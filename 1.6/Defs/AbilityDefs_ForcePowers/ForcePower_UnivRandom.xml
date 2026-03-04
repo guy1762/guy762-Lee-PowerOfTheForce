@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_breathcontrol</defName>
+		<label>body control</label>
+		<description>Use the Force to focus the caster's breathing and internal temperature regulation, giving temporary immunity to environmental toxins as well as significantly boosting the comfortable temperature limits. Also boosts carry weight limit. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_BreathControl</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Breath_Control</iconPath>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>5</level>
+		<aiCanUse>true</aiCanUse>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<showGizmoOnWorldView>True</showGizmoOnWorldView>
+		
+		
+		<cooldownTicksRange>36000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>10</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>240</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_generic</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_BreathControl</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_BreathControl</defName>
+		<label>body control</label>
+		<description>Force-enhanced breathing and temperature regulation, giving temporary immunity to environmental toxins as well as boosted comfortable temperature limits. Also boosts carry weight limit. Duration scales with the target's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+				<VEF_MassCarryCapacity>50</VEF_MassCarryCapacity>
+				<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+				<ComfyTemperatureMax>100</ComfyTemperatureMax>
+				<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+			</statOffsets>
+			<capMods>
+				  <li>
+					<capacity>Breathing</capacity>
+					<offset>5</offset>
+				  </li>
+            </capMods>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	 
+	 
+
+</Defs>

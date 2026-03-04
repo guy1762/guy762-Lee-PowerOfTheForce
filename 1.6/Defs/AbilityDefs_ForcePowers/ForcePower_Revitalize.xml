@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_revitalize</defName>
+		<label>revitalize</label>
+		<description>Use the Force to quickly heal a downed target's wounds. Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceRevitalize</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Power_Revitalize</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>9</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>false</canTargetSelf>
+				
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceRevitalize</hediffDef>
+				<replaceExisting>false</replaceExisting>
+				<!--applyToSelf>true</applyToSelf-->
+				<applyToTarget>true</applyToTarget>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<goodwillImpact>15</goodwillImpact>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAteamheal</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceRevitalize</defName>
+		<description>Force-stimulated natural healing factors. Duration scales with the target's psychic sensitivity.</description>
+		<label>Force revitalize</label>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<preventsDeath>true</preventsDeath>
+		<stages>
+		  <li>
+			<naturalHealingFactor>10000</naturalHealingFactor>
+			<totalBleedFactor>0.25</totalBleedFactor>
+			<statOffsets>
+				<ImmunityGainSpeedFactor>1000</ImmunityGainSpeedFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advrevitalize</defName>
+		<label>knight revitalize</label>
+		<description>Use the Force to quickly heal a downed target's wounds. Potential targets can also include the caster. Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceRevitalize</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Power_Improved_Revitalize</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>15</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>true</canTargetSelf>
+				
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceRevitalize</hediffDef>
+				<replaceExisting>false</replaceExisting>
+				<!--applyToSelf>true</applyToSelf-->
+				<applyToTarget>true</applyToTarget>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<goodwillImpact>15</goodwillImpact>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAteamheal</sound>
+			</li>
+		</comps>
+		
+		<modExtensions>
+		  <li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+			<castableInUnconscious>true</castableInUnconscious>
+			<castableInMentalbreak>false</castableInMentalbreak>
+		  </li>
+		  <!--li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li-->
+		</modExtensions>
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstrevitalize</defName>
+		<label>master revitalize</label>
+		<description>Use the Force to quickly heal the wounds of any downed friendlies within a radius. Duration scales with the psychic sensitivity of those affected.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceRevitalize</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Power_Master_Revitalize</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>21</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		<targetRequired>false</targetRequired>
+		<statBases>
+			<Force_AbilityForcePoolCost>50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+			<Ability_EffectRadius>5</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<drawAimPie>False</drawAimPie>
+			<warmupTime>1</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>true</canTargetSelf>
+				
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>true</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceRevitalize</hediffDef>
+				<replaceExisting>false</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<goodwillImpact>15</goodwillImpact>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAteamheal</sound>
+			</li>
+		</comps>
+		
+		<modExtensions>
+		  <li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+			<castableInUnconscious>true</castableInUnconscious>
+			<castableInMentalbreak>false</castableInMentalbreak>
+		  </li>
+		  <!--li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li-->
+		</modExtensions>
+	  </AbilityDef>
+	  
+
+
+</Defs>

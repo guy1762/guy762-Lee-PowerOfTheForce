@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_shock</defName>
+		<label>Force shock</label>
+		<description>Use the Force to electrocute a target. Does not use psychic sensitivity for scaling.</description>
+		<descriptionHyperlinks>
+			<HediffDef>guy762_Electrocuted</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Shock</iconPath>
+		<hotKey>Misc5</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_JAlightning</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetLocations>True</canTargetLocations>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>true</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SWPotF_projectile_ForceShock</projectileDef>
+			</li>
+			<!--li Class="EBSGFramework.CompProperties_AbilityChargeBattery">
+                <batteryChangeAmount>100</batteryChangeAmount>
+                <efficiencyFactorStat>PsychicSensitivity</efficiencyFactorStat>
+            </li-->
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_ForceShock</defName>
+		<label>Force shock</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_RangedDamage_electrical</damageDef>
+			<speed>64</speed>
+			<damageAmountBase>16</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<soundAmbient>kotorsound_JAlightningloop</soundAmbient>
+		</projectile>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_lightning</defName>
+		<label>Force lightning</label>
+		<description>Use the Force to electrocute all targets in a long but narrow arc. Does not use psychic sensitivity for scaling.</description>
+		<descriptionHyperlinks>
+			<HediffDef>guy762_Electrocuted</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Lightning</iconPath>
+		<hotKey>Misc5</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>9</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<cooldownTicksRange>2000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>15</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_lightning</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<!--canTargetLocations>True</canTargetLocations-->
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>true</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<!--<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_lightning</sound>
+			</li>-->
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_AbilityForceLightning">
+				<range>15</range>
+				<lineWidthEnd>7</lineWidthEnd>
+				<!-- <filthDef></filthDef> -->
+				<!-- <effecterDef></effecterDef> -->
+				<canHitFilledCells>true</canHitFilledCells>
+				<projectileDef>SWPotF_projectile_ForceLightning</projectileDef>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_ForceLightning</defName>
+		<label>Force lightning</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_RangedDamage_electrical</damageDef>
+			<speed>64</speed>
+			<damageAmountBase>1</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<soundAmbient>kotorsound_JAlightningloop</soundAmbient>
+		</projectile>
+		<dealsDamageOnce>false</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_storm</defName>
+		<label>Force storm</label>
+		<description>Use the Force to electrocute all targets in a large arc. Does not use psychic sensitivity for scaling.</description>
+		<descriptionHyperlinks>
+			<HediffDef>guy762_Electrocuted</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Storm</iconPath>
+		<hotKey>Misc5</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>18</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<cooldownTicksRange>8000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>60</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>15</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_lightning</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<!--canTargetLocations>True</canTargetLocations-->
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>true</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<!--<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_lightning</sound>
+			</li>-->
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_AbilityForceLightning">
+				<range>15</range>
+				<lineWidthEnd>14</lineWidthEnd>
+				<!-- <filthDef></filthDef> -->
+				<!-- <effecterDef></effecterDef> -->
+				<canHitFilledCells>true</canHitFilledCells>
+				<projectileDef>SWPotF_projectile_ForceStorm</projectileDef>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_ForceStorm</defName>
+		<label>Force storm</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_RangedDamage_electrical</damageDef>
+			<speed>64</speed>
+			<damageAmountBase>1</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<soundAmbient>kotorsound_JAlightningloop</soundAmbient>
+		</projectile>
+		<dealsDamageOnce>false</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	  
+
+	  
+
+
+	  
+
+
+</Defs>

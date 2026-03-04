@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_drainforce</defName>
+		<label>Drain Force</label>
+		<description>Use the Force to drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Drain_Force</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>1</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>-25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>1</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_drain</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SWPotF_projectile_ForceDrain</projectileDef>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceDrainSap</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+				
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+                <targetHasAllOfHediffs>
+                    <li>SWPotF_Hediff_ForceProgression</li>
+                </targetHasAllOfHediffs>
+				<!--targetStatLimiters>
+                    <li>
+						<stat>Force_AbilityForcePoolCost</stat>
+						<minStatValue>25</minStatValue>
+					</li>
+                </targetStatLimiters-->
+            </li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_ForceDrain</defName>
+		<label>Force drain</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning_purple/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning_purple/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_ForceDamage_add</damageDef> <!-- this method doesn't work either -->
+			<speed>64</speed>
+			<damageAmountBase>30</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+		</projectile>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceDrainSap</defName>
+		<label>Force Drain</label>
+		<description>Force energy actively being siphoned by an opponent.</description>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+		  <li>
+			<statFactors>
+				<Force_FPRecovery>-12.5</Force_FPRecovery>
+			</statFactors>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advdrainforce</defName>
+		<label>Adv. drain Force</label>
+		<description>Use the Force to better drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Improved_Drain_Force</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>9</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>-50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>1</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_drain</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SWPotF_projectile_AdvForceDrain</projectileDef>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_AdvForceDrainSap</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+				
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+                <targetHasAllOfHediffs>
+                    <li>SWPotF_Hediff_ForceProgression</li>
+                </targetHasAllOfHediffs>
+            </li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_AdvForceDrain</defName>
+		<label>Adv. Force drain</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning_purple/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning_purple/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_ForceDamage_add</damageDef> <!-- this method doesn't work either -->
+			<speed>64</speed>
+			<damageAmountBase>55</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+		</projectile>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_AdvForceDrainSap</defName>
+		<label>Adv. Force Drain</label>
+		<description>Force energy actively being siphoned by an opponent.</description>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+		  <li>
+			<statFactors>
+				<Force_FPRecovery>-25</Force_FPRecovery>
+			</statFactors>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstdrainforce</defName>
+		<label>Master drain Force</label>
+		<description>Use the Force to greatly drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Master_Drain_Force</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>15</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>-75</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>1</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_drain</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SWPotF_projectile_MstForceDrain</projectileDef>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_MstForceDrainSap</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+				
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+                <targetHasAllOfHediffs>
+                    <li>SWPotF_Hediff_ForceProgression</li>
+                </targetHasAllOfHediffs>
+            </li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_MstForceDrain</defName>
+		<label>Master Force drain</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning_purple/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning_purple/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_ForceDamage_add</damageDef> <!-- this method doesn't work either -->
+			<speed>64</speed>
+			<damageAmountBase>80</damageAmountBase>
+			<armorPenetrationBase>1</armorPenetrationBase>
+			<stoppingPower>1</stoppingPower>
+		</projectile>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_MstForceDrainSap</defName>
+		<label>Master Force Drain</label>
+		<description>Force energy actively being siphoned by an opponent.</description>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+		  <li>
+			<statFactors>
+				<Force_FPRecovery>-50</Force_FPRecovery>
+			</statFactors>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+
+
+
+	  
+
+
+</Defs>

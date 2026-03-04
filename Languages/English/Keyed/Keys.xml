@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+	<!-- 1. Apprentice System -->
+	<Force.Apprentices>Apprentices</Force.Apprentices>
+	<Force_ApprenticeCapacity>Amount of Apprentices one can have.</Force_ApprenticeCapacity>
+	<Force.ApprenticeUsage>Current apprentices:</Force.ApprenticeUsage>
+	<Force.ApprenticeLimitReached>Apprentice Limit has been reached</Force.ApprenticeLimitReached>
+	<Force.CannotHaveMoreApprentice>Cannot have more apprentices.</Force.CannotHaveMoreApprentice>
+	<Force.TargetIsApprenticeAlready>Target is an apprentice already.</Force.TargetIsApprenticeAlready>
+	<Force.TargetIsNotYourApprentice>{0} is someone else's apprentice</Force.TargetIsNotYourApprentice>
+	<Force.TaughtNewAbility>Successfully taught {0} {1}</Force.TaughtNewAbility>
+	<Force.ApprenticeshipRemoved>{0} has been removed as an Apprentice</Force.ApprenticeshipRemoved>
+	<Force.ApprenticeshipGraduated>{0} has graduated and has been promoted into an {1}</Force.ApprenticeshipGraduated>
+	<Force_MasterPromotion>{0} has met the promotion targets. They have been promoted into {1}</Force_MasterPromotion>
+	<Force.MasterIsInCooldown>Master is on cooldown.</Force.MasterIsInCooldown>
+	<Force.Apprentice_Label>{0} of: {1}</Force.Apprentice_Label>
+	<Force.Apprentice_UnknownMaster>Unknown Master</Force.Apprentice_UnknownMaster>
+	<Force.Apprentice_XPGain>{0} has gained {1} Force experience</Force.Apprentice_XPGain>
+	<Force.Apprentice_GraduationReady>{0} is ready to graduate from apprenticeship</Force.Apprentice_GraduationReady>
+	<Force.Apprentice_BondFormed>A Force bond has formed between {0} and {1}</Force.Apprentice_BondFormed>
+	<Force.Apprentice_Graduated>{0} has graduated from apprenticeship under {1}</Force.Apprentice_Graduated>
+	<Force.Apprentice_Removed>{0} is no longer an apprentice</Force.Apprentice_Removed>
+	<Force.Apprentice_MasterKilled>{0} has been freed by the death of master {1}</Force.Apprentice_MasterKilled>
+	<Force.Teaching_BreakthroughTitle>Teaching Breakthrough</Force.Teaching_BreakthroughTitle>
+	<Force.Teaching_BreakthroughText>{0} has had a teaching breakthrough with {1}!\n\n{1} gained {2} Force experience and learned {3}!</Force.Teaching_BreakthroughText>
+	<Force.Teaching_SessionTitle>Teaching Session Complete</Force.Teaching_SessionTitle>
+	<Force.Teaching_SessionText>{0} has completed a teaching session with {1}.\n\n{1} gained {2} Force experience.</Force.Teaching_SessionText>
+	<Force.Teaching_AbilityLearned>{0} has learned {1}!</Force.Teaching_AbilityLearned>
+	<Force.Training_ListeningReport>Attending {ORGANIZER}'s Jedi training</Force.Training_ListeningReport>
+	<Force.Training_GivingReport>Conducting Jedi training</Force.Training_GivingReport>
+	<Force.Training_CancelledTitle>Training Cancelled</Force.Training_CancelledTitle>
+	<Force.Training_CancelledText>{0} had to cancel the Jedi training session</Force.Training_CancelledText>
+
+	<!-- 2. Force Abilities (General) -->
+	<Force_HigherConnection>{0} has a stronger connection to the force. Failed to apply ability</Force_HigherConnection>
+	<Force_FearFailed>{0} resisted Force Fear</Force_FearFailed>
+	<Force_Fear>Overwhelmed by Force Fear</Force_Fear>
+	<Force_Fear_TemporaryMap>Not at player colony, apply hediff instead of mental break</Force_Fear_TemporaryMap>
+	<Force_Insanity>Driven Insane by Force Insanity</Force_Insanity>
+	<Force_InsanityFailed>{0} resisted Force Insanity.</Force_InsanityFailed>
+	<Force_MindControlFailed>The target's willpower is too strong to be affected.</Force_MindControlFailed>
+	<Force.CancelAbilityLabel>Stop Channeling {0}</Force.CancelAbilityLabel>
+	<Force.CancelAbilityDesc>Stop Channeling {0}. Removing {1} in the process.</Force.CancelAbilityDesc>
+	<Force.CancelForceDefense>Cancel Force Defense</Force.CancelForceDefense>
+	<Force_AbilityMustTargetLivingPawn>Must target a Living Pawn</Force_AbilityMustTargetLivingPawn>
+	<Force_HediffCheck>This ability Requires {0} with a severity of {1}. Current Severity : {2}</Force_HediffCheck>
+	<Force_EntropyGainPerTick>Entropy Gain Per Tick</Force_EntropyGainPerTick>
+	<Force.Ability_NotForceUser>Only Force-sensitive beings can use this ability</Force.Ability_NotForceUser>
+	<Force.NotAForceUser>Not a Force user</Force.NotAForceUser>
+	<Force.NotEnoughForcePoints>Not enough Force points ({0}/{1})</Force.NotEnoughForcePoints>
+
+	<!-- 3. Specific Force Powers -->
+	<!-- Mind/Bond Powers -->
+	<Force.Bond_ManhunterOption>Trigger manhunter state</Force.Bond_ManhunterOption>
+	<Force.Bond_CreateOption>Create force bond</Force.Bond_CreateOption>
+	<Force.Bond_ManhunterSuccess>{0} has driven {1} into a manhunter rage!</Force.Bond_ManhunterSuccess>
+	<Force.Bond_AlreadyExists>These pawns are already force bonded!</Force.Bond_AlreadyExists>
+	<Force.Bond_CreatedSuccess>{0} has formed a force bond with {1}!</Force.Bond_CreatedSuccess>
+	<Force.MindTrick_NoValidDestination>No valid destination found</Force.MindTrick_NoValidDestination>
+	<Force.MindTrick_Resisted>Resisted!</Force.MindTrick_Resisted>
+	<Force.MindTrick_ZeroSensitivityResist>{0} resisted due to zero psychic sensitivity</Force.MindTrick_ZeroSensitivityResist>
+	<Force.MindTrick_WindowTitle>Mind Control: {0}</Force.MindTrick_WindowTitle>
+	<Force.MindTrick_MultiTargetTitle>Mind Control {0} Targets</Force.MindTrick_MultiTargetTitle>
+	<Force.MindTrick_SelectJob>Select Job...</Force.MindTrick_SelectJob>
+	<Force.MindTrick_ApplyToAll>Apply to All</Force.MindTrick_ApplyToAll>
+	<Force.MindTrick_ChooseJob>Choose Mind Control Job</Force.MindTrick_ChooseJob>
+
+	<!-- Destruction Powers -->
+	<Force.Destruction_Drain25>Drain 25% FP</Force.Destruction_Drain25>
+	<Force.Destruction_Drain33>Drain 33% FP</Force.Destruction_Drain33>
+	<Force.Destruction_Drain50>Drain 50% FP</Force.Destruction_Drain50>
+	<Force.Destruction_Drain66>Drain 66% FP</Force.Destruction_Drain66>
+	<Force.Destruction_Drain100>Drain 100% FP</Force.Destruction_Drain100>
+	<Force.Destruction_NotEnoughFP>{0} doesn't have enough Force Points ({1})</Force.Destruction_NotEnoughFP>
+	<Force.Destruction_PowerfulEffect>{0} unleashed a devastating wave of Force Destruction!</Force.Destruction_PowerfulEffect>
+
+	<!-- Physical Powers -->
+	<Force.Pull_AlreadyEquipped>Already equipped with another weapon</Force.Pull_AlreadyEquipped>
+	<Force.Pull_InvalidTarget>Can only pull pawns or weapons</Force.Pull_InvalidTarget>
+	<Force.Throw_NonMinifiableBuilding>Cannot throw non-minifiable buildings</Force.Throw_NonMinifiableBuilding>
+	<Force.Heal_NoWoundsToTransfer>No wounds available to transfer</Force.Heal_NoWoundsToTransfer>
+	<Force.MessageRegrowingBodyPart>{0} has regrown {2} on {1}</Force.MessageRegrowingBodyPart>
+	<Force.MessagePermanentWoundHealed>{0} has healed {2} on {1}</Force.MessagePermanentWoundHealed>
+	<Force.LaunchProjectile>Launch {0}</Force.LaunchProjectile>
+	<Force.LaunchProjectileDesc>Launch {0} at a target</Force.LaunchProjectileDesc>
+	<Force.ReleaseThing>Drop {0}</Force.ReleaseThing>
+	<Force.ReleaseThingDesc>Drop {0}</Force.ReleaseThingDesc>
+	<Force_Deconstruct>Force Deconstruct</Force_Deconstruct>
+	<Force_Disassemble>Force Disassemble</Force_Disassemble>
+	<Force_DisassembleMechanoid>Force Disassemble Mechanoid</Force_DisassembleMechanoid>
+	<Force_CannotDeconstruct>Cannot deconstruct this structure</Force_CannotDeconstruct>
+	<Force_CannotDisassemble>Cannot disassemble {0}</Force_CannotDisassemble>
+	<Force_NotEnoughForce>Not enough Force energy ({0} required)</Force_NotEnoughForce>
+	<Force_IntelligenceSkillTooLow>Requires Intelligence skill level {0}</Force_IntelligenceSkillTooLow>
+	<Force_SkillTooLow>Skill too low</Force_SkillTooLow>
+
+	<!-- Gizmo Labels and Descriptions -->
+	<Force.LaunchNext>Launch Next : {0} / {1} </Force.LaunchNext>
+	<Force.LaunchNextDesc>Launch the currently selected projectile</Force.LaunchNextDesc>
+	<Force.LaunchAll>Launch All</Force.LaunchAll>
+	<Force.LaunchAllDesc>Launch all held projectiles in random directions</Force.LaunchAllDesc>
+	<Force.ExplodePawn>Crush {0}</Force.ExplodePawn>
+	<Force.ExplodePawnDesc>Crush {0} into a pile of meat</Force.ExplodePawnDesc>
+
+	<!-- Tooltip Strings -->
+	<Force.HoldingProjectiles>Holding {0} projectiles:</Force.HoldingProjectiles>
+	<Force.NextToLaunch>Next to launch: {0}</Force.NextToLaunch>
+	<Force.AndXMore>... and {0} more</Force.AndXMore>
+
+	<!-- Error Messages -->
+	<Force.CannotLaunchInvalid>Cannot launch - invalid conditions</Force.CannotLaunchInvalid>
+	<Force.CannotLaunchNull>Cannot launch - null pawn or map</Force.CannotLaunchNull>
+	<Force.FailedToGetIcon>Failed to get projectile icon for {0}</Force.FailedToGetIcon>
+	<Force.ErrorDrawingBeam>Error drawing beam mote</Force.ErrorDrawingBeam>
+	<Force.ErrorInDrawWorn>Error in ProjectileHolder.DrawWornExtras</Force.ErrorInDrawWorn>
+	<Force.ErrorInTick>Error in CompPostTick</Force.ErrorInTick>
+	<Force.ErrorCatchingForceThrow>Error catching ForceThrow projectile</Force.ErrorCatchingForceThrow>
+
+	<!-- Sith Powers -->
+	<Force.SithDrain_Success>{0} has drained {1} of {2} knowledge ({3} points)</Force.SithDrain_Success>
+	<Force.SithDrain_InvalidTarget>Must target a living pawn</Force.SithDrain_InvalidTarget>
+	<Force.SithDrain_WindowTitle>Sith Knowledge Drain</Force.SithDrain_WindowTitle>
+	<Force.SithDrain_TargetLabel>Target: {0}</Force.SithDrain_TargetLabel>
+	<Force.SithDrain_Warning>Warning: Draining knowledge causes severe psychic trauma!</Force.SithDrain_Warning>
+	<Force.SithDrain_SkillLevel>Level {0}</Force.SithDrain_SkillLevel>
+	<Force.SithDrain_SelectPrompt>Select a skill to drain from the target</Force.SithDrain_SelectPrompt>
+	<Force.SithDrain_HighRiskWarning>High transfers may cause permanent damage!</Force.SithDrain_HighRiskWarning>
+	<Force.SithDrain_Button>Drain {0} points</Force.SithDrain_Button>
+	<Force.SithDrain_CannotDrain>Cannot Drain</Force.SithDrain_CannotDrain>
+	<Force.SithDrain_AnalysisHeader>&lt;b&gt;Drain Potential Analysis:&lt;/b&gt;</Force.SithDrain_AnalysisHeader>
+	<Force.SithDrain_TargetHeader>&gt;\n&lt;b&gt;From {0}:&lt;/b&gt;</Force.SithDrain_TargetHeader>
+	<Force.SithDrain_TargetMinSkill>&lt;color=red&gt;- Cannot drain: Target's skill already at minimum&lt;/color&gt;</Force.SithDrain_TargetMinSkill>
+	<Force.SithDrain_TargetAvailable>- Available to drain: {0} points</Force.SithDrain_TargetAvailable>
+	<Force.SithDrain_CasterHeader>&gt;\n&lt;b&gt;To {0}:&lt;/b&gt;</Force.SithDrain_CasterHeader>
+	<Force.SithDrain_CasterMaxSkill>&lt;color=red&gt;- Cannot receive: Your skill is already maxed&lt;/color&gt;</Force.SithDrain_CasterMaxSkill>
+	<Force.SithDrain_CasterCapacity>- Can receive: {0} points</Force.SithDrain_CasterCapacity>
+	<Force.SithDrain_PsychicHeader>&gt;\n&lt;b&gt;Psychic Factors:&lt;/b&gt;</Force.SithDrain_PsychicHeader>
+	<Force.SithDrain_TargetSensitivity>- Target's psychic sensitivity: {0}</Force.SithDrain_TargetSensitivity>
+	<Force.SithDrain_CasterPower>- Your psychic power: {0}</Force.SithDrain_CasterPower>
+	<Force.SithDrain_TransferEfficiency>- Transfer efficiency: {0}</Force.SithDrain_TransferEfficiency>
+	<Force.SithDrain_NoTransferPossible>&gt;\n&lt;color=red&gt;&lt;b&gt;Cannot drain:&lt;/b&gt; No valid transfer possible&lt;/color&gt;</Force.SithDrain_NoTransferPossible>
+	<Force.SithDrain_MaxSafeTransfer>&gt;\n&lt;color=green&gt;&lt;b&gt;Maximum safe transfer:&lt;/b&gt; {0} skill points&lt;/color&gt;</Force.SithDrain_MaxSafeTransfer>
+	<Force.SithDrain_RiskWarning>&lt;i&gt;Higher transfers risk psychic backlash for both parties&lt;/i&gt;</Force.SithDrain_RiskWarning>
+	<Force.SithResurrection_Success>{0} has been resurrected through Sith alchemy!</Force.SithResurrection_Success>
+	<Force_CasterCannotBePhantom>Cannot be a Force Phantom</Force_CasterCannotBePhantom>
+	<Force_CannotBeChild>Cannot be a Child</Force_CannotBeChild>
+	<Force.EssenceTransferFailed>Essence Transfer Failed</Force.EssenceTransferFailed>
+	<Force.CannotSwapWithGhost>Cannot perform essence transfer with a Force ghost.</Force.CannotSwapWithGhost>
+	<Force.EssenceTransferComplete>Essence Transfer Complete</Force.EssenceTransferComplete>
+	<Force.EssenceTransferSuccess>{CASTER} has successfully transferred essence with {TARGET}</Force.EssenceTransferSuccess>
+
+	<!-- Mechu-Deru Powers -->
+	<Force_MechuPower.Unlinked>Unlinked from {0}</Force_MechuPower.Unlinked>
+	<Force_MechuPower.Linked>Linked to {0}</Force_MechuPower.Linked>
+	<Force.Mechu_InvalidTarget>Mechu-Reconste ability applied to invalid target</Force.Mechu_InvalidTarget>
+	<Force.Mechu_TargetMustBeConduit>Target must be a power conduit</Force.Mechu_TargetMustBeConduit>
+	<Force.Mechu_RepairConnected>Repair connected buildings</Force.Mechu_RepairConnected>
+	<Force.MechuTek_InvalidTarget>Ability must target a living pawn</Force.MechuTek_InvalidTarget>
+	<Force.MechuTek_NoImplants>{0} has no implants to remove</Force.MechuTek_NoImplants>
+	<Force.MustConsumePower>Target must consume Power</Force.MustConsumePower>
+	<Force.MechuTrans_InvalidTarget>Mechu-Transmutation: Target is not a valid living pawn</Force.MechuTrans_InvalidTarget>
+	<Force.MechuTrans_FailedSpawn>Mechu-Transmutation: Failed to spawn mechanoid</Force.MechuTrans_FailedSpawn>
+	<Force.MechuTrans_TargetLivingPawn>Must target a living pawn</Force.MechuTrans_TargetLivingPawn>
+	<Force.MechuTrans_RequiresMechanitor>You must be a Mechanitor to use this ability</Force.MechuTrans_RequiresMechanitor>
+	<Force.MechuTrans_InsufficientBandwidth>Not enough bandwidth to control {0} (requires {1}, available {2})</Force.MechuTrans_InsufficientBandwidth>
+	<Force.MechuTrans_MechanoidAssigned>{0} has been assigned to control {1}</Force.MechuTrans_MechanoidAssigned>
+	<Force.MechuTek_ImplantStudied>Successfully studied {0}</Force.MechuTek_ImplantStudied>
+	<Force.MechuTek_InvalidTargetType>Must target a pawn or tech implant</Force.MechuTek_InvalidTargetType>
+	<Force.MechuTek_RequiresImplant>Caster must have a Mechu-Deru implant</Force.MechuTek_RequiresImplant>
+	<Force.MechuTek_AlreadyStudied>The implant {0} has already been studied</Force.MechuTek_AlreadyStudied>
+	<Force.MechuTek_ImplantReplaced>Replaced {0} with {1} on {2}</Force.MechuTek_ImplantReplaced>
+	<Force.MechuTek_SelectImplant>Select an implant to replace for {0}:</Force.MechuTek_SelectImplant>
+	<Force.MechuTek_SelectReplacement>Select a replacement for {0}:</Force.MechuTek_SelectReplacement>
+	<Force.MechuTek_BodyPart>Body Part: {0}</Force.MechuTek_BodyPart>
+	<Force.General_WholeBody>Whole body</Force.General_WholeBody>
+	<Force.General_Select>Select</Force.General_Select>
+
+	<!-- Mechu-Flux System -->
+	<Force.MechuFlux_InfuseOption>Infuse power</Force.MechuFlux_InfuseOption>
+	<Force.MechuFlux_AbsorbOption>Absorb power</Force.MechuFlux_AbsorbOption>
+	<Force.MechuFlux_AbsorbPartial>Drain {0:F0}% - {1:N0}W ({2:F1} FP)</Force.MechuFlux_AbsorbPartial>
+	<Force.MechuFlux_AbsorbFull>Drain {0:N0}W ({1:F1} FP)</Force.MechuFlux_AbsorbFull>
+	<Force.MechuFlux_TotalAvailable>Total available: {0:N0}W ({1:F1} FP)</Force.MechuFlux_TotalAvailable>
+	<Force.MechuFlux_InfuseStandard>Infuse {0:F0}% FP ({1:F1} FP → {2:N0}W)</Force.MechuFlux_InfuseStandard>
+	<Force.MechuFlux_InfuseOverload>Overload power grid (guaranteed explosion) - {0:F1} FP → {1:N0}W</Force.MechuFlux_InfuseOverload>
+	<Force.MechuFlux_NotForceUser>Caster is not a Force user</Force.MechuFlux_NotForceUser>
+	<Force.MechuFlux_InvalidTarget>Target must be a Power Conduit</Force.MechuFlux_InvalidTarget>
+	<Force.MechuFlux_InvalidPowerNetwork>Target is not connected to a valid power network</Force.MechuFlux_InvalidPowerNetwork>
+	<Force.MechuFlux_OverloadExplosion>The power grid was overloaded and caused a short circuit!</Force.MechuFlux_OverloadExplosion>
+	<Force.MechuFlux_InfuseSuccess>Caster spent {0:F1} FP to restore {1:N0}W of power</Force.MechuFlux_InfuseSuccess>
+	<Force.MechuFlux_InsufficientFP>The caster doesn't have enough FP to perform this action</Force.MechuFlux_InsufficientFP>
+	<Force.MechuFlux_AbsorbSuccess>Caster has restored {0:F1} FP by draining {1:N0}W</Force.MechuFlux_AbsorbSuccess>
+	<Force.MechuFlux_InsufficientPower>There is not enough power to drain</Force.MechuFlux_InsufficientPower>
+
+	<!-- Mechu-Turret System -->
+	<Force.MechuTurret_ShieldSpawned>Shield spawned around {0}</Force.MechuTurret_ShieldSpawned>
+	<Force.MechuTurret_InsufficientEnergy>Not enough stored energy to spawn a shield</Force.MechuTurret_InsufficientEnergy>
+	<Force.MechuTurret_MissingImplant>Pawn does not have the Mechu-Deru implant</Force.MechuTurret_MissingImplant>
+	<Force.MechuTurret_InvalidTarget>Target must be a Power Conduit</Force.MechuTurret_InvalidTarget>
+	<Force.MechuTurret_ShieldDefMissing>ShieldDef is not defined</Force.MechuTurret_ShieldDefMissing>
+	<Force.MechuTurret_ShieldMote>Shield Spawned</Force.MechuTurret_ShieldMote>
+	<Force.MechuDeru_EnergyDepleted>Mechu-Deru energy depleted - all shields deactivated</Force.MechuDeru_EnergyDepleted>
+	<Force.MechuDeru_NullLinkTarget>Attempted to link to a null target</Force.MechuDeru_NullLinkTarget>
+	<Force.MechuDeru_LinkEstablished>{0} established Mechu-Deru link with {1}</Force.MechuDeru_LinkEstablished>
+	<Force.MechuDeru_LinkTerminated>{0} terminated Mechu-Deru link with {1}</Force.MechuDeru_LinkTerminated>
+	<Force.MechuDeru_ImplantStudied>{0} has studied {1} implant</Force.MechuDeru_ImplantStudied>
+	<Force.MechuDeru_TickError>Error in MechuDeru tick for {0}: {1}</Force.MechuDeru_TickError>
+	<Force.MechuDeru_ImplantRemoved>{0}'s Mechu-Deru implant has been removed</Force.MechuDeru_ImplantRemoved>
+
+	<!-- Sith Sorcery -->
+	<Force.SithSorcery_SelectAnimalTitle>Select Animal Form</Force.SithSorcery_SelectAnimalTitle>
+	<Force.SithSorcery_SearchTooltip>Search for animal forms</Force.SithSorcery_SearchTooltip>
+	<Force.SithSorcery_SelectTooltip>Select this animal form</Force.SithSorcery_SelectTooltip>
+	<Force.SithSorcery_AnimalSelected>Selected form: {0}</Force.SithSorcery_AnimalSelected>
+
+	<!-- Force Ghost System -->
+	<Force_ReturnAsGhost>Return as a force Ghost</Force_ReturnAsGhost>
+	<Force_Ghost>{0} returns as a force ghost</Force_Ghost>
+	<Force_GhostReturns>{0} returns as a force ghost</Force_GhostReturns>
+	<Force_ReturnToFlesh>Return to the mortal coil</Force_ReturnToFlesh>
+	<Force_SithGhost>Bound To: </Force_SithGhost>
+	<Force_LinkedTo>{0}</Force_LinkedTo>
+	<Force_LinkedToDesc>The pawn's spirit is linked to this object. If it is destroyed, the pawn will die</Force_LinkedToDesc>
+	<Force_SithGhostDesc>The pawn's spirit is linked to this object. If it is destroyed, the pawn will die</Force_SithGhostDesc>
+	<Force_LinkedObjectAction>Linked Object Actions</Force_LinkedObjectAction>
+	<Force_LinkedObjectActionDesc>Expand to see actions related to the Sith's Spirit.</Force_LinkedObjectActionDesc>
+	<Force_LinktoObject>Link to Object</Force_LinktoObject>
+	<Force_LinktoObjectDesc>Link the pawn's spirit to an object. If the object is destroyed, the pawn will die.</Force_LinktoObjectDesc>
+	<Force_Unlink>Unlink from the linked object</Force_Unlink>
+	<Force_UnlinkDesc>Safely unlink the pawn's spirit from the object</Force_UnlinkDesc>
+	<Force_UnlinkMessage>The object has been safely unlinked from the pawn.</Force_UnlinkMessage>
+	<Force.ReturnAsForceGhost>Return as Force Ghost</Force.ReturnAsForceGhost>
+	<Force.ReturnAsForceGhostDesc>Return as a light side force ghost</Force.ReturnAsForceGhostDesc>
+	<Force.ReturnAsSithGhost>Return as Sith Ghost</Force.ReturnAsSithGhost>
+	<Force.ReturnAsSithGhostDesc>Return as a dark side spirit</Force.ReturnAsSithGhostDesc>
+	<Force.FocusOnPhylactery>Focus on Phylactery</Force.FocusOnPhylactery>
+	<Force.FocusOnPhylacteryDesc>Jump to the object anchoring this spirit</Force.FocusOnPhylacteryDesc>
+	<Force.SithGhostLabel>Sith Ghost: {0}</Force.SithGhostLabel>
+
+	<!-- Training System -->
+	<Force_OutcomeLetterLabel>{OUTCOMELABEL}</Force_OutcomeLetterLabel>
+	<Force_LectureOutcomeQualitySpecific>Training effectiveness: {0}</Force_LectureOutcomeQualitySpecific>
+	<Force_LectureOutcomeHediffApplied>Participants gained {0} (severity: {1})\nThe effects will last until the knowledge is fully integrated.</Force_LectureOutcomeHediffApplied>
+	<FailedJediTraining>Failed Training</FailedJediTraining>
+	<BasicJediTraining>Basic Instruction</BasicJediTraining>
+	<EffectiveJediTraining>Effective Training</EffectiveJediTraining>
+	<MasterfulJediTraining>Masterful Instruction</MasterfulJediTraining>
+	<FailedJediTraining.desc>The Force concepts remained unclear to most students.</FailedJediTraining.desc>
+	<BasicJediTraining.desc>Students grasped only the fundamentals of the lesson.</BasicJediTraining.desc>
+	<EffectiveJediTraining.desc>Clear understanding was achieved by most participants.</EffectiveJediTraining.desc>
+	<MasterfulJediTraining.desc>Exceptional comprehension - students surpassed expectations.</MasterfulJediTraining.desc>
+	<Force.LectureOutcomeXPGainedStudents>Students gained {0} XP each</Force.LectureOutcomeXPGainedStudents>
+	<Force.LectureOutcomeXPGainedTeacher>Teacher gained {0} XP</Force.LectureOutcomeXPGainedTeacher>
+
+
+	<!-- Requirements & Checks -->
+	<Force.TargetPsylinkLevelTooHigh>{0} Psycasting Experience Exceeds your own.</Force.TargetPsylinkLevelTooHigh>
+	<Force.NotPsycaster>{0} is not a psycaster/</Force.NotPsycaster>
+	<Force.MustHaveDarkAttuneAmount>Must have at least {0}% Darkside Attunement.</Force.MustHaveDarkAttuneAmount>
+	<Force.NotEnoughAttunement>Connection to the Darkside is too weak.</Force.NotEnoughAttunement>
+	<Force.HediffCheck>Required {0} severity of {1}, but current severity is {2}.</Force.HediffCheck>
+	<Force.AlreadyHaveCorrectBackstory>{0} is already an {1}</Force.AlreadyHaveCorrectBackstory>
+	<Force.MustbeAncientScrollSith>Must target Ancient Scroll(Sith)</Force.MustbeAncientScrollSith>
+
+	<!-- Lightsaber Components -->
+	<Force_slot_colorcrystal>Color crystal</Force_slot_colorcrystal>
+	<MForce_Core>Core Color</MForce_Core>
+	<MForce_Hilt>Hilt</MForce_Hilt>
+	<Force_VariableBlade1>Blade 1 Length:</Force_VariableBlade1>
+	<Force_VariableBlade2>Blade 2 Length:</Force_VariableBlade2>
+	<Force_Vibration1>Vibration Rate:</Force_Vibration1>
+	<Force_Vibration2>Vibration Rate:</Force_Vibration2>
+
+	<!-- Miscellaneous -->
+	<Force.Alignment>Alignment</Force.Alignment>
+	<Force.InvalidTargetForCrafting>{0} is not a valid thing for Crafting </Force.InvalidTargetForCrafting>
+	<Force.TimeRemaining>Time Until Healed : {0}</Force.TimeRemaining>
+	<Force.LevelUP>{0} has leveled up to level {1}</Force.LevelUP>
+	<Force.TraitChanceNullDef>TraitChance has null def</Force.TraitChanceNullDef>
+	<Force.TraitChanceInvalidChance>TraitChance for {0} has chance less than 0</Force.TraitChanceInvalidChance>
+	<Force.MessageCannotFeedOnGhost>Cannot feed on a Force ghost</Force.MessageCannotFeedOnGhost>
+	<Force.WarningLinkedObjectsInTrade>Warning: One or more items in this trade are linked objects. Selling them will result in their linked items being destroyed.</Force.WarningLinkedObjectsInTrade>
+
+	<!-- Midichlorian Test Results -->
+	<Force.MidichlorianTestResults>{0} midichlorian test complete.\n\nCount: {1}</Force.MidichlorianTestResults>
+	<Force.ExceptionalForceSensitivity>This individual has an exceptionally strong connection to the Force!</Force.ExceptionalForceSensitivity>
+	<Force.StrongForceSensitivity>This individual has a strong connection to the Force.</Force.StrongForceSensitivity>
+	<Force.SomeForceSensitivity>This individual shows some sensitivity to the Force.</Force.SomeForceSensitivity>
+	<Force.ForceSensitivity>Force Sensitivity</Force.ForceSensitivity>
+	<Force.GainedTrait>Gained trait: {0}</Force.GainedTrait>
+	<Force.ErrorDeterminingSensitivity>Error determining Force sensitivity.</Force.ErrorDeterminingSensitivity>
+	<Force.CouldNotDetermineSensitivity>Could not determine Force sensitivity.</Force.CouldNotDetermineSensitivity>
+	<Force.MidichlorianCountTooLow>Midichlorian count too low for Force sensitivity.</Force.MidichlorianCountTooLow>
+	<Force.NoSensitivityChange>No change in Force sensitivity was detected this time.</Force.NoSensitivityChange>
+	<Force.InvalidTargetForSurgery>Target must be a living creature</Force.InvalidTargetForSurgery>
+	<Force.AlreadyTested>Already tested for Force sensitivity</Force.AlreadyTested>
+
+	<!-- Force Effects -->
+	<Force.AuraEffectDescription>Creates an aura with radius {0} that applies {1} to affected targets, increasing severity by {2} per application. Affects {3}.</Force.AuraEffectDescription>
+	<Force.EnemiesOnly>enemies only</Force.EnemiesOnly>
+	<Force.AllNonAllied>all non-allied pawns</Force.AllNonAllied>
+	<Force.ChanneledAbility.FPCostPerTick>Force point cost per tick: {0}</Force.ChanneledAbility.FPCostPerTick>
+	<Force.Enlighten.SkillIncreased>{0}'s {1} skill has been enlightened from {2} to {3}</Force.Enlighten.SkillIncreased>
+	<Force.Enlighten.SkillReverted>{0}'s {1} skill has reverted from 20 back to {2}</Force.Enlighten.SkillReverted>
+	<Force.Combustion.InvalidTarget>Invalid target for Force Combustion.</Force.Combustion.InvalidTarget>
+	<Force.Combustion.NoItems>Target has no items to combust.</Force.Combustion.NoItems>
+	<Force.Combustion.CannotTargetSelf>Cannot target self with Force Combustion.</Force.Combustion.CannotTargetSelf>
+	<Force.Combustion.SelectItem>Select item to combust:</Force.Combustion.SelectItem>
+	<Force.Combustion.ItemSelectionLabel>{0} (Mass: {1})</Force.Combustion.ItemSelectionLabel>
+	<Force.NightsisterTeleport.NotEnoughFP>Not enough Force Points to teleport</Force.NightsisterTeleport.NotEnoughFP>
+	<Force.NightsisterTeleport.MinFPRequired>Not enough Force Points (Minimum {0} FP required)</Force.NightsisterTeleport.MinFPRequired>
+	<Force.Summon_AbilityName>Summon</Force.Summon_AbilityName>
+	<Force.Summon_AbilityDesc>{0} summons {1} {2}</Force.Summon_AbilityDesc>
+	<Force.SummonObject.NotEnoughFP>Not enough Force Points to summon {0} (Cost: {1} FP)</Force.SummonObject.NotEnoughFP>
+	<Force.SummonObject.ValueTooHigh>Cannot summon {0} (Value: {1}, Max: {2})</Force.SummonObject.ValueTooHigh>
+	<Force.SummonObject.MustTargetObject>Must target object to summon</Force.SummonObject.MustTargetObject>
+	<Force.SummonObject.CannotSummonLivingOrBuildings>Cannot summon living things or buildings</Force.SummonObject.CannotSummonLivingOrBuildings>
+	<Force.SummonObject.NotEnoughFPGeneral>Not enough Force Points (Need: {0}, Have: {1})</Force.SummonObject.NotEnoughFPGeneral>
+	<Force.SummonObject.FPCostPreview>FP Cost: {0}</Force.SummonObject.FPCostPreview>
+	<Force.SummonObject.FPCostLabel>FP Cost: {0}</Force.SummonObject.FPCostLabel>
+
+	<!-- Alignment System -->
+	<Force.AlignmentActions.Title>Alignment Actions</Force.AlignmentActions.Title>
+	<Force.AlignmentActions.LightSideHeader>Light Side Actions</Force.AlignmentActions.LightSideHeader>
+	<Force.AlignmentActions.DarkSideHeader>Dark Side Actions</Force.AlignmentActions.DarkSideHeader>
+	<Force.AlignmentActions.ShowLightSide>Light Side</Force.AlignmentActions.ShowLightSide>
+	<Force.AlignmentActions.ShowDarkSide>Dark Side</Force.AlignmentActions.ShowDarkSide>
+	<Force.AlignmentActions.HealingOthers>Healing Others</Force.AlignmentActions.HealingOthers>
+	<Force.AlignmentActions.HealingOthersDesc>Tending to wounds increases Light Side attunement.\n\nBase gain: 0.01 per tend quality point</Force.AlignmentActions.HealingOthersDesc>
+	<Force.AlignmentActions.CharityQuests>Completing Charity Quests</Force.AlignmentActions.CharityQuests>
+	<Force.AlignmentActions.CharityQuestsDesc>Successfully completing charity quests increases Light Side attunement for all colonists.\n\nGain: 0.01 attunement</Force.AlignmentActions.CharityQuestsDesc>
+	<Force.AlignmentActions.PeacefulDiplomacy>Peaceful Diplomacy</Force.AlignmentActions.PeacefulDiplomacy>
+	<Force.AlignmentActions.PeacefulDiplomacyDesc>Achieving successful peace talks increases Light Side attunement.\n\nGain: 0.3 attunement</Force.AlignmentActions.PeacefulDiplomacyDesc>
+	<Force.AlignmentActions.DiplomaticVictories>Diplomatic Victories</Force.AlignmentActions.DiplomaticVictories>
+	<Force.AlignmentActions.DiplomaticVictoriesDesc>Exceptional diplomatic successes grant significant Light Side attunement.\n\nGain: 0.8 attunement</Force.AlignmentActions.DiplomaticVictoriesDesc>
+	<Force.AlignmentActions.KillingNonHostiles>Killing Non-Hostiles</Force.AlignmentActions.KillingNonHostiles>
+	<Force.AlignmentActions.KillingNonHostilesDesc>Killing pawns from factions you're not hostile with increases Dark Side attunement.\n\nGain: 0.1 attunement per kill</Force.AlignmentActions.KillingNonHostilesDesc>
+	<Force.AlignmentActions.HarmingAllies>Harming Faction Members</Force.AlignmentActions.HarmingAllies>
+	<Force.AlignmentActions.HarmingAlliesDesc>Injuring members of your own faction slightly increases Dark Side attunement.\n\nGain: 0.01 attunement per incident</Force.AlignmentActions.HarmingAlliesDesc>
+	<Force.AlignmentActions.InsultingOthers>Insulting Others</Force.AlignmentActions.InsultingOthers>
+	<Force.AlignmentActions.InsultingOthersDesc>Insulting other colonists increases Dark Side attunement.\n\nGain: 0.01 attunement per insult</Force.AlignmentActions.InsultingOthersDesc>
+	<Force.AlignmentActions.SocialSlights>Social Slights</Force.AlignmentActions.SocialSlights>
+	<Force.AlignmentActions.SocialSlightsDesc>Negative social interactions increase Dark Side attunement.\n\nGain: 0.01 attunement per slight</Force.AlignmentActions.SocialSlightsDesc>
+	<Force.AlignmentActions.ThoughtTooltip>{0}\n\nGrants {1} {2} Side attunement when experienced.</Force.AlignmentActions.ThoughtTooltip>
+	<Force.AlignmentActions.LightSide>Light </Force.AlignmentActions.LightSide>
+	<Force.AlignmentActions.DarkSide>Dark </Force.AlignmentActions.DarkSide>
+	<Force.AlignmentActions.BleedCrystal>Bleed Crystal</Force.AlignmentActions.BleedCrystal>
+	<Force.AlignmentActions.BleedCrystalDesc>Infuse the crystal with dark side energy</Force.AlignmentActions.BleedCrystalDesc>
+	<Force.AlignmentActions.PurifyCrystal>Purify Crystal</Force.AlignmentActions.PurifyCrystal>
+	<Force.AlignmentActions.PurifyCrystalDesc>Cleanse the crystal with light side energy</Force.AlignmentActions.PurifyCrystalDesc>
+	<Force.AlignmentActions.InvalidPawn>Invalid pawn</Force.AlignmentActions.InvalidPawn>
+	<Force.AlignmentActions.NoTransformationJob>No transformation job defined</Force.AlignmentActions.NoTransformationJob>
+	<Force.AlignmentActions.CrystalBleedSuccess>{0} successfully bled the crystal</Force.AlignmentActions.CrystalBleedSuccess>
+	<Force.AlignmentActions.CrystalPurifySuccess>{0} successfully purified the crystal</Force.AlignmentActions.CrystalPurifySuccess>
+
+	<!-- Ability System -->
+	<Force.Abilities.Title>Select Ability to Unlock</Force.Abilities.Title>
+	<Force.Abilities.Info>Available Points: {0} • Unlocked Abilities: {1}</Force.Abilities.Info>
+	<Force.AbilityCategories.General>General</Force.AbilityCategories.General>
+	<Force.AbilityCategories.Misc>Misc</Force.AbilityCategories.Misc>
+	<Force.Abilities.LevelRequirement> (Lvl {0})</Force.Abilities.LevelRequirement>
+	<Force.Abilities.StatFormat>{0}: {1}</Force.Abilities.StatFormat>
+	<Force.Abilities.Status.Unlocked>Unlocked</Force.Abilities.Status.Unlocked>
+	<Force.Abilities.Status.CanUnlock>Can Unlock</Force.Abilities.Status.CanUnlock>
+	<Force.Abilities.Status.Locked>Locked</Force.Abilities.Status.Locked>
+	<Force.Abilities.Status.NeedLevel>Need Lvl {0}</Force.Abilities.Status.NeedLevel>
+	<Force.Abilities.Status.MissingPrereqs>Missing prereqs</Force.Abilities.Status.MissingPrereqs>
+	<Force.Abilities.Status.MissingAllTraits>Missing traits</Force.Abilities.Status.MissingAllTraits>
+	<Force.Abilities.Status.MissingOneTrait>Missing a trait</Force.Abilities.Status.MissingOneTrait>
+	<Force.Abilities.Status.MissingAllConditions>Missing conditions</Force.Abilities.Status.MissingAllConditions>
+	<Force.Abilities.Status.MissingOneCondition>Missing a condition</Force.Abilities.Status.MissingOneCondition>
+	<Force.Abilities.Status.NoPoints>No points</Force.Abilities.Status.NoPoints>
+	<Force.Abilities.Status.DarkSide>Darkside</Force.Abilities.Status.DarkSide>
+	<Force.Abilities.Status.LightSide>Lightside</Force.Abilities.Status.LightSide>
+	<Force.Abilities.Status.NeedAlignment>Need {0} {1}</Force.Abilities.Status.NeedAlignment>
+	<Force.Abilities.Button.Unlock>Unlock</Force.Abilities.Button.Unlock>
+	<Force.Abilities.Error.UnlockFailed>Failed to unlock ability</Force.Abilities.Error.UnlockFailed>
+	<Force.Abilities.Tooltip.RequirementsHeader>Requirements not met:</Force.Abilities.Tooltip.RequirementsHeader>
+	<Force.Abilities.Tooltip.NeedLevel>- Need level {0} (current: {1})</Force.Abilities.Tooltip.NeedLevel>
+	<Force.Abilities.Tooltip.MissingPrereqs>- Missing prerequisites: {0}</Force.Abilities.Tooltip.MissingPrereqs>
+	<Force.Abilities.Tooltip.NoPoints>- No ability points available</Force.Abilities.Tooltip.NoPoints>
+	<Force.AbilityInactiveInPreset>Ability is inactive in current preset</Force.AbilityInactiveInPreset>
+	<Force.AbilityInactiveInPreset>Ability is inactive in current preset</Force.AbilityInactiveInPreset>
+	<Force_CancelBuff>Cancel {0}</Force_CancelBuff>
+	<Force_CancelBuffDesc>Stop maintaining the {0} effect</Force_CancelBuffDesc>
+
+	<!-- UI Elements -->
+	<Force.Error.NoPawnSelected>Character tab found no selected pawn to display.</Force.Error.NoPawnSelected>
+	<Force.Error.AlignmentTabError>Error in Force Alignment tab: {0}</Force.Error.AlignmentTabError>
+	<Force.Alignment.TabLabel>Alignment</Force.Alignment.TabLabel>
+	<Force.Alignment.Header>Force Alignment</Force.Alignment.Header>
+	<Force.Alignment.AttunementHeader>Force Attunement</Force.Alignment.AttunementHeader>
+	<Force.Alignment.LightSideValue>Light: {0}%</Force.Alignment.LightSideValue>
+	<Force.Alignment.DarkSideValue>Dark: {0}%</Force.Alignment.DarkSideValue>
+	<Force.Alignment.MasteryHeader>Mastery</Force.Alignment.MasteryHeader>
+	<Force.Alignment.MasterSummary>Apprentices: {0}/{1}\nGraduated: {2}</Force.Alignment.MasterSummary>
+	<Force.Alignment.PromotionProgress>Promotion Progress: {0}/{1}</Force.Alignment.PromotionProgress>
+	<Force.Alignment.NeedMoreGraduates>Need {0} more graduates</Force.Alignment.NeedMoreGraduates>
+	<Force.Alignment.ReadyForPromotion>Ready for promotion!</Force.Alignment.ReadyForPromotion>
+	<Force.Alignment.MasterRelationship>Master Relationship</Force.Alignment.MasterRelationship>
+	<Force.Alignment.MasterInfo>{0} (Level {1})</Force.Alignment.MasterInfo>
+	<Force.Alignment.TrainingDuration>Training Duration: {0} days</Force.Alignment.TrainingDuration>
+	<Force.Alignment.TrainingProgress>Training Progress</Force.Alignment.TrainingProgress>
+	<Force.Alignment.CurrentXP>Current XP: {0} (Need {1} more)</Force.Alignment.CurrentXP>
+	<Force.Alignment.LevelProgress>Level {0} → {1} ({2:F0}%)</Force.Alignment.LevelProgress>
+	<Force.Alignment.ViewActionsTooltip>View alignment actions</Force.Alignment.ViewActionsTooltip>
+	<Force.Alignment.ForceLevel>Force Level: <b>{0}</b>
+	</Force.Alignment.ForceLevel>
+	<Force.Alignment.LightSidePercentage>Light: {0}%</Force.Alignment.LightSidePercentage>
+	<Force.Alignment.DarkSidePercentage>Dark: {0}%</Force.Alignment.DarkSidePercentage>
+	<Force.Alignment.ViewAbilities>View Abilities</Force.Alignment.ViewAbilities>
+	<Force.Alignment.ViewAbilitiesTooltip>View unlocked Force abilities</Force.Alignment.ViewAbilitiesTooltip>
+	<Force.Common.Details>Details</Force.Common.Details>
+	<Force.Gizmo.Title>Force Pool</Force.Gizmo.Title>
+	<Force.Gizmo.FPCount>{0}/{1}</Force.Gizmo.FPCount>
+	<Force.Gizmo.Experience>EXP: {0} (Next: {1})</Force.Gizmo.Experience>
+	<Force.Gizmo.Tooltip>Force Points: {0}/{1} 
+Level: {2}
+Available Points: {3}	
+Alignment: {4}
+EXP: {5}/{6}
+Unlocked Abilities: {7}</Force.Gizmo.Tooltip>
+	<Force.Gizmo.ChangeColor>Change bar color</Force.Gizmo.ChangeColor>
+	<Force.Gizmo.ChooseColor>Choose Bar Color</Force.Gizmo.ChooseColor>
+	<Force.Gizmo.Red>Red</Force.Gizmo.Red>
+	<Force.Gizmo.Green>Green</Force.Gizmo.Green>
+	<Force.Gizmo.Blue>Blue</Force.Gizmo.Blue>
+	<Force.Gizmo.Presets>Preset Colors</Force.Gizmo.Presets>
+	<Force.Gizmo.ApplyColor>Apply Color</Force.Gizmo.ApplyColor>
+	<Force.Gizmo.ChooseFromVanilla>Choose from Vanilla Colors</Force.Gizmo.ChooseFromVanilla>
+	<Force.Alignment.CrystalTransformEnabled>Crystal Transformation Enabled</Force.Alignment.CrystalTransformEnabled>
+	<Force.Alignment.CrystalTransformDisabled>Crystal Transformation Disabled</Force.Alignment.CrystalTransformDisabled>
+	<Force.Alignment.ResetForceUserTooltip>DEV ACTION: RESET FORCE POWERS TO 1</Force.Alignment.ResetForceUserTooltip>
+
+	<!-- Debug & Misc -->
+	<Force.Limbs.ReplacementMessage>{0} gained Force-constructed limbs</Force.Limbs.ReplacementMessage>
+	<Force.Debug.SetDarkSide>DEBUG: Set Dark Side Attunement</Force.Debug.SetDarkSide>
+	<Force.Debug.DarkSideSlider>Dark Side Attunement</Force.Debug.DarkSideSlider>
+	<Force.Debug.SetLightSide>DEBUG: Set Light Side Attunement</Force.Debug.SetLightSide>
+	<Force.Debug.LightSideSlider>Light Side Attunement</Force.Debug.LightSideSlider>
+	<Force.Limbs.ReplaceLabel>Replace Missing Limbs</Force.Limbs.ReplaceLabel>
+	<Force.Limbs.ReplaceDescription>Replace missing limbs with Force-constructed versions</Force.Limbs.ReplaceDescription>
+	<Force.Stats.ForcePowerCalculation>Force Power Calculation:</Force.Stats.ForcePowerCalculation>
+	<Force.Stats.BaseFP>Base FP: 20 + (Level {0} × 5) = {1}</Force.Stats.BaseFP>
+	<Force.Stats.BaseSensitivity>Base Sensitivity: {0}</Force.Stats.BaseSensitivity>
+	<Force.Stats.FinalMaxFP>Final Max FP: {0} × {1} = {2}</Force.Stats.FinalMaxFP>
+	<Force.ErrorInCorpseGizmoPatch>Error in corpse gizmo patch: {0}</Force.ErrorInCorpseGizmoPatch>
+	<Force.ErrorInThingDestroyPatch>Error in thing destroy patch: {0}</Force.ErrorInThingDestroyPatch>
+	<Force.UnknownTrait>Unknown Trait</Force.UnknownTrait>
+	<Force.AlignmentActions.Filters>Filters</Force.AlignmentActions.Filters>
+	<Force.AlignmentActions.PawnFilter>Pawn:</Force.AlignmentActions.PawnFilter>
+	<Force.AlignmentActions.ActionFilter>Action:</Force.AlignmentActions.ActionFilter>
+	<Force.AlignmentActions.FactionFilter>Faction:</Force.AlignmentActions.FactionFilter>
+	<Force.AlignmentActions.AlignmentFilter>Alignment:</Force.AlignmentActions.AlignmentFilter>
+	<Force.AlignmentActions.AnyAlignment>Any Alignment</Force.AlignmentActions.AnyAlignment>
+	<Force.AlignmentActions.AmountRange>Amount Range:</Force.AlignmentActions.AmountRange>
+	<Force.AlignmentActions.Min>Min:</Force.AlignmentActions.Min>
+	<Force.AlignmentActions.Max>Max:</Force.AlignmentActions.Max>
+	<Force.AlignmentActions.ResetFilters>Reset Filters</Force.AlignmentActions.ResetFilters>
+
+	<!-- Mechu-Deru UI Strings -->
+	<Force.MechuDeru_EnergyStatus>Energy Stored: {0} / {1} W</Force.MechuDeru_EnergyStatus>
+	<Force.MechuDeru_LinkedTarget>Linked Target: {0}</Force.MechuDeru_LinkedTarget>
+	<Force.MechuDeru_PowerConsumption>Power Consumption: {0} W</Force.MechuDeru_PowerConsumption>
+	<Force.MechuDeru_BatteryStatus>Battery Stored: {0}/{1} W</Force.MechuDeru_BatteryStatus>
+
+	<Force.MustBeForceUserToUse>Must be a Force user to use this.</Force.MustBeForceUserToUse>
+	<Force.NoAbilityCategoriesDefined>This item has no ability categories defined.</Force.NoAbilityCategoriesDefined>
+	<Force.AlreadyHasAllAbilitiesFromCategories>Already knows all abilities from these categories.</Force.AlreadyHasAllAbilitiesFromCategories>
+	<Force.NoEligibleAbilities>No eligible abilities available.</Force.NoEligibleAbilities>
+	<Force.GainRandomAbilityConfirm>This will grant the ability: {0}. Continue?</Force.GainRandomAbilityConfirm>
+	<Force.AlreadyKnowAbility>Already knows this Ability</Force.AlreadyKnowAbility>
+
+	<!-- New strings for UI display -->
+	<Force.ContainsAbility>Contains ability: {0}</Force.ContainsAbility>
+	<Force.WillGrantAbility>Will grant ability: {0}</Force.WillGrantAbility>
+	<Force.StoredAbilityTooltip>Stored Ability: {0}\n{1}</Force.StoredAbilityTooltip>
+	<Force.RandomAbilityFromCategories>Random ability from: {0}</Force.RandomAbilityFromCategories>
+
+	<Force.AlignmentActions.ActionsTab>Actions</Force.AlignmentActions.ActionsTab>
+	<Force.AlignmentActions.LogTab>Action Log</Force.AlignmentActions.LogTab>
+	<Force.AlignmentActions.ActionLog>Alignment Action Log</Force.AlignmentActions.ActionLog>
+	<Force.AlignmentActions.ClearLog>Clear Log</Force.AlignmentActions.ClearLog>
+	<Force.AlignmentActions.NoLogEntries>No alignment actions recorded yet.</Force.AlignmentActions.NoLogEntries>
+	<Force.AlignmentActions.Time>Time</Force.AlignmentActions.Time>
+	<Force.AlignmentActions.Pawn>Pawn</Force.AlignmentActions.Pawn>
+	<Force.AlignmentActions.Action>Action</Force.AlignmentActions.Action>
+	<Force.AlignmentActions.Alignment>Alignment</Force.AlignmentActions.Alignment>
+	<Force.AlignmentActions.Amount>Amount</Force.AlignmentActions.Amount>
+	<Force.AlignmentActions.Source>Source</Force.AlignmentActions.Source>
+
+
+	<Force.Standard_25>25% Force</Force.Standard_25>
+	<Force.Standard_50>50% Force</Force.Standard_50>
+	<Force.Standard_75>75% Force</Force.Standard_75>
+	<Force.Standard_100>100% Force</Force.Standard_100>
+
+	<Force.Detailed_25>25% Force</Force.Detailed_25>
+	<Force.Detailed_33>33% Force</Force.Detailed_33>
+	<Force.Detailed_50>50% Force</Force.Detailed_50>
+	<Force.Detailed_66>66% Force</Force.Detailed_66>
+	<Force.Detailed_100>100% Force</Force.Detailed_100>
+
+	<!-- Nurture Plants Ability -->
+	<Force.Nurture_25>Nurture Plants (25% Force)</Force.Nurture_25>
+	<Force.Nurture_50>Nurture Plants (50% Force)</Force.Nurture_50>
+	<Force.Nurture_75>Nurture Plants (75% Force)</Force.Nurture_75>
+	<Force.Nurture_100>Nurture Plants (100% Force)</Force.Nurture_100>
+	<Force.NurtureRadius>Radius: {0}</Force.NurtureRadius>
+	<Force.NurtureRadiusLabel>Nurture Radius: {0} (Scales with {1}: {2})</Force.NurtureRadiusLabel>
+	<Force.NurtureMultipleSuccess>{0} nurtured {1} plants in a {2}-tile radius!</Force.NurtureMultipleSuccess>
+	<Force.NurtureNoPlantsInArea>No plants found within {0} tiles</Force.NurtureNoPlantsInArea>
+
+	<Force.NurtureSuccess>{0} nurtured {1} % growth</Force.NurtureSuccess>
+	<Force.NurtureInvalidTarget>Must target a plant</Force.NurtureInvalidTarget>
+	<Force.Nurture_NotEnoughFP>{0} needs {1} Force Points to nurture plants</Force.Nurture_NotEnoughFP>
+
+	<!-- Force Drain Ability -->
+	<Force.Destruction_Drain25>Drain Force (25%)</Force.Destruction_Drain25>
+	<Force.Destruction_Drain33>Drain Force (33%)</Force.Destruction_Drain33>
+	<Force.Destruction_Drain50>Drain Force (50%)</Force.Destruction_Drain50>
+	<Force.Destruction_Drain66>Drain Force (66%)</Force.Destruction_Drain66>
+	<Force.Destruction_Drain100>Drain Force (100%)</Force.Destruction_Drain100>
+
+	<Force.Destruction_NotEnoughFP>{0} needs {1} Force Points</Force.Destruction_NotEnoughFP>
+
+
+	<!-- Hediff Extraction/Injection Language Keys -->
+	<Force.NoExtractableHediffs>No extractable hediffs found</Force.NoExtractableHediffs>
+	<Force.ExtractHediff>Extract {0} ({1})</Force.ExtractHediff>
+	<Force.HediffExtracted>Successfully extracted {0}</Force.HediffExtracted>
+	<Force.AlreadyHasHediff>Target already has {0}</Force.AlreadyHasHediff>
+	<Force.HediffInjected>Successfully injected {0}</Force.HediffInjected>
+	<Force.InjectHediff>Inject {0}</Force.InjectHediff>
+	<Force.ContainsExtractedHediff>Contains extracted {0} (severity: {1})</Force.ContainsExtractedHediff>
+	<Force.ReadyToExtractHediff>Ready to extract hediff</Force.ReadyToExtractHediff>
+
+</LanguageData>

@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<GeneDef Name="SWPotF_Gene_ForceSensitive" Abstract="True">
+		<displayCategory>Psychic</displayCategory>
+		<biostatCpx>0</biostatCpx>
+		<selectionWeight>0</selectionWeight>
+		<exclusionTags>
+		  <li>Force</li>
+		</exclusionTags>
+		<randomChosen>false</randomChosen>
+		<!--modExtensions>
+			<li Class="VanillaGenesExpanded.GeneExtension">
+				<hediffsToBodyParts>
+					<li>
+						<hediff>PsychicAmplifier</hediff>
+						<bodyparts>
+						  <li>Brain</li>
+						</bodyparts>
+					</li>
+					<li>
+						<hediff>VPE_PsycastAbilityImplant</hediff>
+						<bodyparts>
+							<li>Brain</li>
+							
+						</bodyparts>
+					</li>
+				</hediffsToBodyParts>
+			</li>
+		</modExtensions-->
+	</GeneDef>
+
+	
+	
+	<GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+		<defName>SWPotF_Gene_LSEnlightenmentIII</defName>
+		<label>major lightside enlightenment</label>
+		<labelShortAdj>enlightened</labelShortAdj>
+		<description>...</description>
+		<iconPath>UI/Icons/Genes/Gene_ForceSensitive</iconPath>
+		<iconColor>(7,172,255)</iconColor> <!-- blue -->
+		<selectionWeight>0.1</selectionWeight>
+		<displayOrderInCategory>76201</displayOrderInCategory>
+		<statOffsets>
+			<Force_Lightside_Attunement>0.5</Force_Lightside_Attunement>
+			<PsychicSensitivity>0.50</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+			<Force_FPRecovery>0.25</Force_FPRecovery>
+			
+			<PawnBeauty>2</PawnBeauty>
+		</statOffsets>
+		<biostatCpx>15</biostatCpx>
+	</GeneDef>
+
+	<GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+		<defName>SWPotF_Gene_LSEnlightenmentII</defName>
+		<label>moderate lightside enlightenment</label>
+		<labelShortAdj>enlightened</labelShortAdj>
+		<description>...</description>
+		<iconPath>UI/Icons/Genes/Gene_ForceSensitive</iconPath>
+		<iconColor>(135,215,255)</iconColor> <!-- half-saturation blue -->
+		<selectionWeight>0.3</selectionWeight>
+		<displayOrderInCategory>76202</displayOrderInCategory>
+		<statOffsets>
+			<Force_Lightside_Attunement>0.25</Force_Lightside_Attunement>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
+			<Force_FPRecovery>0.125</Force_FPRecovery>
+			
+			<PawnBeauty>1</PawnBeauty>
+		</statOffsets>
+		<biostatCpx>10</biostatCpx>
+	</GeneDef>
+	
+	<GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+		<defName>SWPotF_Gene_LSEnlightenmentI</defName>
+		<label>minor lightside enlightenment</label>
+		<labelShortAdj>enlightened</labelShortAdj>
+		<description>... has strengthened this pawn's connection to the Force</description>
+		<iconPath>UI/Icons/Genes/Gene_ForceSensitive</iconPath>
+		<selectionWeight>0.1</selectionWeight>
+		<displayOrderInCategory>76203</displayOrderInCategory>
+		<statOffsets>
+			<Force_Lightside_Attunement>0.10</Force_Lightside_Attunement>
+			<PsychicSensitivity>0.10</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+			<Force_FPRecovery>0.05</Force_FPRecovery>
+		</statOffsets>
+		<biostatCpx>5</biostatCpx>
+	</GeneDef>
+  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+		<defName>SWPotF_Gene_DSCorruptionI</defName>
+		<label>minor darkside corruption</label>
+		<labelShortAdj>corrupted</labelShortAdj>
+		<description>Repeated use of the dark side of the Force has begun to physically affect this pawn. Though the more adverse effects of dark side use has yet to set in, this pawn's connection to the Force has definitely strengthened, and their baseline dark side attunement is now set to 10%.</description>
+		<iconPath>UI/Icons/Genes/Gene_ForceCorruption</iconPath>
+		<selectionWeight>0.3</selectionWeight>
+		<displayOrderInCategory>76204</displayOrderInCategory>
+		<statOffsets>
+			<Force_Darkside_Attunement>0.10</Force_Darkside_Attunement>
+			<PsychicSensitivity>0.10</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
+			<Force_FPRecovery>0.10</Force_FPRecovery>
+		</statOffsets>
+		<biostatCpx>5</biostatCpx>
+	  </GeneDef>
+	  
+	  <GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+		<defName>SWPotF_Gene_DSCorruptionII</defName>
+		<label>moderate darkside corruption</label>
+		<labelShortAdj>corrupted</labelShortAdj>
+		<description>The dark side has taken hold of this pawn. Others taken notice and have started to avoid them. The distinctive sickly yellow hue has begun to show in this pawn's eyes, a common trait to those who feel the dark side's call. Their connection to the Force is fortified, and their baseline dark side attunement has sank to 25%.</description>
+		<iconPath>UI/Icons/Genes/Gene_ForceCorruption</iconPath>
+		<iconColor>(255,109,133)</iconColor> <!-- half-saturation red -->
+		<biostatCpx>10</biostatCpx>
+		<selectionWeight>0.3</selectionWeight>
+		<displayOrderInCategory>76205</displayOrderInCategory>
+		<statOffsets>
+			<Force_Darkside_Attunement>0.25</Force_Darkside_Attunement>
+			<PsychicSensitivity>0.25</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
+			<Force_FPRecovery>0.20</Force_FPRecovery>
+			
+			<PawnBeauty>-1</PawnBeauty>
+		</statOffsets>
+		
+		<renderNodeProperties>
+		  <li Class="PawnRenderNodeProperties_Eye">
+			<texPath>Pawn/SithEyes/T2SithEyes_male</texPath>
+			<texPathFemale>Pawn/SithEyes/T2SithEyes_female</texPathFemale>
+			<anchorTag>RightEye</anchorTag>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<parentTagDef>Head</parentTagDef>
+			<drawSize>0.2</drawSize>
+			<side>Right</side>
+			<drawData>
+			  <defaultData>
+				<layer>54</layer>
+				<offset>(0, 0, -0.25)</offset>
+			  </defaultData>
+			</drawData>
+		  </li>
+		  <li Class="PawnRenderNodeProperties_Eye">
+			<texPath>Pawn/SithEyes/T2SithEyes_male</texPath>
+			<texPathFemale>Pawn/SithEyes/T2SithEyes_female</texPathFemale>
+			<anchorTag>LeftEye</anchorTag>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<parentTagDef>Head</parentTagDef>
+			<drawSize>0.2</drawSize>
+			<side>Left</side>
+			<drawData>
+			  <defaultData>
+				<layer>54</layer>
+				<offset>(0, 0, -0.25)</offset>
+				<flip>true</flip>
+			  </defaultData>
+			  <dataWest>
+				<flip>false</flip>
+			  </dataWest>
+			</drawData>
+		  </li>
+		</renderNodeProperties>
+		<exclusionTags>
+		  <li>EyeColor_ReplacedByPotFSithEyes</li>
+		</exclusionTags>
+	  </GeneDef>
+	 
+	 <GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+		<defName>SWPotF_Gene_DSCorruptionIII</defName>
+		<label>major darkside corruption</label>
+		<labelShortAdj>corrupted</labelShortAdj>
+		<description>This pawn has become fully immersed in the dark side of the Force. A dark aura surrounds them and has decayed their visage; a disturbing sight for others around them. Their skin has deteriorated to a lifeless grey hue, and the distinctive sickly yellowed eyes glow even brighter. This has made them strong in the Force, and has set their baseline dark side attunement to 50%.</description>
+		<iconPath>UI/Icons/Genes/Gene_ForceCorruption</iconPath>
+		<iconColor>(255,7,48)</iconColor> <!-- red -->
+		<biostatCpx>15</biostatCpx>
+		<selectionWeight>0.1</selectionWeight>
+		<displayOrderInCategory>76206</displayOrderInCategory>
+		
+		<statOffsets>
+			<Force_Darkside_Attunement>0.5</Force_Darkside_Attunement>
+			<PsychicSensitivity>0.50</PsychicSensitivity>
+			<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
+			<Force_FPRecovery>0.30</Force_FPRecovery>
+			
+			<PawnBeauty>-2</PawnBeauty>
+		</statOffsets>
+		
+		<skinColorOverride>(162,162,162)</skinColorOverride>
+		
+		<renderNodeProperties>
+		  <li Class="PawnRenderNodeProperties_Eye">
+			<texPath>Pawn/SithEyes/T3SithEyes_male</texPath>
+			<texPathFemale>Pawn/SithEyes/T3SithEyes_female</texPathFemale>
+			<anchorTag>RightEye</anchorTag>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<parentTagDef>Head</parentTagDef>
+			<drawSize>0.2</drawSize>
+			<side>Right</side>
+			<drawData>
+			  <defaultData>
+				<layer>54</layer>
+				<offset>(0, 0, -0.25)</offset>
+			  </defaultData>
+			</drawData>
+		  </li>
+		  <li Class="PawnRenderNodeProperties_Eye">
+			<texPath>Pawn/SithEyes/T3SithEyes_male</texPath>
+			<texPathFemale>Pawn/SithEyes/T3SithEyes_female</texPathFemale>
+			<anchorTag>LeftEye</anchorTag>
+			<rotDrawMode>Fresh, Rotting</rotDrawMode>
+			<parentTagDef>Head</parentTagDef>
+			<drawSize>0.2</drawSize>
+			<side>Left</side>
+			<drawData>
+			  <defaultData>
+				<layer>54</layer>
+				<offset>(0, 0, -0.25)</offset>
+				<flip>true</flip>
+			  </defaultData>
+			  <dataWest>
+				<flip>false</flip>
+			  </dataWest>
+			</drawData>
+		  </li>
+		</renderNodeProperties>
+		<exclusionTags>
+		  <li>EyeColor_ReplacedByPotFSithEyes</li>
+		  <li>SkinColorOverride</li>
+		</exclusionTags>
+	  </GeneDef>
+
+
+
+
+
+
+
+
+
+</Defs>

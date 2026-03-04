@@ -1,0 +1,516 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_energyres</defName>
+		<label>energy resistance</label>
+		<description>Use the Force to form a barrier protecting the caster from energy, electrical, sonic, heat, and cold attacks. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ERes</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Energy_Resistance</iconPath>
+		<hotKey>Misc4</hotKey>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ERes</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_energyres</sound>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ERes</defName>
+		<label>Force energy resistance</label>
+		<description>A barrier of Force energy protecting an individual from energy, electrical, sonic, heat, and cold attacks.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+				<ComfyTemperatureMax>15</ComfyTemperatureMax>
+				<ComfyTemperatureMin>-15</ComfyTemperatureMin>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_Shield">
+			<maxEnergy>0.6</maxEnergy>
+			<energyRechargeRate>0.0006</energyRechargeRate>
+			<energyPerDamageModifier>0.0035</energyPerDamageModifier>
+			<resetDelay>3200</resetDelay>
+			<energyOnReset>1</energyOnReset>
+			<removeOnBreak>true</removeOnBreak>
+
+			<blocksRangedDamage>true</blocksRangedDamage>
+			<blocksExplosions>true</blocksExplosions>
+			<blocksMeleeDamage>true</blocksMeleeDamage>
+			
+			<blockedDamageDefs>
+			  <li>guy762_RangedDamage_energy</li>
+			  <li>guy762_BeamDamage_energy</li>
+			  <li>guy762_MeleeDamage_energy</li>
+			  <li>guy762_MeleeDamage_ecut</li>
+			  <li>guy762_MeleeDamage_estab</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_LightsaberCut</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_SaberSlash</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_SaberStab</li>
+			  <li>guy762_ExplosiveDamage_energy</li>
+			  <li>guy762_GrenadeDamage_energy</li>
+			  <li>guy762_GrenadeDamage_thermaldet</li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">Beam</li>
+			  <li>guy762_RangedDamage_KOstun</li>
+			  
+			  <li>guy762_RangedDamage_AntiVehicleEnergy</li>
+			  <li>guy762_ExplosiveDamage_AntiVehicleEnergy</li>
+			  
+			  <li>guy762_RangedDamage_electrical</li>
+			  <li>guy762_MeleeDamage_electrical</li>
+			  <li>guy762_BeamDamage_electrical</li>
+			  
+			  <li>guy762_RangedDamage_sonic</li>
+			  <li>guy762_MeleeDamage_sonic</li>
+			  <li>guy762_GrenadeDamage_sonic</li>
+			  <li>Thump</li>
+			  
+			  <li>Flame</li>
+			  <li>Burn</li>
+			  <li>guy762_GrenadeDamage_plasma</li>
+			  <li>guy762_BeamDamage_radiation</li>
+			  
+			  <li>Frostbite</li>
+			</blockedDamageDefs>
+			<!--blacklistedDamageDefs>
+			  <li>guy762_RangedDamage_disruptor</li>
+			  <li>guy762_BeamDamage_disruptor</li>
+			  <li>guy762_MeleeDamage_unstoppable</li>
+			</blacklistedDamageDefs>
+			
+			<shatterOn>
+			  <li>EMP</li>
+			  <li>guy762_RangedDamage_ion</li>
+			  <li>guy762_ExplosiveDamage_ion</li>
+			  <li>guy762_MeleeDamage_ion</li>
+			  <li>guy762_GrenadeDamage_ion</li>
+			</shatterOn-->
+
+			<absorbFleck>ExplosionFlash</absorbFleck>
+			<breakFleck>ExplosionFlash</breakFleck>
+			<shieldBreakEffecter>Shield_Break</shieldBreakEffecter>
+			<absorbSound>kotorsound_shielddeflect_small</absorbSound>
+			<!--resetSound>kotorsound_shieldpowerup</resetSound-->
+
+			<displayGizmo>true</displayGizmo>
+			<gizmoTitle>Force energy resistance</gizmoTitle>
+			<gizmoTip>A barrier of Force energy protecting an individual from energy attacks.</gizmoTip>
+
+			<minDrawSize>1.2</minDrawSize>
+			<maxDrawSize>1.55</maxDrawSize>
+			<scaleWithOwner>true</scaleWithOwner>
+			<graphicData>
+			  <texPath>Other/ShieldBubble</texPath>
+			  <graphicClass>Graphic_Single</graphicClass>
+			  <shaderType>Transparent</shaderType>
+			  <color>(0.25, 0.75, 0.5)</color>
+			</graphicData>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advenergyres</defName>
+		<label>knight energy resistance</label>
+		<description>Use the Force to form a strong barrier protecting an individual from energy, electrical, sonic, heat, and cold attacks. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_AdvERes</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Improved_Energy_Resistance</iconPath>
+		<hotKey>Misc4</hotKey>
+		
+		<level>9</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>45</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_AdvERes</hediffDef>
+				<!--applyToSelf>true</applyToSelf-->
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_energyres</sound>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_AdvERes</defName>
+		<label>knight energy resistance</label>
+		<description>A barrier of Force energy protecting an individual from energy, electrical, sonic, heat, and cold attacks.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+				<ComfyTemperatureMax>30</ComfyTemperatureMax>
+				<ComfyTemperatureMin>-30</ComfyTemperatureMin>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_Shield">
+			<maxEnergy>1.2</maxEnergy>
+			<energyRechargeRate>0.0006</energyRechargeRate>
+			<energyPerDamageModifier>0.0035</energyPerDamageModifier>
+			<resetDelay>3200</resetDelay>
+			<energyOnReset>1</energyOnReset>
+			<removeOnBreak>true</removeOnBreak>
+
+			<blocksRangedDamage>true</blocksRangedDamage>
+			<blocksExplosions>true</blocksExplosions>
+			<blocksMeleeDamage>true</blocksMeleeDamage>
+			
+			<blockedDamageDefs>
+			  <li>guy762_RangedDamage_energy</li>
+			  <li>guy762_BeamDamage_energy</li>
+			  <li>guy762_MeleeDamage_energy</li>
+			  <li>guy762_MeleeDamage_ecut</li>
+			  <li>guy762_MeleeDamage_estab</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_LightsaberCut</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_SaberSlash</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_SaberStab</li>
+			  <li>guy762_ExplosiveDamage_energy</li>
+			  <li>guy762_GrenadeDamage_energy</li>
+			  <li>guy762_GrenadeDamage_thermaldet</li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">Beam</li>
+			  <li>guy762_RangedDamage_KOstun</li>
+			  
+			  <li>guy762_RangedDamage_AntiVehicleEnergy</li>
+			  <li>guy762_ExplosiveDamage_AntiVehicleEnergy</li>
+			  
+			  <li>guy762_RangedDamage_electrical</li>
+			  <li>guy762_MeleeDamage_electrical</li>
+			  <li>guy762_BeamDamage_electrical</li>
+			  
+			  <li>guy762_RangedDamage_sonic</li>
+			  <li>guy762_MeleeDamage_sonic</li>
+			  <li>guy762_GrenadeDamage_sonic</li>
+			  <li>Thump</li>
+			  
+			  <li>Flame</li>
+			  <li>Burn</li>
+			  <li>guy762_GrenadeDamage_plasma</li>
+			  <li>guy762_BeamDamage_radiation</li>
+			  
+			  <li>Frostbite</li>
+			</blockedDamageDefs>
+			<!--blacklistedDamageDefs>
+			  <li>guy762_RangedDamage_disruptor</li>
+			  <li>guy762_BeamDamage_disruptor</li>
+			  <li>guy762_MeleeDamage_unstoppable</li>
+			</blacklistedDamageDefs>
+			
+			<shatterOn>
+			  <li>EMP</li>
+			  <li>guy762_RangedDamage_ion</li>
+			  <li>guy762_ExplosiveDamage_ion</li>
+			  <li>guy762_MeleeDamage_ion</li>
+			  <li>guy762_GrenadeDamage_ion</li>
+			</shatterOn-->
+
+			<absorbFleck>ExplosionFlash</absorbFleck>
+			<breakFleck>ExplosionFlash</breakFleck>
+			<shieldBreakEffecter>Shield_Break</shieldBreakEffecter>
+			<absorbSound>kotorsound_shielddeflect_small</absorbSound>
+			<!--resetSound>kotorsound_shieldpowerup</resetSound-->
+
+			<displayGizmo>true</displayGizmo>
+			<gizmoTitle>Force energy resistance</gizmoTitle>
+			<gizmoTip>A barrier of Force energy protecting an individual from energy attacks.</gizmoTip>
+
+			<minDrawSize>1.2</minDrawSize>
+			<maxDrawSize>1.55</maxDrawSize>
+			<scaleWithOwner>true</scaleWithOwner>
+			<graphicData>
+			  <texPath>Other/ShieldBubble</texPath>
+			  <graphicClass>Graphic_Single</graphicClass>
+			  <shaderType>Transparent</shaderType>
+			  <color>(0.25, 0.75, 0.5)</color>
+			</graphicData>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstenergyres</defName>
+		<label>master energy resistance</label>
+		<description>Use the Force to form a very strong barrier protecting an individual from energy, electrical, sonic, heat, and cold attacks. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_MstERes</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Master_Energy_Resistance</iconPath>
+		<hotKey>Misc4</hotKey>
+		
+		<level>17</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_MstERes</hediffDef>
+				<!--applyToSelf>true</applyToSelf-->
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_energyres</sound>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_MstERes</defName>
+		<label>master energy resistance</label>
+		<description>A barrier of Force energy protecting an individual from energy, electrical, sonic, heat, and cold attacks.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+				<ComfyTemperatureMax>45</ComfyTemperatureMax>
+				<ComfyTemperatureMin>-45</ComfyTemperatureMin>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_Shield">
+			<maxEnergy>2</maxEnergy>
+			<energyRechargeRate>0.0006</energyRechargeRate>
+			<energyPerDamageModifier>0.0035</energyPerDamageModifier>
+			<resetDelay>3200</resetDelay>
+			<energyOnReset>1</energyOnReset>
+			<removeOnBreak>true</removeOnBreak>
+
+			<blocksRangedDamage>true</blocksRangedDamage>
+			<blocksExplosions>true</blocksExplosions>
+			<blocksMeleeDamage>true</blocksMeleeDamage>
+			
+			<blockedDamageDefs>
+			  <li>guy762_RangedDamage_energy</li>
+			  <li>guy762_BeamDamage_energy</li>
+			  <li>guy762_MeleeDamage_energy</li>
+			  <li>guy762_MeleeDamage_ecut</li>
+			  <li>guy762_MeleeDamage_estab</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_LightsaberCut</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_SaberSlash</li>
+			  <li MayRequire="lee.theforce.lightsaber">Force_SaberStab</li>
+			  <li>guy762_ExplosiveDamage_energy</li>
+			  <li>guy762_GrenadeDamage_energy</li>
+			  <li>guy762_GrenadeDamage_thermaldet</li>
+			  <li MayRequire="Ludeon.RimWorld.Biotech">Beam</li>
+			  <li>guy762_RangedDamage_KOstun</li>
+			  
+			  <li>guy762_RangedDamage_AntiVehicleEnergy</li>
+			  <li>guy762_ExplosiveDamage_AntiVehicleEnergy</li>
+		  
+			  <li>guy762_RangedDamage_electrical</li>
+			  <li>guy762_MeleeDamage_electrical</li>
+			  <li>guy762_BeamDamage_electrical</li>
+			  
+			  <li>guy762_RangedDamage_sonic</li>
+			  <li>guy762_MeleeDamage_sonic</li>
+			  <li>guy762_GrenadeDamage_sonic</li>
+			  <li>Thump</li>
+			  
+			  <li>Flame</li>
+			  <li>Burn</li>
+			  <li>guy762_GrenadeDamage_plasma</li>
+			  <li>guy762_BeamDamage_radiation</li>
+			  
+			  <li>Frostbite</li>
+			</blockedDamageDefs>
+			<!--blacklistedDamageDefs>
+			  <li>guy762_RangedDamage_disruptor</li>
+			  <li>guy762_BeamDamage_disruptor</li>
+			  <li>guy762_MeleeDamage_unstoppable</li>
+			</blacklistedDamageDefs>
+			
+			<shatterOn>
+			  <li>EMP</li>
+			  <li>guy762_RangedDamage_ion</li>
+			  <li>guy762_ExplosiveDamage_ion</li>
+			  <li>guy762_MeleeDamage_ion</li>
+			  <li>guy762_GrenadeDamage_ion</li>
+			</shatterOn-->
+
+			<absorbFleck>ExplosionFlash</absorbFleck>
+			<breakFleck>ExplosionFlash</breakFleck>
+			<shieldBreakEffecter>Shield_Break</shieldBreakEffecter>
+			<absorbSound>kotorsound_shielddeflect_small</absorbSound>
+			<!--resetSound>kotorsound_shieldpowerup</resetSound-->
+
+			<displayGizmo>true</displayGizmo>
+			<gizmoTitle>Force energy resistance</gizmoTitle>
+			<gizmoTip>A barrier of Force energy protecting an individual from energy attacks.</gizmoTip>
+
+			<minDrawSize>1.2</minDrawSize>
+			<maxDrawSize>1.55</maxDrawSize>
+			<scaleWithOwner>true</scaleWithOwner>
+			<graphicData>
+			  <texPath>Other/ShieldBubble</texPath>
+			  <graphicClass>Graphic_Single</graphicClass>
+			  <shaderType>Transparent</shaderType>
+			  <color>(0.25, 0.75, 0.5)</color>
+			</graphicData>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+
+
+</Defs>

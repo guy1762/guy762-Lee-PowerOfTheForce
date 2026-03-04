@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_battleprecog</defName>
+		<label>Battle precognition</label>
+		<description>Use the Force to peer into the future, boosting the caster's melee hit and dodge chance for a time. Can be repeatedly cast up to 5 times to increase the bonus given. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_BattlePrecognition</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Battle_Precognition_base</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<!--cooldownTicksRange>12000</cooldownTicksRange-->
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<warmupStartSound>kotorsound_force_JAsight</warmupStartSound>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>20</warmupTime>
+			<soundAiming>kotorsound_JAsightloop</soundAiming>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAsight</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_BattlePrecognition</hediffDef>
+				<severity>1</severity>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>false</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_BattlePrecognition</defName>
+		<label>Battle precognition</label>
+		<description>Foresight of impending combat granted by the Force. Bonuses can stack up to the 5th focus level. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>5</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<minSeverity>1</minSeverity>
+			<label>1st focus</label>
+			<statFactors>
+			  <MeleeHitChance>1.2</MeleeHitChance>
+			  
+			  <MeleeDodgeChance>1.2</MeleeDodgeChance>
+			  <PawnTrapSpringChance>0.8</PawnTrapSpringChance>
+			</statFactors>
+		  </li>
+		  <li>
+			<minSeverity>2</minSeverity>
+			<label>2nd focus</label>
+			<statFactors>
+			  <MeleeHitChance>1.4</MeleeHitChance>
+			  
+			  <MeleeDodgeChance>1.4</MeleeDodgeChance>
+			  <PawnTrapSpringChance>0.6</PawnTrapSpringChance>
+			</statFactors>
+		  </li>
+		  <li>
+			<minSeverity>3</minSeverity>
+			<label>3rd focus</label>
+			<statFactors>
+			  <MeleeHitChance>1.6</MeleeHitChance>
+			  
+			  <MeleeDodgeChance>1.6</MeleeDodgeChance>
+			  <PawnTrapSpringChance>0.4</PawnTrapSpringChance>
+			</statFactors>
+		  </li>
+		  <li>
+			<minSeverity>4</minSeverity>
+			<label>4th focus</label>
+			<statFactors>
+			  <MeleeHitChance>1.8</MeleeHitChance>
+			  
+			  <MeleeDodgeChance>1.8</MeleeDodgeChance>
+			  <PawnTrapSpringChance>0.2</PawnTrapSpringChance>
+			</statFactors>
+		  </li>
+		  <li>
+			<minSeverity>5</minSeverity>
+			<label>5th focus</label>
+			<statFactors>
+			  <MeleeHitChance>2</MeleeHitChance>
+			  
+			  <MeleeDodgeChance>2</MeleeDodgeChance>
+			  <PawnTrapSpringChance>0</PawnTrapSpringChance>
+			</statFactors>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advprecog</defName>
+		<label>Knight precognition</label>
+		<description>Use the Force to briefly peer into the future, boosting the caster's melee hit and dodge chance for a time. Can be repeatedly cast up to 5 times to increase the bonus given. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_BattlePrecognition</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Battle_Precognition_adv</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>17</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<!--cooldownTicksRange>12000</cooldownTicksRange-->
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>75</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<warmupStartSound>kotorsound_force_JAsight</warmupStartSound>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>15</warmupTime>
+			<soundAiming>kotorsound_JAsightloop</soundAiming>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAsight</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_BattlePrecognition</hediffDef>
+				<severity>1</severity>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>false</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+
+	  
+	  
+	  
+	  
+	 <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstprecog</defName>
+		<label>Master precognition</label>
+		<description>Use the Force to quickly peer into the future, boosting the caster's melee hit and dodge chance for a time. Can be repeatedly cast up to 5 times to increase the bonus given. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_BattlePrecognition</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Power_Battle_Precognition</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>24</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<!--cooldownTicksRange>12000</cooldownTicksRange-->
+		<statBases>
+			<Force_AbilityForcePoolCost>10</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>90</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<warmupStartSound>kotorsound_force_JAsight</warmupStartSound>
+		<showCastingProgressBar>true</showCastingProgressBar>
+		
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>10</warmupTime>
+			<soundAiming>kotorsound_JAsightloop</soundAiming>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAsight</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_BattlePrecognition</hediffDef>
+				<severity>1</severity>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>false</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	 
+
+</Defs>

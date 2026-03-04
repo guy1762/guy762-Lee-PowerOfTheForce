@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_blasterstorm</defName>
+		<label>Blaster storm</label>
+		<description>Use the Force to reduce the caster's ranged aiming speed and attack cooldown. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_BlasterStorm</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_BlasterFocus</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>6</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>5</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_knightspeed</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_BlasterStorm</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_BlasterStorm</defName>
+		<label>Blaster storm</label>
+		<description>Force-enhanced ranged attack speed. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <RangedCooldownFactor>-0.3</RangedCooldownFactor>
+			  <AimingDelayFactor>-0.3</AimingDelayFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advblasterstorm</defName>
+		<label>Adv. Blaster storm</label>
+		<description>Use the Force to better reduce the caster's ranged aiming speed and attack cooldown. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_AdvBlasterStorm</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_BlasterFocus_adv</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>5</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_knightspeed</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_AdvBlasterStorm</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_AdvBlasterStorm</defName>
+		<label>Adv. Blaster storm</label>
+		<description>Force-enhanced ranged attack speed. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <RangedCooldownFactor>-0.6</RangedCooldownFactor>
+			  <AimingDelayFactor>-0.6</AimingDelayFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstblasterstorm</defName>
+		<label>Master Blaster storm</label>
+		<description>Use the Force to greatly reduce the caster's ranged aiming speed and attack cooldown. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_MstBlasterStorm</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_BlasterFocus_mst</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>18</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>5</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_knightspeed</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_MstBlasterStorm</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_MstBlasterStorm</defName>
+		<label>Master Blaster storm</label>
+		<description>Force-enhanced ranged attack speed. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <RangedCooldownFactor>-0.9</RangedCooldownFactor>
+			  <AimingDelayFactor>-0.9</AimingDelayFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	 
+	  
+	  
+	 
+</Defs>

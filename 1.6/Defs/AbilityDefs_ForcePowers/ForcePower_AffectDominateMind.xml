@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_affectmind</defName>
+		<label>affect mind</label>
+		<description>Use the Force to reduce a target's resistance to recruitment. Effectiveness scales with the target's psychic sensitivity.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Affect_Mind</iconPath>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>false</aiCanUse>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>10</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<neverTargetIncapacitated>True</neverTargetIncapacitated>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAmindtrick</sound>
+			</li>
+			<li Class="CompProperties_AbilityOffsetPrisonerResistance">
+				<offset>-24</offset>
+				<psychic>True</psychic>
+			  </li>
+			  <li Class="CompProperties_AbilitySocialInteraction">
+				<interactionDef>guy762_InteractDef_affectmind</interactionDef>
+			  </li>
+			  <li Class="CompProperties_AbilityMustBeCapableOf">
+				<workTags>
+				  <li>Social</li>
+				</workTags>
+			  </li>
+		</comps>
+	  </AbilityDef>
+	  
+	  <InteractionDef>
+		<defName>guy762_InteractDef_affectmind</defName>
+		<label>affected mind</label>
+		<workerClass>InteractionWorker</workerClass>
+		<ignoreTimeSinceLastInteraction>True</ignoreTimeSinceLastInteraction>
+		<symbol>UI/ForceIcons/N/KotORII_Power_Affect_Mind</symbol>
+		<logRulesInitiator>
+		  <rulesStrings>
+			<li>r_logentry->[INITIATOR_nameDef] telepathically suggested that [RECIPIENT_nameDef] drop [RECIPIENT_possessive] guard.</li>
+		  </rulesStrings>
+		</logRulesInitiator>
+	  </InteractionDef>
+
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_dominatemind</defName>
+		<label>dominate mind</label>
+		<description>Use the Force to greatly reduce a target's resistance to recruitment and conversion to the caster's ideoligion. Effectiveness scales with the target's psychic sensitivity.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Dominate_Mind</iconPath>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>6</level>
+		<aiCanUse>false</aiCanUse>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<neverTargetIncapacitated>True</neverTargetIncapacitated>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAmindtrick</sound>
+			</li>
+			<li Class="CompProperties_AbilityOffsetPrisonerResistance">
+				<offset>-48</offset>
+				<psychic>True</psychic>
+			  </li>
+			  <li Class="CompProperties_AbilitySocialInteraction">
+				<interactionDef>guy762_InteractDef_affectmind</interactionDef>
+			  </li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology" Class="CompProperties_AbilityConvert">
+				<successMessage>{INITIATOR_labelShort} has converted {RECIPIENT_labelShort} to {IDEO}.</successMessage>
+				<failMessage>{INITIATOR_labelShort} failed to convert {RECIPIENT_labelShort}. {RECIPIENT_labelShort} was upset by the attempt, but {RECIPIENT_possessive} certainty fell from {CERTAINTYBEFORE} to {CERTAINTYAFTER}.</failMessage>
+				<failedThoughtInitiator>FailedConvertAbilityInitiator</failedThoughtInitiator>
+				<failedThoughtRecipient>FailedConvertAbilityRecipient</failedThoughtRecipient>
+				<convertPowerFactor>4</convertPowerFactor>
+			  </li>
+			  <li Class="CompProperties_AbilityMustBeCapableOf">
+				<workTags>
+				  <li>Social</li>
+				</workTags>
+			  </li>
+			  <li MayRequire="Ludeon.RimWorld.Ideology" Class="CompProperties_AbilityShowTargetIdeoCertainty" />
+		</comps>
+	  </AbilityDef>
+
+	 
+
+</Defs>

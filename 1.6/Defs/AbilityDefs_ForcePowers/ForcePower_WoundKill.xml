@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_wound</defName>
+		<label>wound</label>
+		<description>Use the Force to wound a target, periodically inflicting damage on random internal organs. Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceWound</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Wound</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceWound</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAgrip</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceWound</defName>
+		<description>Wounding through the Force. Periodically inflicts damage on random internal organs. Duration scales with the psychic sensitivity of those affected.</description>
+		<label>Force wound</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+				<damage>Crush</damage>
+				<damageAmount>5</damageAmount>
+				<armorPenetration>100</armorPenetration>
+				<createFilth>False</createFilth>
+				<tickInterval>120</tickInterval>
+				<bodyParts>
+				  <li>Lung</li>
+				  <li>Kidney</li>
+				  <li>Liver</li>
+				  <li>Stomach</li>
+				</bodyParts>
+		  </li>
+		  
+		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>SWPotF_hediff_ForceArmor</li>
+				</hediffs>
+			</li>
+		</comps>
+
+		<!--renderNodeProperties>
+		  <li>
+			<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+			<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+			<texPaths>
+			  <li>VFX/forcechoke</li>
+			</texPaths>
+			<shaderTypeDef>TransparentPostLight</shaderTypeDef>
+			<parentTagDef>Head</parentTagDef>
+			<drawData>
+			  <defaultData>
+				<layer>49</layer>
+			  </defaultData>
+			</drawData>
+		  </li>
+		</renderNodeProperties-->
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_kill</defName>
+		<label>kill</label>
+		<description>Use the Force to kill a target, periodically inflicting damage to their vital internal organs (including the heart and brain). Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceKill</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Kill</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceKill</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<canTargetBosses>false</canTargetBosses>
+				<goodwillImpact>-75</goodwillImpact>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAgrip</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceKill</defName>
+		<description>Killing through the Force. Periodically inflicts damage to vital internal organs, including the heart and brain. Duration scales with the caster's psychic sensitivity.</description>
+		<label>Force kill</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+				<damage>Crush</damage>
+				<damageAmount>10</damageAmount>
+				<armorPenetration>100</armorPenetration>
+				<createFilth>False</createFilth>
+				<tickInterval>120</tickInterval>
+				<bodyParts>
+				  <li>Liver</li>
+				  <li>Stomach</li>
+				  <li>Heart</li>
+				  <li>Brain</li>
+				</bodyParts>
+		  </li>
+		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>SWPotF_hediff_ForceAura</li>
+					<li>SWPotF_hediff_ForceShield</li>
+					<li>SWPotF_hediff_ForceArmor</li>
+				</hediffs>
+			</li>
+		</comps>
+		
+		<!--renderNodeProperties>
+		  <li>
+			<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+			<bodyTypeGraphicPaths>
+				<Thin>VFX/forcecrush_normalbody</Thin>
+				<Female>VFX/forcecrush_normalbody</Female>
+				<Male>VFX/forcecrush_normalbody</Male>
+				<Hulk>VFX/forcecrush_bigbody</Hulk>
+				<Fat>VFX/forcecrush_bigbody</Fat>
+			</bodyTypeGraphicPaths>
+			<shaderTypeDef>TransparentPostLight</shaderTypeDef>
+			<parentTagDef>Body</parentTagDef>
+			<drawData>
+			  <scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+			  <defaultData>
+				<layer>-1</layer>
+			  </defaultData>
+			</drawData>
+		  </li>
+		</renderNodeProperties-->
+	  </HediffDef>
+	  
+
+
+	  
+
+
+</Defs>

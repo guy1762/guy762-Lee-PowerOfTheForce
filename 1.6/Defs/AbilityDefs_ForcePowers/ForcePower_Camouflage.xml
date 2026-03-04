@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_cloak</defName>
+		<label>Force camouflage</label>
+		<description>Use the Force to render the caster invisible. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also reduced while active. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceCloak</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Camouflage</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>15</level>
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_cloak</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceCloak</hediffDef>
+				<severity>1</severity>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceCloak</defName>
+		<label>Force camouflage</label>
+		<description>Force-induced invisibility. Combat is disabled while this is active, but performing mundane tasks are not. Movement speed is also reduced while active. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<label>active</label>
+				<minSeverity>0</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<disabledWorkTags>Violent</disabledWorkTags>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+					<Vulnerability MayRequire="rim.job.world">0</Vulnerability>
+				</statFactors>
+			  </li>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_Invisibility">
+			<visibleToPlayer>true</visibleToPlayer>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+			<severityChange>-1</severityChange>
+		  </li>
+		  
+		  
+		  <li Class="HediffCompProperties_GiveAbility">
+			<abilityDef>guy762_StealthDeactivate_ForceCloak</abilityDef>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_knightcloak</defName>
+		<label>knight camouflage</label>
+		<description>Use the Force to better render the caster invisible. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also slightly reduced while active. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_KnightCloak</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Improved_Force_Camouflage</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>19</level>
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>2000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_cloak</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_KnightCloak</hediffDef>
+				<severity>1</severity>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_KnightCloak</defName>
+		<label>knight camouflage</label>
+		<description>Force-induced invisibility. Combat is disabled while this is active, but performing mundane tasks are not. Movement speed is also slightly reduced while active. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<label>active</label>
+				<minSeverity>0</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<disabledWorkTags>Violent</disabledWorkTags>
+				<statFactors>
+					<MoveSpeed>0.75</MoveSpeed>
+					<Vulnerability MayRequire="rim.job.world">0</Vulnerability>
+				</statFactors>
+			  </li>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_Invisibility">
+			<visibleToPlayer>true</visibleToPlayer>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+			<severityChange>-1</severityChange>
+		  </li>
+		  
+		  
+		  <li Class="HediffCompProperties_GiveAbility">
+			<abilityDef>guy762_StealthDeactivate_ForceCloak</abilityDef>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstcloak</defName>
+		<label>master camouflage</label>
+		<description>Use the Force to better render the caster invisible. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also slightly reduced while active. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_MstCloak</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Master_Force_Camouflage</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>23</level>
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>90</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_cloak</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_MstCloak</hediffDef>
+				<severity>1</severity>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_MstCloak</defName>
+		<label>master camouflage</label>
+		<description>Force-induced invisibility. Combat is disabled while this is active, but performing mundane tasks are not. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<label>active</label>
+				<minSeverity>0</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<disabledWorkTags>Violent</disabledWorkTags>
+				<statFactors>
+					<Vulnerability MayRequire="rim.job.world">0</Vulnerability>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_Invisibility">
+			<visibleToPlayer>true</visibleToPlayer>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+			<severityChange>-1</severityChange>
+		  </li>
+		  
+		  
+		  <li Class="HediffCompProperties_GiveAbility">
+			<abilityDef>guy762_StealthDeactivate_ForceCloak</abilityDef>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		</comps>
+	  </HediffDef>
+	  
+
+	  
+	 
+
+</Defs>

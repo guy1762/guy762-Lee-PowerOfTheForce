@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_rend</defName>
+		<label>rend</label>
+		<description>Use the Force to boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceRend</HediffDef>
+			<HediffDef>SWPotF_hediff_RendKillstreakBonus</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/MeleeCombat/KotORII_Feat_Flurry</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_fury</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceRend</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceRend</defName>
+		<label>Force rend</label>
+		<description>Force-enhanced melee attack speed, increasing the caster's damage per second output at the cost of reducing their chance to hit and deflect ranged attacks. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.2</MeleeCooldownFactor>
+			  
+			  <MeleeWeapon_DeflectionChance>-0.2</MeleeWeapon_DeflectionChance>
+			  <MeleeHitChance>-0.2</MeleeHitChance>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+			<hediff>SWPotF_hediff_RendKillstreakBonus</hediff>
+			<severityForFirstKill>1</severityForFirstKill>
+			<severityPerExtraKill>1</severityPerExtraKill>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_RendKillstreakBonus</defName>
+		<label>Rend bonus</label>
+		<description>Melee attack speed increase from killing. Bonus is capped at +60%. Dissipates after one in-game hour.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>6</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<minSeverity>1</minSeverity>
+			<label>1 kill</label>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.1</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		  <li>
+			<minSeverity>2</minSeverity>
+			<label>2 kills</label>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.2</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		  <li>
+			<minSeverity>3</minSeverity>
+			<label>3 kills</label>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.3</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		  <li>
+			<minSeverity>4</minSeverity>
+			<label>4 kills</label>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		  <li>
+			<minSeverity>5</minSeverity>
+			<label>5 kills</label>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.5</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		  <li>
+			<minSeverity>6</minSeverity>
+			<label>6 kills</label>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.6</MeleeCooldownFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>2500</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advrend</defName>
+		<label>warrior rend</label>
+		<description>Use the Force to better boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_WarriorRend</HediffDef>
+			<HediffDef>SWPotF_hediff_RendKillstreakBonus</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/MeleeCombat/KotORII_Feat_Improved_Flurry</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>17</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>45</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_fury</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_WarriorRend</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_WarriorRend</defName>
+		<label>Warrior rend</label>
+		<description>Force-enhanced melee attack speed, increasing the caster's damage per second output at the cost of reducing their chance to hit and deflect ranged attacks. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
+			  
+			  <MeleeWeapon_DeflectionChance>-0.4</MeleeWeapon_DeflectionChance>
+			  <MeleeHitChance>-0.4</MeleeHitChance>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+			<hediff>SWPotF_hediff_RendKillstreakBonus</hediff>
+			<severityForFirstKill>1</severityForFirstKill>
+			<severityPerExtraKill>1</severityPerExtraKill>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstrend</defName>
+		<label>marauder rend</label>
+		<description>Use the Force to greatly boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Duration scales with the caster's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_MarauderRend</HediffDef>
+			<HediffDef>SWPotF_hediff_RendKillstreakBonus</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/MeleeCombat/KotORII_Feat_Master_Flurry</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>24</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_fury</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_MarauderRend</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_MarauderRend</defName>
+		<label>Marauder rend</label>
+		<description>Force-enhanced melee attack speed, increasing the caster's damage per second output at the cost of reducing their chance to hit and deflect ranged attacks. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+			  <MeleeCooldownFactor>-0.6</MeleeCooldownFactor>
+			  
+			  <MeleeWeapon_DeflectionChance>-0.6</MeleeWeapon_DeflectionChance>
+			  <MeleeHitChance>-0.6</MeleeHitChance>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_HediffOnKill">
+			<hediff>SWPotF_hediff_RendKillstreakBonus</hediff>
+			<severityForFirstKill>1</severityForFirstKill>
+			<severityPerExtraKill>1</severityPerExtraKill>
+		  </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	 
+
+</Defs>

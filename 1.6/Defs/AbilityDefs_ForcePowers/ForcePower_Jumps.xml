@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_jump</defName>
+		<label>Force jump</label>
+		<description>Use the Force to leap to a visible spot within 10 meters.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Feat_Force_Jump</iconPath>
+		<hotKey></hotKey>
+		
+		
+		<level>1</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>2000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		
+		<verbProperties>
+		  <verbClass>Verb_CastAbilityJump</verbClass>
+		  <label>Force jump</label>
+		  <violent>false</violent>
+		  <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+		  <warmupTime>0.5</warmupTime>
+		  <range>10</range>
+		  <requireLineOfSight>true</requireLineOfSight>
+		  <soundCast>kotorsound_force_JAjump</soundCast>
+		  <!--soundLanding>Longjump_Land</soundLanding-->
+		  <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+		  </targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_knightjump</defName>
+		<label>knight jump</label>
+		<description>Use the Force to leap to a visible spot within 20 meters.</description>
+		<!--description>Use the Force to leap to a visible spot within 20 meters, also giving a minor buff to melee damage and accuracy.</description-->
+		<iconPath>UI/ForceIcons/N/KotORII_Feat_Improved_Force_Jump</iconPath>
+		<hotKey></hotKey>
+		
+		
+		<level>6</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>2000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		
+		<verbProperties>
+		  <verbClass>Verb_CastAbilityJump</verbClass>
+		  <label>knight jump</label>
+		  <violent>false</violent>
+		  <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+		  <warmupTime>0.5</warmupTime>
+		  <range>20</range>
+		  <requireLineOfSight>true</requireLineOfSight>
+		  <soundCast>kotorsound_force_JAjump</soundCast>
+		  <!--soundLanding>Longjump_Land</soundLanding-->
+		  <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+		  </targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+		
+		<!--comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_JumpBuff</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps-->
+
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <!--HediffDef>
+		<defName>SWPotF_hediff_JumpBuff</defName>
+		<label>Force jump momentum</label>
+		<description>Minor melee damage and accuracy boost from Force-jumping.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeDamageFactor>0.2</MeleeDamageFactor>
+					<MeleeHitChance>0.2</MeleeHitChance>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>500</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef-->
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstjump</defName>
+		<label>master jump</label>
+		<description>Use the Force to leap to any accessible spot within 30 meters.</description>
+		<!--description>Use the Force to leap to any accessible spot within 30 meters, also giving a buff to melee damage and accuracy.</description-->
+		<iconPath>UI/ForceIcons/N/KotORII_Feat_Master_Force_Jump</iconPath>
+		<hotKey></hotKey>
+		
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>2000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		
+		<verbProperties>
+		  <verbClass>Verb_CastAbilityJump</verbClass>
+		  <label>master jump</label>
+		  <violent>false</violent>
+		  <forceNormalTimeSpeed>false</forceNormalTimeSpeed>
+		  <warmupTime>0.5</warmupTime>
+		  <range>30</range>
+		  <requireLineOfSight>false</requireLineOfSight>
+		  <soundCast>kotorsound_force_JAjump</soundCast>
+		  <!--soundLanding>Longjump_Land</soundLanding-->
+		  <targetParams>
+			<canTargetLocations>true</canTargetLocations>
+			<canTargetPawns>false</canTargetPawns>
+			<canTargetBuildings>false</canTargetBuildings>
+		  </targetParams>
+		</verbProperties>
+		<jobDef>CastJump</jobDef>
+		
+		<!--comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_AdvJumpBuff</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps-->
+
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  <!--HediffDef>
+		<defName>SWPotF_hediff_AdvJumpBuff</defName>
+		<label>improved Force jump momentum</label>
+		<description>Melee damage and accuracy boost from Force-jumping.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeDamageFactor>0.4</MeleeDamageFactor>
+					<MeleeHitChance>0.4</MeleeHitChance>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>500</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef-->
+	  
+	  
+	 
+
+</Defs>

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_focus</defName>
+		<label>Force focus</label>
+		<description>Use the Force to bolster the skills of the caster. Duration scales with the psychic sensitivity of the caster.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceFocus</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Feat_Improved_Force_Focus</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>6</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>40</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_focus</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceFocus</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+		</comps>
+
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceFocus</defName>
+		<label>Force focus</label>
+		<description>Force-stimulated skill boost. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+                <skillChanges>
+                    <li>
+                        <skill>Shooting</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Melee</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Construction</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Mining</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Cooking</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Plants</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Animals</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Crafting</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Artistic</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Medicine</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Social</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+					<li>
+                        <skill>Intellectual</skill>
+                        <skillChange>2</skillChange>
+                    </li>
+                </skillChanges>
+            </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  <!--AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_knightfocus</defName>
+		<label>knight focus</label>
+		<description>Use the Force to better bolster the skills of the caster. Also provides immunity to stun damage and removes debilitating conditions like sonic disorientation, electrocution, and Force-induced fear. Duration scales with the psychic sensitivity of the caster.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Feat_Improved_Force_Focus</iconPath>
+		<hotKey></hotKey>
+		
+		<level>6</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost>
+			<Ability_Duration>40</Ability_Duration>
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_focus</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_KnightFocus</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+                <hediffs>
+                    <li>guy762_SonicDisorient</li>
+                    <li>guy762_Electrocuted</li>
+                </hediffs>
+                <recursiveChecks>3</recursiveChecks>
+            </li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_KnightFocus</defName>
+		<label>knight focus</label>
+		<description>Force-stimulated skill boost and immunity to stun damage and some debilitating conditions. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<makeImmuneTo>
+				<li>guy762_SonicDisorient</li>
+				<li>guy762_Electrocuted</li>
+			</makeImmuneTo>
+			<damageFactors>
+				<Stun>0</Stun>
+			</damageFactors>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+                <skillChanges>
+                    <li>
+                        <skill>Shooting</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Melee</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Construction</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Mining</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Cooking</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Plants</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Animals</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Crafting</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Artistic</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Medicine</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Social</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+					<li>
+                        <skill>Intellectual</skill>
+                        <skillChange>3</skillChange>
+                    </li>
+                </skillChanges>
+            </li>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef-->
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_mstfocus</defName>
+		<label>master focus</label>
+		<description>Use the Force to greatly bolster the skills of the caster. Also provides immunity to stun damage and removes debilitating conditions like sonic disorientation and electrocution. Duration scales with the psychic sensitivity of the caster.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_MstFocus</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Force_MasterFocusLS</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>40</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_focus</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_MstFocus</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+                <hediffs>
+                    <li>guy762_SonicDisorient</li>
+                    <li>guy762_Electrocuted</li>
+                </hediffs>
+                <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+            </li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_MstFocus</defName>
+		<label>master focus</label>
+		<description>Force-stimulated skill boost and immunity to stun damage and some debilitating conditions. Duration scales with the caster's psychic sensitivity.</description>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<makeImmuneTo>
+				<li>guy762_SonicDisorient</li>
+				<li>guy762_Electrocuted</li>
+			</makeImmuneTo>
+			<damageFactors>
+				<Stun>0</Stun>
+			</damageFactors>
+		  </li>
+		</stages>
+		<comps>
+		  <li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+                <skillChanges>
+                    <li>
+                        <skill>Shooting</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Melee</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Construction</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Mining</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Cooking</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Plants</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Animals</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Crafting</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Artistic</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Medicine</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Social</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+					<li>
+                        <skill>Intellectual</skill>
+                        <skillChange>4</skillChange>
+                    </li>
+                </skillChanges>
+            </li>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	 
+
+</Defs>

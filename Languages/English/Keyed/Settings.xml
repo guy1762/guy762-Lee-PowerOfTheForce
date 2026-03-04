@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+
+    <!-- Error Messages -->
+    <Force.Error.ShaderLoadFailed>Failed to load Shader from path "{0}"</Force.Error.ShaderLoadFailed>
+    <Force.Error.UnsupportedPlatform>Unsupported Platform</Force.Error.UnsupportedPlatform>
+    <Force.Error.BundleLoadFailed>Failed to load bundle at path: {0}</Force.Error.BundleLoadFailed>
+
+    <!-- Settings UI -->
+    <Force.Settings.ModName>Star Wars: The Force</Force.Settings.ModName>
+    <Force.Settings.GeneralTab>General</Force.Settings.GeneralTab>
+
+    <!-- Settings Options -->
+    <Force.Settings.DarksideOnKill>Increase Darkside on Kill</Force.Settings.DarksideOnKill>
+    <Force.Settings.DarksideOnKillDesc>Pawns gain Darkside attunement when killing non-hostiles</Force.Settings.DarksideOnKillDesc>
+
+    <Force.Settings.ForceXPMultiplier>Force Xp Multiplier: {0}</Force.Settings.ForceXPMultiplier>
+
+    <Force.Settings.UsePsycastStat>Use Psycast Stat</Force.Settings.UsePsycastStat>
+    <Force.Settings.UsePsycastStatDesc>Use RimWorld's built-in Psycast stat instead of custom Force calculation</Force.Settings.UsePsycastStatDesc>
+
+    <Force.Settings.OffsetMultiplier>Offset Multiplier: {0}</Force.Settings.OffsetMultiplier>
+    <Force.Settings.ApprenticeCapacity>Apprentice Capacity: {0}</Force.Settings.ApprenticeCapacity>
+
+    <Force.Settings.ApprenticeRankup>Enable Apprentice Rankup</Force.Settings.ApprenticeRankup>
+    <Force.Settings.ApprenticeRankupDesc>Allow apprentices to rank up after meeting requirements</Force.Settings.ApprenticeRankupDesc>
+
+    <Force.Settings.MasterRankup>Enable Master Rankup</Force.Settings.MasterRankup>
+    <Force.Settings.MasterRankupDesc>Allow masters to rank up after training enough apprentices</Force.Settings.MasterRankupDesc>
+
+    <Force.Settings.RequiredApprentices>Required Graduated Apprentices: {0}</Force.Settings.RequiredApprentices>
+    <Force.Settings.RequiredPsycast>Required Force Level: {0}</Force.Settings.RequiredPsycast>
+
+    <Force.Settings.DarksideVisuals>Enable Darkside Visuals</Force.Settings.DarksideVisuals>
+    <Force.Settings.DarksideVisualsDesc>Enable special visual effects for Darkside Force users</Force.Settings.DarksideVisualsDesc>
+
+    <Force.Settings.ResetToDefault>Reset to Default</Force.Settings.ResetToDefault>
+</LanguageData>

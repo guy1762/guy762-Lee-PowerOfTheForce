@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_choke</defName>
+		<label>choke</label>
+		<description>Use the Force to choke a target, inflicting damage directly to their neck. Lasts for 10 seconds. Does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceChoke</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Choke</iconPath>
+		<hotKey>Misc9</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>9</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<!--<jobDef>CastAbilityOnThingWithoutWeapon</jobDef> superhero genes abilities have these jobDefs listed, investigate further once SorceryDef compatible versions of the JobGivers are available -->
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceChoke</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+				
+				<goodwillImpact>-75</goodwillImpact>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_choke</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceChoke</defName>
+		<description>Choking through the use of Force telekinesis. Periodically inflicts damage on the target's throat and halts all movement. Lasts for 10 seconds, does not scale with any stat, and cannot be canceled by Force Suppression/Breach.</description>
+		<label>Force choke</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+				<!-- <damage>Crush</damage> this cuts for some reason -->
+				<damage>Blunt</damage>
+				<damageAmount>5</damageAmount>
+				<armorPenetration>100</armorPenetration>
+				<createFilth>False</createFilth>
+				<tickInterval>120</tickInterval>
+				<bodyParts>
+				  <li>Neck</li>
+				</bodyParts>
+		  </li>
+		</comps>
+		
+		<stages>
+		  <li>
+			<capMods>
+				<li>
+					<capacity>Manipulation</capacity>
+					<postFactor>0.5</postFactor>
+				</li>
+            </capMods>
+			<statFactors>
+				<MoveSpeed>0</MoveSpeed>
+				<MeleeDodgeChance>0</MeleeDodgeChance>
+			</statFactors>
+		  </li>
+		</stages>
+		<renderNodeProperties>
+		  <li>
+			<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+			<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+			<texPaths>
+			  <li>VFX/forcechoke</li>
+			</texPaths>
+			<shaderTypeDef>TransparentPostLight</shaderTypeDef>
+			<parentTagDef>Head</parentTagDef>
+			<drawData>
+			  <defaultData>
+				<layer>49</layer>
+			  </defaultData>
+			</drawData>
+		  </li>
+		</renderNodeProperties>
+	  </HediffDef>
+	  
+	  
+	  
+	  <ThoughtDef>
+		<defName>guy762_ThoughtDef_ForceChokeMasochist</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>SWPotF_hediff_ForceChoke</hediff>
+		<validWhileDespawned>false</validWhileDespawned>
+		<developmentalStageFilter>Adult</developmentalStageFilter>
+		<requiredTraits>
+			<li>Masochist</li>
+		</requiredTraits>
+		<stages>
+		  <li>
+			<label>Force choke</label>
+			<description>H-harder master~!</description>
+			<baseMoodEffect>50</baseMoodEffect>
+		  </li>
+		</stages>
+	  </ThoughtDef>
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_crush</defName>
+		<label>crush</label>
+		<description>Use the Force to crush a target, rapidly inflicting damage throughout their entire body. Lasts for 10 seconds. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceCrush</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Crush</iconPath>
+		<hotKey>Misc9</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>25</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>60</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceCrush</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>true</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+				
+				<canTargetBosses>false</canTargetBosses>
+				<goodwillImpact>-75</goodwillImpact>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_choke</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceCrush</defName>
+		<description>Crushing through the use of Force telekinesis. Rapidly inflicts damage throughout the target's entire body and halts all movement. Lasts for 10 seconds. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<label>Force crush</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  
+		  <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+				<!-- <damage>Crush</damage> this cuts for some reason -->
+				<damage>Blunt</damage>
+				<damageAmount>10</damageAmount>
+				<armorPenetration>100</armorPenetration>
+				<createFilth>False</createFilth>
+				<tickInterval>60</tickInterval>
+		  </li>
+		</comps>
+		
+		<stages>
+		  <li>
+			<capMods>
+				<li>
+					<capacity>Manipulation</capacity>
+					<postFactor>0.25</postFactor>
+				</li>
+            </capMods>
+			<statFactors>
+				<MoveSpeed>0</MoveSpeed>
+				<MeleeDodgeChance>0</MeleeDodgeChance>
+			</statFactors>
+		  </li>
+		</stages>
+		
+		<renderNodeProperties>
+		  <li>
+			<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+			<bodyTypeGraphicPaths>
+				<Thin>VFX/forcecrush_normalbody</Thin>
+				<Female>VFX/forcecrush_normalbody</Female>
+				<Male>VFX/forcecrush_normalbody</Male>
+				<Hulk>VFX/forcecrush_bigbody</Hulk>
+				<Fat>VFX/forcecrush_bigbody</Fat>
+			</bodyTypeGraphicPaths>
+			<shaderTypeDef>TransparentPostLight</shaderTypeDef>
+			<parentTagDef>Body</parentTagDef>
+			<drawData>
+			  <scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+			  <defaultData>
+				<layer>-1</layer>
+			  </defaultData>
+			</drawData>
+		  </li>
+		</renderNodeProperties>
+	  </HediffDef>
+	  
+
+
+	  
+
+
+</Defs>

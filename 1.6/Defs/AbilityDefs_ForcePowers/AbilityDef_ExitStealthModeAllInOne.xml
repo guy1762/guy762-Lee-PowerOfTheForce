@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	<AbilityDef>
+		<defName>guy762_StealthDeactivate_ForceCloak</defName>
+		<label>exit stealth mode</label>
+		<description>Deactivate an active stealth field or Force camouflage ability.</description>
+		<iconPath>UI/KotOR_Icon_Stealth_off</iconPath>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<aiCanUse>true</aiCanUse>
+		<targetRequired>false</targetRequired>
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  <range>-1</range>
+		  <drawAimPie>false</drawAimPie>
+		</verbProperties>
+		<comps>
+		  <li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWPotF_hediff_ForceCloak</li>
+					<li>SWPotF_hediff_KnightCloak</li>
+					<li>SWPotF_hediff_MstCloak</li>
+					
+					<!-- <li>guy762_StealthField</li> -->
+					<!-- <li>guy762_StealthField_sixty</li> -->
+					<!-- <li>guy762_StealthField_twomin</li> -->
+					<!-- <li>guy762_StealthField_threemin</li> -->
+					<!-- <li>guy762_StealthField_fourmin</li> -->
+					
+					<li>guy762_StealthField_defel</li>
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
+		  <li Class="CompProperties_AbilityFleckOnTarget">
+			<sound>kotorsound_cloak</sound>
+		  </li>
+		</comps>
+	</AbilityDef>
+	  
+	 
+
+</Defs>

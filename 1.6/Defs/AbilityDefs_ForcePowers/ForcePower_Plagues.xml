@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_affliction</defName>
+		<label>affliction</label>
+		<description>Use the Force to poison a target, slowing them down and causing them to vomit periodically. Also halves Force point recovery. Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceAffliction</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Affliction</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>6</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceAffliction</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_plague</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceAffliction</defName>
+		<description>Force-induced nausea, slowness, and weakness. Also halves Force point recovery. Duration scales with the caster's psychic sensitivity.</description>
+		<label>Force afflicted</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<makesSickThought>true</makesSickThought>
+		<stages>
+		  <li>
+			<painOffset>0.3</painOffset>
+			<vomitMtbDays>0.00005787</vomitMtbDays>
+			<naturalHealingFactor>-0.5</naturalHealingFactor>
+			<statFactors>
+				<MoveSpeed>0.8</MoveSpeed>
+				<MeleeDodgeChance>0.8</MeleeDodgeChance>
+				<ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor>
+				
+				<Force_FPRecovery>0.5</Force_FPRecovery>
+			</statFactors>
+			<statOffsets>
+				<MeleeCooldownFactor>0.3</MeleeCooldownFactor>
+				<RangedCooldownFactor>0.3</RangedCooldownFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
+			<hediffs>
+				<li>SWPotF_hediff_ForceCure</li>
+				<li>guy762_medpacHeal_antidote</li>
+			</hediffs>
+		  </li>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_plague</defName>
+		<label>plague</label>
+		<description>Use the Force to inflict a terrible plague on a target, slowly rotting their organs and weakening them. Also halts the target's Force point recovery. Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForcePlague</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Plague</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>5000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForcePlague</hediffDef>	
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<goodwillImpact>-75</goodwillImpact>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_plague</sound>
+			</li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Darkside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	  </AbilityDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForcePlague</defName>
+		<description>Force-induced plague. Will inflict organ decay upon random organs and halt Force point recovery. Duration scales with the caster's psychic sensitivity.</description>
+		<label>Force plague</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<makesSickThought>true</makesSickThought>
+		<cureAllAtOnceIfCuredByItem>true</cureAllAtOnceIfCuredByItem>
+		
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="EBSGFramework.HediffCompProperties_DamageOverTime">
+				<damage>Decayed</damage>
+				<createFilth>False</createFilth>
+				<damageAmount>1</damageAmount>
+				<tickInterval>300</tickInterval>
+				<bodyParts>
+				  <li>Lung</li>
+				  <li>Kidney</li>
+				  <li>Liver</li>
+				  <li>Stomach</li>
+				  <li>Heart</li>
+				</bodyParts>
+		  </li>
+		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
+			<hediffs>
+				<li>SWPotF_hediff_ForceCure</li>
+				<li>guy762_medpacHeal_antidote</li>
+			</hediffs>
+		  </li>
+		</comps>
+		
+		<stages>
+		  <li>
+			<vomitMtbDays>0.00005787</vomitMtbDays>
+			<naturalHealingFactor>-0.3</naturalHealingFactor>
+			<statFactors>
+				<MoveSpeed>0.3</MoveSpeed>
+				<MeleeDodgeChance>0.3</MeleeDodgeChance>
+				<ImmunityGainSpeedFactor>0.3</ImmunityGainSpeedFactor>
+				
+				<Force_FPRecovery>0</Force_FPRecovery>
+			</statFactors>
+			<statOffsets>
+				<MeleeCooldownFactor>0.7</MeleeCooldownFactor>
+				<RangedCooldownFactor>0.7</RangedCooldownFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <!-- OLD VERSION -->
+	  
+	  
+	  
+	  
+	  <!--HediffDef>
+		<defName>SWPotF_hediff_ForcePlague</defName>
+		<description>Force-induced plague. Will begin to inflict organ decay upon random organs after reaching 'moderate' severity. Duration scales with the caster's psychic sensitivity.</description>
+		<label>Force plague</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<makesAlert>true</makesAlert>
+		<makesSickThought>true</makesSickThought>
+		<tendable>true</tendable>
+		<cureAllAtOnceIfCuredByItem>true</cureAllAtOnceIfCuredByItem>
+		
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
+			<hediffs>
+				<li>guy762_medpacHeal_antidote</li>
+			</hediffs>
+		  </li>
+		  <li Class="HediffCompProperties_TendDuration">
+			<baseTendDurationHours>12</baseTendDurationHours>
+			<severityPerDayTended>-0.3628</severityPerDayTended>
+		  </li>
+		  <li Class="HediffCompProperties_Immunizable">
+			<severityPerDayNotImmune>20</severityPerDayNotImmune>
+			<immunityPerDaySick>1</immunityPerDaySick>
+			<severityPerDayImmune>-5</severityPerDayImmune>
+			<immunityPerDayNotSick>-0.75</immunityPerDayNotSick>
+		  </li>
+		</comps>
+		
+		<stages>
+		  <li>
+			<minSeverity>0.25</minSeverity>
+			<label>initial</label>
+			<lifeThreatening>false</lifeThreatening>
+			<painOffset>0.35</painOffset>
+			
+			<naturalHealingFactor>-0.1</naturalHealingFactor>
+			<statFactors>
+				<ImmunityGainSpeedFactor>0.9</ImmunityGainSpeedFactor>
+			</statFactors>
+		  </li>
+		  <li>
+			<minSeverity>0.5</minSeverity>
+			<label>moderate</label>
+			<lifeThreatening>false</lifeThreatening>
+			<painOffset>0.65</painOffset>
+			<vomitMtbDays>0.00005787</vomitMtbDays>
+			
+			<naturalHealingFactor>-0.4</naturalHealingFactor>
+			<statFactors>
+				<ImmunityGainSpeedFactor>0.6</ImmunityGainSpeedFactor>
+			</statFactors>
+			
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>OrganDecay</hediff>
+				<mtbDays>0.5</mtbDays>
+				<partsToAffect>
+				  <li>Lung</li>
+				  <li>Kidney</li>
+				</partsToAffect>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+			<minSeverity>0.75</minSeverity>
+			<label>severe</label>
+			<lifeThreatening>true</lifeThreatening>
+			<painOffset>0.95</painOffset>
+			<vomitMtbDays>0.005787</vomitMtbDays>
+			
+			<naturalHealingFactor>-0.7</naturalHealingFactor>
+			<statFactors>
+				<ImmunityGainSpeedFactor>0.3</ImmunityGainSpeedFactor>
+			</statFactors>
+			
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>OrganDecay</hediff>
+				<mtbDays>0.5</mtbDays>
+				<partsToAffect>
+				  <li>Lung</li>
+				  <li>Kidney</li>
+				</partsToAffect>
+			  </li>
+			  <li Class="HediffGiver_Random">
+				<hediff>OrganDecay</hediff>
+				<mtbDays>1</mtbDays>
+				<partsToAffect>
+				  <li>Liver</li>
+				  <li>Stomach</li>
+				</partsToAffect>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  <li>
+			<minSeverity>1</minSeverity>
+			<label>extreme</label>
+			<lifeThreatening>true</lifeThreatening>
+			<painOffset>0.95</painOffset>
+			<vomitMtbDays>0.5787</vomitMtbDays>
+			
+			<naturalHealingFactor>-1</naturalHealingFactor>
+			<statFactors>
+				<ImmunityGainSpeedFactor>0</ImmunityGainSpeedFactor>
+			</statFactors>
+			
+			<hediffGivers>
+			  <li Class="HediffGiver_Random">
+				<hediff>OrganDecay</hediff>
+				<mtbDays>0.25</mtbDays>
+				<partsToAffect>
+				  <li>Lung</li>
+				  <li>Kidney</li>
+				</partsToAffect>
+			  </li>
+			  <li Class="HediffGiver_Random">
+				<hediff>OrganDecay</hediff>
+				<mtbDays>0.5</mtbDays>
+				<partsToAffect>
+				  <li>Liver</li>
+				  <li>Stomach</li>
+				</partsToAffect>
+			  </li>
+			  <li Class="HediffGiver_Random">
+				<hediff>OrganDecay</hediff>
+				<mtbDays>1</mtbDays>
+				<partsToAffect>
+				  <li>Heart</li>
+				</partsToAffect>
+			  </li>
+			</hediffGivers>
+		  </li>
+		  
+		</stages>
+	  </HediffDef-->
+	  
+	  
+	  
+	  
+	
+
+	  
+
+
+</Defs>

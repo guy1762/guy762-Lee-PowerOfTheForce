@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_slow</defName>
+		<label>Force slow</label>
+		<description>Use the Force to slow a target down. Duration scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceSlow</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/DS/KotORII_Power_Slow</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceSlow</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_slow</sound>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceSlow</defName>
+		<description>Force-induced slowness. Duration scales with the caster's psychic sensitivity.</description>
+		<label>Force slowed</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- keeping this red bc even though slow is a universal power, it's currently the only negative hediff from a univ power -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<stages>
+		  <li>
+			<!--naturalHealingFactor>-0.5</naturalHealingFactor-->
+			<statFactors>
+				<MoveSpeed>0.5</MoveSpeed>
+				<MeleeDodgeChance>0.5</MeleeDodgeChance>
+				<!--ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor-->
+			</statFactors>
+			<statOffsets>
+				<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+				<RangedCooldownFactor>0.5</RangedCooldownFactor>
+				<StaggerDurationFactor>-0.5</StaggerDurationFactor>
+			</statOffsets>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_stasis</defName>
+		<label>stasis</label>
+		<description>Use the Force to halt a target's movement. Lasts for 12 seconds. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceStasis</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Stasis</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>9</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>12</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceStasis</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>true</applicableToMechs>
+				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
+				
+				<canTargetBosses>false</canTargetBosses>
+			  </li>
+			  <li Class ="CompProperties_AbilityForceJob">
+				<compClass>CompAbilityEffect_ForceJob</compClass>
+				<jobDef>Wait_MaintainPosture</jobDef>
+				<!--destination>Caster</destination>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				<psychic>True</psychic-->
+			  </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_slow</sound>
+			</li>
+		</comps>
+	  </AbilityDef>
+	  
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_ForceStasis</defName>
+		<description>Halting of all movement through the use of Force telekinesis. Lasts for 12 seconds. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<label>Force stasis</label>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		
+		<comps>
+		  <li Class="HediffCompProperties_Effecter">
+			<stateEffecter>guy762_effecter_ForcedVisible</stateEffecter>
+		  </li>
+		  
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		
+		<stages>
+		  <li>
+			<disabledWorkTags>Violent</disabledWorkTags>
+			<statFactors>
+				<MoveSpeed>0</MoveSpeed>
+				<MeleeDodgeChance>0</MeleeDodgeChance>
+			</statFactors>
+		  </li>
+		</stages>
+		
+		<renderNodeProperties>
+		  <li>
+			<workerClass>PawnRenderNodeWorker_AttachmentBody</workerClass>
+			<bodyTypeGraphicPaths>
+				<Thin>VFX/forcestasis_normalbody</Thin>
+				<Female>VFX/forcestasis_normalbody</Female>
+				<Male>VFX/forcestasis_normalbody</Male>
+				<Hulk>VFX/forcestasis_bigbody</Hulk>
+				<Fat>VFX/forcestasis_bigbody</Fat>
+			</bodyTypeGraphicPaths>
+			<shaderTypeDef>TransparentPostLight</shaderTypeDef>
+			<parentTagDef>Body</parentTagDef>
+			<drawData>
+			  <scaleOffsetByBodySize>false</scaleOffsetByBodySize>
+			  <defaultData>
+				<layer>-1</layer>
+			  </defaultData>
+			</drawData>
+		  </li>
+		</renderNodeProperties>
+	  </HediffDef>
+
+	  
+
+
+</Defs>

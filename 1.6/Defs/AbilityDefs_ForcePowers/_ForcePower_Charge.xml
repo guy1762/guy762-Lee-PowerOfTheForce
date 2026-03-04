@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_chargebattery</defName>
+		<label>Charge battery</label>
+		<description>Use the Force to shock any battery-like structure with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage. Effectiveness scales with the caster's psychic sensitivity stat.</description>
+		<descriptionHyperlinks>
+			<HediffDef>guy762_Electrocuted</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Charge</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>5</level>
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>15</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_droidzap</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>true</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>false</canTargetHumans>
+				<!-- <canTargetMutants>false</canTargetMutants> -->
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SWPotF_projectile_ChargeShock</projectileDef>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityChargeBattery">
+                <batteryChangeAmount>1000</batteryChangeAmount>
+                <efficiencyFactorStat>PsychicSensitivity</efficiencyFactorStat>
+            </li>
+			<!--li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+                <targetIsOneOfXenotype>
+                    <li>guy762_debugxenotype_droid</li>
+                </targetIsOneOfXenotype>
+            </li>
+			<li Class="EBSGFramework.CompProperties_AbilityOffsetNeed">
+                <needOffsets>
+                    <li>
+                        <need>Food</need>
+                        <offset>1</offset>
+                    </li>
+					<li>
+                        <need>MechEnergy</need>
+                        <offset>1</offset>
+                    </li>
+                </needOffsets>
+            </li-->
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_chargedroid</defName>
+		<label>Charge droid</label>
+		<description>Use the Force to shock a droid or mechanoid with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage.</description>
+		<descriptionHyperlinks>
+			<HediffDef>guy762_Electrocuted</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_ChargeDroid</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>7</level>
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>15</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_force_droidzap</soundCast>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<!-- <canTargetMutants>false</canTargetMutants> -->
+				<canTargetMechs>true</canTargetMechs>
+				
+				<neverTargetHostileFaction>false</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>SWPotF_projectile_ChargeShock</projectileDef>
+			</li>
+			<!--li Class="EBSGFramework.CompProperties_AbilityChargeBattery">
+                <batteryChangeAmount>1000</batteryChangeAmount>
+                <efficiencyFactorStat>PsychicSensitivity</efficiencyFactorStat>
+            </li-->
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+                <targetIsOneOfXenotype>
+                    <li>guy762_debugxenotype_droid</li>
+                </targetIsOneOfXenotype>
+            </li>
+			<li Class="EBSGFramework.CompProperties_AbilityOffsetNeed">
+                <needOffsets>
+                    <li>
+                        <need>Food</need>
+                        <offset>10</offset>
+                    </li>
+					<li>
+                        <need>MechEnergy</need>
+                        <offset>100</offset>
+                    </li>
+                </needOffsets>
+            </li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+		<defName>SWPotF_projectile_ChargeShock</defName>
+		<label>Charge</label>
+		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<graphicData>
+			<texPath>VFX/ForceLightning/ForceLightning</texPath>
+			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
+			<shaderType>MoteGlow</shaderType>
+		</graphicData>
+		<projectile>
+			<damageDef>guy762_RangedDamage_electrical</damageDef>
+			<speed>64</speed>
+			<damageAmountBase>9</damageAmountBase>
+			<stoppingPower>1</stoppingPower>
+			<soundAmbient>kotorsound_JAlightningloop</soundAmbient>
+		</projectile>
+		<dealsDamageOnce>true</dealsDamageOnce>
+		
+		<tickDamageRate>1</tickDamageRate>
+		<lifeTimeDuration>30</lifeTimeDuration> <!-- neither of these works -->
+		
+		
+		<drawOffscreen>true</drawOffscreen>
+		<widthScaleFactor>0.75</widthScaleFactor>
+		<heightScaleFactor>1</heightScaleFactor>
+		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
+		<totalSizeScale>1.15</totalSizeScale>
+		<tickFrameRate>7</tickFrameRate>
+		<finalTickFrameRate>5</finalTickFrameRate>
+		<minDistanceToAffect>0.5</minDistanceToAffect>
+	  </VEF.Weapons.ExpandableProjectileDef>
+	 
+
+</Defs>

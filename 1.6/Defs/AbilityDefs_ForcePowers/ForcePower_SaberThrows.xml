@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_saberthrow</defName>
+		<label>throw lightsaber</label>
+		<description>Use the Force to throw the caster's lightsaber at a target.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Throw_Lightsaber</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>1</level>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>15</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>true</canTargetBuildings>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityLaunchProjectile">
+				<projectileDef>Spinning_Projectile</projectileDef>
+			</li>
+			<!--li Class="CompProperties_AbilityFleckOnTarget">
+				<sound>kotorsound_force_generic</sound>
+			</li-->
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  <ThingDef ParentName="BaseBullet">
+        <defName>Spinning_Projectile</defName>
+        <label>Weapon Throw</label>
+        <thingClass>Spinning_Projectile.SpinningWeaponProjectile</thingClass>
+        <drawOffscreen>true</drawOffscreen>
+		<graphicData>
+		  <texPath>Things/Projectile/Bullet_Small</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>Transparent</shaderType>
+		</graphicData>
+        <projectile>
+            <damageDef>guy762_MeleeDamage_ecut</damageDef>
+            <damageAmountBase>16</damageAmountBase>
+            <speed>32</speed>
+            <spinRate>9</spinRate> <!-- This is the spin rate of the projectile -->
+			<soundAmbient>kotorsound_lightsaber_swingsustainer</soundAmbient>
+        </projectile>
+	  </ThingDef>
+	  
+	  <ThingDef ParentName="MoteBase">
+        <defName>Mote_LightSaberReturn</defName>
+        <label>Weapon Return Mote</label>
+        <thingClass>Spinning_Projectile.MoteWeaponReturn</thingClass>
+        <altitudeLayer>MoteOverhead</altitudeLayer>
+        <drawOffscreen>true</drawOffscreen>
+		<graphicData>
+		  <texPath>Things/Projectile/Bullet_Small</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>Transparent</shaderType>
+		</graphicData>
+        <mote>
+            <fadeInTime>0.5</fadeInTime>
+            <solidTime>7</solidTime>
+            <fadeOutTime>1</fadeOutTime>
+        </mote>
+    </ThingDef>
+
+	
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_advsaberthrow</defName>
+		<label>adv. throw lightsaber</label>
+		<description>Use the Force to throw the caster's lightsaber at multiple targets.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Advanced_Throw_Lightsaber</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>9</level>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>6000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>15</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetBuildings>true</canTargetBuildings>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="BoomerangAbility.CompProperties_AbilityLaunchBoomerang">
+				<compClass>BoomerangAbility.CompAbilityEffect_LaunchBoomerang</compClass>
+				<projectileDef>SWPotF_projectile_AdvThrownWeapon</projectileDef>
+				<targetAmount>3</targetAmount> <!-- default: 1 -->
+				<targetDetectRadius>5</targetDetectRadius> <!-- default: 5 -->
+				<requireMeleeWeapon>true</requireMeleeWeapon> <!-- default: true -->
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	
+	
+	<ThingDef ParentName="BaseBullet">
+        <defName>SWPotF_projectile_AdvThrownWeapon</defName>
+        <label>Weapon Throw</label>
+        <thingClass>BoomerangAbility.Projectile_Boomerang</thingClass>
+        <drawOffscreen>true</drawOffscreen>
+		<graphicData>
+		  <texPath>Things/Projectile/Bullet_Small</texPath>
+		  <graphicClass>Graphic_Single</graphicClass>
+		  <shaderType>Transparent</shaderType>
+		</graphicData>
+        <projectile>
+            <damageDef>guy762_MeleeDamage_ecut</damageDef>
+            <damageAmountBase>24</damageAmountBase>
+            <speed>32</speed>
+            <spinRate>9</spinRate>
+			<soundAmbient>kotorsound_lightsaber_swingsustainer</soundAmbient>
+        </projectile>
+	  </ThingDef>
+	  
+	  
+	  
+	  
+
+  
+  <!--AbilityDef>
+    <defName>Ability_Boomerang</defName>
+    <label>throw boomerang</label>
+    <description>sample of boomerang ability</description>
+    <cooldownTicksRange>60</cooldownTicksRange>
+    <aiCanUse>true</aiCanUse>
+    <verbProperties>
+      <verbClass>Verb_CastAbility</verbClass>
+      <range>15</range>
+      <warmupTime>0.5</warmupTime>
+      <soundCast>PiercingSpine_Launch</soundCast>
+      <requireLineOfSight>false</requireLineOfSight>
+      <targetParams>
+        <canTargetLocations>true</canTargetLocations>
+      </targetParams>
+    </verbProperties>
+    <comps>
+      <li Class="BoomerangAbility.CompProperties_AbilityLaunchBoomerang">
+        <compClass>BoomerangAbility.CompAbilityEffect_LaunchBoomerang</compClass>
+        <projectileDef>Projectile_Boomerang</projectileDef>
+        <targetAmount>3</targetAmount>
+        <targetDetectRadius>5</targetDetectRadius>
+        <requireMeleeWeapon>true</requireMeleeWeapon>
+      </li>
+    </comps>
+  </AbilityDef-->
+	  
+	  
+	  
+	  
+	 
+
+</Defs>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	  
+	  <EffecterDef>
+		<defName>guy762_effecter_ForcedVisible</defName>
+		<children>
+		  <li>
+			<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+			<moteDef>guy762_mote_ForcedVisible</moteDef>
+			<scale>.2</scale>
+			<spawnLocType>OnTarget</spawnLocType>
+			<absoluteAngle>true</absoluteAngle>
+			<angle>0</angle>
+			<speed>0</speed>
+			<rotation>0</rotation>
+		  </li>
+		</children>
+	  </EffecterDef>
+	  
+	  <ThingDef ParentName="MoteBase">
+		<defName>guy762_mote_ForcedVisible</defName>
+		<thingClass>MoteAttached</thingClass>
+		<altitudeLayer>MoteLow</altitudeLayer>
+		<mote>
+		  <fadeInTime>.05</fadeInTime>
+		  <solidTime>0</solidTime>
+		  <fadeOutTime>.5</fadeOutTime>
+		  <growthRate>1</growthRate>
+		</mote>
+		<graphicData>
+		  <graphicClass>Graphic_MoteWithAgeSecs</graphicClass>
+		  <texPath>VFX/black1x1</texPath>
+		  <shaderType>MoteLargeDistortionWave</shaderType>
+		  <shaderParameters>
+			<_DistortionTex>/Things/Mote/PsychicDistortionCurrents</_DistortionTex>
+			<_NoiseTex>/Things/Mote/PsycastNoise</_NoiseTex>
+			<_distortionIntensity>0.2</_distortionIntensity>
+			<_brightnessMultiplier>-1</_brightnessMultiplier>
+			<_noiseIntensity>0</_noiseIntensity>
+		  </shaderParameters>
+		  <drawSize>10.0</drawSize>
+		</graphicData>
+	  </ThingDef>
+	 
+
+</Defs>

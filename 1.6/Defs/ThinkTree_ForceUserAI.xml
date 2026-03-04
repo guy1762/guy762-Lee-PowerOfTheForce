@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<ThinkTreeDef>
+		<defName>guy762_SWPotFAI_selfbuff</defName>
+		<insertTag>EBSGAI_NonColonist_NearbyEnemy</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes> <!-- /////////////////////////////////// -->
+				
+				<li Class="EBSGFramework.ThinkNode_ConditionalNearbyEnemyTarget"> <!-- tier 1 ERes and speeds aren't needed since they are self-use only and vanilla AI is sufficient to handle it -->
+					<subNodes>
+						<!--li Class="EBSGFramework.ThinkNode_RecordPassage">
+							<output>self buff ThinkNode reached!</output>
+						</li-->
+						
+						<!-- E res -->
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_advenergyres</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_AdvERes</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_advenergyres</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_mstenergyres</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_MstERes</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_mstenergyres</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						
+						<!--barriers-->
+						
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_barrier</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_ForceBarrier</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_barrier</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_advbarrier</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_AdvForceBarrier</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_advbarrier</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_mstbarrier</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_MstForceBarrier</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_mstbarrier</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						
+						<!--armors-->
+						
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_aura</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_ForceAura</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_aura</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_shield</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_ForceShield</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_shield</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_armor</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_ForceArmor</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_armor</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						
+						<!--fury-->
+						
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_fury</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_ForceFury</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_fury</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_advfury</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_WarriorFury</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_advfury</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_mstfury</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_MarauderFury</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_mstfury</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						
+						<!--enlightenment-->
+						
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_enlightenment</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalHasHediff">
+									<hediff>SWPotF_hediff_Enlightenment</hediff>
+									<invert>true</invert>
+									<subNodes>
+										<li Class="JobGiver_AICastAbilityOnSelf">
+											<ability>SWPotF_forcepower_enlightenment</ability>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+
+					</subNodes>
+				</li>
+				
+			</subNodes> <!-- /////////////////////////////////// -->
+		</thinkRoot>
+	</ThinkTreeDef>
+	
+	<ThinkTreeDef>
+		<defName>guy762_SWPotFAI_forceattack</defName>
+		<insertTag>EBSGAI_NonColonist_NearbyEnemy</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes> <!-- /////////////////////////////////// -->
+				
+				<li Class="EBSGFramework.ThinkNode_ConditionalNearbyEnemyTarget">
+					<subNodes>
+						<!--li Class="EBSGFramework.ThinkNode_RecordPassage">
+							<output>Force attack ThinkNode reached!</output>
+						</li-->
+						<li Class="EBSGFramework.JobGiver_AICastAnyOfAbilityOnEnemyTarget">
+							<hashInterval>3</hashInterval>
+							<abilities>
+								<li>SWPotF_forcepower_choke</li>
+								<li>SWPotF_forcepower_wound</li>
+								<li>SWPotF_forcepower_slow</li>
+								<li>SWPotF_forcepower_affliction</li>
+								<li>SWPotF_forcepower_scream</li>
+								<li>SWPotF_forcepower_advscream</li>
+							</abilities>
+						</li>
+						<li Class="EBSGFramework.JobGiver_AICastAnyOfAbilityOnEnemyTarget"> <!--powerful abilities-->
+							<hashInterval>30</hashInterval>
+							<abilities>
+								<li>SWPotF_forcepower_crush</li>
+								<li>SWPotF_forcepower_kill</li>
+								<li>SWPotF_forcepower_plague</li>
+								<!--<li>SWPotF_forcepower_mstscream</li> make a separate AoE check path for this -->
+							</abilities>
+						</li>
+					</subNodes>
+				</li>
+				
+			</subNodes> <!-- /////////////////////////////////// -->
+		</thinkRoot>
+	</ThinkTreeDef>
+	
+	<!-- <ThinkTreeDef> -->
+		<!-- <defName>guy762_SWPotFAI_forcepush</defName> -->
+		<!-- <insertTag>EBSGAI_NonColonist_NearbyEnemy</insertTag> -->
+		<!-- <insertPriority>100</insertPriority> -->
+		<!-- <thinkRoot Class="ThinkNode_Priority"> -->
+			<!-- <subNodes> -->
+				
+				<!-- <li Class="ThinkNode_ConditionalHasAbility"> -->
+					<!-- <ability>SWPotF_forcepower_push</ability> -->
+					<!-- <subNodes> -->
+						<!-- <li Class="EBSGFramework.ThinkNode_ConditionalNearbyEnemyTarget"> -->
+							<!-- <subNodes> -->
+								<!-- <li Class="ThinkNode_ConditionalTotalDamage"> -->
+									<!-- <thresholdPercent>0.125</thresholdPercent> -->
+									<!-- <subNodes> -->
+										<!-- <li Class="EBSGFramework.ThinkNode_RecordPassage"> -->
+											<!-- <output>Force push ThinkNode reached!</output> -->
+										<!-- </li> -->
+										<!-- <li Class="EBSGFramework.JobGiver_AICastAnyOfAbilityOnEnemyTarget"> -->
+											<!-- <hashInterval>3</hashInterval> -->
+											<!-- <abilities> -->
+												<!-- <li>SWPotF_forcepower_push</li> -->
+											<!-- </abilities> -->
+										<!-- </li> -->
+									<!-- </subNodes> -->
+								<!-- </li> -->
+							<!-- </subNodes> -->
+						<!-- </li> -->
+					<!-- </subNodes> -->
+				<!-- </li> -->
+				
+				<!-- <li Class="ThinkNode_ConditionalHasAbility"> -->
+						<!-- only repulse is needed because it's a prerequisite to wave -->
+					<!-- <ability>SWPotF_forcepower_repulse</ability> -->
+					<!-- <subNodes> -->
+						<!-- <li Class="EBSGFramework.ThinkNode_ConditionalTooManyNearbyThreats"> -->
+							<!-- <dangerRadius>8</dangerRadius> -->
+							<!-- <minCount>3</minCount> -->
+							<!-- <subNodes> -->
+								<!-- <li Class="EBSGFramework.ThinkNode_ConditionalNeedTending"> -->
+									<!-- <subNodes> -->
+										<!-- <li Class="EBSGFramework.ThinkNode_RecordPassage"> -->
+											<!-- <output>Force repulse/wave ThinkNode reached!</output> -->
+										<!-- </li> -->
+										<!-- <li Class="EBSGFramework.JobGiver_AICastAnyOfAbilityOnEnemyTarget"> -->
+											<!-- <hashInterval>3</hashInterval> -->
+											<!-- <abilities> -->
+												<!-- <li>SWPotF_forcepower_repulse</li> -->
+												<!-- <li>SWPotF_forcepower_wave</li> -->
+											<!-- </abilities> -->
+										<!-- </li> -->
+									<!-- </subNodes> -->
+								<!-- </li> -->
+							<!-- </subNodes> -->
+						<!-- </li> -->
+					<!-- </subNodes> -->
+				<!-- </li> -->
+				
+			<!-- </subNodes> -->
+		<!-- </thinkRoot> -->
+	<!-- </ThinkTreeDef> -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--<ThinkTreeDef>
+		<defName>guy762_SWPotFAI_suppressionbreach</defName>
+		<insertTag>EBSGAI_NonColonist_NearbyEnemy</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				
+				<li Class="EBSGFramework.ThinkNode_ConditionalNearbyEnemyTarget">
+					<subNodes>
+						<li Class="EBSGFramework.ThinkNode_ConditionalHasAnyOfHediff"> 
+						
+						"The main problem I encountered with ThinkNode_ConditionalTargetHasAnyOfHediff when I tried it previously was that because Rimworld doesn't record the pawn's current enemy often, I'm just making a best guess, and when multiple potentially valid pawns are involved there can be cases where the targets end up different between nodes, which leads to miscasts or confused pawns. This issue doesn't pop up when using ThinkNode_ConditionalValidTargetForAbility and the ability validator, but that's due to the validator handling the hediff check for the conditional while the conditional also handles the other ability targeting parameters. A TargetHasHediff conditional is technically doable, it just risks not being as consistent with its targets as I would like, which is why I ended up not adding it." - Alite
+						
+						<hediffs>
+								<li>SWPotF_hediff_ForceCure</li>
+								<li>SWPotF_hediff_ForceHeal</li>
+								
+								<li>SWPotF_hediff_ForceRevitalize</li>
+								
+								<li>SWPotF_hediff_ForceAura</li>
+								<li>SWPotF_hediff_ForceShield</li>
+								<li>SWPotF_hediff_ForceArmor</li>
+								
+								<li>SWPotF_hediff_ForceBarrier</li>
+								<li>SWPotF_hediff_AdvForceBarrier</li>
+								<li>SWPotF_hediff_MstForceBarrier</li>
+								
+								<li>SWPotF_hediff_ForceValor</li>
+								<li>SWPotF_hediff_KnightValor</li>
+								<li>SWPotF_hediff_MstValor</li>
+								
+								<li>SWPotF_hediff_ForceSpeed</li>
+								<li>SWPotF_hediff_KnightSpeed</li>
+								<li>SWPotF_hediff_MstSpeed</li>
+								
+								<li>SWPotF_hediff_ERes</li>
+								<li>SWPotF_hediff_AdvERes</li>
+								<li>SWPotF_hediff_MstERes</li>
+								
+								<li>SWPotF_hediff_ForceResist</li>
+								<li>SWPotF_hediff_ForceImmune</li>
+								
+								<li>SWPotF_hediff_ForceFocus</li>
+								<li>SWPotF_hediff_MstFocus</li>
+							</hediffs>
+							<subNodes>
+								<li Class="EBSGFramework.ThinkNode_RecordPassage">
+									<output>Suppression/breach ThinkNode reached!</output>
+								</li>
+								<li Class="EBSGFramework.JobGiver_AICastAnyOfAbilityOnEnemyTarget">
+									<hashInterval>3</hashInterval>
+									<abilities>
+										<li>SWPotF_forcepower_suppression</li>
+										<li>SWPotF_forcepower_breach</li>
+									</abilities>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+				
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>-->
+	
+	
+	
+	<!--
+	
+	<ThinkTreeDef>
+		<defName>guy762_SWPotFAI_forcejumpescape</defName>
+		<insertTag>EBSGAI_NonColonist_NearbyEnemy</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				
+				<li Class="EBSGFramework.ThinkNode_ConditionalNearbyEnemyTarget">
+					<subNodes>
+						<li Class="EBSGFramework.ThinkNode_ConditionalConcerningBleeding">
+							<bleedThreshold>0.01</bleedThreshold>
+							<subNodes>
+								<li Class="EBSGFramework.ThinkNode_RecordPassage">
+									<output>Force jump escape 1 ThinkNode reached!</output>
+								</li>
+								<li Class="JobGiver_AIJumpEscapeEnemies">
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+				
+				
+				<li Class="EBSGFramework.ThinkNode_ConditionalTooManyNearbyThreats">
+					<dangerRadius>7.5</dangerRadius>
+					<minCount>4</minCount>
+					<subNodes>
+						<li Class="EBSGFramework.ThinkNode_ConditionalNeedTending">
+							<subNodes>
+								<li Class="EBSGFramework.ThinkNode_RecordPassage">
+									<output>Force jump escape 2 ThinkNode reached!</output>
+								</li>
+								<li Class="JobGiver_AIJumpEscapeEnemies">
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+				
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+	
+	
+	
+	<ThinkTreeDef>
+		<defName>guy762_SWPotFAI_forcejumpcharge</defName>
+		<insertTag>EBSGAI_NonColonist_NearbyEnemy</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes>
+				
+				<li Class="EBSGFramework.ThinkNode_ConditionalNearbyEnemyTarget">
+					<subNodes>
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_jump</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalAbilityCastLastTick">
+									<ability>SWPotF_forcepower_jump</ability>
+									<minTicksAgo>3000</minTicksAgo>
+									<subNodes>
+										<li Class="EBSGFramework.ThinkNode_RecordPassage">
+											<output>Force jump charge ThinkNode reached!</output>
+										</li>
+										<li Class="EBSGFramework.JobGiver_AICastAbilityGoToTarget">
+											<safeJumpsOnly>false</safeJumpsOnly>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_knightjump</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalAbilityCastLastTick">
+									<ability>SWPotF_forcepower_knightjump</ability>
+									<minTicksAgo>3000</minTicksAgo>
+									<subNodes>
+										<li Class="EBSGFramework.ThinkNode_RecordPassage">
+											<output>Force jump charge ThinkNode reached!</output>
+										</li>
+										<li Class="EBSGFramework.JobGiver_AICastAbilityGoToTarget">
+											<safeJumpsOnly>false</safeJumpsOnly>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+						
+						<li Class="ThinkNode_ConditionalHasAbility">
+							<ability>SWPotF_forcepower_mstjump</ability>
+							<subNodes>
+								<li Class="ThinkNode_ConditionalAbilityCastLastTick">
+									<ability>SWPotF_forcepower_mstjump</ability>
+									<minTicksAgo>3000</minTicksAgo>
+									<subNodes>
+										<li Class="EBSGFramework.ThinkNode_RecordPassage">
+											<output>Force jump charge ThinkNode reached!</output>
+										</li>
+										<li Class="EBSGFramework.JobGiver_AICastAbilityGoToTarget">
+											<safeJumpsOnly>false</safeJumpsOnly>
+										</li>
+									</subNodes>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+				
+			</subNodes>
+		</thinkRoot>
+	</ThinkTreeDef>
+	
+	-->
+	
+	
+
+	
+</Defs>

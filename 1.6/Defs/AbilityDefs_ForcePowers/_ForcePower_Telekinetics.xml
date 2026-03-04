@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_push</defName>
+		<label>Force push</label>
+		<description>Use the Force to push a target away from the caster. Effectiveness scales with StaggerDurationFactor. Casting this will also cancel the "Force choke" hediff if it is active on the caster.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Push</iconPath>
+		<hotKey>Misc11</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				<thingCategory>Item</thingCategory>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JApush</sound>
+			</li>
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_ForcePush">
+				<!-- The base knockback distance before any scaling is applied. This is the starting value for how far the target will be pushed. -->
+				<baseKnockback>5</baseKnockback>
+			
+				<!-- The stat used for scaling the knockback. 
+					 In this case, it's 'StaggerDurationFactor', which means the knockback will be influenced by how long the target can be staggered. -->
+				<scalingStat>StaggerDurationFactor</scalingStat>
+			
+				<!-- The factor by which the stat value affects the knockback. 
+					 If scaleInversely is true, this value will divide the base knockback by the stat value. 
+					 If scaleInversely is false, this value will multiply the base knockback by the stat value. -->
+				<scalingFactor>1.0</scalingFactor>
+			
+				<!-- A boolean indicating whether the scaling is inverse. 
+					 If true, higher values of the scaling stat will result in less knockback. 
+					 If false, higher values will increase the knockback. -->
+				<scaleInversely>true</scaleInversely>
+			
+				<!-- The minimum value of the scaling stat required for the ability to have any effect. 
+					 If the stat value is below this threshold, the ability won't affect the target at all. -->
+				<effectivenessThreshold>0.2</effectivenessThreshold>
+			</li>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceChoke</hediffDef>
+				<applyToSelf>true</applyToSelf>
+				<applyToTarget>false</applyToTarget>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWPotF_hediff_BatlMed</li>
+					<li>SWPotF_hediff_AdvBatlMed</li>
+					<li>SWPotF_hediff_MstBatlMed</li>
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_pull</defName>
+		<label>Force pull</label>
+		<description>Use the Force to pull a target towards the caster. Can also be used to quickly equip a nearby weapon when unarmed. Effectiveness scales with StaggerDurationFactor.</description>
+		<iconPath>UI/ForceIcons/Power_Force_Pull</iconPath>
+		<hotKey>Misc12</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>1</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				<thingCategory>Item</thingCategory>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JApull</sound>
+			</li>
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_ForcePull">
+				<!-- The base pull distance before any scaling is applied. This is the starting value for how far the target will be pulled. -->
+				<basePullDistance>5</basePullDistance>
+			
+				<!-- The stat used for scaling the pull distance. In this case, it's 'StaggerDurationFactor', which means the pull distance will be influenced by how long the target can be staggered. -->
+				<scalingStat>StaggerDurationFactor</scalingStat>
+			
+				<!-- The factor by which the stat value affects the pull distance. If scaleInversely is true, this value will divide the base pull distance by the stat value. If scaleInversely is false, this value will multiply the base pull distance by the stat value. -->
+				<scalingFactor>1.0</scalingFactor>
+			
+				<!-- A boolean indicating whether the scaling is inverse. If true, higher values of the scaling stat will result in less pull distance. If false, higher values will increase the pull distance. -->
+				<scaleInversely>true</scaleInversely>
+			
+				<!-- The minimum value of the scaling stat required for the ability to have any effect. If the stat value is below this threshold, the ability won't affect the target at all. -->
+				<effectivenessThreshold>0.2</effectivenessThreshold>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWPotF_hediff_BatlMed</li>
+					<li>SWPotF_hediff_AdvBatlMed</li>
+					<li>SWPotF_hediff_MstBatlMed</li>
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_repulse</defName>
+		<label>Force repulse</label>
+		<description>Use the Force to push all nearby targets away from the caster. Effectiveness scales with StaggerDurationFactor. Casting this will also cancel the "Force choke" and "Force crush" hediffs if they are active on the caster.</description>
+		<iconPath>UI/ForceIcons/Power_Force_Repulse</iconPath>
+		<hotKey>Misc11</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>12</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_EffectRadius>5</Ability_EffectRadius>
+		</statBases>
+		<targetRequired>false</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>5</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<drawAimPie>False</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				<thingCategory>Item</thingCategory>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_repulse</sound>
+			</li>
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_ForceRepulse">
+				<!-- The base knockback distance before any scaling is applied. This is the starting value for how far the target will be pushed. -->
+				<baseKnockback>5</baseKnockback>
+				<!-- The stat used for scaling the knockback. 
+					 In this case, it's 'StaggerDurationFactor', which means the knockback will be influenced by how long the target can be staggered. -->
+				<scalingStat>StaggerDurationFactor</scalingStat>
+				<!-- The factor by which the stat value affects the knockback. 
+					 If scaleInversely is true, this value will divide the base knockback by the stat value. 
+					 If scaleInversely is false, this value will multiply the base knockback by the stat value. -->
+				<scalingFactor>1.0</scalingFactor>
+				<!-- A boolean indicating whether the scaling is inverse. 
+					 If true, higher values of the scaling stat will result in less knockback. 
+					 If false, higher values will increase the knockback. -->
+				<scaleInversely>true</scaleInversely>
+				<!-- The minimum value of the scaling stat required for the ability to have any effect. 
+					 If the stat value is below this threshold, the ability won't affect the target at all. -->
+				<effectivenessThreshold>0.2</effectivenessThreshold>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+                
+				<applyToBoth>true</applyToBoth>
+				<hediffs>
+                    <li>SWPotF_hediff_ForceChoke</li>
+                    <li>SWPotF_hediff_ForceCrush</li>
+					
+                    <li>SWPotF_hediff_ForceStasis</li>
+					
+					<li>SWPotF_hediff_BatlMed</li>
+					<li>SWPotF_hediff_AdvBatlMed</li>
+					<li>SWPotF_hediff_MstBatlMed</li>
+                </hediffs>
+                <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+            </li>
+		</comps>
+		
+	  </AbilityDef>
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_wave</defName>
+		<label>Force wave</label>
+		<description>Use the Force to push all targets within an angled radius away from the caster. Effectiveness scales with StaggerDurationFactor. Casting this will also cancel the "Force choke" hediff if it is active on the caster.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Wave</iconPath>
+		<hotKey>Misc11</hotKey>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>15</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<range>7</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>false</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>true</canTargetItems>
+				<canTargetLocations>true</canTargetLocations>
+				<thingCategory>Item</thingCategory>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_wave</sound>
+			</li>
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_ForceWave">
+				<!-- The base knockback distance before any scaling is applied. This is the starting value for how far the target will be pushed. -->
+				<baseKnockback>5</baseKnockback>
+			
+				<!-- The stat used for scaling the knockback. 
+					 In this case, it's 'StaggerDurationFactor', which means the knockback will be influenced by how long the target can be staggered. -->
+				<scalingStat>StaggerDurationFactor</scalingStat>
+			
+				<!-- The factor by which the stat value affects the knockback. 
+					 If scaleInversely is true, this value will divide the base knockback by the stat value. 
+					 If scaleInversely is false, this value will multiply the base knockback by the stat value. -->
+				<scalingFactor>1.0</scalingFactor>
+			
+				<!-- A boolean indicating whether the scaling is inverse. 
+					 If true, higher values of the scaling stat will result in less knockback. 
+					 If false, higher values will increase the knockback. -->
+				<scaleInversely>true</scaleInversely>
+			
+				<!-- The minimum value of the scaling stat required for the ability to have any effect. 
+					 If the stat value is below this threshold, the ability won't affect the target at all. -->
+				<effectivenessThreshold>0.2</effectivenessThreshold>
+
+				<range>7</range>
+				<lineWidthEnd>10</lineWidthEnd>
+				<canHitFilledCells>false</canHitFilledCells>
+			</li>
+			<li Class="CompProperties_AbilityRemoveHediff">
+				<compClass>CompAbilityEffect_RemoveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceChoke</hediffDef>
+				<applyToSelf>true</applyToSelf>
+				<applyToTarget>false</applyToTarget>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWPotF_hediff_BatlMed</li>
+					<li>SWPotF_hediff_AdvBatlMed</li>
+					<li>SWPotF_hediff_MstBatlMed</li>
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
+		</comps>
+	  </AbilityDef>
+	 
+
+</Defs>

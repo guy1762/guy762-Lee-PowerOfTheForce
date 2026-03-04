@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	  
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_inspire</defName>
+		<label>inspiration</label>
+		<description>Use the Force to channel a target's mental faculties to cause an inspiration and elevate their mood. Effectiveness scales with the target's psychic sensitivity.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_Inspire</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Feat_Force_Focus</iconPath>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<level>18</level>
+		<aiCanUse>false</aiCanUse>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		
+		<cooldownTicksRange>192000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>600</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<neverTargetIncapacitated>True</neverTargetIncapacitated>
+				<onlyTargetColonists>True</onlyTargetColonists>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAmindtrick</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_Inspire</hediffDef>
+				<onlyApplyToSelf>false</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+			<li Class="CompProperties_AbilityGiveInspiration">
+				<canTargetBaby>False</canTargetBaby>
+				<psychic>True</psychic>
+			  </li>
+		</comps>
+		
+		<!--modExtensions>
+		  <li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li>
+		</modExtensions-->
+	</AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_Inspire</defName>
+		<label>Force inspiration</label>
+		<description>Force-enhanced mental faculties and heightened mood. Duration scales with the target's psychic sensitivity.</description>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+		  <li>
+			<statOffsets>
+				<ImmunityGainSpeedFactor>10</ImmunityGainSpeedFactor>
+			</statOffsets>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<offset>0.1</offset>
+				</li>
+            </capMods>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	  
+	  <ThoughtDef>
+		<defName>guy762_ThoughtDef_ForceInspire</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>SWPotF_hediff_Inspire</hediff>
+		<validWhileDespawned>false</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+		  <li>
+			<label>Force inspire</label>
+			<description>I feel so inspired and alive! This is great!</description>
+			<baseMoodEffect>30</baseMoodEffect>
+		  </li>
+		</stages>
+	  </ThoughtDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  <AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_enlightenment</defName>
+		<label>Force enlightenment</label>
+		<description>Use the Force to greatly enhance the capabilities of the caster, providing the bonuses of Master Speed, Master Valor, and Force Armor. Also ends any active mental breaks and provides immunity to mental breaks given by abilities. Duration scales with the psychic sensitivity of the caster. Can be used while experiencing a mental break.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_Enlightenment</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/LS/KotORII_Power_Force_Enlightenment</iconPath>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<level>25</level>
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>false</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_valor</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_Enlightenment</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+                <hediffs>
+					<li>SWPotF_hediff_ForceFear</li>
+					
+					<li>SWPotF_hediff_ForcePacify</li>
+					
+					<li>SWPotF_hediff_ForceAura</li>
+                    <li>SWPotF_hediff_ForceShield</li>
+                    <li>SWPotF_hediff_ForceArmor</li>
+					
+					<li>SWPotF_hediff_ForceValor</li>
+                    <li>SWPotF_hediff_KnightValor</li>
+                    <li>SWPotF_hediff_MstValor</li>
+					
+                    <li>SWPotF_hediff_ForceSpeed</li>
+                    <li>SWPotF_hediff_KnightSpeed</li>
+                    <li>SWPotF_hediff_MstSpeed</li>
+                </hediffs>
+                <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+            </li>
+			<!-- <li Class="TheForce_ItsSorcery.Abilities.CompProperties_StopMentalState" /> -->
+			<li Class="EBSGFramework.CompProperties_AbilityStopMentalNoPsychic">
+                <majorChance>1</majorChance>
+                <extremeChance>1</extremeChance>
+            </li>
+		</comps>
+		
+		<modExtensions>
+		  <li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+			<castableInUnconscious>false</castableInUnconscious>
+			<castableInMentalbreak>true</castableInMentalbreak>
+		  </li>
+		  <!--li Class="IgnoreConfigErrors.Ignore_AbilityStopMentalState" /-->
+		  <!--li Class="TheForce_Psycast.AbilityExtensionForce">
+			<Attunement>
+			  <li>Force_Lightside</li>
+			</Attunement>
+			<severity>0.01</severity>
+		  </li-->
+		</modExtensions>
+	  </AbilityDef>
+	  
+	  <HediffDef>
+		<defName>SWPotF_hediff_Enlightenment</defName>
+		<label>Force enlightenment</label>
+		<description>Force-enhanced physical capabilities and immunity to mental breaks from enemy abilities. Duration scales with the target's psychic sensitivity.</description>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<modExtensions>
+		  <li Class="MentalBreakBlocker.ModExtension_MentalBreakBlocker">
+			<!--choose one: mood, damage, psycast, moodAndDamage, moodAndPsycast, damageAndPsycast, all-->
+			<!--  allow only mood or damage cause  -->
+			<cause>moodAndDamage</cause>
+			<isWhitelist>true</isWhitelist>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<makeImmuneTo>
+				<li>SWPotF_hediff_ForceFear</li>
+				
+				<li>SWPotF_hediff_ForceWound</li>
+				<li>SWPotF_hediff_ForceKill</li>
+			</makeImmuneTo>
+			<statFactors>
+				<MoveSpeed>4</MoveSpeed>
+				<MeleeDodgeChance>0.4</MeleeDodgeChance>
+			</statFactors>
+			<statOffsets>
+				<IncomingDamageFactor>-0.6</IncomingDamageFactor>
+				
+				<MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
+				<RangedCooldownFactor>-0.4</RangedCooldownFactor>
+			</statOffsets>
+			<capMods>
+				<li>
+					<capacity>Consciousness</capacity>
+					<offset>0.5</offset>
+				</li>
+				<li>
+					<capacity>Sight</capacity>
+					<offset>0.5</offset>
+				</li>
+				<li>
+					<capacity>Hearing</capacity>
+					<offset>0.5</offset>
+				</li>
+				<li>
+					<capacity>Talking</capacity>
+					<offset>0.5</offset>
+				</li>
+				<!--li>
+				  <capacity>Moving</capacity> omitted to avoid making Force speed redundant
+				  <offset>0.5</offset>
+				</li-->
+				<li>
+					<capacity>Manipulation</capacity>
+					<offset>0.5</offset>
+				</li>
+				<li>
+					<capacity>BloodPumping</capacity>
+					<offset>0.5</offset>
+				  </li>
+				  <li>
+					<capacity>BloodFiltration</capacity>
+					<offset>0.5</offset>
+				  </li>
+				  <li>
+					<capacity>Breathing</capacity>
+					<offset>0.5</offset>
+				  </li>
+            </capMods>
+		  </li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	  </HediffDef>
+	 
+
+</Defs>
