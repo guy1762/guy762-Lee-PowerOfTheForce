@@ -111,6 +111,7 @@
 			<hediffs>
 				<li>SWPotF_hediff_ForceCure</li>
 				<li>guy762_medpacHeal_antidote</li>
+				<li>SWCPHediff_BactaHeal</li>
 			</hediffs>
 		  </li>
 		</comps>
@@ -226,6 +227,7 @@
 			<hediffs>
 				<li>SWPotF_hediff_ForceCure</li>
 				<li>guy762_medpacHeal_antidote</li>
+				<li>SWCPHediff_BactaHeal</li>
 			</hediffs>
 		  </li>
 		</comps>
