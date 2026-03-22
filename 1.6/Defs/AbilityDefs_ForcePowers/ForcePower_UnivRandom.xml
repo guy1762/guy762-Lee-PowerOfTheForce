@@ -3,18 +3,21 @@
 
 	
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_breathcontrol</defName>
 		<label>body control</label>
-		<description>Use the Force to focus the caster's breathing and internal temperature regulation, giving temporary immunity to environmental toxins as well as significantly boosting the comfortable temperature limits. Also boosts carry weight limit. Duration scales with the caster's psychic sensitivity.</description>
+		<!-- <description>Use the Force to focus the caster's breathing and internal temperature regulation, giving temporary immunity to environmental toxins as well as significantly boosting the comfortable temperature limits. Also boosts carry weight limit. Duration scales with the caster's psychic sensitivity.</description> -->
+		<description>Use the Force to focus the caster's breathing and internal temperature regulation, giving temporary immunity to environmental toxins as well as significantly boosting the comfortable temperature limits. Also boosts carry weight limit. Lasts for 4 minutes.</description>
 		<descriptionHyperlinks>
 			<HediffDef>SWPotF_hediff_BreathControl</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Breath_Control</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>5</level>
+		<!-- <level>5</level> -->
 		<aiCanUse>true</aiCanUse>
 		<hostile>false</hostile>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -60,12 +63,17 @@
 				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
 			</li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>5</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_BreathControl</defName>
 		<label>body control</label>
 		<description>Force-enhanced breathing and temperature regulation, giving temporary immunity to environmental toxins as well as boosted comfortable temperature limits. Also boosts carry weight limit. Duration scales with the target's psychic sensitivity.</description>
@@ -97,7 +105,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	 

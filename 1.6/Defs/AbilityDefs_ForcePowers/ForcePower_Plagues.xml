@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_affliction</defName>
 		<label>affliction</label>
 		<description>Use the Force to poison a target, slowing them down and causing them to vomit periodically. Also halves Force point recovery. Duration scales with the target's psychic sensitivity.</description>
@@ -9,10 +9,12 @@
 			<HediffDef>SWPotF_hediff_ForceAffliction</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Affliction</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>6</level>
+		<!-- <level>6</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -24,6 +26,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -62,19 +66,16 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>6</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceAffliction</defName>
 		<description>Force-induced nausea, slowness, and weakness. Also halves Force point recovery. Duration scales with the caster's psychic sensitivity.</description>
 		<label>Force afflicted</label>
@@ -91,6 +92,7 @@
 			<statFactors>
 				<MoveSpeed>0.8</MoveSpeed>
 				<MeleeDodgeChance>0.8</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.8</VEF_RangedDodgeChance>
 				<ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor>
 				
 				<Force_FPRecovery>0.5</Force_FPRecovery>
@@ -115,12 +117,12 @@
 			</hediffs>
 		  </li>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_plague</defName>
 		<label>plague</label>
 		<description>Use the Force to inflict a terrible plague on a target, slowly rotting their organs and weakening them. Also halts the target's Force point recovery. Duration scales with the target's psychic sensitivity.</description>
@@ -128,10 +130,12 @@
 			<HediffDef>SWPotF_hediff_ForcePlague</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Plague</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>12</level>
+		<!-- <level>12</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -143,6 +147,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -182,18 +188,18 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>12</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_affliction</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForcePlague</defName>
 		<description>Force-induced plague. Will inflict organ decay upon random organs and halt Force point recovery. Duration scales with the caster's psychic sensitivity.</description>
 		<label>Force plague</label>
@@ -239,6 +245,7 @@
 			<statFactors>
 				<MoveSpeed>0.3</MoveSpeed>
 				<MeleeDodgeChance>0.3</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.3</VEF_RangedDodgeChance>
 				<ImmunityGainSpeedFactor>0.3</ImmunityGainSpeedFactor>
 				
 				<Force_FPRecovery>0</Force_FPRecovery>
@@ -249,7 +256,7 @@
 			</statOffsets>
 		  </li>
 		</stages>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  

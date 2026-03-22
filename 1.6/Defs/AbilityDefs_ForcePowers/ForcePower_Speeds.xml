@@ -9,10 +9,12 @@
 			<HediffDef>SWPotF_hediff_ForceSpeed</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Burst_of_Speed</iconPath>
-		<hotKey></hotKey>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey></hotKey> -->
 		
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -54,17 +56,14 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceSpeed</defName>
 		<label>burst of speed</label>
 		<description>Force-stimulated movement. Duration scales with the caster's psychic sensitivity.</description>
@@ -79,6 +78,7 @@
 				</statFactors>
 				<statOffsets>
 					<MeleeDodgeChance>0.2</MeleeDodgeChance>
+					<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.2</VEF_RangedDodgeChance>
 				</statOffsets>
 			</li>
 		</stages>
@@ -90,12 +90,12 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_knightspeed</defName>
 		<label>knight speed</label>
 		<description>Use the Force to better enhance the caster's movement speed, dodge chance, and attack speed. Duration scales with the caster's psychic sensitivity.</description>
@@ -103,10 +103,12 @@
 			<HediffDef>SWPotF_hediff_KnightSpeed</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Knight_Speed</iconPath>
-		<hotKey></hotKey>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey></hotKey> -->
 		
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -148,17 +150,17 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_speed</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_KnightSpeed</defName>
 		<label>knight speed</label>
 		<description>Force-stimulated movement. Duration scales with the caster's psychic sensitivity.</description>
@@ -173,6 +175,7 @@
 				</statFactors>
 				<statOffsets>
 					<MeleeDodgeChance>0.4</MeleeDodgeChance>
+					<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.4</VEF_RangedDodgeChance>
 					
 					<MeleeCooldownFactor>-0.2</MeleeCooldownFactor>
 					<RangedCooldownFactor>-0.2</RangedCooldownFactor>
@@ -187,7 +190,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -197,7 +200,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstspeed</defName>
 		<label>master speed</label>
 		<description>Use the Force to greatly increase the movement speed, dodge chance, and attack speed of the caster. Duration scales with the caster's psychic sensitivity.</description>
@@ -205,10 +208,12 @@
 			<HediffDef>SWPotF_hediff_MstSpeed</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Master_Speed</iconPath>
-		<hotKey></hotKey>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey></hotKey> -->
 		
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -250,17 +255,17 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_knightspeed</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstSpeed</defName>
 		<label>master speed</label>
 		<description>Force-stimulated movement. Duration scales with the caster's psychic sensitivity.</description>
@@ -275,6 +280,7 @@
 				</statFactors>
 				<statOffsets>
 					<MeleeDodgeChance>0.4</MeleeDodgeChance>
+					<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.4</VEF_RangedDodgeChance>
 					
 					<MeleeCooldownFactor>-0.4</MeleeCooldownFactor>
 					<RangedCooldownFactor>-0.4</RangedCooldownFactor>
@@ -289,7 +295,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	 
 

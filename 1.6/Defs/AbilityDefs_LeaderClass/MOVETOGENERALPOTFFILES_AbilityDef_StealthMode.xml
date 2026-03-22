@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	
+	
+	<AbilityDef>
+		<defName>SWCP_Ability_StealthMode</defName>
+		<label>activate stealth field</label>
+		<description>Enter stealth mode. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also reduced while active.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWCP_StealthMode</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/KotOR_Icon_Stealth</iconPath>
+		
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<writeCombatLog>True</writeCombatLog>
+		
+		<cooldownTicksRange>7200</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		
+		<!-- <statBases> -->
+			<!-- <Ability_EffectRadius>1</Ability_EffectRadius> -->
+		<!-- </statBases> -->
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_cloak</soundCast>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWCP_StealthMode</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<targetMentalStates />
+				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>
+				
+				<casterHasNoneOfHediffs>
+					<li>SWCP_Hediff_StealthModeCaught</li>
+				</casterHasNoneOfHediffs>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	
+	
+	<HediffDef MayRequire="Ludeon.RimWorld.Royalty" Name="SWCP_StealthMode">
+		<defName>SWCP_StealthMode</defName>
+		<label>stealth field</label>
+		<description>A camouflage field that hides the user. Combat is disabled while this is active, but performing mundane tasks are not. Movement speed is also reduced while active.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_Invisibility">
+				<visibleToPlayer>true</visibleToPlayer>
+			</li>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_ExitStealthModeWithSneakAttack</abilityDef>
+			</li>
+			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="HediffCompProperties_RemoveIfApparelDropped" />
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_GiveHediffsToNonAlliesInRange">
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>False</canTargetMechs>
+				</targetingParameters>
+				<hediff>SWCP_Hediff_AwarenessCheck</hediff>
+				<onlyWhileDrafted>false</onlyWhileDrafted>
+				<range>5</range>
+			</li>
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>SWCP_Hediff_StealthModeCaught</li>
+				</hediffs>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>active</label>
+				<minSeverity>0</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<disabledWorkTags>Violent</disabledWorkTags>
+				<statFactors>
+					<Vulnerability MayRequire="rim.job.world">0</Vulnerability>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ sneak attack -->
+	
+	<AbilityDef>
+		<defName>SWCP_ExitStealthModeWithSneakAttack</defName>
+		<label>sneak attack (exit stealth)</label>
+		<description>Deactivate an active stealth field or Force camouflage ability.</description>
+		<iconPath>UI/SneakAttack</iconPath>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<aiCanUse>true</aiCanUse>
+		<targetRequired>false</targetRequired>
+		<statBases>
+			<Ability_Duration>2</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>
+		  <verbClass>Verb_CastAbility</verbClass>
+		  <range>-1</range>
+		  <drawAimPie>false</drawAimPie>
+		</verbProperties>
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWCP_SneakAttack</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<!-- <applicableToMechs>True</applicableToMechs> -->
+				<!-- <durationMultiplier>HuntingStealth</durationMultiplier> -->
+			</li>
+			
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWCP_StealthMode</li>
+					
+					<li>SWPotF_TacticAbilityHediff_AmbushWaiting</li>
+					
+					<!-- <li>SWPotF_hediff_ForceCloak</li> -->
+					<!-- <li>SWPotF_hediff_KnightCloak</li> -->
+					<!-- <li>SWPotF_hediff_MstCloak</li> -->
+					
+					<!-- <li>guy762_StealthField</li> -->
+					<!-- <li>guy762_StealthField_sixty</li> -->
+					<!-- <li>guy762_StealthField_twomin</li> -->
+					<!-- <li>guy762_StealthField_threemin</li> -->
+					<!-- <li>guy762_StealthField_fourmin</li> -->
+					
+					<!-- <li>guy762_StealthField_defel</li> -->
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
+			
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<sound>kotorsound_cloak</sound>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	<HediffDef>
+        <defName>SWCP_SneakAttack</defName>
+        <label>Sneak Attack</label>
+        <description>This pawn is attacking from a hidden position.</description>
+		<defaultLabelColor>(255,255,135)</defaultLabelColor> <!-- soft yellow -->
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+				<becomeVisible>true</becomeVisible>
+				<statFactors>
+					<MeleeHitChance>10</MeleeHitChance>
+					<MeleeDamageFactor>3</MeleeDamageFactor>
+					
+					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+				<!-- <statOffsets> -->
+				<!-- </statOffsets> -->
+			</li>
+        </stages>
+        <comps>
+			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_Disappears">
+                <!-- <disappearsAfterTicks>60000</disappearsAfterTicks> -->
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+    </HediffDef>
+	  
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ awareness check -->
+	
+	<HediffDef>
+		<defName>SWCP_Hediff_AwarenessCheck</defName>
+		<label>awareness check ability giver</label>
+		<description>This grants the "Awareness Check" ability for 30 seconds.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_Ability_AwarenessCheck</abilityDef>
+			</li>
+			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>1800</disappearsAfterTicks> <!-- 30 seconds -->
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	<AbilityDef>
+        <defName>SWCP_Ability_AwarenessCheck</defName>
+        <label>awareness check</label>
+        <description>Check for hidden nearby enemies.</description>
+        <iconPath>UI/EaWIcons/Caution_red</iconPath>
+		<uiOrder>999</uiOrder>
+		
+        <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+        <!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<targetRequired>false</targetRequired>
+		
+		<!-- 12000 = 5 hours -->
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+            <range>-1</range>
+            <drawAimPie>true</drawAimPie>
+            <warmupTime>0.5</warmupTime>
+            <requireLineOfSight>False</requireLineOfSight>
+			<soundCast>kotorsound_JKdetpack_warning</soundCast>
+            <targetParams>
+                <canTargetSelf>True</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_EBSGBurst">
+                <explosion>
+					<radius>5</radius>
+					<!-- <damageDef>guy762_GrenadeDamage_sonic</damageDef> -->
+					<damageDef>SWCP_Damage_AwarenessCheck</damageDef>
+					<!-- <injureSelf>false</injureSelf> -->
+					<damageAmount>1</damageAmount>
+					<exclusions>Allies</exclusions>
+				</explosion>
+            </li>
+        </comps>
+    </AbilityDef>
+	
+	<DamageDef>
+		<defName>SWCP_Damage_AwarenessCheck</defName>
+		<label>awareness check signal damage</label>
+		<hasForcefulImpact>false</hasForcefulImpact>
+		<makesBlood>false</makesBlood>
+		<canInterruptJobs>true</canInterruptJobs>
+		<harmsHealth>false</harmsHealth>
+		
+		<!-- <workerClass>DamageWorker_AddInjury</workerClass> -->
+		<hediff>SWCP_Hediff_StealthModeCaught</hediff>
+		
+		<modExtensions>
+			<li Class="guy762_Ionization.ModExtension_HediffGiver">
+				<hediffToAdd>SWCP_Hediff_StealthModeCaught</hediffToAdd>
+			</li>
+		</modExtensions>
+		
+		<buildingDamageFactorImpassable>0</buildingDamageFactorImpassable>
+		<buildingDamageFactorPassable>0</buildingDamageFactorPassable>
+		<plantDamageFactor>0</plantDamageFactor>
+		<corpseDamageFactor>0</corpseDamageFactor>
+	</DamageDef>
+	
+	<HediffDef>
+		<defName>SWCP_Hediff_StealthModeCaught</defName>
+		<label>Caught!</label>
+		<description>This pawn has failed a stealth check while in stealth mode, and cannot re-enter stealth mode for 5 minutes.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>18000</disappearsAfterTicks> <!-- 300 seconds -->
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

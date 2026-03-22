@@ -6,11 +6,13 @@
 		<label>Force suppression</label>
 		<description>Use the Force to cancel a wide range of Force abilities active on the target.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Suppression</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -117,26 +119,33 @@
 					<!--<li>SWPotF_hediff_MarauderRend</li> FORCE BREACH ONLY -->
 
                 </hediffs>
-                <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+                <recursiveChecks>3</recursiveChecks>
             </li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_breach</defName>
 		<label>Force breach</label>
 		<description>Use the Force to cancel a wide range of Force abilities active on the target, including many higher-level powers.</description>
 		<iconPath>UI/ForceIcons/Power_Force_Breach2</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -250,10 +259,18 @@
 					<li>SWPotF_hediff_MarauderRend</li>
 					
                 </hediffs>
-                <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+                <recursiveChecks>3</recursiveChecks>
             </li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_suppression</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  

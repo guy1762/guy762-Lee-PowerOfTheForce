@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	  
-	  
-	  
-	  
-	  
-	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_batlmed</defName>
 		<label>battle meditation</label>
 		<description>"Every fighter brings their own fears, their own hopes into combat; with sufficient concentration, a Jedi can strengthen the hopes of their allies and heighten the fears of their enemies. Thus, what armies know in their hearts must become true, because they believe it so strongly." - Odan-Urr\n\nBy visualizing the desired outcome of a battle, a Jedi can shape the field of Force that surrounds events. The caster can greatly enhance the willpower and combat abilities of nearby friendlies while weakening that of their enemies. Proper use can turn the tide of even the largest battles.\n\nAfter activating this ability the caster will go into a state of deep meditation and will remain still for the duration of the ability. This trance will be broken if new commands are ordered or if the caster takes damage, so make sure you leave the caster in a safe place and don't disturb them!\n\nThe duration of the meditative trance scales with the caster's psychic sensitivity stat, and it will slowly drain the caster's Force points over the course of the meditative state. All psychically-sensitive colonists within a 500-tile radius will benefit from this ability, and all psy-sensitive enemies within 500 tiles will suffer it's negative effects.</description>
@@ -19,7 +15,9 @@
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Battle_Meditation</iconPath>
 		<jobDef>CastAbilityOnThing</jobDef>
 		
-		<level>20</level>
+		<category>SWPotF_AbilityCategory_Universal</category>
+		
+		<!-- <level>20</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -75,10 +73,16 @@
                 </casterStatLimiters>
           </li-->
 		</comps>
-	  </AbilityDef>
+		
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>20</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <JobDef>
+	<JobDef>
 		<defName>ReverseMeditate_BatlMed</defName>
 		<driverClass>ReverseMeditation.JobDriver_ReverseMeditate</driverClass>
 		<reportString>casting battle meditation.</reportString>
@@ -96,10 +100,10 @@
 			<bodyPartDef>Brain</bodyPartDef>
 		  </li>
 		</modExtensions>
-	  </JobDef>
+	</JobDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_BatlMed</defName>
 		<label>battle meditation (caster)</label>
 		<description>Through channeling the Force, this person can enhance the willpower and combat abilities of all colonists within 500 tiles, while weakening any enemies in that area. This will be disabled if any damage is taken, so keep this pawn in a safe location!</description>
@@ -153,7 +157,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -171,7 +175,7 @@
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_BatlMed_Buff</defName>
 		<label>friendly battle meditation</label>
 		<description>Combat abilities and willpower are boosted due to being near someone who is using battle meditation.</description>
@@ -196,6 +200,8 @@
 			<makeImmuneTo>
 				<li>SWPotF_hediff_BatlMed_Debuff</li>
 				<li>SWPotF_hediff_ForceFear</li>
+				<li>SWCPHediff_Suppression</li>
+				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
 			</makeImmuneTo>
 			<statOffsets>
 			  <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
@@ -218,9 +224,9 @@
 			<isWhitelist>true</isWhitelist>
 		  </li>
 		</modExtensions>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_BatlMed_Buff</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_BatlMed_Buff</hediff>
@@ -233,10 +239,10 @@
 			<baseMoodEffect>10</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_BatlMed_Debuff</defName>
 		<label>enemy battle meditation</label>
 		<description>Combat abilities and willpower are weakened due to being near an enemy who is using battle meditation.</description>
@@ -266,9 +272,9 @@
 			</statOffsets>
 		  </li>
 		</stages>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_BatlMed_Debuff</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_BatlMed_Debuff</hediff>
@@ -281,7 +287,7 @@
 			<baseMoodEffect>-10</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
 	  
@@ -303,7 +309,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advbatlmed</defName>
 		<label>Adv. battle meditation</label>
 		<description>"Every fighter brings their own fears, their own hopes into combat; with sufficient concentration, a Jedi can strengthen the hopes of their allies and heighten the fears of their enemies. Thus, what armies know in their hearts must become true, because they believe it so strongly." - Odan-Urr\n\nBy visualizing the desired outcome of a battle, a Jedi can shape the field of Force that surrounds events. The caster can greatly enhance the willpower and combat abilities of nearby friendlies while weakening that of their enemies. Proper use can turn the tide of even the largest battles.\n\nAfter activating this ability the caster will go into a state of deep meditation and will remain still for the duration of the ability. This trance will be broken if new commands are ordered or if the caster takes damage, so make sure you leave the caster in a safe place and don't disturb them!\n\nThe duration of the meditative trance scales with the caster's psychic sensitivity stat, and it will slowly drain the caster's Force points over the course of the meditative state. All psychically-sensitive colonists within a 500-tile radius will benefit from this ability, and all psy-sensitive enemies within 500 tiles will suffer it's negative effects.</description>
@@ -316,7 +322,9 @@
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Improved_Battle_Meditation</iconPath>
 		<jobDef>CastAbilityOnThing</jobDef>
 		
-		<level>28</level>
+		<category>SWPotF_AbilityCategory_Universal</category>
+		
+		<!-- <level>28</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -372,10 +380,18 @@
                 </casterStatLimiters>
           </li-->
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>28</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_batlmed</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <JobDef>
+	<JobDef>
 		<defName>ReverseMeditate_AdvBatlMed</defName>
 		<driverClass>ReverseMeditation.JobDriver_ReverseMeditate</driverClass>
 		<reportString>casting battle meditation.</reportString>
@@ -393,10 +409,10 @@
 			<bodyPartDef>Brain</bodyPartDef>
 		  </li>
 		</modExtensions>
-	  </JobDef>
+	</JobDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_AdvBatlMed</defName>
 		<label>Adv. battle meditation (caster)</label>
 		<description>Through channeling the Force, this person can better enhance the willpower and combat abilities of all colonists within 500 tiles, while weakening any enemies in that area. This will be disabled if any damage is taken, so keep this pawn in a safe location!</description>
@@ -450,7 +466,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 
@@ -458,7 +474,7 @@
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_AdvBatlMed_Buff</defName>
 		<label>friendly battle meditation</label>
 		<description>Combat abilities and willpower are better boosted due to being near someone who is using battle meditation.</description>
@@ -484,6 +500,8 @@
 				<li>SWPotF_hediff_BatlMed_Debuff</li>
 				<li>SWPotF_hediff_AdvBatlMed_Debuff</li>
 				<li>SWPotF_hediff_ForceFear</li>
+				<li>SWCPHediff_Suppression</li>
+				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
 			</makeImmuneTo>
 			<statOffsets>
 			  <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
@@ -506,9 +524,9 @@
 			<isWhitelist>true</isWhitelist>
 		  </li>
 		</modExtensions>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_AdvBatlMed_Buff</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_AdvBatlMed_Buff</hediff>
@@ -521,10 +539,10 @@
 			<baseMoodEffect>20</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_AdvBatlMed_Debuff</defName>
 		<label>enemy battle meditation</label>
 		<description>Combat abilities and willpower are significantly weakened due to being near an enemy who is using battle meditation.</description>
@@ -554,9 +572,9 @@
 			</statOffsets>
 		  </li>
 		</stages>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_AdvBatlMed_Debuff</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_AdvBatlMed_Debuff</hediff>
@@ -569,7 +587,7 @@
 			<baseMoodEffect>-25</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
 	  
@@ -588,7 +606,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstbatlmed</defName>
 		<label>master battle meditation</label>
 		<description>"Every fighter brings their own fears, their own hopes into combat; with sufficient concentration, a Jedi can strengthen the hopes of their allies and heighten the fears of their enemies. Thus, what armies know in their hearts must become true, because they believe it so strongly." - Odan-Urr\n\nBy visualizing the desired outcome of a battle, a Jedi can shape the field of Force that surrounds events. The caster can greatly enhance the willpower and combat abilities of nearby friendlies while weakening that of their enemies. Proper use can turn the tide of even the largest battles.\n\nAfter activating this ability the caster will go into a state of deep meditation and will remain still for the duration of the ability. This trance will be broken if new commands are ordered or if the caster takes damage, so make sure you leave the caster in a safe place and don't disturb them!\n\nThe duration of the meditative trance scales with the caster's psychic sensitivity stat, and it will slowly drain the caster's Force points over the course of the meditative state. All psychically-sensitive colonists within a 500-tile radius will benefit from this ability, and all psy-sensitive enemies within 500 tiles will suffer it's negative effects.</description>
@@ -602,7 +620,9 @@
 		<!--warmupMoteSocialSymbol>UI/KotORII_Power_Master_Battle_Meditation</warmupMoteSocialSymbol-->
 		<jobDef>CastAbilityOnThing</jobDef>
 		
-		<level>34</level>
+		<category>SWPotF_AbilityCategory_Universal</category>
+		
+		<!-- <level>34</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -658,10 +678,18 @@
                 </casterStatLimiters>
           </li-->
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>34</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advbatlmed</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <JobDef>
+	<JobDef>
 		<defName>ReverseMeditate_MstBatlMed</defName>
 		<driverClass>ReverseMeditation.JobDriver_ReverseMeditate</driverClass>
 		<reportString>casting battle meditation.</reportString>
@@ -679,10 +707,10 @@
 			<bodyPartDef>Brain</bodyPartDef>
 		  </li>
 		</modExtensions>
-	  </JobDef>
+	</JobDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstBatlMed</defName>
 		<label>master battle meditation (caster)</label>
 		<description>Through channeling the Force, this person can greatly enhance the willpower and combat abilities of all colonists within 500 tiles, while weakening any enemies in that area. This will be disabled if any damage is taken, so keep this pawn in a safe location!</description>
@@ -736,12 +764,12 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstBatlMed_Buff</defName>
 		<label>friendly battle meditation</label>
 		<description>Combat abilities and willpower are greatly boosted due to being near someone who is using battle meditation.</description>
@@ -768,6 +796,8 @@
 				<li>SWPotF_hediff_AdvBatlMed_Debuff</li>
 				<li>SWPotF_hediff_MstBatlMed_Debuff</li>
 				<li>SWPotF_hediff_ForceFear</li>
+				<li>SWCPHediff_Suppression</li>
+				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
 			</makeImmuneTo>
 			<statOffsets>
 			  <ShootingAccuracyPawn>6</ShootingAccuracyPawn>
@@ -790,9 +820,9 @@
 			<isWhitelist>true</isWhitelist>
 		  </li>
 		</modExtensions>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_MstBatlMed_Buff</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_MstBatlMed_Buff</hediff>
@@ -805,10 +835,10 @@
 			<baseMoodEffect>50</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstBatlMed_Debuff</defName>
 		<label>enemy battle meditation</label>
 		<description>Combat abilities and willpower are severely weakened due to being near an enemy who is using battle meditation.</description>
@@ -838,9 +868,9 @@
 			</statOffsets>
 		  </li>
 		</stages>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_MstBatlMed_Debuff</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_MstBatlMed_Debuff</hediff>
@@ -853,7 +883,7 @@
 			<baseMoodEffect>-50</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
 

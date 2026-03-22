@@ -9,9 +9,11 @@
 			<HediffDef>SWPotF_hediff_BattlePrecognition</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Battle_Precognition_base</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>12</level>
+		<!-- <level>12</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -56,10 +58,17 @@
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>12</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	  
+	  
+	  
+	<HediffDef>
 		<defName>SWPotF_hediff_BattlePrecognition</defName>
 		<label>Battle precognition</label>
 		<description>Foresight of impending combat granted by the Force. Bonuses can stack up to the 5th focus level. Duration scales with the caster's psychic sensitivity.</description>
@@ -72,50 +81,55 @@
 			<minSeverity>1</minSeverity>
 			<label>1st focus</label>
 			<statFactors>
-			  <MeleeHitChance>1.2</MeleeHitChance>
-			  
-			  <MeleeDodgeChance>1.2</MeleeDodgeChance>
-			  <PawnTrapSpringChance>0.8</PawnTrapSpringChance>
+				<MeleeHitChance>1.2</MeleeHitChance>
+
+				<MeleeDodgeChance>1.2</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.2</VEF_RangedDodgeChance>
+				<PawnTrapSpringChance>0.8</PawnTrapSpringChance>
 			</statFactors>
 		  </li>
 		  <li>
 			<minSeverity>2</minSeverity>
 			<label>2nd focus</label>
 			<statFactors>
-			  <MeleeHitChance>1.4</MeleeHitChance>
-			  
-			  <MeleeDodgeChance>1.4</MeleeDodgeChance>
-			  <PawnTrapSpringChance>0.6</PawnTrapSpringChance>
+				<MeleeHitChance>1.4</MeleeHitChance>
+
+				<MeleeDodgeChance>1.4</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.4</VEF_RangedDodgeChance>
+				<PawnTrapSpringChance>0.6</PawnTrapSpringChance>
 			</statFactors>
 		  </li>
 		  <li>
 			<minSeverity>3</minSeverity>
 			<label>3rd focus</label>
 			<statFactors>
-			  <MeleeHitChance>1.6</MeleeHitChance>
-			  
-			  <MeleeDodgeChance>1.6</MeleeDodgeChance>
-			  <PawnTrapSpringChance>0.4</PawnTrapSpringChance>
+				<MeleeHitChance>1.6</MeleeHitChance>
+
+				<MeleeDodgeChance>1.6</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.6</VEF_RangedDodgeChance>
+				<PawnTrapSpringChance>0.4</PawnTrapSpringChance>
 			</statFactors>
 		  </li>
 		  <li>
 			<minSeverity>4</minSeverity>
 			<label>4th focus</label>
 			<statFactors>
-			  <MeleeHitChance>1.8</MeleeHitChance>
-			  
-			  <MeleeDodgeChance>1.8</MeleeDodgeChance>
-			  <PawnTrapSpringChance>0.2</PawnTrapSpringChance>
+				<MeleeHitChance>1.8</MeleeHitChance>
+
+				<MeleeDodgeChance>1.8</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.8</VEF_RangedDodgeChance>
+				<PawnTrapSpringChance>0.2</PawnTrapSpringChance>
 			</statFactors>
 		  </li>
 		  <li>
 			<minSeverity>5</minSeverity>
 			<label>5th focus</label>
 			<statFactors>
-			  <MeleeHitChance>2</MeleeHitChance>
-			  
-			  <MeleeDodgeChance>2</MeleeDodgeChance>
-			  <PawnTrapSpringChance>0</PawnTrapSpringChance>
+				<MeleeHitChance>2</MeleeHitChance>
+
+				<MeleeDodgeChance>2</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2</VEF_RangedDodgeChance>
+				<PawnTrapSpringChance>0</PawnTrapSpringChance>
 			</statFactors>
 		  </li>
 		</stages>
@@ -127,7 +141,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -136,7 +150,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advprecog</defName>
 		<label>Knight precognition</label>
 		<description>Use the Force to briefly peer into the future, boosting the caster's melee hit and dodge chance for a time. Can be repeatedly cast up to 5 times to increase the bonus given. Duration scales with the caster's psychic sensitivity.</description>
@@ -144,9 +158,11 @@
 			<HediffDef>SWPotF_hediff_BattlePrecognition</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Battle_Precognition_adv</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>17</level>
+		<!-- <level>17</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -191,14 +207,21 @@
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>17</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_battleprecog</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 
 	  
 	  
 	  
 	  
-	 <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstprecog</defName>
 		<label>Master precognition</label>
 		<description>Use the Force to quickly peer into the future, boosting the caster's melee hit and dodge chance for a time. Can be repeatedly cast up to 5 times to increase the bonus given. Duration scales with the caster's psychic sensitivity.</description>
@@ -206,9 +229,11 @@
 			<HediffDef>SWPotF_hediff_BattlePrecognition</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Battle_Precognition</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>24</level>
+		<!-- <level>24</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -253,8 +278,15 @@
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>24</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advprecog</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	 
 

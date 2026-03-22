@@ -3,12 +3,12 @@
 
 	<TraitDef>
 		<defName>SWPotF_Trait_heroic</defName>
-		<modExtensions>
-			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
-				<schema>SWPotF_HeroModeSchema</schema>
-				<baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef>
-			</li>
-		</modExtensions>
+		<!-- <modExtensions> -->
+			<!-- <li Class="ItsSorceryFramework.ModExtension_SchemaAddition"> -->
+				<!-- <schema>SWPotF_HeroModeSchema</schema> -->
+				<!-- <baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
 		<commonality>0</commonality>
 		<degreeDatas>
 			<li>
@@ -20,26 +20,26 @@
 	</TraitDef>
 	
 	
-	<TraitDef>
-		<defName>SWPotF_Trait_psyultrasensitive</defName>
-		<commonality>0</commonality>
-		<degreeDatas>
-			<li>
-				<label>psychically ultrasensitive</label>
-				<description>[PAWN_nameDef]'s mind posesses god-like psychic potential. [PAWN_pronoun] is extremely sensitive to psychic phenomena.</description>
-				<degree>0</degree>
-				<statOffsets>
-				  <PsychicSensitivity>2</PsychicSensitivity>
-				</statOffsets>
-				<possessions>
-				  <Apparel_PsychicFoilHelmet />
-				</possessions>
-			</li>
-		</degreeDatas>
+	<!-- <TraitDef> -->
+		<!-- <defName>SWPotF_Trait_psyultrasensitive</defName> -->
+		<!-- <commonality>0</commonality> -->
+		<!-- <degreeDatas> -->
+			<!-- <li> -->
+				<!-- <label>psychically ultrasensitive</label> -->
+				<!-- <description>[PAWN_nameDef]'s mind posesses god-like psychic potential. [PAWN_pronoun] is extremely sensitive to psychic phenomena.</description> -->
+				<!-- <degree>0</degree> -->
+				<!-- <statOffsets> -->
+				  <!-- <PsychicSensitivity>2</PsychicSensitivity> -->
+				<!-- </statOffsets> -->
+				<!-- <possessions> -->
+				  <!-- <Apparel_PsychicFoilHelmet /> -->
+				<!-- </possessions> -->
+			<!-- </li> -->
+		<!-- </degreeDatas> -->
 		
-		<conflictingTraits>
-		  <li>PsychicSensitivity</li>
-		</conflictingTraits>
-	</TraitDef>
+		<!-- <conflictingTraits> -->
+		  <!-- <li>PsychicSensitivity</li> -->
+		<!-- </conflictingTraits> -->
+	<!-- </TraitDef> -->
 
 </Defs>

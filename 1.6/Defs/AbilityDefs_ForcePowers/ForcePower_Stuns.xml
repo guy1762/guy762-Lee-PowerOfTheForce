@@ -6,9 +6,11 @@
 		<label>stun</label>
 		<description>Use the Force to stun a target. Duration scales with the psychic sensitivity of the target.</description>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Stun</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<hotKey>Misc8</hotKey>
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -53,27 +55,25 @@
 				<sound>kotorsound_force_stun</sound>
 			</li>
 		</comps>
-		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_stunfield</defName>
 		<label>stun field</label>
 		<description>Use the Force to stun multiple targets within a radius. Duration scales with the psychic sensitivity of the target.</description>
 		<iconPath>UI/ForceIcons/Power_Force_StunField</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<hotKey>Misc8</hotKey>
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -126,16 +126,15 @@
 				<sound>kotorsound_force_stun</sound>
 			</li>
 		</comps>
-		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_stun</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
@@ -146,7 +145,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_pacify</defName>
 		<label>pacify</label>
 		<description>Use the Force to render a target unconscious. Duration scales with the target's psychic sensitivity.</description>
@@ -154,10 +153,12 @@
 			<HediffDef>SWPotF_hediff_ForcePacify</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Stasis_Field</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<hotKey>Misc8</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>18</level>
+		<!-- <level>18</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -168,6 +169,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityLightsideStat>5</Force_AbilityLightsideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -209,18 +212,18 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>18</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_stunfield</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForcePacify</defName>
 		<label>Force pacified</label>
 		<description>Force-suppressed consciousness. Duration scales with the psychic sensitivity of those affected. Can be removed with Force Breach or Force Enlightenment.</description>
@@ -249,10 +252,11 @@
 		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
 				<hediffs>
 					<li>SWPotF_hediff_Enlightenment</li>
+					<li>SWPotF_hediff_MstFocus</li>
 				</hediffs>
 			</li>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	 
 </Defs>

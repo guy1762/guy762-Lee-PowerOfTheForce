@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_choke</defName>
 		<label>choke</label>
 		<description>Use the Force to choke a target, inflicting damage directly to their neck. Lasts for 10 seconds. Does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
@@ -9,10 +9,12 @@
 			<HediffDef>SWPotF_hediff_ForceChoke</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Choke</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<hotKey>Misc9</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -26,6 +28,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -66,18 +70,15 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceChoke</defName>
 		<description>Choking through the use of Force telekinesis. Periodically inflicts damage on the target's throat and halts all movement. Lasts for 10 seconds, does not scale with any stat, and cannot be canceled by Force Suppression/Breach.</description>
 		<label>Force choke</label>
@@ -117,6 +118,7 @@
             </capMods>
 			<statFactors>
 				<MoveSpeed>0</MoveSpeed>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0</VEF_RangedDodgeChance>
 				<MeleeDodgeChance>0</MeleeDodgeChance>
 			</statFactors>
 		  </li>
@@ -137,11 +139,11 @@
 			</drawData>
 		  </li>
 		</renderNodeProperties>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_ForceChokeMasochist</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_ForceChoke</hediff>
@@ -157,13 +159,13 @@
 			<baseMoodEffect>50</baseMoodEffect>
 		  </li>
 		</stages>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_crush</defName>
 		<label>crush</label>
 		<description>Use the Force to crush a target, rapidly inflicting damage throughout their entire body. Lasts for 10 seconds. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
@@ -171,10 +173,12 @@
 			<HediffDef>SWPotF_hediff_ForceCrush</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Crush</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<hotKey>Misc9</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>25</level>
+		<!-- <level>25</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -186,6 +190,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>60</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -227,18 +233,18 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>25</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_choke</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceCrush</defName>
 		<description>Crushing through the use of Force telekinesis. Rapidly inflicts damage throughout the target's entire body and halts all movement. Lasts for 10 seconds. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
 		<label>Force crush</label>
@@ -276,6 +282,7 @@
 			<statFactors>
 				<MoveSpeed>0</MoveSpeed>
 				<MeleeDodgeChance>0</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0</VEF_RangedDodgeChance>
 			</statFactors>
 		  </li>
 		</stages>
@@ -300,7 +307,7 @@
 			</drawData>
 		  </li>
 		</renderNodeProperties>
-	  </HediffDef>
+	</HediffDef>
 	  
 
 

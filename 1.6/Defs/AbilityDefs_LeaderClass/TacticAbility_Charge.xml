@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<AbilityDef ParentName="SWPotF_TacticDelegationAbilityBASE">
+		<defName>SWPotF_TacticDelegationAbility_charge</defName>
+		<label>delegate tactic: Charge</label>
+		<description>Distribute temporary "Charge" tactical orders to a subordinate.</description>
+		<descriptionHyperlinks>
+			<AbilityDef>SWPotF_TacticAbility_Charge</AbilityDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/EaWIcons/Delegation/Delegate_Charge</iconPath>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_DelegatedTacticHediff_charge</hediffDef>
+				<onlyApplyToSelf>false</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+
+	<HediffDef ParentName="SWPotF_DelegatedTacticHediffBASE">
+		<defName>SWPotF_DelegatedTacticHediff_charge</defName>
+		<label>temporary tactical orders: Charge</label>
+		<description>.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWPotF_TacticAbility_Charge</abilityDef>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+	<AbilityDef ParentName="SWPotF_TacticAbilityValidatorBASE">
+		<defName>SWPotF_TacticAbility_Charge</defName>
+		<label>Charge</label>
+		<description>.</description>
+		<iconPath>UI/EaWIcons/Charge</iconPath>
+		<warmupMoteSocialSymbol>UI/EaWIcons/Charge</warmupMoteSocialSymbol>
+		<uiOrder>762</uiOrder>
+		<hotKey>Misc10</hotKey>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<targetRequired>false</targetRequired>
+		<stunTargetWhileCasting>True</stunTargetWhileCasting>
+		<statBases>
+			<Ability_Duration>20</Ability_Duration>
+			<Ability_EffectRadius>10</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>10</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<drawAimPie>True</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_CW2002PowerUp</soundCast>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> don't use this, it checks for factions automatically -->
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_TacticAbilityHediff_Charge</hediffDef>
+				<applicableToMechs>False</applicableToMechs>
+				<severity>1</severity>
+				<!-- <onlyBrain>True</onlyBrain> -->
+				<!-- <onlyApplyToSelf>False</onlyApplyToSelf> -->
+				<!-- <replaceExisting>true</replaceExisting> -->
+			</li>
+			<!-- <li Class="CompProperties_AbilityFleckOnTarget"> -->
+				<!-- <fleckDef>PsycastPsychicEffect</fleckDef> -->
+				<!-- <sound>kotorsound_force_JAteamheal</sound> -->
+			<!-- </li> -->
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotF_TacticAbilityHediff_BreaksInMentalStateBASE">
+        <defName>SWPotF_TacticAbilityHediff_Charge</defName>
+        <label>Charge strategy</label>
+        <description>This pawn is charging towards an enemy position. Movement speed and damage resistance is greatly increased while moving. Once enemies are adjacent, melee damage and attack speed are increased instead.</description>
+		<defaultLabelColor>(255,255,135)</defaultLabelColor> <!-- soft yellow -->
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+            <li>
+				<label>charging</label>
+				<minSeverity>1</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<statFactors>
+					<MoveSpeed>2</MoveSpeed>
+					<MeleeDodgeChance>2</MeleeDodgeChance>
+					<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2</VEF_RangedDodgeChance>
+					<StaggerDurationFactor>0</StaggerDurationFactor>
+					<IncomingDamageFactor>0.5</IncomingDamageFactor>
+					<PainShockThreshold>2</PainShockThreshold>
+				</statFactors>
+			</li>
+			<li>
+				<label>engaging</label>
+				<minSeverity>2</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<statFactors>
+					<MeleeDamageFactor>2</MeleeDamageFactor>
+					<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
+				</statFactors>
+			</li>
+        </stages>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByNearbyPawns">
+                <onlyEnemies>True</onlyEnemies>
+                <!-- <includeSelf>True</includeSelf> -->
+                <range>2</range>
+            </li>
+			
+			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_Disappears">
+                <!-- <disappearsAfterTicks>60000</disappearsAfterTicks> -->
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+    </HediffDef>
+	
+	
+	
+</Defs>

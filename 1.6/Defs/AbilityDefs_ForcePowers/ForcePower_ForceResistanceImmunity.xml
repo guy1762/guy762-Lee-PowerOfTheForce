@@ -9,11 +9,13 @@
 			<HediffDef>SWPotF_hediff_ForceResist</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Force_Resistance</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -54,10 +56,14 @@
 				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
 			</li>
 		</comps>
-
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceResist</defName>
 		<label>Force resistance</label>
 		<description>Reduced psychic sensitivity.</description>
@@ -80,12 +86,12 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_forceimmune</defName>
 		<label>Force immunity</label>
 		<description>Use the Force to reduce the caster's psychic sensitivity to 0%, offering immunity to most Force abilities good or bad.</description>
@@ -93,11 +99,13 @@
 			<HediffDef>SWPotF_hediff_ForceImmune</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Resistance</iconPath> <!-- yes, I switched it around -->
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -138,9 +146,17 @@
 				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
 			</li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_forceresist</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceImmune</defName>
 		<label>Force immunity</label>
 		<description>Nullified psychic sensitivity.</description>
@@ -163,7 +179,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  

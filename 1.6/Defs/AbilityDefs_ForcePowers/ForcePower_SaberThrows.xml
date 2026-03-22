@@ -6,10 +6,12 @@
 		<label>throw lightsaber</label>
 		<description>Use the Force to throw the caster's lightsaber at a target.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Throw_Lightsaber</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
 		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -21,7 +23,9 @@
 			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
-			<verbClass>Verb_CastAbility</verbClass>
+			<!-- <verbClass>Verb_CastAbility</verbClass> -->
+			<verbClass>Lightsaber.Verb_AbilityLaunchProjectile</verbClass>
+			<defaultProjectile>Force_NonVPELightsaberThrow</defaultProjectile>
 			<violent>true</violent>
 			<range>15</range>
 			<requireLineOfSight>True</requireLineOfSight>
@@ -39,55 +43,59 @@
 		</verbProperties>
 		
 		<comps>
-			<li Class="CompProperties_AbilityLaunchProjectile">
-				<projectileDef>Spinning_Projectile</projectileDef>
-			</li>
+			<!-- <li Class="CompProperties_AbilityLaunchProjectile"> -->
+				<!-- <projectileDef>Spinning_Projectile</projectileDef> -->
+			<!-- </li> -->
 			<!--li Class="CompProperties_AbilityFleckOnTarget">
 				<sound>kotorsound_force_generic</sound>
 			</li-->
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <ThingDef ParentName="BaseBullet">
-        <defName>Spinning_Projectile</defName>
-        <label>Weapon Throw</label>
-        <thingClass>Spinning_Projectile.SpinningWeaponProjectile</thingClass>
-        <drawOffscreen>true</drawOffscreen>
-		<graphicData>
-		  <texPath>Things/Projectile/Bullet_Small</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
-		  <shaderType>Transparent</shaderType>
-		</graphicData>
-        <projectile>
-            <damageDef>guy762_MeleeDamage_ecut</damageDef>
-            <damageAmountBase>16</damageAmountBase>
-            <speed>32</speed>
-            <spinRate>9</spinRate> <!-- This is the spin rate of the projectile -->
-			<soundAmbient>kotorsound_lightsaber_swingsustainer</soundAmbient>
-        </projectile>
-	  </ThingDef>
+	<!-- <ThingDef ParentName="BaseBullet"> -->
+        <!-- <defName>Spinning_Projectile</defName> -->
+        <!-- <label>Weapon Throw</label> -->
+        <!-- <thingClass>Spinning_Projectile.SpinningWeaponProjectile</thingClass> -->
+        <!-- <drawOffscreen>true</drawOffscreen> -->
+		<!-- <graphicData> -->
+		  <!-- <texPath>Things/Projectile/Bullet_Small</texPath> -->
+		  <!-- <graphicClass>Graphic_Single</graphicClass> -->
+		  <!-- <shaderType>Transparent</shaderType> -->
+		<!-- </graphicData> -->
+        <!-- <projectile> -->
+            <!-- <damageDef>guy762_MeleeDamage_ecut</damageDef> -->
+            <!-- <damageAmountBase>16</damageAmountBase> -->
+            <!-- <speed>32</speed> -->
+            <!-- <spinRate>9</spinRate> -->
+			<!-- <soundAmbient>kotorsound_lightsaber_swingsustainer</soundAmbient> -->
+        <!-- </projectile> -->
+	<!-- </ThingDef> -->
 	  
-	  <ThingDef ParentName="MoteBase">
-        <defName>Mote_LightSaberReturn</defName>
-        <label>Weapon Return Mote</label>
-        <thingClass>Spinning_Projectile.MoteWeaponReturn</thingClass>
-        <altitudeLayer>MoteOverhead</altitudeLayer>
-        <drawOffscreen>true</drawOffscreen>
-		<graphicData>
-		  <texPath>Things/Projectile/Bullet_Small</texPath>
-		  <graphicClass>Graphic_Single</graphicClass>
-		  <shaderType>Transparent</shaderType>
-		</graphicData>
-        <mote>
-            <fadeInTime>0.5</fadeInTime>
-            <solidTime>7</solidTime>
-            <fadeOutTime>1</fadeOutTime>
-        </mote>
-    </ThingDef>
+	<!-- <ThingDef ParentName="MoteBase"> -->
+        <!-- <defName>Mote_LightSaberReturn</defName> -->
+        <!-- <label>Weapon Return Mote</label> -->
+        <!-- <thingClass>Spinning_Projectile.MoteWeaponReturn</thingClass> -->
+        <!-- <altitudeLayer>MoteOverhead</altitudeLayer> -->
+        <!-- <drawOffscreen>true</drawOffscreen> -->
+		<!-- <graphicData> -->
+		  <!-- <texPath>Things/Projectile/Bullet_Small</texPath> -->
+		  <!-- <graphicClass>Graphic_Single</graphicClass> -->
+		  <!-- <shaderType>Transparent</shaderType> -->
+		<!-- </graphicData> -->
+        <!-- <mote> -->
+            <!-- <fadeInTime>0.5</fadeInTime> -->
+            <!-- <solidTime>7</solidTime> -->
+            <!-- <fadeOutTime>1</fadeOutTime> -->
+        <!-- </mote> -->
+    <!-- </ThingDef> -->
 
 	
 	<AbilityDef ParentName="SWPotF_forcepower_base">
@@ -95,10 +103,12 @@
 		<label>adv. throw lightsaber</label>
 		<description>Use the Force to throw the caster's lightsaber at multiple targets.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Advanced_Throw_Lightsaber</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
 		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -137,8 +147,15 @@
 				<requireMeleeWeapon>true</requireMeleeWeapon> <!-- default: true -->
 			</li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_saberthrow</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	
 	
 	<ThingDef ParentName="BaseBullet">
@@ -158,7 +175,7 @@
             <spinRate>9</spinRate>
 			<soundAmbient>kotorsound_lightsaber_swingsustainer</soundAmbient>
         </projectile>
-	  </ThingDef>
+	</ThingDef>
 	  
 	  
 	  

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_shock</defName>
 		<label>Force shock</label>
 		<description>Use the Force to electrocute a target. Does not use psychic sensitivity for scaling.</description>
@@ -9,6 +9,8 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Shock</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<hotKey>Misc5</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -21,6 +23,8 @@
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
 			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			
+			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -57,20 +61,18 @@
             </li-->
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_ForceShock</defName>
 		<label>Force shock</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
@@ -97,7 +99,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
 	  
@@ -105,7 +107,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_lightning</defName>
 		<label>Force lightning</label>
 		<description>Use the Force to electrocute all targets in a long but narrow arc. Does not use psychic sensitivity for scaling.</description>
@@ -113,10 +115,12 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Lightning</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<hotKey>Misc5</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -130,6 +134,8 @@
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
 			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			
+			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -161,33 +167,32 @@
 				<fleckDef>PsycastPsychicEffect</fleckDef>
 				<sound>kotorsound_force_lightning</sound>
 			</li>-->
-			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_AbilityForceLightning">
-				<range>15</range>
-				<lineWidthEnd>7</lineWidthEnd>
-				<!-- <filthDef></filthDef> -->
-				<!-- <effecterDef></effecterDef> -->
-				<canHitFilledCells>true</canHitFilledCells>
-				<projectileDef>SWPotF_projectile_ForceLightning</projectileDef>
-			</li>
+			<!-- <li Class="TheForce_ItsSorcery.Abilities.CompProperties_AbilityForceLightning"> -->
+				<!-- <range>15</range> -->
+				<!-- <lineWidthEnd>7</lineWidthEnd> -->
+				<!-- <canHitFilledCells>true</canHitFilledCells> -->
+				<!-- <projectileDef>SWPotF_projectile_ForceLightning</projectileDef> -->
+			<!-- </li> -->
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_shock</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_ForceLightning</defName>
 		<label>Force lightning</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
@@ -214,7 +219,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
 	  
@@ -223,7 +228,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_storm</defName>
 		<label>Force storm</label>
 		<description>Use the Force to electrocute all targets in a large arc. Does not use psychic sensitivity for scaling.</description>
@@ -231,10 +236,12 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Storm</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<hotKey>Misc5</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>18</level>
+		<!-- <level>18</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -248,6 +255,8 @@
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
 			<Force_AbilityForcePoolCost>60</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			
+			<Force_AbilityDarksideStat>20</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -279,33 +288,32 @@
 				<fleckDef>PsycastPsychicEffect</fleckDef>
 				<sound>kotorsound_force_lightning</sound>
 			</li>-->
-			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_AbilityForceLightning">
-				<range>15</range>
-				<lineWidthEnd>14</lineWidthEnd>
-				<!-- <filthDef></filthDef> -->
-				<!-- <effecterDef></effecterDef> -->
-				<canHitFilledCells>true</canHitFilledCells>
-				<projectileDef>SWPotF_projectile_ForceStorm</projectileDef>
-			</li>
+			<!-- <li Class="TheForce_ItsSorcery.Abilities.CompProperties_AbilityForceLightning"> -->
+				<!-- <range>15</range> -->
+				<!-- <lineWidthEnd>14</lineWidthEnd> -->
+				<!-- <canHitFilledCells>true</canHitFilledCells> -->
+				<!-- <projectileDef>SWPotF_projectile_ForceStorm</projectileDef> -->
+			<!-- </li> -->
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>18</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_lightning</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_ForceStorm</defName>
 		<label>Force storm</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
@@ -332,7 +340,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 
 	  

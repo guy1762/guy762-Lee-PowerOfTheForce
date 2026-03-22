@@ -6,6 +6,8 @@
 		<label>affect mind</label>
 		<description>Use the Force to reduce a target's resistance to recruitment. Effectiveness scales with the target's psychic sensitivity.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Affect_Mind</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -64,7 +66,12 @@
 				</workTags>
 			  </li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  <InteractionDef>
 		<defName>guy762_InteractDef_affectmind</defName>
@@ -81,15 +88,17 @@
 
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_dominatemind</defName>
 		<label>dominate mind</label>
 		<description>Use the Force to greatly reduce a target's resistance to recruitment and conversion to the caster's ideoligion. Effectiveness scales with the target's psychic sensitivity.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Dominate_Mind</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>6</level>
+		<!-- <level>6</level> -->
 		<aiCanUse>false</aiCanUse>
 		<hostile>false</hostile>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -153,7 +162,15 @@
 			  </li>
 			  <li MayRequire="Ludeon.RimWorld.Ideology" Class="CompProperties_AbilityShowTargetIdeoCertainty" />
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>6</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_affectmind</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 
 	 
 

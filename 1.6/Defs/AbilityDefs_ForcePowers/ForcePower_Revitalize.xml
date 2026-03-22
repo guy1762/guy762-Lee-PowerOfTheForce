@@ -4,14 +4,16 @@
 	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_revitalize</defName>
 		<label>revitalize</label>
-		<description>Use the Force to quickly heal a downed target's wounds. Duration scales with the target's psychic sensitivity.</description>
+		<description>Use the Force to heal a downed target's wounds. Duration scales with the target's psychic sensitivity.</description>
 		<descriptionHyperlinks>
 			<HediffDef>SWPotF_hediff_ForceRevitalize</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Revitalize</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -26,6 +28,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityLightsideStat>15</Force_AbilityLightsideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -67,19 +71,16 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceRevitalize</defName>
 		<description>Force-stimulated natural healing factors. Duration scales with the target's psychic sensitivity.</description>
 		<label>Force revitalize</label>
@@ -104,22 +105,24 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advrevitalize</defName>
 		<label>knight revitalize</label>
-		<description>Use the Force to quickly heal a downed target's wounds. Potential targets can also include the caster. Duration scales with the target's psychic sensitivity.</description>
+		<description>Use the Force to heal a downed target's wounds. Potential targets can also include the caster. Duration scales with the target's psychic sensitivity.</description>
 		<descriptionHyperlinks>
 			<HediffDef>SWPotF_hediff_ForceRevitalize</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Improved_Revitalize</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -134,6 +137,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityLightsideStat>15</Force_AbilityLightsideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -176,33 +181,35 @@
 		</comps>
 		
 		<modExtensions>
-		  <li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
-			<castableInUnconscious>true</castableInUnconscious>
-			<castableInMentalbreak>false</castableInMentalbreak>
-		  </li>
-		  <!--li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li-->
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious>
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_revitalize</li>
+				</requiredAbilities>
+			</li>
 		</modExtensions>
-	  </AbilityDef>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstrevitalize</defName>
 		<label>master revitalize</label>
-		<description>Use the Force to quickly heal the wounds of any downed friendlies within a radius. Duration scales with the psychic sensitivity of those affected.</description>
+		<description>Use the Force to heal the wounds of any downed friendlies within a radius. Duration scales with the psychic sensitivity of those affected.</description>
 		<descriptionHyperlinks>
 			<HediffDef>SWPotF_hediff_ForceRevitalize</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Master_Revitalize</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>21</level>
+		<!-- <level>21</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -221,6 +228,8 @@
 			<Force_AbilityForcePoolCost>50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
+			
+			<Force_AbilityLightsideStat>15</Force_AbilityLightsideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -264,18 +273,18 @@
 		</comps>
 		
 		<modExtensions>
-		  <li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
-			<castableInUnconscious>true</castableInUnconscious>
-			<castableInMentalbreak>false</castableInMentalbreak>
-		  </li>
-		  <!--li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li-->
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious>
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>21</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advrevitalize</li>
+				</requiredAbilities>
+			</li>
 		</modExtensions>
-	  </AbilityDef>
+	</AbilityDef>
 	  
 
 

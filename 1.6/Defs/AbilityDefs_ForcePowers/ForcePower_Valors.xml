@@ -9,9 +9,11 @@
 			<HediffDef>SWPotF_hediff_ForceValor</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Force_Valor</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -27,6 +29,8 @@
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
+			
+			<Force_AbilityLightsideStat>5</Force_AbilityLightsideStat>
 		</statBases>
 		
 		<verbProperties>		
@@ -67,22 +71,22 @@
                 <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
                 <hediffs>
 					<li>SWPotF_hediff_ForceFear</li>
+					
+					<li>SWCPHediff_Suppression</li>
+					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceValor</defName>
 		<label>Force valor</label>
 		<description>Force-stimulated capacity boost. Duration scales with the target's psychic sensitivity.</description>
@@ -95,6 +99,9 @@
 			<makeImmuneTo>
 				<li>SWPotF_hediff_ForceFear</li>
 				<li>SWPotF_hediff_ForceDisarm</li>
+				
+				<li>SWCPHediff_Suppression</li>
+				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
 			</makeImmuneTo>
 			<capMods>
 				<li>
@@ -144,12 +151,12 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_knightvalor</defName>
 		<label>knight valor</label>
 		<description>Use the Force to better bolster the physical capacities of the caster and any colonists within the casting radius. Also provides immunity to mental breaks given by abilities. Duration scales with the psychic sensitivity of those affected.</description>
@@ -157,9 +164,11 @@
 			<HediffDef>SWPotF_hediff_KnightValor</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Knight_Valor</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -175,6 +184,8 @@
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
+			
+			<Force_AbilityLightsideStat>10</Force_AbilityLightsideStat>
 		</statBases>
 		
 		<verbProperties>		
@@ -215,22 +226,25 @@
                 <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
                 <hediffs>
 					<li>SWPotF_hediff_ForceFear</li>
+					
+					<li>SWCPHediff_Suppression</li>
+					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_valor</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_KnightValor</defName>
 		<label>knight valor</label>
 		<description>Force-stimulated capacity boost and immunity to mental breaks from enemy abilities. Duration scales with the target's psychic sensitivity.</description>
@@ -251,6 +265,9 @@
 			<makeImmuneTo>
 				<li>SWPotF_hediff_ForceFear</li>
 				<li>SWPotF_hediff_ForceDisarm</li>
+				
+				<li>SWCPHediff_Suppression</li>
+				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
 			</makeImmuneTo>
 			<capMods>
 				<li>
@@ -300,7 +317,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -310,7 +327,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstvalor</defName>
 		<label>master valor</label>
 		<description>Use the Force to greatly bolster the physical capacities of the caster and any colonists within the casting radius. Also ends any active mental breaks and provides immunity to mental breaks given by abilities. Duration scales with the psychic sensitivity of those affected.</description>
@@ -318,9 +335,11 @@
 			<HediffDef>SWPotF_hediff_MstValor</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Master_Valor</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -336,6 +355,8 @@
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
+			
+			<Force_AbilityLightsideStat>15</Force_AbilityLightsideStat>
 		</statBases>
 		
 		<verbProperties>		
@@ -376,6 +397,9 @@
                 <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
                 <hediffs>
 					<li>SWPotF_hediff_ForceFear</li>
+					
+					<li>SWCPHediff_Suppression</li>
+					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
@@ -387,17 +411,17 @@
 		</comps>
 		
 		<modExtensions>
-		  <!--li Class="IgnoreConfigErrors.Ignore_AbilityStopMentalState" /-->
-		  <!--li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li-->
+			<!--li Class="IgnoreConfigErrors.Ignore_AbilityStopMentalState" /-->
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_knightvalor</li>
+				</requiredAbilities>
+			</li>
 		</modExtensions>
-	  </AbilityDef>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstValor</defName>
 		<label>master valor</label>
 		<description>Force-stimulated capacity boost and immunity to mental breaks from enemy abilities. Duration scales with the target's psychic sensitivity.</description>
@@ -418,6 +442,9 @@
 			<makeImmuneTo>
 				<li>SWPotF_hediff_ForceFear</li>
 				<li>SWPotF_hediff_ForceDisarm</li>
+				
+				<li>SWCPHediff_Suppression</li>
+				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
 			</makeImmuneTo>
 			<capMods>
 				<li>
@@ -467,7 +494,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	 
 

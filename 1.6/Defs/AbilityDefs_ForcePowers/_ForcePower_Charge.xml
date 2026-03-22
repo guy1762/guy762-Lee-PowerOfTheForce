@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_chargebattery</defName>
 		<label>Charge battery</label>
 		<description>Use the Force to shock any battery-like structure with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage. Effectiveness scales with the caster's psychic sensitivity stat.</description>
 		<descriptionHyperlinks>
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<iconPath>UI/ForceIcons/Power_Charge</iconPath>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>5</level>
+		<!-- <level>5</level> -->
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -77,13 +79,17 @@
                 </needOffsets>
             </li-->
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>5</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_chargedroid</defName>
 		<label>Charge droid</label>
 		<description>Use the Force to shock a droid or mechanoid with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage.</description>
@@ -91,10 +97,12 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_ChargeDroid</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>7</level>
+		<!-- <level>7</level> -->
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -144,23 +152,41 @@
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
                 <targetIsOneOfXenotype>
                     <li>guy762_debugxenotype_droid</li>
+					
+                    <li>SWCPDroidXenotype_21BMedDroid</li>
+                    <li>SWCPDroidXenotype_3POProtocolDroid</li>
+                    <li>SWCPDroidXenotype_ASP7LaborDroid</li>
+                    <li>SWCPDroidXenotype_CLLM2BinaryLoadlifter</li>
+                    <li>SWCPDroidXenotype_LOMProtocolDroid</li>
+                    <li>SWCPDroidXenotype_PitDroid</li>
+                    <li>SWCPDroidXenotype_R2Series</li>
+                    <li>SWCPDroidXenotype_R4Series</li>
+                    <li>SWCPDroidXenotype_R5Series</li>
+                    <li>SWCPDroidXenotype_RA7ProtocolDroid</li>
                 </targetIsOneOfXenotype>
             </li>
 			<li Class="EBSGFramework.CompProperties_AbilityOffsetNeed">
                 <needOffsets>
                     <li>
                         <need>Food</need>
-                        <offset>10</offset>
-                    </li>
-					<li>
-                        <need>MechEnergy</need>
                         <offset>100</offset>
                     </li>
+					<!-- <li> -->
+                        <!-- <need>MechEnergy</need> -->
+                        <!-- <offset>100</offset> -->
+                    <!-- </li> -->
                 </needOffsets>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>7</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_chargebattery</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
@@ -168,10 +194,11 @@
 	  
 	  
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_ChargeShock</defName>
 		<label>Charge</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning/ForceLightningFadeOut</texPathFadeOut>
@@ -198,7 +225,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	 
 
 </Defs>

@@ -10,27 +10,27 @@
 		<comps>
 			<li Class="TheForce_Standalone.CompProperties_AbilityEffect_ForcePower"></li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
 	</AbilityDef>
 	
 	<AbilityCategoryDef>
 		<defName>SWPotF_AbilityCategory_Lightside</defName>
-		<label>Lightside</label>
-		<displayOrder>1</displayOrder>
+		<label>(SWPotF) Light</label>
+		<displayOrder>0</displayOrder>
 	</AbilityCategoryDef>
 	<AbilityCategoryDef>
 		<defName>SWPotF_AbilityCategory_Universal</defName>
-		<label>Universal</label>
-		<displayOrder>2</displayOrder>
+		<label>(SWPotF) Universal</label>
+		<displayOrder>0</displayOrder>
 	</AbilityCategoryDef>
 	<AbilityCategoryDef>
 		<defName>SWPotF_AbilityCategory_Darkside</defName>
-		<label>Darkside</label>
-		<displayOrder>3</displayOrder>
+		<label>(SWPotF) Dark</label>
+		<displayOrder>0</displayOrder>
 	</AbilityCategoryDef>
 	
 </Defs>

@@ -10,9 +10,11 @@
 			<HediffDef>SWPotF_hediff_FuryKillstreakBonus</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Fury</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -23,6 +25,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -53,17 +57,14 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceFury</defName>
 		<label>Force fury</label>
 		<description>Force-enhanced rage, strengthening the caster at the cost of reducing their dodge chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -81,6 +82,7 @@
 				<StaggerDurationFactor>-0.1</StaggerDurationFactor>
 
 				<MeleeDodgeChance>-0.2</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">-0.2</VEF_RangedDodgeChance>
 				<PawnTrapSpringChance>0.2</PawnTrapSpringChance>
 			</statOffsets>
 			<damageFactors>
@@ -107,11 +109,11 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_FuryKillstreakBonus</defName>
 		<label>Fury bonus</label>
 		<description>Damage boost from killing. Bonus is capped at +60%. Dissipates after one in-game hour.</description>
@@ -171,12 +173,12 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advfury</defName>
 		<label>warrior fury</label>
 		<description>Use the Force to better channel the caster's anger and rage, strengthening them and increasing melee damage dealt with each subsequent kill (caps at 6). Also reduces dodge chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -185,9 +187,11 @@
 			<HediffDef>SWPotF_hediff_FuryKillstreakBonus</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Improved_Fury</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>20</level>
+		<!-- <level>20</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -198,6 +202,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>45</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>20</Force_AbilityDarksideStat>
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -228,17 +234,17 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>20</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_fury</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_WarriorFury</defName>
 		<label>Warrior fury</label>
 		<description>Force-enhanced rage, strengthening the caster at the cost of reducing their dodge chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -256,6 +262,7 @@
 				<StaggerDurationFactor>-0.2</StaggerDurationFactor>
 
 				<MeleeDodgeChance>-0.4</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">-0.4</VEF_RangedDodgeChance>
 				<PawnTrapSpringChance>0.4</PawnTrapSpringChance>
 			</statOffsets>
 			<damageFactors>
@@ -280,7 +287,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -290,7 +297,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstfury</defName>
 		<label>marauder fury</label>
 		<description>Use the Force to greatly channel the caster's anger and rage, strengthening them and increasing melee damage dealt with each subsequent kill (caps at 6). Also reduces dodge chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -299,9 +306,11 @@
 			<HediffDef>SWPotF_hediff_FuryKillstreakBonus</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Master_Fury</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>24</level>
+		<!-- <level>24</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -312,6 +321,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>25</Force_AbilityDarksideStat>
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -342,17 +353,17 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>24</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advfury</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MarauderFury</defName>
 		<label>Marauder fury</label>
 		<description>Force-enhanced rage, strengthening the caster at the cost of reducing their dodge chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -363,14 +374,15 @@
 		<stages>
 		  <li>
 			<statOffsets>
-			  <MeleeDamageFactor>0.6</MeleeDamageFactor>
-			  
-			  <PainShockThreshold>0.3</PainShockThreshold>
-			  <!--MentalBreakThreshold>0.3</MentalBreakThreshold-->
-			  <StaggerDurationFactor>-0.3</StaggerDurationFactor>
-			  
-			  <MeleeDodgeChance>-0.6</MeleeDodgeChance>
-			  <PawnTrapSpringChance>0.6</PawnTrapSpringChance>
+				<MeleeDamageFactor>0.6</MeleeDamageFactor>
+
+				<PainShockThreshold>0.3</PainShockThreshold>
+				<!--MentalBreakThreshold>0.3</MentalBreakThreshold-->
+				<StaggerDurationFactor>-0.3</StaggerDurationFactor>
+
+				<MeleeDodgeChance>-0.6</MeleeDodgeChance>
+				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">-0.6</VEF_RangedDodgeChance>
+				<PawnTrapSpringChance>0.6</PawnTrapSpringChance>
 			</statOffsets>
 			<damageFactors>
 				<Stun>0</Stun>
@@ -394,7 +406,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	 
 

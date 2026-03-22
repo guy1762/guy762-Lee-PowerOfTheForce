@@ -6,10 +6,12 @@
 		<label>Force jump</label>
 		<description>Use the Force to leap to a visible spot within 10 meters.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Feat_Force_Jump</iconPath>
-		<hotKey></hotKey>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey></hotKey> -->
 		
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -40,26 +42,25 @@
 		</verbProperties>
 		<jobDef>CastJump</jobDef>
 
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_knightjump</defName>
 		<label>knight jump</label>
 		<description>Use the Force to leap to a visible spot within 20 meters.</description>
 		<!--description>Use the Force to leap to a visible spot within 20 meters, also giving a minor buff to melee damage and accuracy.</description-->
 		<iconPath>UI/ForceIcons/N/KotORII_Feat_Improved_Force_Jump</iconPath>
-		<hotKey></hotKey>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey></hotKey> -->
 		
 		
-		<level>6</level>
+		<!-- <level>6</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -99,17 +100,17 @@
 			</li>
 		</comps-->
 
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>6</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_jump</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <!--HediffDef>
+	<!--HediffDef>
 		<defName>SWPotF_hediff_JumpBuff</defName>
 		<label>Force jump momentum</label>
 		<description>Minor melee damage and accuracy boost from Force-jumping.</description>
@@ -132,22 +133,24 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef-->
+	</HediffDef-->
 	  
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstjump</defName>
 		<label>master jump</label>
 		<description>Use the Force to leap to any accessible spot within 30 meters.</description>
 		<!--description>Use the Force to leap to any accessible spot within 30 meters, also giving a buff to melee damage and accuracy.</description-->
 		<iconPath>UI/ForceIcons/N/KotORII_Feat_Master_Force_Jump</iconPath>
-		<hotKey></hotKey>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey></hotKey> -->
 		
 		
-		<level>12</level>
+		<!-- <level>12</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -187,17 +190,17 @@
 			</li>
 		</comps-->
 
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>12</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_knightjump</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <!--HediffDef>
+	<!--HediffDef>
 		<defName>SWPotF_hediff_AdvJumpBuff</defName>
 		<label>improved Force jump momentum</label>
 		<description>Melee damage and accuracy boost from Force-jumping.</description>
@@ -220,7 +223,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef-->
+	</HediffDef-->
 	  
 	  
 	 

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_drainforce</defName>
 		<label>Drain Force</label>
 		<description>Use the Force to drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Drain_Force</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -60,34 +62,35 @@
 				<goodwillImpact>-75</goodwillImpact>
 			</li>
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-                <targetHasAllOfHediffs>
-                    <li>SWPotF_Hediff_ForceProgression</li>
-                </targetHasAllOfHediffs>
+                <!-- <targetHasAllOfHediffs> -->
+                    <!-- <li>SWPotF_Hediff_ForceProgression</li> -->
+                <!-- </targetHasAllOfHediffs> -->
 				<!--targetStatLimiters>
                     <li>
 						<stat>Force_AbilityForcePoolCost</stat>
 						<minStatValue>25</minStatValue>
 					</li>
                 </targetStatLimiters-->
+				<targetStatLimiters>
+					<li><stat>Force_FPMax</stat></li>
+				</targetStatLimiters>
             </li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_ForceDrain</defName>
 		<label>Force drain</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning_purple/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning_purple/ForceLightningFadeOut</texPathFadeOut>
@@ -114,10 +117,10 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceDrainSap</defName>
 		<label>Force Drain</label>
 		<description>Force energy actively being siphoned by an opponent.</description>
@@ -139,7 +142,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -147,15 +150,17 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advdrainforce</defName>
 		<label>Adv. drain Force</label>
 		<description>Use the Force to better drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Improved_Drain_Force</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -206,28 +211,32 @@
 				<goodwillImpact>-75</goodwillImpact>
 			</li>
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-                <targetHasAllOfHediffs>
-                    <li>SWPotF_Hediff_ForceProgression</li>
-                </targetHasAllOfHediffs>
+                <!-- <targetHasAllOfHediffs> -->
+                    <!-- <li>SWPotF_Hediff_ForceProgression</li> -->
+                <!-- </targetHasAllOfHediffs> -->
+				<targetStatLimiters>
+					<li><stat>Force_FPMax</stat></li>
+				</targetStatLimiters>
             </li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_drainforce</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_AdvForceDrain</defName>
 		<label>Adv. Force drain</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning_purple/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning_purple/ForceLightningFadeOut</texPathFadeOut>
@@ -254,10 +263,10 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_AdvForceDrainSap</defName>
 		<label>Adv. Force Drain</label>
 		<description>Force energy actively being siphoned by an opponent.</description>
@@ -279,7 +288,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -293,15 +302,17 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstdrainforce</defName>
 		<label>Master drain Force</label>
 		<description>Use the Force to greatly drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Master_Drain_Force</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -352,28 +363,35 @@
 				<goodwillImpact>-75</goodwillImpact>
 			</li>
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-                <targetHasAllOfHediffs>
-                    <li>SWPotF_Hediff_ForceProgression</li>
-                </targetHasAllOfHediffs>
+                <!-- <targetHasAllOfHediffs> -->
+                    <!-- <li>SWPotF_Hediff_ForceProgression</li> -->
+                <!-- </targetHasAllOfHediffs> -->
+				<targetStatLimiters>
+					<li>
+						<stat>Force_FPMax</stat>
+						<!-- <minStatValue></minStatValue> -->
+					</li>
+				</targetStatLimiters>
             </li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advdrainforce</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_MstForceDrain</defName>
 		<label>Master Force drain</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning_purple/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning_purple/ForceLightningFadeOut</texPathFadeOut>
@@ -400,10 +418,10 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstForceDrainSap</defName>
 		<label>Master Force Drain</label>
 		<description>Force energy actively being siphoned by an opponent.</description>
@@ -425,7 +443,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -433,7 +451,13 @@
 	  
 	  
 
-
+	<DamageDef>
+		<defName>guy762_ForceDamage_add</defName>
+		<label>siphoned Force</label>
+		<hasForcefulImpact>false</hasForcefulImpact>
+		<makesBlood>false</makesBlood>
+		<canInterruptJobs>false</canInterruptJobs>
+	</DamageDef>
 
 	  
 

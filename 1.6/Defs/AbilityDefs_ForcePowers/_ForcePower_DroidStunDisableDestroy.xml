@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	  <AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_droidstun</defName>
 		<label>Stun droid</label>
 		<description>Use the Force to cause electromagnetic disruption within a droid or turret, temporarily stunning it for several seconds. Because this deals EMP damage, this will instantly disable any active energy shield.</description>
@@ -9,6 +9,8 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks-->
 		<iconPath>UI/ForceIcons/Force_power_Stun_Droid</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -53,16 +55,32 @@
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
                 <targetIsOneOfXenotype>
                     <li>guy762_debugxenotype_droid</li>
+					
+                    <li>SWCPDroidXenotype_21BMedDroid</li>
+                    <li>SWCPDroidXenotype_3POProtocolDroid</li>
+                    <li>SWCPDroidXenotype_ASP7LaborDroid</li>
+                    <li>SWCPDroidXenotype_CLLM2BinaryLoadlifter</li>
+                    <li>SWCPDroidXenotype_LOMProtocolDroid</li>
+                    <li>SWCPDroidXenotype_PitDroid</li>
+                    <li>SWCPDroidXenotype_R2Series</li>
+                    <li>SWCPDroidXenotype_R4Series</li>
+                    <li>SWCPDroidXenotype_R5Series</li>
+                    <li>SWCPDroidXenotype_RA7ProtocolDroid</li>
                 </targetIsOneOfXenotype>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
 		<defName>SWPotF_projectile_DroidStun</defName>
 		<label>Droid stun</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning_cyan/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning_cyan/ForceLightningFadeOut</texPathFadeOut>
@@ -89,7 +107,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
 	  
@@ -98,7 +116,7 @@
 	  
 	  
 	  
-	  <AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_droiddisable</defName>
 		<label>Disable droid</label>
 		<description>Use the Force to cause ionic buildup within a droid, potentially ionizing it. This does not disable active energy shields.</description>
@@ -106,10 +124,12 @@
 			<HediffDef>guy762_IonizationBuildup</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Disable_Droid</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>6</level>
+		<!-- <level>6</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -151,16 +171,35 @@
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
                 <targetIsOneOfXenotype>
                     <li>guy762_debugxenotype_droid</li>
+					
+                    <li>SWCPDroidXenotype_21BMedDroid</li>
+                    <li>SWCPDroidXenotype_3POProtocolDroid</li>
+                    <li>SWCPDroidXenotype_ASP7LaborDroid</li>
+                    <li>SWCPDroidXenotype_CLLM2BinaryLoadlifter</li>
+                    <li>SWCPDroidXenotype_LOMProtocolDroid</li>
+                    <li>SWCPDroidXenotype_PitDroid</li>
+                    <li>SWCPDroidXenotype_R2Series</li>
+                    <li>SWCPDroidXenotype_R4Series</li>
+                    <li>SWCPDroidXenotype_R5Series</li>
+                    <li>SWCPDroidXenotype_RA7ProtocolDroid</li>
                 </targetIsOneOfXenotype>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>6</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_droidstun</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
 		<defName>SWPotF_projectile_DroidDisable</defName>
 		<label>Droid ionization</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning_cyan/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning_cyan/ForceLightningFadeOut</texPathFadeOut>
@@ -187,7 +226,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
 	  
@@ -199,7 +238,7 @@
 	  
 	  
 	  
-	  <AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_droiddestroy</defName>
 		<label>Destroy droid</label>
 		<description>Use the Force to rip a droid apart at the molecular level, ignoring all armor and shields.</description>
@@ -207,10 +246,12 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks-->
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Destroy_Droid</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>12</level>
+		<!-- <level>12</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -252,16 +293,35 @@
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
                 <targetIsOneOfXenotype>
                     <li>guy762_debugxenotype_droid</li>
+					
+                    <li>SWCPDroidXenotype_21BMedDroid</li>
+                    <li>SWCPDroidXenotype_3POProtocolDroid</li>
+                    <li>SWCPDroidXenotype_ASP7LaborDroid</li>
+                    <li>SWCPDroidXenotype_CLLM2BinaryLoadlifter</li>
+                    <li>SWCPDroidXenotype_LOMProtocolDroid</li>
+                    <li>SWCPDroidXenotype_PitDroid</li>
+                    <li>SWCPDroidXenotype_R2Series</li>
+                    <li>SWCPDroidXenotype_R4Series</li>
+                    <li>SWCPDroidXenotype_R5Series</li>
+                    <li>SWCPDroidXenotype_RA7ProtocolDroid</li>
                 </targetIsOneOfXenotype>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>12</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_droiddisable</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
 		<defName>SWPotF_projectile_DroidDestroy</defName>
 		<label>Droid destruction</label>
-		<thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass>
+		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
+		<thingClass>VEF.Weapons.ExpandableProjectile</thingClass>
 		<graphicData>
 			<texPath>VFX/ForceLightning_cyan/ForceLightning</texPath>
 			<texPathFadeOut>VFX/ForceLightning_cyan/ForceLightningFadeOut</texPathFadeOut>
@@ -288,7 +348,7 @@
 		<tickFrameRate>7</tickFrameRate>
 		<finalTickFrameRate>5</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
-	  </VEF.Weapons.ExpandableProjectileDef>
+	</VEF.Weapons.ExpandableProjectileDef>
 	  
 	  
 	  

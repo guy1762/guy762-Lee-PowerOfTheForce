@@ -9,6 +9,8 @@
 			<HediffDef>SWPotF_hediff_ForceFear</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Fear</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
 		
@@ -23,6 +25,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>90</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>5</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -60,19 +64,16 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceFear</defName>
 		<description>Force-induced fear. Has a chance to give a mental break while active. Duration scales with the caster's psychic sensitivity.</description>
 		<label>Force-induced fear</label>
@@ -115,15 +116,21 @@
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
 			<hediffs>
+				<li>SWPotF_hediff_BatlMed_Buff</li>
+				<li>SWPotF_hediff_AdvBatlMed_Buff</li>
+				<li>SWPotF_hediff_MstBatlMed_Buff</li>
+				
 				<li>SWPotF_hediff_ForceValor</li>
 				<li>SWPotF_hediff_KnightValor</li>
 				<li>SWPotF_hediff_MstValor</li>
+				
+				<li>SWPotF_hediff_Enlightenment</li>
 			</hediffs>
 		  </li>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
-	  <ThoughtDef>
+	<ThoughtDef>
 		<defName>guy762_ThoughtDef_ForceFear</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
 		<hediff>SWPotF_hediff_ForceFear</hediff>
@@ -138,7 +145,7 @@
 		</stages>
 		<lerpMoodToZero>true</lerpMoodToZero>
 		<stackLimit>5</stackLimit>
-	  </ThoughtDef>
+	</ThoughtDef>
 	  
 	  
 	  
@@ -152,15 +159,17 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_horror</defName>
 		<label>horror</label>
 		<description>Use the Force to induce panic in a target, causing them to flee off the map. Duration scales with the target's psychic sensitivity.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Horror</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>6</level>
+		<!-- <level>6</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -173,6 +182,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>15</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -210,29 +221,31 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>6</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_fear</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_insanity</defName>
 		<label>insanity</label>
 		<description>Use the Force to drive a target insane, causing them to lash out and attack anyone they can find. Duration scales with the target's psychic sensitivity.</description>
 		<iconPath>UI/ForceIcons/Power_Force_Insanity2</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<level>12</level>
+		<!-- <level>12</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -245,6 +258,8 @@
 		<statBases>
 			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -283,15 +298,15 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Darkside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>12</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_horror</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	

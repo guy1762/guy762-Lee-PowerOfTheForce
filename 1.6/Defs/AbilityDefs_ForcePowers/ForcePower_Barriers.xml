@@ -9,9 +9,11 @@
 			<HediffDef>SWPotF_hediff_ForceBarrier</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Force_Barrier</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<hotKey>Misc7</hotKey>
 		
-		<level>6</level>
+		<!-- <level>6</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>false</ai_IsOffensive>
@@ -59,19 +61,16 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>6</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceBarrier</defName>
 		<label>Force barrier</label>
 		<description>A barrier of Force energy protecting an individual from physical attacks.</description>
@@ -94,26 +93,26 @@
 			<blocksMeleeDamage>true</blocksMeleeDamage>
 			
 			<blockedDamageDefs>
-			  <li>Cut</li>
-			  <li>Crush</li>
-			  <li>Blunt</li>
-			  <li MayRequire="lee.theforce.lightsaber">Force_BluntLightsaber</li>
-			  <li>Poke</li>
-			  <li>Stab</li>
-			  <li>Scratch</li>
-			  <li>ScratchToxic</li>
-			  <li>Bite</li>
-			  <li>ToxicBite</li>
-			  <li>RangedStab</li>
-			  <li>Bullet</li>
-			  <li>Arrow</li>
-			  <li>ArrowHighVelocity</li>
-			  <li>TornadoScratch</li>
-			  
-			  <li>Bomb</li>
-			  <li>guy762_GrenadeDamage_frag</li>
-			  <li>guy762_GrenadeDamage_detpack</li>
-			  <li MayRequire="guy762.NA.MM.SWVehicles">guy762_ExplosiveDamage_conc</li>
+				<li>Cut</li>
+				<li>Crush</li>
+				<li>Blunt</li>
+				<li MayRequire="lee.theforce.lightsaber">Force_BluntLightsaber</li>
+				<li>Poke</li>
+				<li>Stab</li>
+				<li>Scratch</li>
+				<li>ScratchToxic</li>
+				<li>Bite</li>
+				<li>ToxicBite</li>
+				<li>RangedStab</li>
+				<li>Bullet</li>
+				<li>Arrow</li>
+				<li>ArrowHighVelocity</li>
+				<li>TornadoScratch</li>
+
+				<li>Bomb</li>
+				<li>guy762_GrenadeDamage_frag</li>
+				<li>guy762_GrenadeDamage_detpack</li>
+				<li MayRequire="guy762.NA.MM.SWVehicles">guy762_ExplosiveDamage_conc</li>
 			</blockedDamageDefs>
 			<!--blacklistedDamageDefs>
 			  <li>guy762_RangedDamage_disruptor</li>
@@ -156,7 +155,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -170,9 +169,11 @@
 			<HediffDef>SWPotF_hediff_AdvForceBarrier</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Improved_Force_Barrier</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<hotKey>Misc7</hotKey>
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>false</ai_IsOffensive>
@@ -221,19 +222,19 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_barrier</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_AdvForceBarrier</defName>
 		<label>knight barrier</label>
 		<description>A barrier of Force energy protecting an individual from physical attacks.</description>
@@ -318,7 +319,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -328,7 +329,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstbarrier</defName>
 		<label>master barrier</label>
 		<description>Use the Force to form a very strong barrier protecting an individual from physical attacks. Duration scales with the target's psychic sensitivity.</description>
@@ -336,9 +337,11 @@
 			<HediffDef>SWPotF_hediff_MstForceBarrier</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotORII_Power_Master_Force_Barrier</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Lightside</category>
 		<hotKey>Misc7</hotKey>
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>false</ai_IsOffensive>
@@ -387,20 +390,20 @@
 			</li>
 		</comps>
 		
-		<!--modExtensions>
-		  <li Class="TheForce_Psycast.AbilityExtensionForce">
-			<Attunement>
-			  <li>Force_Lightside</li>
-			</Attunement>
-			<severity>0.01</severity>
-		  </li>
-		</modExtensions-->
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advbarrier</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
 	  
 	  
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstForceBarrier</defName>
 		<label>master barrier</label>
 		<description>A barrier of Force energy protecting an individual from physical attacks.</description>
@@ -485,7 +488,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 
 
 </Defs>

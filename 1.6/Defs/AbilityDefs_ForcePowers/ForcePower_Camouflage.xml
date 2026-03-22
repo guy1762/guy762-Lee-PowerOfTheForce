@@ -9,9 +9,11 @@
 			<HediffDef>SWPotF_hediff_ForceCloak</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Camouflage</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -53,9 +55,14 @@
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceCloak</defName>
 		<label>Force camouflage</label>
 		<description>Force-induced invisibility. Combat is disabled while this is active, but performing mundane tasks are not. Movement speed is also reduced while active. Duration scales with the caster's psychic sensitivity.</description>
@@ -95,7 +102,7 @@
 			<showRemainingTime>True</showRemainingTime>
 		  </li>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -106,7 +113,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_knightcloak</defName>
 		<label>knight camouflage</label>
 		<description>Use the Force to better render the caster invisible. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also slightly reduced while active. Duration scales with the caster's psychic sensitivity.</description>
@@ -114,9 +121,11 @@
 			<HediffDef>SWPotF_hediff_KnightCloak</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Improved_Force_Camouflage</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>19</level>
+		<!-- <level>19</level> -->
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -158,9 +167,17 @@
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>19</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_cloak</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_KnightCloak</defName>
 		<label>knight camouflage</label>
 		<description>Force-induced invisibility. Combat is disabled while this is active, but performing mundane tasks are not. Movement speed is also slightly reduced while active. Duration scales with the caster's psychic sensitivity.</description>
@@ -200,7 +217,7 @@
 			<showRemainingTime>True</showRemainingTime>
 		  </li>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
@@ -210,7 +227,7 @@
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstcloak</defName>
 		<label>master camouflage</label>
 		<description>Use the Force to better render the caster invisible. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also slightly reduced while active. Duration scales with the caster's psychic sensitivity.</description>
@@ -218,9 +235,11 @@
 			<HediffDef>SWPotF_hediff_MstCloak</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Master_Force_Camouflage</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>23</level>
+		<!-- <level>23</level> -->
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -262,9 +281,17 @@
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
 			</li>
 		</comps>
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>23</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_knightcloak</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstCloak</defName>
 		<label>master camouflage</label>
 		<description>Force-induced invisibility. Combat is disabled while this is active, but performing mundane tasks are not. Duration scales with the caster's psychic sensitivity.</description>
@@ -303,7 +330,7 @@
 			<showRemainingTime>True</showRemainingTime>
 		  </li>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 
 	  

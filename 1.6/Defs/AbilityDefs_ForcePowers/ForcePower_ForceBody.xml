@@ -9,9 +9,11 @@
 			<HediffDef>SWPotF_hediff_ForceBody</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Body</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>1</level>
+		<!-- <level>1</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -63,10 +65,14 @@
                 </casterNeedLevels>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_ForceBody</defName>
 		<label>Force body</label>
 		<description>Rapid Force point recharging caused by channeling stored energy within the caster's body. Lasts 10 seconds.</description>
@@ -91,14 +97,14 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advforcebody</defName>
 		<label>Adv. Force body</label>
 		<description>Use the Force to efficiently channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Lasts 10 seconds. Sleep and hunger levels must be above 50% to cast.</description>
@@ -106,9 +112,11 @@
 			<HediffDef>SWPotF_hediff_AdvForceBody</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Improved_Force_Body</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>9</level>
+		<!-- <level>9</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -160,10 +168,17 @@
                 </casterNeedLevels>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_forcebody</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_AdvForceBody</defName>
 		<label>Adv. Force body</label>
 		<description>Rapid Force point recharging caused by channeling stored energy within the caster's body. Lasts 10 seconds.</description>
@@ -188,13 +203,13 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 	  
 	  
 	  
-	  <AbilityDef ParentName="SWPotF_forcepower_base">
+	<AbilityDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstforcebody</defName>
 		<label>Master Force body</label>
 		<description>Use the Force to optimally channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Lasts 10 seconds. Sleep and hunger levels must be above 33% to cast.</description>
@@ -202,9 +217,11 @@
 			<HediffDef>SWPotF_hediff_MstForceBody</HediffDef>
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Master_Force_Body</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<level>15</level>
+		<!-- <level>15</level> -->
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -256,10 +273,17 @@
                 </casterNeedLevels>
             </li>
 		</comps>
-		
-	  </AbilityDef>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_advforcebody</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
 	  
-	  <HediffDef>
+	<HediffDef>
 		<defName>SWPotF_hediff_MstForceBody</defName>
 		<label>Master Force body</label>
 		<description>Rapid Force point recharging caused by channeling stored energy within the caster's body. Lasts 10 seconds.</description>
@@ -284,7 +308,7 @@
 		  </li>
 		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
 		</comps>
-	  </HediffDef>
+	</HediffDef>
 	  
 	  
 
