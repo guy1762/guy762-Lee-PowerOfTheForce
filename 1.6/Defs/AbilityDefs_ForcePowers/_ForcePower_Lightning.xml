@@ -96,8 +96,8 @@
 		<heightScaleFactor>1</heightScaleFactor>
 		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
 		<totalSizeScale>1.15</totalSizeScale>
-		<tickFrameRate>7</tickFrameRate>
-		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickFrameRate>3</tickFrameRate>
+		<finalTickFrameRate>1</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
 	</VEF.Weapons.ExpandableProjectileDef>
 	  
@@ -216,8 +216,8 @@
 		<heightScaleFactor>1</heightScaleFactor>
 		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
 		<totalSizeScale>1.15</totalSizeScale>
-		<tickFrameRate>7</tickFrameRate>
-		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickFrameRate>3</tickFrameRate>
+		<finalTickFrameRate>1</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
 	</VEF.Weapons.ExpandableProjectileDef>
 	  
@@ -337,8 +337,8 @@
 		<heightScaleFactor>1</heightScaleFactor>
 		<startingPositionOffset>(0, 0, -1)</startingPositionOffset>
 		<totalSizeScale>1.15</totalSizeScale>
-		<tickFrameRate>7</tickFrameRate>
-		<finalTickFrameRate>5</finalTickFrameRate>
+		<tickFrameRate>3</tickFrameRate>
+		<finalTickFrameRate>1</finalTickFrameRate>
 		<minDistanceToAffect>0.5</minDistanceToAffect>
 	</VEF.Weapons.ExpandableProjectileDef>
 	  

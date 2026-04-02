@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationReplace">
+		  <xpath>Defs/TraitDef[defName="Force_NeutralSensitivity"]/commonality</xpath>
+		  <value>
+				<commonality>0.01</commonality>
+		  </value>
+		</match>
+	  
+	</Operation>
+	
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationReplace">
+		  <xpath>Defs/TraitDef[defName="Force_NeutralSensitivity"]/degreeDatas/li[2]/statOffsets</xpath>
+		  <value>
+				<statOffsets>
+					<PsychicSensitivity>0.6</PsychicSensitivity>
+				</statOffsets>
+		  </value>
+		</match>
+	  
+	</Operation>
+
+	
+	
+</Patch>
