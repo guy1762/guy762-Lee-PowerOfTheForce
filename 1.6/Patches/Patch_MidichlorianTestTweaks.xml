@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  
+	<!-- <Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone"> -->
+		<!-- <mods> -->
+			<!-- <li>Star Wars : The Force Standalone</li> -->
+		<!-- </mods> -->
+		
+		<!-- <match Class="PatchOperationAdd"> -->
+			<!-- <xpath>Defs/RecipeDef[defName="Force_PerformMidichlorianTest"]</xpath> -->
+			<!-- <order>Append</order> -->
+			<!-- <value> -->
+				<!-- <addsHediff>SWPotF_hediff_MidichlorianTestRepeatBlocker</addsHediff> -->
+				<!-- <incompatibleWithHediffTags> -->
+					<!-- <li>SWPotFHediffTag_MidichlorianTestRepeatBlocker</li> -->
+				<!-- </incompatibleWithHediffTags> -->
+			<!-- </value> -->
+		<!-- </match> -->
+	  
+	<!-- </Operation> -->
+	
+	
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/HediffDef[defName="Force_TestedMidichlorians"]/comps</xpath>
+		</match>
+	  
+	</Operation>
+	
+	
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/HediffDef[defName="Force_TestedMidichlorians"]</xpath>
+			<order>Append</order>
+			<value>
+				<stages>
+					<li><becomeVisible>false</becomeVisible></li>
+				</stages>
+			</value>
+		</match>
+	  
+	</Operation>
+	
+	
+	<!-- <Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone"> -->
+		<!-- <mods> -->
+			<!-- <li>Star Wars : The Force Standalone</li> -->
+		<!-- </mods> -->
+		
+		<!-- <match Class="PatchOperationAdd"> -->
+			<!-- <xpath>Defs/HediffDef[defName="Force_TestedMidichlorians"]</xpath> -->
+			<!-- <order>Append</order> -->
+			<!-- <value> -->
+				<!-- <tags> -->
+					<!-- <li>SWPotFHediffTag_MidichlorianTestRepeatBlocker</li> -->
+				<!-- </tags> -->
+			<!-- </value> -->
+		<!-- </match> -->
+	  
+	<!-- </Operation> -->
+
+	
+	
+</Patch>
