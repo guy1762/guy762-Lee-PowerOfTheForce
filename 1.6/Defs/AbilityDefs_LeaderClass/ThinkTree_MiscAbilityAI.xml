@@ -69,7 +69,28 @@
 	
 	
 	
-	
+	<ThinkTreeDef>	<!-- REMINDER: THIS NEEDS A PATCH TO WORK -->
+		<defName>guy762_SWCPAI_StealthModeAwarenessCheck</defName>
+		<insertTag>EBSGAI_NonColonist</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes> <!-- /////////////////////////////////// -->
+				
+				<li Class="ThinkNode_ConditionalHasAbility">
+					<ability>SWCP_Ability_AwarenessCheck</ability>
+					<subNodes>
+						<li Class="EBSGFramework.ThinkNode_RecordPassage">
+							<output>[Stealth Mode Awareness Check] ability check ThinkNode reached!</output>
+						</li>
+						<li Class="JobGiver_AICastAbilityOnSelf">
+							<ability>SWCP_Ability_AwarenessCheck</ability>
+						</li>
+					</subNodes>
+				</li>
+
+			</subNodes> <!-- /////////////////////////////////// -->
+		</thinkRoot>
+	</ThinkTreeDef>
 	
 	
 </Defs>

@@ -245,6 +245,18 @@
 					<AimingDelayFactor>-0.05</AimingDelayFactor>
 					<MortarMissRadiusFactor>-0.05</MortarMissRadiusFactor>
 				</statOffsets>
+				
+				
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
+				<disablesNeeds>
+					<li>Joy</li>
+					<li>Beauty</li>
+					<li>Comfort</li>
+					<!-- <li>DrugDesire</li> save for teetoler trait bonus? -->
+					<li>Outdoors</li>
+					<li>Indoors</li>
+				</disablesNeeds>
 			</li>
 		</stages>
 	</HediffDef>
@@ -394,8 +406,6 @@
 		<isBad>false</isBad>
 		<stages>
 			<li>
-				<hungerRateFactor>0.9</hungerRateFactor>
-				<restFallFactor>0.9</restFallFactor>
 				<statOffsets>
 					<MeleeDamageFactor>0.05</MeleeDamageFactor>
 
@@ -412,6 +422,18 @@
 
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.05</PilotingAbility>
 				</statOffsets>
+				
+				
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
+				<disablesNeeds>
+					<li>Joy</li>
+					<li>Beauty</li>
+					<li>Comfort</li>
+					<!-- <li>DrugDesire</li> save for teetoler trait bonus? -->
+					<li>Outdoors</li>
+					<li>Indoors</li>
+				</disablesNeeds>
 			</li>
 		</stages>
 	</HediffDef>
@@ -562,8 +584,6 @@
 		<isBad>false</isBad>
 		<stages>
 			<li>
-				<hungerRateFactor>0.8</hungerRateFactor>
-				<restFallFactor>0.8</restFallFactor>
 				<statOffsets>
 					<MeleeDamageFactor>0.10</MeleeDamageFactor>
 
@@ -580,6 +600,9 @@
 					
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.10</PilotingAbility>
 				</statOffsets>
+				
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
 				<disablesNeeds>
 					<li>Joy</li>
 					<li>Beauty</li>
@@ -737,8 +760,6 @@
 		<isBad>false</isBad>
 		<stages>
 			<li>
-				<hungerRateFactor>0.7</hungerRateFactor>
-				<restFallFactor>0.7</restFallFactor>
 				<statOffsets>
 					<MeleeDamageFactor>0.15</MeleeDamageFactor>
 
@@ -757,6 +778,9 @@
 
 					<MoveSpeed>0.05</MoveSpeed>
 				</statOffsets>
+				
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
 				<disablesNeeds>
 					<li>Joy</li>
 					<li>Beauty</li>
@@ -914,8 +938,6 @@
 		<isBad>false</isBad>
 		<stages>
 			<li>
-				<hungerRateFactor>0.6</hungerRateFactor>
-				<restFallFactor>0.6</restFallFactor>
 				<statOffsets>
 					<MeleeDamageFactor>0.20</MeleeDamageFactor>
 
@@ -934,6 +956,9 @@
 
 					<MoveSpeed>0.1</MoveSpeed>
 				</statOffsets>
+				
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
 				<disablesNeeds>
 					<li>Joy</li>
 					<li>Beauty</li>
@@ -1085,8 +1110,6 @@
 		<isBad>false</isBad>
 		<stages>
 			<li>
-				<hungerRateFactor>0.5</hungerRateFactor>
-				<restFallFactor>0.5</restFallFactor>
 				<statOffsets>
 					<MeleeDamageFactor>0.25</MeleeDamageFactor>
 
@@ -1105,6 +1128,10 @@
 
 					<MoveSpeed>0.15</MoveSpeed>
 				</statOffsets>
+				
+				
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
 				<disablesNeeds>
 					<li>Joy</li>
 					<li>Beauty</li>

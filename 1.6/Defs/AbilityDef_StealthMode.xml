@@ -4,59 +4,56 @@
 	
 	
 	
-	<AbilityDef>
-		<defName>SWCP_Ability_StealthMode</defName>
-		<label>activate stealth field</label>
-		<description>Enter stealth mode. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also reduced while active.</description>
-		<descriptionHyperlinks>
-			<HediffDef>SWCP_StealthMode</HediffDef>
-		</descriptionHyperlinks>
-		<iconPath>UI/KotOR_Icon_Stealth</iconPath>
+	<!-- <AbilityDef> -->
+		<!-- <defName>SWCP_Ability_StealthMode</defName> -->
+		<!-- <label>activate stealth field</label> -->
+		<!-- <description>Enter stealth mode. Combat is disabled while active, but performing mundane tasks are not. Movement speed is also reduced while active.</description> -->
+		<!-- <descriptionHyperlinks> -->
+			<!-- <HediffDef>SWCP_StealthMode</HediffDef> -->
+		<!-- </descriptionHyperlinks> -->
+		<!-- <iconPath>UI/KotOR_Icon_Stealth</iconPath> -->
 		
-		<aiCanUse>false</aiCanUse>
-		<ai_IsOffensive>false</ai_IsOffensive>
-		<hostile>false</hostile>
-		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
-		<writeCombatLog>True</writeCombatLog>
+		<!-- <aiCanUse>false</aiCanUse> -->
+		<!-- <ai_IsOffensive>false</ai_IsOffensive> -->
+		<!-- <hostile>false</hostile> -->
+		<!-- <casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence> -->
+		<!-- <writeCombatLog>True</writeCombatLog> -->
 		
-		<cooldownTicksRange>7200</cooldownTicksRange>
-		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<!-- <cooldownTicksRange>7200</cooldownTicksRange> -->
+		<!-- <stunTargetWhileCasting>true</stunTargetWhileCasting> -->
 		
-		<!-- <statBases> -->
-			<!-- <Ability_EffectRadius>1</Ability_EffectRadius> -->
-		<!-- </statBases> -->
-		<targetRequired>False</targetRequired>
-		<verbProperties>		
-			<verbClass>Verb_CastAbility</verbClass>
-			<violent>false</violent>
-			<drawAimPie>False</drawAimPie>
-			<range>-1</range>
-			<requireLineOfSight>false</requireLineOfSight>
-			<warmupTime>0.5</warmupTime>
-			<soundCast>kotorsound_cloak</soundCast>
-			<targetParams>
-				<canTargetSelf>true</canTargetSelf>
-			</targetParams>
-		</verbProperties>
+		<!-- <targetRequired>False</targetRequired> -->
+		<!-- <verbProperties>		 -->
+			<!-- <verbClass>Verb_CastAbility</verbClass> -->
+			<!-- <violent>false</violent> -->
+			<!-- <drawAimPie>False</drawAimPie> -->
+			<!-- <range>-1</range> -->
+			<!-- <requireLineOfSight>false</requireLineOfSight> -->
+			<!-- <warmupTime>0.5</warmupTime> -->
+			<!-- <soundCast>kotorsound_cloak</soundCast> -->
+			<!-- <targetParams> -->
+				<!-- <canTargetSelf>true</canTargetSelf> -->
+			<!-- </targetParams> -->
+		<!-- </verbProperties> -->
 		
-		<comps>
-			<li Class="CompProperties_AbilityGiveHediff">
-				<compClass>CompAbilityEffect_GiveHediff</compClass>
-				<hediffDef>SWCP_StealthMode</hediffDef>
-				<onlyApplyToSelf>True</onlyApplyToSelf>
-				<replaceExisting>true</replaceExisting>
-			</li>
+		<!-- <comps> -->
+			<!-- <li Class="CompProperties_AbilityGiveHediff"> -->
+				<!-- <compClass>CompAbilityEffect_GiveHediff</compClass> -->
+				<!-- <hediffDef>SWCP_StealthMode</hediffDef> -->
+				<!-- <onlyApplyToSelf>True</onlyApplyToSelf> -->
+				<!-- <replaceExisting>true</replaceExisting> -->
+			<!-- </li> -->
 			
-			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-				<targetMentalStates />
-				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>
+			<!-- <li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator"> -->
+				<!-- <targetMentalStates /> -->
+				<!-- <targetMentalStateCheck>Forbidden</targetMentalStateCheck> -->
 				
-				<casterHasNoneOfHediffs>
-					<li>SWCP_Hediff_StealthModeCaught</li>
-				</casterHasNoneOfHediffs>
-			</li>
-		</comps>
-	</AbilityDef>
+				<!-- <casterHasNoneOfHediffs> -->
+					<!-- <li>SWCP_Hediff_StealthModeCaught</li> -->
+				<!-- </casterHasNoneOfHediffs> -->
+			<!-- </li> -->
+		<!-- </comps> -->
+	<!-- </AbilityDef> -->
 	
 	
 	
@@ -88,10 +85,29 @@
 				<hediff>SWCP_Hediff_AwarenessCheck</hediff>
 				<onlyWhileDrafted>false</onlyWhileDrafted>
 				<range>5</range>
+				
+				<duration>1800</duration> <!-- 30 seconds -->
+				<interval>600</interval> <!-- 10 seconds -->
+				<successChance>
+					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
+					<casterStatChance>SWCPStat_Stealth</casterStatChance>
+					<casterStatEffect>Divide</casterStatEffect> <!-- success chance decreases if stat is above 1 -->
+					
+					<!-- <successMessage>Awareness check given! {0} -> {1}</successMessage> -->
+					<!-- <failureMessage>Awareness check give FAILED! {0} -> {1}</failureMessage> -->
+				</successChance>
 			</li>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_RemoveWhenDamaged">
+                <amount>1</amount>
+                <damageDefs>
+                    <li>SWCP_Damage_AwarenessCheck</li>
+                    <!-- <li>guy762_GrenadeDamage_sonic</li> -->
+                </damageDefs>
+            </li>
 			<li Class="HediffCompProperties_RemoveIfOtherHediff">
 				<hediffs>
 					<li>SWCP_Hediff_StealthModeCaught</li>
+					<!-- <li>guy762_SonicDisorient</li> -->
 				</hediffs>
 			</li>
 		</comps>
@@ -193,8 +209,14 @@
 					<MeleeHitChance>10</MeleeHitChance>
 					<MeleeDamageFactor>3</MeleeDamageFactor>
 					
-					<ShootingAccuracyPawn>10</ShootingAccuracyPawn>
+					<!-- <ShootingAccuracyPawn>10</ShootingAccuracyPawn> -->
+					<ShootingAccuracyFactor_Touch>10</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>10</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Medium>10</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>10</ShootingAccuracyFactor_Long>
 					<AimingDelayFactor>0.1</AimingDelayFactor>
+					
+					<VEF_RangeAttackDamageFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">3</VEF_RangeAttackDamageFactor>
 				</statFactors>
 				<!-- <statOffsets> -->
 				<!-- </statOffsets> -->
@@ -228,12 +250,12 @@
 			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
 			<li Class="HediffCompProperties_DisappearsOnDeath"/>
 			<li Class="HediffCompProperties_Disappears">
-				<disappearsAfterTicks>1800</disappearsAfterTicks> <!-- 30 seconds -->
 				<showRemainingTime>True</showRemainingTime>
 			</li>
 		</comps>
 		<stages>
 			<li>
+				<minSeverity>0</minSeverity>
 				<becomeVisible>false</becomeVisible>
 			</li>
 		</stages>
@@ -259,7 +281,8 @@
 		
 		<!-- 12000 = 5 hours -->
 		<cooldownTicksRange>1000</cooldownTicksRange>
-		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<!-- <stunTargetWhileCasting>true</stunTargetWhileCasting> -->
+		<targetRequired>False</targetRequired>
         <verbProperties>
             <verbClass>Verb_CastAbility</verbClass>
 			<violent>false</violent>
@@ -273,7 +296,7 @@
             </targetParams>
         </verbProperties>
         <comps>
-            <li Class="EBSGFramework.CompProperties_EBSGBurst">
+            <li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_EBSGBurst">
                 <explosion>
 					<radius>5</radius>
 					<!-- <damageDef>guy762_GrenadeDamage_sonic</damageDef> -->
@@ -282,6 +305,14 @@
 					<damageAmount>1</damageAmount>
 					<exclusions>Allies</exclusions>
 				</explosion>
+				<successChance>
+					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
+					<casterStatChance>SWCPStat_Awareness</casterStatChance>
+					<casterStatEffect>Multiply</casterStatEffect> <!-- success chance increases if stat is above 1 -->
+					
+					<successMessage>Awareness check cast! {0} -> {1}</successMessage>
+					<failureMessage>Awareness check cast FAILED! {0} -> {1}</failureMessage>
+				</successChance>
             </li>
         </comps>
     </AbilityDef>
@@ -294,19 +325,38 @@
 		<canInterruptJobs>true</canInterruptJobs>
 		<harmsHealth>false</harmsHealth>
 		
-		<!-- <workerClass>DamageWorker_AddInjury</workerClass> -->
-		<hediff>SWCP_Hediff_StealthModeCaught</hediff>
+		<workerClass>DamageWorker_AddInjury</workerClass>
+		<hediff>Bruise</hediff>
+		<hediffSolid>Bruise</hediffSolid>
+		<defaultDamage>0</defaultDamage>
+		<defaultArmorPenetration>0</defaultArmorPenetration>
 		
-		<modExtensions>
-			<li Class="guy762_Ionization.ModExtension_HediffGiver">
-				<hediffToAdd>SWCP_Hediff_StealthModeCaught</hediffToAdd>
+		<externalViolence>true</externalViolence>
+		<harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<!-- <modExtensions> -->
+			<!-- <li Class="guy762_Ionization.ModExtension_HediffGiver"> -->
+				<!-- <hediffToAdd>SWCP_Hediff_StealthModeCaught</hediffToAdd> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+		
+		<additionalHediffs>
+			<li>
+				<hediff>SWCP_Hediff_StealthModeCaught</hediff>
+				<severityPerDamageDealt>1</severityPerDamageDealt>
 			</li>
-		</modExtensions>
+		</additionalHediffs>
 		
 		<buildingDamageFactorImpassable>0</buildingDamageFactorImpassable>
 		<buildingDamageFactorPassable>0</buildingDamageFactorPassable>
 		<plantDamageFactor>0</plantDamageFactor>
 		<corpseDamageFactor>0</corpseDamageFactor>
+		
+		<!-- <isExplosive>true</isExplosive> -->
+		<!-- <impactSoundType>Blunt</impactSoundType> -->
+		<!-- <explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly> -->
+		<!-- <explosionCellFleck>BlastDry</explosionCellFleck> -->
+		<!-- <explosionColorCenter>(0.73, 0.93, 0.96)</explosionColorCenter> -->
+		<!-- <explosionColorEdge>(0.71, 0.82, 0.90)</explosionColorEdge> -->
 	</DamageDef>
 	
 	<HediffDef>
