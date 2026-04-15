@@ -27,7 +27,7 @@
 		<targetRequired>false</targetRequired>
 		<statBases>
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
-			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
 			
 			<Force_AbilityLightsideStat>5</Force_AbilityLightsideStat>
@@ -120,10 +120,10 @@
 					<capacity>Talking</capacity>
 					<offset>0.2</offset>
 				</li>
-				<!--li>
-				  <capacity>Moving</capacity> omitted to avoid making Force speed redundant
+				<li>
+				  <capacity>Moving</capacity>
 				  <offset>0.2</offset>
-				</li-->
+				</li>
 				<li>
 					<capacity>Manipulation</capacity>
 					<offset>0.2</offset>
@@ -182,7 +182,7 @@
 		<targetRequired>false</targetRequired>
 		<statBases>
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
-			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
 			
 			<Force_AbilityLightsideStat>10</Force_AbilityLightsideStat>
@@ -286,10 +286,10 @@
 					<capacity>Talking</capacity>
 					<offset>0.3</offset>
 				</li>
-				<!--li>
-				  <capacity>Moving</capacity> omitted to avoid making Force speed redundant
+				<li>
+				  <capacity>Moving</capacity>
 				  <offset>0.3</offset>
-				</li-->
+				</li>
 				<li>
 					<capacity>Manipulation</capacity>
 					<offset>0.3</offset>
@@ -353,7 +353,7 @@
 		<targetRequired>false</targetRequired>
 		<statBases>
 			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
-			<Ability_Duration>20</Ability_Duration> <!-- this is in seconds, not ticks -->
+			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
 			<Ability_EffectRadius>5</Ability_EffectRadius>
 			
 			<Force_AbilityLightsideStat>15</Force_AbilityLightsideStat>
@@ -463,10 +463,10 @@
 					<capacity>Talking</capacity>
 					<offset>0.5</offset>
 				</li>
-				<!--li>
-				  <capacity>Moving</capacity> omitted to avoid making Force speed redundant
+				<li>
+				  <capacity>Moving</capacity>
 				  <offset>0.5</offset>
-				</li-->
+				</li>
 				<li>
 					<capacity>Manipulation</capacity>
 					<offset>0.5</offset>

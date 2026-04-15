@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationReplace">
+		  <xpath>Defs/StatDef[defName="Force_FPRecovery"]/minValue</xpath>
+		  <value>
+				<minValue>-100</minValue>
+		  </value>
+		</match>
+	  
+	</Operation>
+
+	
+	
+</Patch>

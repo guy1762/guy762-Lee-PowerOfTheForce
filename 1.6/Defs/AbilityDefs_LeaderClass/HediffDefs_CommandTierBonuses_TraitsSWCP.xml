@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  
+
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierCasterTraitBonus_tough</defName>
+		<label>Command bonus: Tough (caster)</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<!-- <li Class="HediffCompProperties_Disappears"> -->
+				<!-- <showRemainingTime>True</showRemainingTime> -->
+			<!-- </li> -->
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierTraitBonusBuff_tough</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierTraitBonusBuff_tough</defName>
+		<label>Command bonus: Tough</label>
+		<description>Combat stats are impacted by being near someone who is using a command tier ability who also has the "tough" trait.</description>
+		<debugLabelExtra>other</debugLabelExtra>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+		  <li Class="HediffCompProperties_Disappears">
+			<showRemainingTime>false</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li><statFactors><IncomingDamageFactor>0.75</IncomingDamageFactor></statFactors></li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	
+	
+
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierCasterTraitBonus_unyielding</defName>
+		<label>Command bonus: Unyielding (caster)</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<!-- <li Class="HediffCompProperties_Disappears"> -->
+				<!-- <showRemainingTime>True</showRemainingTime> -->
+			<!-- </li> -->
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierTraitBonusBuff_unyielding</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierTraitBonusBuff_unyielding</defName>
+		<label>Command bonus: Unyielding</label>
+		<description>Combat stats are impacted by being near someone who is using a command tier ability who also has the "unyielding" trait.\n\nNOTE: blocks all mental breaks from low mood.</description>
+		<debugLabelExtra>other</debugLabelExtra>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<MentalBreakThreshold>-0.27</MentalBreakThreshold>
+				</statOffsets>
+				<statFactors>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.125</CertaintyLossFactor>
+				</statFactors>
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="MentalBreakBlocker.ModExtension_MentalBreakBlocker">
+				<!--choose one: mood, damage, psycast, moodAndDamage, moodAndPsycast, damageAndPsycast, all-->
+				<!--  allow only mood or damage cause  -->
+				<cause>mood</cause>
+				<isWhitelist>true</isWhitelist>
+			</li>
+		</modExtensions>
+	</HediffDef>
+  
+  
+  
+
+</Defs>

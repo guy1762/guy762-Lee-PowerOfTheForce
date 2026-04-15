@@ -42,79 +42,134 @@
   </AbilityDef>
   
   
+	<HediffDef Name="guy762_CommandTierCasterBASE" Abstract="True">
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>guy762_StopCommandTier</abilityDef>
+			</li>
+		</comps>
+	</HediffDef>
 	
 	
 	
 	
-	<!-- <HediffDef Name="guy762_CommandTierCasterBASE" Abstract="True"> -->
-		<!-- <hediffClass>HediffWithComps</hediffClass> -->
-		<!-- <defaultLabelColor>(255,255,7)</defaultLabelColor> -->
-		<!-- <isBad>false</isBad> -->
-		<!-- <comps> -->
-			<!-- <li Class="HediffCompProperties_Disappears"> -->
-				<!-- <showRemainingTime>True</showRemainingTime> -->
-			<!-- </li> -->
-			<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
-			<!-- <li Class="HediffCompProperties_GiveAbility"> -->
-				<!-- <abilityDef>guy762_StopCommandTier</abilityDef> -->
-			<!-- </li> -->
-			<!-- <li MayRequire="ShunTheWitch.CVNmechanoidwarfarecore" Class="CVNPatronAbilities.HediffCompProperties_ConditionalApply"> -->
-				<!-- <hediffToApplyIfMatch>guy762_hediff_CommandTierCasterTraitBonus_tough</hediffToApplyIfMatch> -->
-				<!-- <traitDefs> -->
+	
+	
+	<HediffDef Name="guy762_CommandTierCasterBASE_TheBigListOfConditionalTraitBonuses" ParentName="guy762_CommandTierCasterBASE" Abstract="True">
+		<comps>
+			<li Class="SWCP_CVN_Misc.HediffCompProperties_Conditional">
+				<onDisappearRemoveAllAddedHediff>True</onDisappearRemoveAllAddedHediff>
+				<conditions>
 					<!-- <li> -->
-						<!-- <def>Tough</def> -->
+						<!-- <hediffIfMatch>hediffDef</hediffIfMatch> -->
+						<!-- <severityOnApply>1.0</severityOnApply> -->
+						
+						<!-- <hediffDef>hediffDef</hediffDef> -->
+						<!-- <minSev>0</minSev> -->
+						
+						<!-- <traitDef>traitDef</traitDef> -->
 						<!-- <degree>0</degree> -->
+						
+						<!-- <geneDef>geneDef</geneDef> -->
+						
+						<!-- <raceDef>thingDef</raceDef> -->
+						
+						<!-- <kindDef>pawnKindDef</kindDef> -->
+						
+						<!-- <factionDef>factionDef</factionDef> -->
+						
+						<!-- <royalTitleDef>royalTitleDef</royalTitleDef> -->
 					<!-- </li> -->
-				<!-- </traitDefs> -->
-			<!-- </li> -->
-		<!-- </comps> -->
-	<!-- </HediffDef> -->
+					
+					
+					
+					
+				<!-- Tough -->	
+					<li>
+						<traitDef>Tough</traitDef><degree>0</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_tough</hediffIfMatch>
+					</li>
+					
+					
+					
+					
+					
+					
+					
+						<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Traits_SWCP.xml -->
+					
+				<!-- Unyielding -->
+					<li>
+						<traitDef>SWCPTrait_Unyielding</traitDef><degree>0</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_unyielding</hediffIfMatch>
+					</li>
+					
+					<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Traits_Spectrum.xml -->
+					
+				<!-- Nerves -->
+					<li>
+						<traitDef>Nerves</traitDef><degree>2</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_ironwilled</hediffIfMatch>
+					</li>
+					<li>
+						<traitDef>Nerves</traitDef><degree>1</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_steadfast</hediffIfMatch>
+					</li>
+					<li>
+						<traitDef>Nerves</traitDef><degree>-1</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_nervous</hediffIfMatch>
+					</li>
+					<li>
+						<traitDef>Nerves</traitDef><degree>-2</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_volatile</hediffIfMatch>
+					</li>
+				<!-- ShootingAccuracy -->
+					<li>
+						<traitDef>ShootingAccuracy</traitDef><degree>1</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_carefulshooter</hediffIfMatch>
+					</li>
+					<li>
+						<traitDef>ShootingAccuracy</traitDef><degree>-1</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_triggerhappy</hediffIfMatch>
+					</li>
+				<!-- SpeedOffset -->
+					<li>
+						<traitDef>SpeedOffset</traitDef><degree>-1</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_slowpoke</hediffIfMatch>
+					</li>
+					<li>
+						<traitDef>SpeedOffset</traitDef><degree>1</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_fastwalker</hediffIfMatch>
+					</li>
+					<li>
+						<traitDef>SpeedOffset</traitDef><degree>2</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_jogger</hediffIfMatch>
+					</li>
+				
+				<!-- . -->
+					
+					
+					
+					
+					
+				
+					
+				</conditions>
+			</li>
+		</comps>
+	</HediffDef>
 	
 	
-	<!-- <HediffDef> -->
-		<!-- <defName>guy762_hediff_CommandTierCasterTraitBonus_tough</defName> -->
-		<!-- <label>Command Tier bonus: Tough (caster)</label> -->
-		<!-- <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description> -->
-		<!-- <hediffClass>HediffWithComps</hediffClass> -->
-		<!-- <defaultLabelColor>(255,255,7)</defaultLabelColor> -->
-		<!-- <comps> -->
-			<!-- <li Class="HediffCompProperties_Disappears"> -->
-				<!-- <showRemainingTime>True</showRemainingTime> -->
-			<!-- </li> -->
-			<!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
-			<!-- <li Class="HediffCompProperties_GiveHediffsInRange"> -->
-				<!-- <range>500</range> -->
-				<!-- <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted> -->
-				<!-- <targetingParameters> -->
-				  <!-- <canTargetBuildings>false</canTargetBuildings> -->
-				  <!-- <canTargetAnimals>false</canTargetAnimals> -->
-				  <!-- <canTargetMechs>false</canTargetMechs> -->
-				<!-- </targetingParameters> -->
-				<!-- <hediff>guy762_hediff_CommandTierTraitBonusBuff_tough</hediff> -->
-			<!-- </li> -->
-		<!-- </comps> -->
-		<!-- <isBad>false</isBad> -->
-	<!-- </HediffDef> -->
 	
 	
-	<!-- <HediffDef> -->
-		<!-- <defName>guy762_hediff_CommandTierTraitBonusBuff_tough</defName> -->
-		<!-- <label>Command Tier bonus: Tough</label> -->
-		<!-- <description>Combat stats are boosted thanks to being near someone who is using a command tier ability who also has the "tough" trait.</description> -->
-		<!-- <debugLabelExtra>other</debugLabelExtra> -->
-		<!-- <hediffClass>HediffWithComps</hediffClass> -->
-		<!-- <defaultLabelColor>(255,255,7)</defaultLabelColor> -->
-		<!-- <comps> -->
-		  <!-- <li Class="HediffCompProperties_Disappears"> -->
-			<!-- <showRemainingTime>false</showRemainingTime> -->
-		  <!-- </li> -->
-		  <!-- <li Class="HediffCompProperties_DisappearsOnDeath"/> -->
-		<!-- </comps> -->
-		<!-- <isBad>false</isBad> -->
-		<!-- <stages> -->
-			<!-- <li><statFactors><IncomingDamageFactor>0.75</IncomingDamageFactor></statFactors></li> -->
-		<!-- </stages> -->
-	<!-- </HediffDef> -->
+
   
   
   
@@ -185,36 +240,26 @@
     </comps>
   </AbilityDef>
   
-  <HediffDef>
-    <defName>guy762_hediff_CommandTierVI_caster</defName>
-	<label>Command Tier VI</label>
-    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
-    <comps>
-      <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>True</showRemainingTime>
-      </li>
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <range>500</range>
-        <!-- <mote>Mote_CombatCommand</mote> -->
-        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <!-- <onlyTargetColonists>true</onlyTargetColonists> -->
-		  <!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
-        </targetingParameters>
-        <hediff>guy762_hediff_CommandTierVI_buff</hediff>
-      </li>
-	  <li Class="HediffCompProperties_GiveAbility">
-		<abilityDef>guy762_StopCommandTier</abilityDef>
-	  </li>
-    </comps>
-    <isBad>false</isBad>
-  </HediffDef>
+	<HediffDef ParentName="guy762_CommandTierCasterBASE">
+		<defName>guy762_hediff_CommandTierVI_caster</defName>
+		<label>Command Tier VI</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<!-- <mote>Mote_CombatCommand</mote> -->
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<!-- <onlyTargetColonists>true</onlyTargetColonists> -->
+					<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierVI_buff</hediff>
+			</li>
+		</comps>
+	</HediffDef>
 
 
 	<HediffDef>
@@ -353,36 +398,26 @@
     </comps>
   </AbilityDef>
   
-  <HediffDef>
-    <defName>guy762_hediff_CommandTierV_caster</defName>
-	<label>Command Tier V</label>
-    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
-    <comps>
-      <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>True</showRemainingTime>
-      </li>
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <range>500</range>
-        <!-- <mote>Mote_CombatCommand</mote> -->
-        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <!-- <onlyTargetColonists>true</onlyTargetColonists> -->
-		  <!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
-        </targetingParameters>
-        <hediff>guy762_hediff_CommandTierV_buff</hediff>
-      </li>
-	  <li Class="HediffCompProperties_GiveAbility">
-		<abilityDef>guy762_StopCommandTier</abilityDef>
-	  </li>
-    </comps>
-    <isBad>false</isBad>
-  </HediffDef>
+	<HediffDef ParentName="guy762_CommandTierCasterBASE">
+		<defName>guy762_hediff_CommandTierV_caster</defName>
+		<label>Command Tier V</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<!-- <mote>Mote_CombatCommand</mote> -->
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<!-- <onlyTargetColonists>true</onlyTargetColonists> -->
+					<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierV_buff</hediff>
+			</li>
+		</comps>
+	</HediffDef>
 
 
 	<HediffDef>
@@ -532,36 +567,26 @@
     </comps>
   </AbilityDef>
   
-  <HediffDef>
-    <defName>guy762_hediff_CommandTierIV_caster</defName>
-    <label>Command Tier IV</label>
-    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
-    <comps>
-      <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>True</showRemainingTime>
-      </li>
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <range>500</range>
-        <!-- <mote>Mote_CombatCommand</mote> -->
-        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <!-- <onlyTargetColonists>true</onlyTargetColonists> -->
-		  <!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
-        </targetingParameters>
-        <hediff>guy762_hediff_CommandTierIV_buff</hediff>
-      </li>
-	  <li Class="HediffCompProperties_GiveAbility">
-		<abilityDef>guy762_StopCommandTier</abilityDef>
-	  </li>
-    </comps>
-    <isBad>false</isBad>
-  </HediffDef>
+	<HediffDef ParentName="guy762_CommandTierCasterBASE">
+		<defName>guy762_hediff_CommandTierIV_caster</defName>
+		<label>Command Tier IV</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<!-- <mote>Mote_CombatCommand</mote> -->
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<!-- <onlyTargetColonists>true</onlyTargetColonists> -->
+					<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierIV_buff</hediff>
+			</li>
+		</comps>
+	</HediffDef>
 
 	<HediffDef>
 		<defName>guy762_hediff_CommandTierIV_buff</defName><!-- NOTE!!!! the buff hediffs disable the 'viewed corpse' thought VIA A PATCH!!!! -->
@@ -708,36 +733,26 @@
     </comps>
   </AbilityDef>
   
-  <HediffDef>
-    <defName>guy762_hediff_CommandTierIII_caster</defName>
-    <label>Command Tier III</label>
-    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
-    <comps>
-      <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>True</showRemainingTime>
-      </li>
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <range>500</range>
-        <!-- <mote>Mote_CombatCommand</mote> -->
-        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <!-- <onlyTargetColonists>true</onlyTargetColonists> -->
-		  <!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
-        </targetingParameters>
-        <hediff>guy762_hediff_CommandTierIII_buff</hediff>
-      </li>
-	  <li Class="HediffCompProperties_GiveAbility">
-		<abilityDef>guy762_StopCommandTier</abilityDef>
-	  </li>
-    </comps>
-    <isBad>false</isBad>
-  </HediffDef>
+	<HediffDef ParentName="guy762_CommandTierCasterBASE_TheBigListOfConditionalTraitBonuses">
+		<defName>guy762_hediff_CommandTierIII_caster</defName>
+		<label>Command Tier III</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<!-- <mote>Mote_CombatCommand</mote> -->
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<!-- <onlyTargetColonists>true</onlyTargetColonists> -->
+					<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierIII_buff</hediff>
+			</li>
+		</comps>
+	</HediffDef>
 
 	<HediffDef>
 		<defName>guy762_hediff_CommandTierIII_buff</defName><!-- NOTE!!!! the buff hediffs disable the 'viewed corpse' thought VIA A PATCH!!!! -->
@@ -886,36 +901,26 @@
     </comps>
   </AbilityDef>
   
-  <HediffDef>
-    <defName>guy762_hediff_CommandTierII_caster</defName>
-    <label>Command Tier II</label>
-    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
-    <comps>
-      <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>True</showRemainingTime>
-      </li>
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <range>500</range>
-        <!-- <mote>Mote_CombatCommand</mote> -->
-        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <!-- <onlyTargetColonists>true</onlyTargetColonists> -->
-		  <!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
-        </targetingParameters>
-        <hediff>guy762_hediff_CommandTierII_buff</hediff>
-      </li>
-	  <li Class="HediffCompProperties_GiveAbility">
-		<abilityDef>guy762_StopCommandTier</abilityDef>
-	  </li>
-    </comps>
-    <isBad>false</isBad>
-  </HediffDef>
+	<HediffDef ParentName="guy762_CommandTierCasterBASE_TheBigListOfConditionalTraitBonuses">
+		<defName>guy762_hediff_CommandTierII_caster</defName>
+		<label>Command Tier II</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<!-- <mote>Mote_CombatCommand</mote> -->
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<!-- <onlyTargetColonists>true</onlyTargetColonists> -->
+					<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierII_buff</hediff>
+			</li>
+		</comps>
+	</HediffDef>
 
 	<HediffDef>
 		<defName>guy762_hediff_CommandTierII_buff</defName><!-- NOTE!!!! the buff hediffs disable the 'viewed corpse' thought VIA A PATCH!!!! -->
@@ -1058,36 +1063,26 @@
     </comps>
   </AbilityDef>
   
-  <HediffDef>
-    <defName>guy762_hediff_CommandTierI_caster</defName>
-    <label>Command Tier I</label>
-    <description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
-    <hediffClass>HediffWithComps</hediffClass>
-	<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
-    <comps>
-      <li Class="HediffCompProperties_Disappears">
-        <showRemainingTime>True</showRemainingTime>
-      </li>
-      <li Class="HediffCompProperties_DisappearsOnDeath"/>
-      <li Class="HediffCompProperties_GiveHediffsInRange">
-        <range>500</range>
-        <!-- <mote>Mote_CombatCommand</mote> -->
-        <hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
-        <targetingParameters>
-          <canTargetBuildings>false</canTargetBuildings>
-          <canTargetAnimals>false</canTargetAnimals>
-          <canTargetMechs>false</canTargetMechs>
-          <!-- <onlyTargetColonists>true</onlyTargetColonists> -->
-		  <!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
-        </targetingParameters>
-        <hediff>guy762_hediff_CommandTierI_buff</hediff>
-      </li>
-	  <li Class="HediffCompProperties_GiveAbility">
-		<abilityDef>guy762_StopCommandTier</abilityDef>
-	  </li>
-    </comps>
-    <isBad>false</isBad>
-  </HediffDef>
+	<HediffDef ParentName="guy762_CommandTierCasterBASE_TheBigListOfConditionalTraitBonuses">
+		<defName>guy762_hediff_CommandTierI_caster</defName>
+		<label>Command Tier I</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<!-- <mote>Mote_CombatCommand</mote> -->
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+					<!-- <onlyTargetColonists>true</onlyTargetColonists> -->
+					<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> -->
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierI_buff</hediff>
+			</li>
+		</comps>
+	</HediffDef>
 
 	<HediffDef>
 		<defName>guy762_hediff_CommandTierI_buff</defName><!-- NOTE!!!! the buff hediffs disable the 'viewed corpse' thought VIA A PATCH!!!! -->

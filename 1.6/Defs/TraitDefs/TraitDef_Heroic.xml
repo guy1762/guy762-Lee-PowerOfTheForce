@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<TraitDef>
+		<defName>SWPotF_Trait_heroic</defName>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_HeroicBonus</HediffDef>
+		</descriptionHyperlinks>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>heroic</label>
+				<description>{PAWN_nameDef} stands above others as an individual. {PAWN_pronoun} is capable of extraordinary feats few other pawns can match and is one of the heroes of this colony or crew's story.</description>
+				<degree>0</degree>
+			</li>
+		</degreeDatas>
+		
+		<modExtensions>
+			<li Class="SWCP.TraitExtension_DraftedHediff">
+				<hediff>SWPotF_hediff_HeroicBonus</hediff>
+			</li>
+			<!-- <li Class="ItsSorceryFramework.ModExtension_SchemaAddition"> -->
+				<!-- <schema>SWPotF_HeroModeSchema</schema> -->
+				<!-- <baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef> -->
+			<!-- </li> -->
+		</modExtensions>
+	</TraitDef>
+	
+	
+	<HediffDef>
+		<defName>SWPotF_hediff_HeroicBonus</defName>
+		<label>Heroic Resolve</label>
+		<description>This pawn is standing at attention and is ready for anything. Superfluous needs like recreation and comfort are suppressed by the desire for this pawn to carry out their duties, whatever they may be. Hunger and rest falling rates are significantly reduced, and this pawn will not experience mental breaks caused by low mood.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<hungerRateFactor>0.1</hungerRateFactor>
+				<restFallFactor>0.1</restFallFactor>
+				<disablesNeeds>
+					<li>Joy</li>
+					<li>Beauty</li>
+					<li>Comfort</li>
+					<li>DrugDesire</li>
+					<li>Outdoors</li>
+					<li>Indoors</li>
+				</disablesNeeds>
+			</li>
+		</stages>
+		<modExtensions>
+			<li Class="MentalBreakBlocker.ModExtension_MentalBreakBlocker">
+				<!--choose one: mood, damage, psycast, moodAndDamage, moodAndPsycast, damageAndPsycast, all-->
+				<!--  allow only mood or damage cause  -->
+				<cause>mood</cause>
+				<isWhitelist>true</isWhitelist>
+			</li>
+		</modExtensions>
+	</HediffDef>
+	
+	
+
+
+</Defs>

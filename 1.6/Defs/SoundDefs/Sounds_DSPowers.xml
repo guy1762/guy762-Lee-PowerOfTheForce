@@ -306,4 +306,85 @@
 	
 	
 	
+	<SoundDef>
+		<defName>kotorsound_force_JArage</defName>	
+		<context>MapOnly</context>
+		<eventNames />	
+		<maxSimultaneous>1</maxSimultaneous>	
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>JediAcademyExtracts/rage</clipPath>
+					</li>
+				</grains>	
+				<volumeRange>
+				<min>35</min>        
+				<max>35</max>
+				</volumeRange>  		
+				<pitchRange>
+					<min>0.8</min>				
+					<max>1.2</max>
+				</pitchRange>			
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	
+	
+	
+	<SoundDef>
+		<defName>kotorsound_force_EaWconvert</defName>	
+		<context>MapOnly</context>
+		<eventNames />	
+		<maxSimultaneous>1</maxSimultaneous>	
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>EmpireAtWarExtracts/FORCE_CONVERT_1</clipPath>
+					</li>
+				</grains>	
+				<volumeRange>
+				<min>35</min>        
+				<max>35</max>
+				</volumeRange>  		
+				<pitchRange>
+					<min>0.8</min>				
+					<max>1.2</max>
+				</pitchRange>			
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	
+	<SoundDef>
+		<defName>kotorsound_force_EaWcorruption</defName>	
+		<context>MapOnly</context>
+		<eventNames />	
+		<maxSimultaneous>1</maxSimultaneous>	
+		<subSounds>
+			<li>
+				<grains>
+					<li Class="AudioGrain_Clip">
+						<clipPath>EmpireAtWarExtracts/FORCE_CORRUPTION_1</clipPath>
+					</li>
+				</grains>	
+				<volumeRange>
+				<min>35</min>        
+				<max>35</max>
+				</volumeRange>  		
+				<pitchRange>
+					<min>0.8</min>				
+					<max>1.2</max>
+				</pitchRange>			
+				<sustainLoop>False</sustainLoop>
+			</li>
+		</subSounds>
+	</SoundDef>
+	
+	
+	
 </Defs>

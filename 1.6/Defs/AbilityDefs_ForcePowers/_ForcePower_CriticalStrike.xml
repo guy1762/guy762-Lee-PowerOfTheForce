@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_critweapon</defName>
+		<label>Sun Djerm</label>
+		<description>Use the Force to guide a melee strike that targets an opponents weapon, destroying it permanently. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
+		<iconPath>UI/ForceIcons/Power_CritStrike_weapon</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<!-- <level>15</level> -->
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>6000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>1.55</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>kotorsound_blastspecial</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<!-- <li Class="TheForce_ItsSorcery.Abilities.LightsaberCombat.CompAbilityProperties_Lightsaber_SunDjerm"> -->
+				<!-- <canTargetBosses>false</canTargetBosses> -->
+			<!-- </li> -->
+			<li Class = "CompProperties_AbilityEffect">
+				<compClass>Lightsaber.Ability.CompAbilityEffect_LightsaberSunDjerm</compClass>
+				<canTargetBosses>false</canTargetBosses>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<casterHasAllOfHediffs>
+					<li>Lightsaber_Stance</li>
+				</casterHasAllOfHediffs>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+
+	  
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_crithand</defName>
+		<label>Cho Mai</label>
+		<description>Use the Force to guide a melee strike that targets an opponents hand, severing it and disarming them. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
+		<iconPath>UI/ForceIcons/Power_CritStrike_hand</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<!-- <level>18</level> -->
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>1.55</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>kotorsound_lightsaber_hitsoft</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		  <!-- <li Class="TheForce_ItsSorcery.Abilities.LightsaberCombat.CompAbilityProperties_Lightsaber_ChoMai"> -->
+			<!-- <canTargetBosses>false</canTargetBosses> -->
+		  <!-- </li> -->
+			<li Class = "CompProperties_AbilityEffect">
+				<compClass>Lightsaber.Ability.CompAbilityEffect_LightsaberChoMai</compClass>
+				<canTargetBosses>false</canTargetBosses>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<casterHasAllOfHediffs>
+					<li>Lightsaber_Stance</li>
+				</casterHasAllOfHediffs>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>18</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_critweapon</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	  
+	  
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_critlimb</defName>
+		<label>Cho Mok</label>
+		<description>Use the Force to guide a melee strike that targets a random limb on the opponent, severing it. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
+		<iconPath>UI/ForceIcons/Power_CritStrike_randomlimb</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<!-- <level>21</level> -->
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>1.55</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>kotorsound_lightsaber_hitsoft</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		  <!-- <li Class="TheForce_ItsSorcery.Abilities.LightsaberCombat.CompAbilityProperties_Lightsaber_ChoMok"> -->
+			<!-- <canTargetBosses>false</canTargetBosses> -->
+		  <!-- </li> -->
+			<li Class = "CompProperties_AbilityEffect">
+				<compClass>Lightsaber.Ability.CompAbilityEffect_LightsaberChoMok</compClass>
+				<canTargetBosses>false</canTargetBosses>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<casterHasAllOfHediffs>
+					<li>Lightsaber_Stance</li>
+				</casterHasAllOfHediffs>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>21</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_crithand</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	  
+	  
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_critbisect</defName>
+		<label>Sai Tok</label>
+		<description>Use the Force to guide a melee strike that bisects an opponent at the waist, severing their legs. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
+		<iconPath>UI/ForceIcons/Power_CritStrike_bisect</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<!-- <level>26</level> -->
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>16000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>1.55</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>kotorsound_lightsaber_hitsoft</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		  <!-- <li Class="TheForce_ItsSorcery.Abilities.LightsaberCombat.CompAbilityProperties_Lightsaber_SaiTok"> -->
+			<!-- <canTargetBosses>false</canTargetBosses> -->
+		  <!-- </li> -->
+			<li Class = "CompProperties_AbilityEffect">
+				<compClass>Lightsaber.Ability.CompAbilityEffect_LightsaberSaiTok</compClass>
+				<canTargetBosses>false</canTargetBosses>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<casterHasAllOfHediffs>
+					<li>Lightsaber_Stance</li>
+				</casterHasAllOfHediffs>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>26</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_critlimb</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	  
+	  
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_crithead</defName>
+		<label>Sai Cha</label>
+		<description>Use the Force to guide a melee strike that decapitates an opponent, severing their head. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
+		<iconPath>UI/ForceIcons/Power_CritStrike_head</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <hotKey>Misc12</hotKey> -->
+		
+		<!-- <level>30</level> -->
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>16000</cooldownTicksRange>
+		<statBases>
+			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>true</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>1.55</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<soundCast>kotorsound_lightsaber_hitsoft</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		<comps>
+		  <!-- <li Class="TheForce_ItsSorcery.Abilities.LightsaberCombat.CompAbilityProperties_Lightsaber_SaiCha"> -->
+			<!-- <canTargetBosses>false</canTargetBosses> -->
+		  <!-- </li> -->
+			<li Class = "CompProperties_AbilityEffect">
+				<compClass>Lightsaber.Ability.CompAbilityEffect_LightsaberSaiCha</compClass>
+				<canTargetBosses>false</canTargetBosses>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<casterHasAllOfHediffs>
+					<li>Lightsaber_Stance</li>
+				</casterHasAllOfHediffs>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>30</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_critbisect</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	 
+</Defs>

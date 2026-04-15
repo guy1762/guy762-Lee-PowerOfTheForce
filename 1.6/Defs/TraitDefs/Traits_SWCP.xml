@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Traits __________-->
+
+    <!-- Art Lover -->
+
+    <TraitDef>
+        <defName>SWCPTrait_ArtLover</defName>
+        <commonality>0.1</commonality>
+        <degreeDatas>
+            <li>
+                <label>art lover</label>
+                <description>[PAWN_nameDef] has a deep appreciation for visual art. Taking time to admire a piece of art lifts [PAWN_possessive] spirits, and sometimes sparks a burst of creative inspiration.</description>
+            </li>
+        </degreeDatas>
+        <modExtensions>
+            <li Class="SWCP.TraitExtension_ViewArtBonus">
+                <thought>SWCPThought_ArtLoverViewed</thought>
+                <inspiration>Inspired_Creativity</inspiration>
+                <inspirationChance>0.05</inspirationChance>
+            </li>
+        </modExtensions>
+    </TraitDef>
+	<ThoughtDef>
+        <defName>SWCPThought_ArtLoverViewed</defName>
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <durationDays>0.5</durationDays>
+        <stackLimit>1</stackLimit>
+        <stages>
+            <li>
+                <label>artistic appreciation</label>
+                <description>I took some time to appreciate a piece of art. It's still with me.</description>
+                <baseMoodEffect>8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+    <!-- Unyielding -->
+
+    <TraitDef>
+        <defName>SWCPTrait_Unyielding</defName>
+        <commonality>0.1</commonality>
+        <degreeDatas>
+            <li>
+                <label>unyielding</label>
+                <description>[PAWN_nameDef] has an unshakeable resolve. No amount of stress or danger will cause [PAWN_objective] to flee in panic or abandon [PAWN_possessive] colony.</description>
+                <disallowedMentalStates>
+                    <li>GiveUpExit</li>
+                    <li>PanicFlee</li>
+                    <li>PanicFleeFire</li>
+                </disallowedMentalStates>
+				
+				<statOffsets>
+					<MentalBreakThreshold>-0.27</MentalBreakThreshold>
+				</statOffsets>
+				<statFactors>
+					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.125</CertaintyLossFactor>
+				</statFactors>
+            </li>
+        </degreeDatas>
+        <conflictingTraits>
+            <li>Nerves</li>
+        </conflictingTraits>
+    </TraitDef>
+
+    <!-- Sadistic -->
+
+    <TraitDef>
+        <defName>SWCPTrait_Sadistic</defName>
+        <commonality>0.1</commonality>
+        <degreeDatas>
+            <li>
+                <label>sadistic</label>
+                <description>[PAWN_nameDef] takes genuine pleasure in inflicting pain on others. Hurting someone — in combat or otherwise — gives [PAWN_objective] a dark satisfaction.</description>
+            </li>
+        </degreeDatas>
+        <conflictingTraits>
+            <li>Kind</li>
+        </conflictingTraits>
+        <modExtensions>
+            <li Class="SWCP.TraitExtension_InjuryMoodBoost">
+                <thought>SWCPThought_SadisticBrute</thought>
+                <minDamage>1</minDamage>
+            </li>
+        </modExtensions>
+    </TraitDef>
+	<ThoughtDef>
+        <defName>SWCPThought_SadisticBrute</defName>
+        <thoughtClass>Thought_Memory</thoughtClass>
+        <durationDays>0.3</durationDays>
+        <stackLimit>3</stackLimit>
+        <stackedEffectMultiplier>0.5</stackedEffectMultiplier>
+        <stages>
+            <li>
+                <label>drew blood</label>
+                <description>I hurt someone recently. It felt good.</description>
+                <baseMoodEffect>8</baseMoodEffect>
+            </li>
+        </stages>
+    </ThoughtDef>
+
+</Defs>

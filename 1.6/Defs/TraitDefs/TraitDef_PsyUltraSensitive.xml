@@ -1,24 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<TraitDef>
-		<defName>SWPotF_Trait_heroic</defName>
-		<!-- <modExtensions> -->
-			<!-- <li Class="ItsSorceryFramework.ModExtension_SchemaAddition"> -->
-				<!-- <schema>SWPotF_HeroModeSchema</schema> -->
-				<!-- <baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef> -->
-			<!-- </li> -->
-		<!-- </modExtensions> -->
-		<commonality>0</commonality>
-		<degreeDatas>
-			<li>
-				<label>heroic</label>
-				<description>{PAWN_nameDef} stands above others as an individual. {PAWN_pronoun} is capable of extraordinary feats few other pawns can match and is one of the heroes of this colony's story.</description>
-				<degree>0</degree>
-			</li>
-		</degreeDatas>
-	</TraitDef>
-	
 	
 	<!-- <TraitDef> -->
 		<!-- <defName>SWPotF_Trait_psyultrasensitive</defName> -->

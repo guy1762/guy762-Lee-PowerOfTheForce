@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/ThoughtDef[defName="ObservedLayingCorpse"]/nullifyingHediffs</xpath>
+		<order>Append</order>
+		<value>
+			<li>guy762_hediff_CommandTierVI_buff</li>
+			<li>guy762_hediff_CommandTierV_buff</li>
+			<li>guy762_hediff_CommandTierIV_buff</li>
+			<li>guy762_hediff_CommandTierIII_buff</li>
+			<li>guy762_hediff_CommandTierII_buff</li>
+			<li>guy762_hediff_CommandTierI_buff</li>
+			
+			<li>SWPotF_hediff_HeroicBonus</li>
+		</value>
+	</Operation>
+	
+	
+	
+	
+</Patch>

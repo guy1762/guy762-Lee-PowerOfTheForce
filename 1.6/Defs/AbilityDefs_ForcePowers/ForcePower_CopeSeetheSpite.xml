@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_cope</defName>
+		<label>cope</label>
+		<description>Channel the dark side to increase the caster's resistance to pain, enabling them to fight for longer. Also clears debilitating conditions from weapon attacks, such as Sonic Disorientation and Electrocution.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceCope</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Force_Cope</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
+		<hotKey>Misc10</hotKey>
+		
+		<!-- <level>1</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<cooldownTicksRange>9000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceCope</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>Force_Darkside_Attunement</durationMultiplier>
+			</li>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+                <compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+                <hediffs>
+                    <li>guy762_SonicDisorient</li>
+                    <li>guy762_Electrocuted</li>
+                </hediffs>
+                <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+            </li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_EaWcorruption</sound>
+			</li>
+		</comps>
+		
+		<modExtensions>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>1</RequiredLevel>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	  
+	  
+	<HediffDef>
+		<defName>SWPotF_hediff_ForceCope</defName>
+		<label>cope</label>
+		<description>Dark-side-aided resistance to pain. Duration scales with the target's dark side corruption.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+				<totalBleedFactor>0.1</totalBleedFactor>
+				<statFactors>
+					<!-- <Force_FPRecovery>-0.1</Force_FPRecovery> -->
+					<Force_AbilityDarksideOffset>2</Force_AbilityDarksideOffset>
+					
+					<IncomingDamageFactor>0.75</IncomingDamageFactor>
+					<PainShockThreshold>2</PainShockThreshold>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_seethe</defName>
+		<label>seethe</label>
+		<description>Channel the dark side of the Force to quickly recover from injuries. Force points will slowly be drained while active. Can be cast while incapacitated.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceSeethe</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Force_Seethe</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
+		<hotKey>Misc10</hotKey>
+		
+		<!-- <level>9</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>20</Force_AbilityDarksideStat>
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+				<neverTargetIncapacitated>false</neverTargetIncapacitated>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceSeethe</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<!-- <durationMultiplier>Force_Darkside_Attunement</durationMultiplier> -->
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JArage</sound>
+			</li>
+		</comps>
+		
+		<modExtensions>
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious>
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>9</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_cope</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	  
+	  
+	<HediffDef>
+		<defName>SWPotF_hediff_ForceSeethe</defName>
+		<label>seethe</label>
+		<description>Dark-side-stimulated natural healing factors. Does *not* cure poisons.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<stages>
+			<li>
+				<statFactors>
+					<Force_FPRecovery>-1</Force_FPRecovery>
+					<Force_AbilityDarksideOffset>2</Force_AbilityDarksideOffset>
+				</statFactors>
+			</li>
+		</stages>
+		<comps>
+			<li Class="FCP.Core.Stims.HediffCompProperties_Stimpack">
+                <HealPermanentInjuries>false</HealPermanentInjuries>
+                <HealMissingBodyParts>false</HealMissingBodyParts>
+                <RemoveHediffWhenDone>False</RemoveHediffWhenDone>
+                <ScaleHealedAmountWithTotalHitPoints>true</ScaleHealedAmountWithTotalHitPoints>
+                <HealedAmount>100</HealedAmount>
+                <TickMinimumBetweenHealing>49</TickMinimumBetweenHealing>
+                <TickMaximumBetweenHealing>51</TickMaximumBetweenHealing>
+            </li>
+			
+			<!--2,500 ticks per hour in game-->
+			<li Class="HediffCompProperties_Disappears">
+				<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	<AbilityDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_spite</defName>
+		<label>spite</label>
+		<description>Surrender to the power of the dark side to continue living even in the face of grievous injuries and imminent death. Bleeding will immediately be halted, immunity to all environmental effects will be granted, and death will be prevented, but no actual healing will take place. Force points will be drained while active. Duration scales with psychic sensitivity. Can only be cast while incapacitated.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotF_hediff_ForceSpite</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/ForceIcons/Power_Force_Spite</iconPath>
+		
+		<category>SWPotF_AbilityCategory_Darkside</category>
+		<hotKey>Misc10</hotKey>
+		
+		<!-- <level>15</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>64000</cooldownTicksRange>
+		
+		<targetRequired>false</targetRequired>
+		<statBases>
+			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>600</Ability_Duration> <!-- this is in seconds, not ticks -->
+			
+			<Force_AbilityDarksideStat>100</Force_AbilityDarksideStat>
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<drawAimPie>False</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_hediff_ForceSpite</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+			</li>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_EaWconvert</sound>
+			</li>
+		</comps>
+		
+		<modExtensions>
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious>
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
+				<RequiredLevel>15</RequiredLevel>
+				<requiredAbilities>
+					<li>SWPotF_forcepower_seethe</li>
+				</requiredAbilities>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	
+	
+	<HediffDef>
+		<defName>SWPotF_hediff_ForceSpite</defName>
+		<label>spite</label>
+		<description>.</description>
+		<defaultLabelColor>(255,110,7)</defaultLabelColor> <!-- orange -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		
+		<preventsDeath>true</preventsDeath>
+		
+		<stages>
+			<li>
+				<totalBleedFactor>0</totalBleedFactor>
+				<statFactors>
+					<Force_FPRecovery>-5</Force_FPRecovery>
+					<Force_AbilityDarksideOffset>3</Force_AbilityDarksideOffset>
+				</statFactors>
+				<statOffsets>
+					<HypoxiaResistance MayRequire="kentington.saveourship2">1</HypoxiaResistance>
+					<DecompressionResistance MayRequire="kentington.saveourship2">1</DecompressionResistance>
+					<VacuumResistance MayRequire="Ludeon.RimWorld.Odyssey">1</VacuumResistance>
+					<ToxicEnvironmentResistance>1</ToxicEnvironmentResistance>
+					<ComfyTemperatureMax>100</ComfyTemperatureMax>
+					<ComfyTemperatureMin>-100</ComfyTemperatureMin>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<!--2,500 ticks per hour in game-->
+			<li Class="HediffCompProperties_Disappears">
+				<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	  
+
+
+</Defs>
