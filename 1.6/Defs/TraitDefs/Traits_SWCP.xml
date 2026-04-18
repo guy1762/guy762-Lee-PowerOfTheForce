@@ -73,11 +73,15 @@
             <li>
                 <label>sadistic</label>
                 <description>[PAWN_nameDef] takes genuine pleasure in inflicting pain on others. Hurting someone — in combat or otherwise — gives [PAWN_objective] a dark satisfaction.</description>
+				<skillGains>
+					<Melee>4</Melee>
+				</skillGains>
             </li>
         </degreeDatas>
-        <conflictingTraits>
-            <li>Kind</li>
-        </conflictingTraits>
+		
+        <!-- <conflictingTraits> -->
+            <!-- <li>Kind</li> -->
+        <!-- </conflictingTraits> -->
         <modExtensions>
             <li Class="SWCP.TraitExtension_InjuryMoodBoost">
                 <thought>SWCPThought_SadisticBrute</thought>
