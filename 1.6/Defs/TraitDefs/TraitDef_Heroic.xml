@@ -45,6 +45,10 @@
 					<li>DrugDesire</li>
 					<li>Outdoors</li>
 					<li>Indoors</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
+					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> -->
 				</disablesNeeds>
 			</li>
 		</stages>
