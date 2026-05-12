@@ -34,8 +34,10 @@
 		<hediffClass>HediffWithComps</hediffClass>
 		<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
 		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
 		<stages>
 			<li>
+				<minSeverity>1</minSeverity>
 				<hungerRateFactor>0.1</hungerRateFactor>
 				<restFallFactor>0.1</restFallFactor>
 				<disablesNeeds>
@@ -52,6 +54,11 @@
 				</disablesNeeds>
 			</li>
 		</stages>
+		<comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByMap">
+				<notInMap>0</notInMap> <!-- Severity to use when the pawn isn't being held in a map (usually due to being in a caravan, shuttle, or other type of transportation -->
+            </li>
+        </comps>
 		<modExtensions>
 			<li Class="MentalBreakBlocker.ModExtension_MentalBreakBlocker">
 				<!--choose one: mood, damage, psycast, moodAndDamage, moodAndPsycast, damageAndPsycast, all-->

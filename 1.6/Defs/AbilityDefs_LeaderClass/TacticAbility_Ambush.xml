@@ -144,16 +144,6 @@
 					<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0</VEF_RangedDodgeChance>
 				</statOffsets>
 			</li>
-			<!-- <li><minSeverity>1</minSeverity></li> -->
-			<!-- <li><minSeverity>2</minSeverity></li> -->
-			<!-- <li><minSeverity>3</minSeverity></li> -->
-			<!-- <li><minSeverity>4</minSeverity></li> -->
-			<!-- <li><minSeverity>5</minSeverity></li> -->
-			<!-- <li><minSeverity>6</minSeverity></li> -->
-			<!-- <li><minSeverity>7</minSeverity></li> -->
-			<!-- <li><minSeverity>8</minSeverity></li> -->
-			<!-- <li><minSeverity>9</minSeverity></li> -->
-			<!-- <li><minSeverity>10</minSeverity></li> -->
         </stages>
         <comps>
             <li Class="EBSGFramework.HediffCompProperties_SeverityByNearbyPawns">
