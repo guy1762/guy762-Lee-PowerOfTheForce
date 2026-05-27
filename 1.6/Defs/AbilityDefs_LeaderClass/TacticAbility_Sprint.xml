@@ -54,7 +54,7 @@
 	<AbilityDef ParentName="SWPotF_TacticAbilityValidatorBASE">
 		<defName>SWPotF_TacticAbility_Sprint</defName>
 		<label>Sprint</label>
-		<description>Force your nearby units to sprint, doubling movement speed for a brief period but tiring your units out after the initial sprint ends.</description>
+		<description>Force your nearby units to sprint, doubling movement speed for a brief period but tiring your units out after the initial sprint ends. Any affected pawns currently in stealth mode will exit stealth mode.</description>
 		<iconPath>UI/EaWIcons/Sprint</iconPath>
 		<warmupMoteSocialSymbol>UI/EaWIcons/Sprint</warmupMoteSocialSymbol>
 		<uiOrder>762</uiOrder>
@@ -111,6 +111,25 @@
 				<!-- <fleckDef>PsycastPsychicEffect</fleckDef> -->
 				<!-- <sound>kotorsound_force_JAteamheal</sound> -->
 			<!-- </li> -->
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWCP_StealthMode</li>
+
+					<!-- <li>SWPotF_hediff_ForceCloak</li> -->
+					<!-- <li>SWPotF_hediff_KnightCloak</li> -->
+					<!-- <li>SWPotF_hediff_MstCloak</li> -->
+					
+					<!-- <li>guy762_StealthField</li> -->
+					<!-- <li>guy762_StealthField_sixty</li> -->
+					<!-- <li>guy762_StealthField_twomin</li> -->
+					<!-- <li>guy762_StealthField_threemin</li> -->
+					<!-- <li>guy762_StealthField_fourmin</li> -->
+					
+					<!-- <li>guy762_StealthField_defel</li> -->
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
 		</comps>
 	</AbilityDef>
 	

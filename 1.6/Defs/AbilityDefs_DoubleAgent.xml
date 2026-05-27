@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<HediffDef Name="SWCPHediff_DoubleAgent">
+		<defName>SWCPHediff_DoubleAgent</defName>
+		<label>double agent</label>
+		<description>This pawn is a double agent from another faction. If one of your colonists is nearby, they can send an "engage" signal to this pawn to temporarily convert them to your faction and engage the enemy.\n\nDouble agents will not attempt awareness checks against stealthed pawns.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<comps>
+			<!-- <li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/> -->
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_RemoveOnFactionChange" />
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_GiveHediffsToNonAlliesInRange">
+				<targetingParameters>
+					<onlyTargetControlledPawns>True</onlyTargetControlledPawns>
+				</targetingParameters>
+				
+				<hediff>SWCPHediff_DoubleAgentEngageAbilityGiver</hediff>
+				<onlyWhileDrafted>false</onlyWhileDrafted>
+				<range>25</range>
+				
+				<duration>3600</duration> <!-- 60 seconds -->
+				<interval>1200</interval> <!-- 20 seconds -->
+				<successChance>
+					<baseSuccessChance>1</baseSuccessChance> <!-- this is basically the DC -->
+				</successChance>
+			</li>
+			
+			<!-- THINGS THIS SYSTEM NEEDS: some kind of check to make sure the player is allied to the Rebel Cell faction -->
+
+		</comps>
+		
+		<displayWound>true</displayWound>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/FactionIcons_EnlistmentResignation/Enlist_Rebellion</texPath>
+				<parentTagDef>Head</parentTagDef>
+				<drawData>
+				  <defaultData>
+					<layer>100</layer>
+					<offset>(0, 0, 1)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+	
+	<HediffDef>
+		<defName>SWCPHediff_DoubleAgentEngageAbilityGiver</defName>
+		<label>double agent engage signal ability giver</label>
+		<description>This grants the "Double Agent Engage Signal" ability for 60 seconds.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<comps>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_Ability_DoubleAgentEngageSignal_RebelCell</abilityDef>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>True</showRemainingTime>
+			</li>
+		</comps>
+		<stages>
+			<li><minSeverity>0</minSeverity><becomeVisible>false</becomeVisible></li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	<AbilityDef>
+        <defName>SWCP_Ability_DoubleAgentEngageSignal_RebelCell</defName>
+        <label>Double Agent Engage Signal</label>
+        <description>Send a signal to a nearby double agent to engage the enemy. The targeted pawn will join your faction immediately, but can be dismissed at any time with no colonist mood penalty via a separate ability.</description>
+        <iconPath>UI/FactionIcons_EnlistmentResignation/Enlist_Rebellion</iconPath>
+		<uiOrder>999</uiOrder>
+		
+        <jobDef>CastAbilityOnThingWithoutWeapon</jobDef>
+        <!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<targetRequired>true</targetRequired>
+		
+		<!-- 12000 = 5 hours -->
+		<cooldownTicksRange>1000</cooldownTicksRange>
+		<!-- <stunTargetWhileCasting>true</stunTargetWhileCasting> -->
+        <verbProperties>
+            <verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+            <range>100</range>
+            <drawAimPie>true</drawAimPie>
+            <warmupTime>1</warmupTime>
+            <requireLineOfSight>False</requireLineOfSight>
+			<soundCast>kotorsound_JKMissionUpdate_quiettriple</soundCast>
+            <targetParams>
+                <canTargetPawns>True</canTargetPawns>
+                <canTargetSelf>False</canTargetSelf>
+            </targetParams>
+        </verbProperties>
+        <comps>
+            <li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+                <useStatic>True</useStatic>
+                <staticFaction>guy762_SWWarlordsFaction_RebelCell</staticFaction>
+            </li>
+			<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnTarget>SWCPHediff_TemporaryRecruitment</hediffOnTarget>
+            </li>
+        </comps>
+    </AbilityDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ temporary recruitment -->	
+	
+	
+	<HediffDef>
+        <defName>SWCPHediff_TemporaryRecruitment</defName>
+        <label>temporary recruitment</label>
+        <description>.</description>
+        <everCurableByItem>false</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <stages />
+        <hediffClass>HediffWithTarget</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_TemporaryFaction" />
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_Ability_DismissFromTemporaryRecruitment</abilityDef>
+			</li>
+        </comps>
+    </HediffDef>
+	
+	
+	
+	<AbilityDef>
+		<defName>SWCP_Ability_DismissFromTemporaryRecruitment</defName>
+		<label>dismiss</label>
+		<description>Dismiss this pawn from their temporary assignment to your faction. This pawn will immediately enter the "panic fleeing" mental state and leave the map.</description>
+		<iconPath>UI/Icons/DismissFromPlayerFaction</iconPath>
+		<uiOrder>999</uiOrder>
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<aiCanUse>false</aiCanUse>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<targetRequired>false</targetRequired>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>-1</range>
+			<drawAimPie>false</drawAimPie>
+		</verbProperties>
+		<comps>
+			<li Class="EBSGFramework.CompProperties_AbilityRemoveMultipleHediffs">
+				<compClass>EBSGFramework.CompAbilityEffect_RemoveMultipleHediffs</compClass>
+				<hediffs>
+					<li>SWCPHediff_TemporaryRecruitment</li>
+				</hediffs>
+				<recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
+			</li>
+			<li Class = "CompProperties_AbilityGiveMentalState">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>PanicFlee</stateDef>
+				<canTargetBosses>false</canTargetBosses>
+				<psychic>False</psychic>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	
+	
+</Defs>

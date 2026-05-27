@@ -252,6 +252,12 @@
 			<li Class="HediffCompProperties_Disappears">
 				<showRemainingTime>True</showRemainingTime>
 			</li>
+			
+			<li Class="HediffCompProperties_RemoveIfOtherHediff">
+				<hediffs>
+					<li>SWCPHediff_DoubleAgent</li>
+				</hediffs>
+			</li>
 		</comps>
 		<stages>
 			<li>
@@ -277,7 +283,6 @@
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
-		<targetRequired>false</targetRequired>
 		
 		<!-- 12000 = 5 hours -->
 		<cooldownTicksRange>1000</cooldownTicksRange>
@@ -365,6 +370,7 @@
 		<description>This pawn has failed a stealth check while in stealth mode, and cannot re-enter stealth mode for 5 minutes.</description>
 		<hediffClass>HediffWithComps</hediffClass>
 		<isBad>false</isBad>
+		<allowMothballIfLowPriorityWorldPawn>false</allowMothballIfLowPriorityWorldPawn>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
 				<disappearsAfterTicks>18000</disappearsAfterTicks> <!-- 300 seconds -->
