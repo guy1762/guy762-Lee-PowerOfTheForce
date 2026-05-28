@@ -2,7 +2,7 @@
 	<name>Star Wars: Power of the Force</name>
 	<author>Lee and guy762</author>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/ModIcon_guy762_SWPotF</modIconPath>
-	<description>BETA VERSION\n\nAdds Force powers and special Feat abilities based on Star Wars: Knights of the Old Republic and Star Wars: Knights of the Old Republic II - The Sith Lords.</description>
+	<description>SWCP Galactic Civil War project - Alpha I build. This mod is a work-in-progress.\n\nAdds Force powers and special Feat abilities based on Star Wars: Knights of the Old Republic and Star Wars: Knights of the Old Republic II - The Sith Lords.</description>
 	<packageId>guy762.Lee.KotORPotF</packageId>
 	<url>https://github.com/guy1762/guy762-Lee-PowerOfTheForce</url>
 	
