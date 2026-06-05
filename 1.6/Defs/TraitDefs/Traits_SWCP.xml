@@ -12,6 +12,10 @@
             <li>
                 <label>art lover</label>
                 <description>[PAWN_nameDef] has a deep appreciation for visual art. Taking time to admire a piece of art lifts [PAWN_possessive] spirits, and sometimes sparks a burst of creative inspiration.</description>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				</statOffsets>
             </li>
         </degreeDatas>
         <modExtensions>
@@ -36,6 +40,14 @@
         </stages>
     </ThoughtDef>
 
+
+
+
+
+
+
+
+
     <!-- Unyielding -->
 
     <TraitDef>
@@ -53,16 +65,30 @@
 				
 				<statOffsets>
 					<MentalBreakThreshold>-0.27</MentalBreakThreshold>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+					<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
 				</statOffsets>
 				<statFactors>
 					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.125</CertaintyLossFactor>
+					<SWCPStat_Loyalty>4</SWCPStat_Loyalty>
 				</statFactors>
             </li>
         </degreeDatas>
         <conflictingTraits>
             <li>Nerves</li>
+            <li>SWCPTrait_Loyal</li>
+            <li>SWCPTrait_Cowardly</li>
         </conflictingTraits>
     </TraitDef>
+
+
+
+
+
+
+
 
     <!-- Sadistic -->
 
@@ -76,6 +102,12 @@
 				<skillGains>
 					<Melee>4</Melee>
 				</skillGains>
+				
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
             </li>
         </degreeDatas>
 		
@@ -103,5 +135,149 @@
             </li>
         </stages>
     </ThoughtDef>
+	
+	
+	
+	
+	
+	<!-- Loyal -->
+	
+	<TraitDef>
+		<defName>SWCPTrait_Loyal</defName>
+		<commonality>0.6</commonality>
+		<degreeDatas>
+			<li>
+				<label>loyal</label>
+				<description>[PAWN_nameDef] is fiercely dedicated to [PAWN_possessive] faction and [PAWN_possessive] friends, and will never willingly abandon them.</description>
+				<degree>0</degree>
+				<disallowedMentalStates>
+                    <li>GiveUpExit</li>
+                </disallowedMentalStates>
+				<statFactors>
+					<SWCPStat_Loyalty>2</SWCPStat_Loyalty>
+				</statFactors>
+				
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+					<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+            <li>SWCPTrait_Unyielding</li>
+            <li>SWCPTrait_Cowardly</li>
+        </conflictingTraits>
+	</TraitDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Cowardly -->
+	
+	<TraitDef>
+		<defName>SWCPTrait_Cowardly</defName>
+		<commonality>0.3</commonality>
+		<degreeDatas>
+			<li>
+				<label>cowardly</label>
+				<description>When the going gets tough, [PAWN_nameDef] is the first to falter and run for [PAWN_possessive] life. [PAWN_nameDef] will try to abandon [PAWN_possessive] faction or colony if [PAWN_pronoun] is sufficiently injured while drafted or upset.</description>
+				<degree>0</degree>
+				<socialFightChanceFactor>0</socialFightChanceFactor>
+				<statFactors>
+					<SWCPStat_Loyalty>0.5</SWCPStat_Loyalty>
+				</statFactors>
+				<theOnlyAllowedMentalBreaks>
+					<li>Wander_OwnRoom</li>
+					<li>GiveUpExit</li>
+                    <!-- <li>PanicFlee</li> these are not MentalBreakDefs -->
+                    <!-- <li>PanicFleeFire</li> -->
+				</theOnlyAllowedMentalBreaks>
+				
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+            <li>SWCPTrait_Unyielding</li>
+            <li>SWCPTrait_Loyal</li>
+        </conflictingTraits>
+		<modExtensions>
+			<li Class="SWCP.TraitExtension_DraftedHediff">
+				<hediff>SWCPTraitHediff_Cowardly</hediff>
+			</li>
+		</modExtensions>
+	</TraitDef>
+	<HediffDef>
+		<defName>SWCPTraitHediff_Cowardly</defName>
+		<label>Cowardly</label>
+		<description>This is a hidden hediff that is only active while this pawn is drafted. This pawn will have an increasing % chance to panic flee or hide in their room if more than 20 points of damage is taken.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<stages>
+			<li><minSeverity>0.01</minSeverity><becomeVisible>false</becomeVisible></li>
+			
+			<li><!-- remember, you're starting at severity 1 -->
+				<label>20 damage</label>
+				<minSeverity>3</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<!-- <PainShockThreshold>-0.2</PainShockThreshold> -->
+					<MentalBreakThreshold>1</MentalBreakThreshold>
+				</statOffsets>
+				<mentalStateGivers>
+					<li><mentalState>GiveUpExit</mentalState><mtbDays>2</mtbDays></li>
+					<li><mentalState>PanicFlee</mentalState><mtbDays>1.5</mtbDays></li>
+					<li><mentalState>Wander_OwnRoom</mentalState><mtbDays>0.75</mtbDays></li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<label>30 damage</label>
+				<minSeverity>4</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<MentalBreakThreshold>10</MentalBreakThreshold>
+				</statOffsets>
+				<mentalStateGivers>
+					<li><mentalState>GiveUpExit</mentalState><mtbDays>1</mtbDays></li>
+					<li><mentalState>PanicFlee</mentalState><mtbDays>0.75</mtbDays></li>
+					<li><mentalState>Wander_OwnRoom</mentalState><mtbDays>0.25</mtbDays></li>
+				</mentalStateGivers>
+			</li>
+			<li>
+				<label>40 damage</label>
+				<minSeverity>5</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<MentalBreakThreshold>100</MentalBreakThreshold>
+				</statOffsets>
+				<mentalStateGivers>
+					<li><mentalState>GiveUpExit</mentalState><mtbDays>0.75</mtbDays></li>
+					<li><mentalState>PanicFlee</mentalState><mtbDays>0.5</mtbDays></li>
+					<li><mentalState>Wander_OwnRoom</mentalState><mtbDays>0.1</mtbDays></li>
+				</mentalStateGivers>
+			</li>
+			
+		</stages>
+		
+		<comps>
+            <li Class="EBSGFramework.HediffCompProperties_SeverityByMap">
+				<notInMap>0</notInMap> <!-- Severity to use when the pawn isn't being held in a map (usually due to being in a caravan, shuttle, or other type of transportation -->
+            </li>
+			<li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+                <severityChangeFactor>0.1</severityChangeFactor> <!-- For example, if set to 0.01, a damage of 10 increases severity by 0.1 -->
+            </li>
+        </comps>
+	</HediffDef>
+	
 
 </Defs>

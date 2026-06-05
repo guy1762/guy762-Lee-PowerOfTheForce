@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+	
+			<!-- <statOffsets> -->
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+				<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity> -->
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			<!-- </statOffsets> -->
+			
+			
+			
+			
+			
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Traits_Singular.xml -->
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nudist"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Bloodlust"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Kind"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Psychopath"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Cannibal"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Abrasive"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<!-- <Operation Class="PatchOperationAdd"> -->
+		<!-- <xpath>Defs/TraitDef[defName="TooSmart"]/degreeDatas/li[1]/statOffsets</xpath> -->
+		<!-- <order>Append</order> -->
+		<!-- <value> -->
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		<!-- </value> -->
+	<!-- </Operation> -->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Brawler"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+			<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Masochist"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<!-- <Operation Class="PatchOperationAdd"> -->
+		<!-- <xpath>Defs/TraitDef[defName="NightOwl"]/degreeDatas/li[1]</xpath> -->
+		<!-- <order>Append</order> -->
+		<!-- <value> -->
+			<!-- <statOffsets> -->
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			<!-- </statOffsets> -->
+		<!-- </value> -->
+	<!-- </Operation> -->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Greedy"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Jealous"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Ascetic"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="AnnoyingVoice"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="CreepyBreathing"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Pyromaniac"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Wimp"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nimble"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="FastLearner"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="SlowLearner"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<!-- <Operation Class="PatchOperationAdd"> -->
+		<!-- <xpath>Defs/TraitDef[defName="Undergrounder"]/degreeDatas/li[1]</xpath> -->
+		<!-- <order>Append</order> -->
+		<!-- <value> -->
+			<!-- <statOffsets> -->
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			<!-- </statOffsets> -->
+		<!-- </value> -->
+	<!-- </Operation> -->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Transhumanist"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="BodyPurist"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="DislikesMen"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="DislikesWomen"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="GreatMemory"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Tough"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="TorturedArtist"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Gourmand"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="QuickSleeper"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<!-- <statOffsets> -->
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+				<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity> -->
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			<!-- </statOffsets> -->
+			
+			
+			
+			
+			
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Traits_Spectrum.xml -->
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="SpeedOffset"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- slowpoke -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="SpeedOffset"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- fast walker -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="SpeedOffset"]/degreeDatas/li[3]/statOffsets</xpath>	<!-- jogger -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="DrugDesire"]/degreeDatas/li[1]</xpath>	<!-- chemical fascination -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.2</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="DrugDesire"]/degreeDatas/li[2]</xpath>	<!-- chemical interest -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="DrugDesire"]/degreeDatas/li[3]</xpath>	<!-- teetotaler -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="NaturalMood"]/degreeDatas/li[1]</xpath>	<!-- sanguine -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_LightSideAffinity>0.2</SWCPStat_TraitRatings_LightSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="NaturalMood"]/degreeDatas/li[2]</xpath>	<!-- optimist -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="NaturalMood"]/degreeDatas/li[3]</xpath>	<!-- pessimist -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="NaturalMood"]/degreeDatas/li[4]</xpath>	<!-- depressive -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad>
+				<SWCPStat_TraitRatings_DarkSideAffinity>0.2</SWCPStat_TraitRatings_DarkSideAffinity>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- iron-willed -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good>
+			<SWCPStat_TraitRatings_LightSideAffinity>0.2</SWCPStat_TraitRatings_LightSideAffinity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- steadfast -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[3]/statOffsets</xpath>	<!-- nervous -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+			<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[4]/statOffsets</xpath>	<!-- volatile -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad>
+			<SWCPStat_TraitRatings_DarkSideAffinity>0.2</SWCPStat_TraitRatings_DarkSideAffinity>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Neurotic"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- neurotic -->
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+			<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Neurotic"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- very neurotic -->
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad> -->
+			<SWCPStat_TraitRatings_DarkSideAffinity>0.2</SWCPStat_TraitRatings_DarkSideAffinity>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Industriousness"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- industrious -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good>
+			<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.2</SWCPStat_TraitRatings_LightSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Industriousness"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- hard worker -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Industriousness"]/degreeDatas/li[3]/statOffsets</xpath>	<!-- lazy -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Industriousness"]/degreeDatas/li[4]/statOffsets</xpath>	<!-- slothful -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad>
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.2</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="PsychicSensitivity"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- psychically hypersensitive -->
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good> -->
+			<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.2</SWCPStat_TraitRatings_LightSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="PsychicSensitivity"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- psychically sensitive -->
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+			<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="PsychicSensitivity"]/degreeDatas/li[3]/statOffsets</xpath>	<!-- psychically dull -->
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="PsychicSensitivity"]/degreeDatas/li[4]/statOffsets</xpath>	<!-- psychically deaf -->
+		<order>Append</order>
+		<value>
+			<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad> -->
+			<!-- <SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad> -->
+			<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.2</SWCPStat_TraitRatings_DarkSideAffinity> -->
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- careful shooter -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="ShootingAccuracy"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- trigger-happy -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+			<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+		</value>
+	</Operation>
+
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Beauty"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- beautiful -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Beauty"]/degreeDatas/li[2]/statOffsets</xpath>	<!-- pretty -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Beauty"]/degreeDatas/li[3]/statOffsets</xpath>	<!-- ugly -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Beauty"]/degreeDatas/li[4]/statOffsets</xpath>	<!-- staggeringly ugly -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>-2</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Bad>2</SWCPStat_TraitRatings_Bad>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Immunity"]/degreeDatas/li[1]/statOffsets</xpath>	<!-- super-immune -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+			<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Immunity"]/degreeDatas/li[2]</xpath>	<!-- sickly -->
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+			<!-- <statOffsets> -->
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
+				<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+				<!-- <SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity> -->
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			<!-- </statOffsets> -->
+			
+			
+			
+			
+			
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ (Biotech) Traits.xml -->
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Delicate"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Recluse"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+				<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+</Patch>

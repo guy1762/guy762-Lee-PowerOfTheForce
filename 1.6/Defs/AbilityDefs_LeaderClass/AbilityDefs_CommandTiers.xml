@@ -89,7 +89,7 @@
 					<!-- </li> -->
 					
 					
-					
+						<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Traits_Singular.xml -->
 					
 				<!-- Tough -->	
 					<li>
@@ -109,6 +109,16 @@
 					<li>
 						<traitDef>SWCPTrait_Unyielding</traitDef><degree>0</degree>
 						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_unyielding</hediffIfMatch>
+					</li>
+				<!-- Loyal -->
+					<li>
+						<traitDef>SWCPTrait_Loyal</traitDef><degree>0</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_loyal</hediffIfMatch>
+					</li>
+				<!-- Cowardly -->
+					<li>
+						<traitDef>SWCPTrait_Cowardly</traitDef><degree>0</degree>
+						<hediffIfMatch>guy762_hediff_CommandTierCasterTraitBonus_cowardly</hediffIfMatch>
 					</li>
 					
 					<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Traits_Spectrum.xml -->
@@ -632,6 +642,8 @@
 					<FixBrokenDownBuildingSuccessChance>0.10</FixBrokenDownBuildingSuccessChance>
 					
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.10</PilotingAbility>
+					
+					<SWCPStat_Loyalty>0.5</SWCPStat_Loyalty>
 				</statOffsets>
 				
 				<hungerRateFactor>0.1</hungerRateFactor>
@@ -804,6 +816,8 @@
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.15</PilotingAbility>
 
 					<MoveSpeed>0.05</MoveSpeed>
+					
+					<SWCPStat_Loyalty>1</SWCPStat_Loyalty>
 				</statOffsets>
 				
 				<hungerRateFactor>0.1</hungerRateFactor>
@@ -975,7 +989,9 @@
 					
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.20</PilotingAbility>
 
-					<MoveSpeed>0.1</MoveSpeed>
+					<MoveSpeed>0.15</MoveSpeed>
+					
+					<SWCPStat_Loyalty>1.5</SWCPStat_Loyalty>
 				</statOffsets>
 				
 				<hungerRateFactor>0.1</hungerRateFactor>
@@ -1141,7 +1157,9 @@
 					
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.25</PilotingAbility>
 
-					<MoveSpeed>0.15</MoveSpeed>
+					<MoveSpeed>0.25</MoveSpeed>
+					
+					<SWCPStat_Loyalty>2</SWCPStat_Loyalty>
 				</statOffsets>
 				
 				

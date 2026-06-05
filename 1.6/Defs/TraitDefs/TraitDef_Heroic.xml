@@ -12,6 +12,10 @@
 				<label>heroic</label>
 				<description>{PAWN_nameDef} stands above others as an individual. {PAWN_pronoun} is capable of extraordinary feats few other pawns can match and is one of the heroes of this colony or crew's story.</description>
 				<degree>0</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				</statOffsets>
 			</li>
 		</degreeDatas>
 		

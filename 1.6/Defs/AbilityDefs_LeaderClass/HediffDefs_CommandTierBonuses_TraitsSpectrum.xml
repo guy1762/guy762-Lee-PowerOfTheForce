@@ -352,6 +352,7 @@
 				</statOffsets>
 				<!-- <statFactors> -->
 					<!-- <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.25</CertaintyLossFactor> -->
+					<!-- <SWCPStat_Loyalty>3</SWCPStat_Loyalty> -->
 				<!-- </statFactors> -->
 			</li>
 		</stages>
@@ -407,6 +408,7 @@
 				</statOffsets>
 				<!-- <statFactors> -->
 					<!-- <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.5</CertaintyLossFactor> -->
+					<!-- <SWCPStat_Loyalty>2</SWCPStat_Loyalty> -->
 				<!-- </statFactors> -->
 			</li>
 		</stages>
@@ -463,6 +465,7 @@
 				</statOffsets>
 				<!-- <statFactors> -->
 					<!-- <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">2</CertaintyLossFactor> -->
+					<!-- <SWCPStat_Loyalty>0.75</SWCPStat_Loyalty> -->
 				<!-- </statFactors> -->
 			</li>
 		</stages>
@@ -517,6 +520,7 @@
 				</statOffsets>
 				<!-- <statFactors> -->
 					<!-- <CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">3</CertaintyLossFactor> -->
+					<!-- <SWCPStat_Loyalty>0.5</SWCPStat_Loyalty> -->
 				<!-- </statFactors> -->
 			</li>
 		</stages>

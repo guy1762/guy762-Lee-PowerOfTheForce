@@ -100,6 +100,7 @@
 				</statOffsets>
 				<statFactors>
 					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.125</CertaintyLossFactor>
+					<SWCPStat_Loyalty>4</SWCPStat_Loyalty>
 				</statFactors>
 			</li>
 		</stages>
@@ -111,6 +112,152 @@
 				<isWhitelist>true</isWhitelist>
 			</li>
 		</modExtensions>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierCasterTraitBonus_loyal</defName>
+		<label>Command bonus: Loyal (caster)</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<!-- <li Class="HediffCompProperties_Disappears"> -->
+				<!-- <showRemainingTime>True</showRemainingTime> -->
+			<!-- </li> -->
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierTraitBonusBuff_loyal</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierTraitBonusBuff_loyal</defName>
+		<label>Command bonus: Loyal</label>
+		<description>Combat stats are impacted by being near someone who is using a command tier ability who also has the "loyal" trait.</description>
+		<debugLabelExtra>other</debugLabelExtra>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<PainShockThreshold>0.1</PainShockThreshold>
+					<MentalBreakThreshold>-0.1</MentalBreakThreshold>
+				</statOffsets>
+				<statFactors>
+					<SWCPStat_Loyalty>2</SWCPStat_Loyalty>
+				</statFactors>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierCasterTraitBonus_cowardly</defName>
+		<label>Command bonus: Cowardly (caster)</label>
+		<description>By encouraging and commanding nearby allies, this person can enhance their focus in combat and thus their battle performance.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<!-- <li Class="HediffCompProperties_Disappears"> -->
+				<!-- <showRemainingTime>True</showRemainingTime> -->
+			<!-- </li> -->
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_GiveHediffsInRange">
+				<range>500</range>
+				<hideMoteWhenNotDrafted>true</hideMoteWhenNotDrafted>
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>false</canTargetMechs>
+				</targetingParameters>
+				<hediff>guy762_hediff_CommandTierTraitBonusBuff_cowardly</hediff>
+			</li>
+		</comps>
+		<isBad>false</isBad>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>guy762_hediff_CommandTierTraitBonusBuff_cowardly</defName>
+		<label>Command bonus: Cowardly</label>
+		<description>Combat stats are impacted by being near someone who is using a command tier ability who also has the "cowardly" trait.\n\nIf this pawn takes more than 40 points of damage, they will have a % chance to panic flee or hide in their room.</description>
+		<debugLabelExtra>other</debugLabelExtra>
+		<hediffClass>HediffWithComps</hediffClass>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<showRemainingTime>false</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			
+			<li Class="EBSGFramework.HediffCompProperties_SeverityChangeWhenDamaged">
+                <severityChangeFactor>0.1</severityChangeFactor> <!-- For example, if set to 0.01, a damage of 10 increases severity by 0.1 -->
+            </li>
+		</comps>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<stages>
+			<li>
+				<statOffsets>
+					<PainShockThreshold>-0.25</PainShockThreshold>
+					<MentalBreakThreshold>1</MentalBreakThreshold>
+				</statOffsets>
+				<statFactors>
+					<SWCPStat_Loyalty>0.5</SWCPStat_Loyalty>
+				</statFactors>
+			</li>
+			
+			<li><!-- remember, you're starting at severity 1 -->
+				<label>40 damage</label>
+				<minSeverity>5</minSeverity>
+				<statOffsets>
+					<PainShockThreshold>-0.25</PainShockThreshold>
+					<MentalBreakThreshold>1</MentalBreakThreshold>
+				</statOffsets>
+				<statFactors>
+					<SWCPStat_Loyalty>0.5</SWCPStat_Loyalty>
+				</statFactors>
+				
+				<mentalStateGivers>
+					<li><mentalState>PanicFlee</mentalState><mtbDays>1.5</mtbDays></li>
+					<li><mentalState>Wander_OwnRoom</mentalState><mtbDays>0.75</mtbDays></li>
+				</mentalStateGivers>
+			</li>
+		</stages>
 	</HediffDef>
   
   
