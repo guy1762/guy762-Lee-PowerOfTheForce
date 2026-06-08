@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<AbilityDef ParentName="SWPotF_TacticDelegationAbilityBASE">
+		<defName>SWPotF_TacticDelegationAbility_Bribery</defName>
+		<label>delegate tactic: Bribery</label>
+		<description>Distribute temporary "Bribery" tactical orders to a subordinate.</description>
+		<descriptionHyperlinks>
+			<AbilityDef>SWPotF_TacticAbility_Bribery</AbilityDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/EaWIcons/Delegation/Delegate_Bribery</iconPath>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotF_DelegatedTacticHediff_bribery</hediffDef>
+				<onlyApplyToSelf>false</onlyApplyToSelf>
+				<onlyBrain>True</onlyBrain>
+				<replaceExisting>true</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+
+	<HediffDef ParentName="SWPotF_DelegatedTacticHediffBASE">
+		<defName>SWPotF_DelegatedTacticHediff_bribery</defName>
+		<label>temporary tactical orders: Bribery</label>
+		<description>.</description>
+		<comps>
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWPotF_TacticAbility_Bribery</abilityDef>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!-- <AbilityDef ParentName="SWPotF_TacticAbilityValidatorBASE"> -->
+	<AbilityDef>
+		<defName>SWPotF_TacticAbility_Bribery</defName>
+		<label>Bribery</label>
+		<description>Spend 10,000 credits from the caster's inventory to attempt to instantly recruit a group of targets. This rolls a check of the caster's Negotiation Ability stat contested by the target's Loyalty stat.\n\nPawns with the Loyal, Unyielding, or Heroic traits are immune to this ability. Pawns recruited by this ability can be dismissed while undrafted. All affected pawns will be removed from their original faction regardless if the stat check succeeds or fails.</description>
+		<iconPath>UI/EaWIcons/Bribery</iconPath>
+		<warmupMoteSocialSymbol>UI/EaWIcons/Bribery</warmupMoteSocialSymbol>
+		<uiOrder>762</uiOrder>
+		<hotKey>Misc10</hotKey>
+		
+		<aiCanUse>false</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<cooldownTicksRange>12000</cooldownTicksRange> <!-- ~6 in-game hours -->
+		<targetRequired>true</targetRequired>
+		<statBases>
+			<!-- <Ability_Duration>15</Ability_Duration> -->
+			<Ability_EffectRadius>5</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>30</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawAimPie>False</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_EaWBribe</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetLocations>true</canTargetLocations>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>false</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> don't use this, it checks for factions automatically -->
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+                <useStatic>True</useStatic>
+                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
+            </li>
+			<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnTarget>SWPotF_TacticAbilityHediff_BriberyTemporaryRecruitment</hediffOnTarget>
+				<canTargetBosses>false</canTargetBosses>
+				<successChance>
+					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
+					
+					<casterStatChance>NegotiationAbility</casterStatChance>
+					<!-- <casterStatChance>SocialImpact</casterStatChance> -->
+					<casterStatEffect>Multiply</casterStatEffect> <!-- success chance increases if stat is above 1 -->
+					
+					<targetStatChance>SWCPStat_Loyalty</targetStatChance>
+					<targetStatEffect>Divide</targetStatEffect> <!-- success chance decreases if stat is above 1 -->
+					
+					<successMessage>Bribery attempt SUCCESS! {0} -> {1}</successMessage>
+					<failureMessage>Bribery attempt FAILED! {0} -> {1}</failureMessage>
+				</successChance>
+            </li>
+			<li Class="EBSGFramework.CompProperties_RemoveItemFromInventory">
+                <casterThing>guy762_KotORcredits</casterThing>
+                <casterCount>10000</casterCount>
+            </li>
+			
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+			
+				<targetGroup>NonPlayer</targetGroup>
+				
+				<!-- <targetHasNoneOfHediffs> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_AmbushWaiting</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_AmbushAttacking</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_Barrage</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_Charge</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_TakeCover</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_ZealousRage</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_Sprint</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_Harass</li> -->
+					<!-- <li>SWPotF_TacticAbilityHediff_StealthAdvance</li> -->
+				<!-- </targetHasNoneOfHediffs> -->
+				
+				<targetMentalStates />
+				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>
+				
+				<casterHasNoneOfHediffs>
+					<li>SWPotF_TacticAbilityHediff_AmbushWaiting</li>
+					<li>SWPotF_TacticAbilityHediff_AmbushAttacking</li>
+					<li>SWPotF_TacticAbilityHediff_Barrage</li>
+					<li>SWPotF_TacticAbilityHediff_Charge</li>
+					<li>SWPotF_TacticAbilityHediff_TakeCover</li>
+					<li>SWPotF_TacticAbilityHediff_ZealousRage</li>
+					<li>SWPotF_TacticAbilityHediff_Sprint</li>
+					<li>SWPotF_TacticAbilityHediff_Harass</li>
+					<li>SWPotF_TacticAbilityHediff_StealthAdvance</li>
+				</casterHasNoneOfHediffs>
+				<casterCapLimiters>
+					<li>
+						<capacity>Consciousness</capacity>
+						<minCapValue>0.75</minCapValue>
+					</li>
+					<li>
+						<capacity>Talking</capacity>
+						<minCapValue>0.5</minCapValue>
+					</li>
+				</casterCapLimiters>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	<HediffDef>
+        <defName>SWPotF_TacticAbilityHediff_BriberyTemporaryRecruitment</defName>
+        <label>bribed</label>
+		<defaultLabelColor>(255,255,135)</defaultLabelColor> <!-- soft yellow -->
+        <description>This pawn has been temporarily recruited by the Bribery tactic ability. This pawn can be dismissed from your faction while un-drafted, and will also stop being controllable if they are downed.</description>
+        <everCurableByItem>false</everCurableByItem>
+        <initialSeverity>0.001</initialSeverity>
+        <stages />
+        <hediffClass>HediffWithTarget</hediffClass>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <comps>
+            <li Class="EBSGFramework.HediffCompProperties_TemporaryFaction" />
+			
+			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_RemoveOnFactionChange" />
+			
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_Ability_DismissFromTemporaryRecruitment</abilityDef>
+			</li>
+        </comps>
+    </HediffDef>
+	
+	
+	
+
+</Defs>

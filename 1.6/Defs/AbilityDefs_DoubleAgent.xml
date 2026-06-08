@@ -121,7 +121,8 @@
         <comps>
             <li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
                 <useStatic>True</useStatic>
-                <staticFaction>guy762_SWWarlordsFaction_RebelCell</staticFaction>
+                <!-- <staticFaction>guy762_SWWarlordsFaction_RebelCell</staticFaction> -->
+                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
             </li>
 			<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
                 <hediffOnTarget>SWCPHediff_TemporaryRecruitment</hediffOnTarget>
@@ -194,7 +195,17 @@
 				<canTargetBosses>false</canTargetBosses>
 				<psychic>False</psychic>
 			</li>
+			<!-- <li Class="EBSGFramework.CompProperties_AbilityChangeFaction"> -->
+                <!-- <useStatic>True</useStatic> -->
+                <!-- <staticFaction>guy762_KotORFaction_Civilians</staticFaction> -->
+            <!-- </li> -->
 		</comps>
+		<!-- <modExtensions> -->
+			<!-- <li Class="CastableInUnconscious.ModExtension_CastableInUnconscious"> -->
+				<!-- <castableInUnconscious>true</castableInUnconscious> -->
+				<!-- <castableInMentalbreak>true</castableInMentalbreak> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
 	</AbilityDef>
 	
 	

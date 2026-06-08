@@ -106,10 +106,13 @@
 				<targetHasNoneOfHediffs>
 					<li>SWPotF_TacticAbilityHediff_AmbushWaiting</li>
 					<li>SWPotF_TacticAbilityHediff_AmbushAttacking</li>
+					<li>SWPotF_TacticAbilityHediff_Barrage</li>
+					<li>SWPotF_TacticAbilityHediff_Charge</li>
 					<li>SWPotF_TacticAbilityHediff_TakeCover</li>
 					<li>SWPotF_TacticAbilityHediff_ZealousRage</li>
 					<li>SWPotF_TacticAbilityHediff_Sprint</li>
 					<li>SWPotF_TacticAbilityHediff_Harass</li>
+					<li>SWPotF_TacticAbilityHediff_StealthAdvance</li>
 				</targetHasNoneOfHediffs>
 				
 				<targetMentalStates />
@@ -118,10 +121,13 @@
 				<casterHasNoneOfHediffs>
 					<li>SWPotF_TacticAbilityHediff_AmbushWaiting</li>
 					<li>SWPotF_TacticAbilityHediff_AmbushAttacking</li>
+					<li>SWPotF_TacticAbilityHediff_Barrage</li>
+					<li>SWPotF_TacticAbilityHediff_Charge</li>
 					<li>SWPotF_TacticAbilityHediff_TakeCover</li>
 					<li>SWPotF_TacticAbilityHediff_ZealousRage</li>
 					<li>SWPotF_TacticAbilityHediff_Sprint</li>
 					<li>SWPotF_TacticAbilityHediff_Harass</li>
+					<li>SWPotF_TacticAbilityHediff_StealthAdvance</li>
 				</casterHasNoneOfHediffs>
 				<casterCapLimiters>
 					<li>
