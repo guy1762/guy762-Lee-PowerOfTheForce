@@ -54,7 +54,7 @@
 	<AbilityDef>
 		<defName>SWPotF_TacticAbility_Bribery</defName>
 		<label>Bribery</label>
-		<description>Spend 10,000 credits from the caster's inventory to attempt to instantly recruit a group of targets. This rolls a check of the caster's Negotiation Ability stat contested by the target's Loyalty stat.\n\nPawns with the Loyal, Unyielding, or Heroic traits are immune to this ability. Pawns recruited by this ability can be dismissed while undrafted. All affected pawns will be removed from their original faction regardless if the stat check succeeds or fails.</description>
+		<description>Spend 10,000 credits from the caster's inventory to attempt to instantly recruit a group of targets. This rolls a check of the caster's Negotiation Ability stat contested by the target's Loyalty stat.\n\nPawns with the Loyal, Unyielding, or Heroic traits are immune to this ability, as well as any pawns casting an active Command Tier. Pawns recruited by this ability can be dismissed while undrafted. All affected pawns will be removed from their original faction regardless if the stat check succeeds or fails.</description>
 		<iconPath>UI/EaWIcons/Bribery</iconPath>
 		<warmupMoteSocialSymbol>UI/EaWIcons/Bribery</warmupMoteSocialSymbol>
 		<uiOrder>762</uiOrder>
@@ -131,7 +131,7 @@
 			
 				<targetGroup>NonPlayer</targetGroup>
 				
-				<!-- <targetHasNoneOfHediffs> -->
+				<targetHasNoneOfHediffs>
 					<!-- <li>SWPotF_TacticAbilityHediff_AmbushWaiting</li> -->
 					<!-- <li>SWPotF_TacticAbilityHediff_AmbushAttacking</li> -->
 					<!-- <li>SWPotF_TacticAbilityHediff_Barrage</li> -->
@@ -141,7 +141,14 @@
 					<!-- <li>SWPotF_TacticAbilityHediff_Sprint</li> -->
 					<!-- <li>SWPotF_TacticAbilityHediff_Harass</li> -->
 					<!-- <li>SWPotF_TacticAbilityHediff_StealthAdvance</li> -->
-				<!-- </targetHasNoneOfHediffs> -->
+					
+					<li>guy762_hediff_CommandTierVI_caster</li>
+					<li>guy762_hediff_CommandTierV_caster</li>
+					<li>guy762_hediff_CommandTierIV_caster</li>
+					<li>guy762_hediff_CommandTierIII_caster</li>
+					<li>guy762_hediff_CommandTierII_caster</li>
+					<li>guy762_hediff_CommandTierI_caster</li>
+				</targetHasNoneOfHediffs>
 				
 				<targetMentalStates />
 				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>

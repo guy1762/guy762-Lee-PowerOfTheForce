@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+	<GUY_HeroLimitIncreased>Hero limit increased!</GUY_HeroLimitIncreased>
+	<GUY_HeroLimitIncreased_Description>You can now have {0} heroes.</GUY_HeroLimitIncreased_Description>
+
+	<GUY_GiveHeroTrait>Make {0} a hero</GUY_GiveHeroTrait>
+	<GUY_GiveHeroTrait_Description>Designate this person as a special hero.</GUY_GiveHeroTrait_Description>
+	
+	<GUY_HeroTraitLimitReached>Hero limit reached</GUY_HeroTraitLimitReached>
+	<GUY_MustBePlayerFaction>{0} is not a part of the player faction</GUY_MustBePlayerFaction>
+	<GUY_PawnIsAlreadyHero>{0} is already a hero</GUY_PawnIsAlreadyHero>
+	
+	<GUY_NewHero>{0} is now a hero!</GUY_NewHero>
+</LanguageData>

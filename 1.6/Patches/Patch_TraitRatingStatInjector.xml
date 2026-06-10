@@ -259,17 +259,17 @@
 		<!-- </value> -->
 	<!-- </Operation> -->
 	
-	<Operation Class="PatchOperationAdd">
-		<xpath>Defs/TraitDef[defName="Transhumanist"]/degreeDatas/li[1]</xpath>
-		<order>Append</order>
-		<value>
-			<statOffsets>
-				<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
-				<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+	<!-- <Operation Class="PatchOperationAdd"> -->
+		<!-- <xpath>Defs/TraitDef[defName="Transhumanist"]/degreeDatas/li[1]</xpath> -->
+		<!-- <order>Append</order> -->
+		<!-- <value> -->
+			<!-- <statOffsets> -->
+				<!-- <SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad> -->
+				<!-- <SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good> -->
 				<!-- <SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity> -->
-			</statOffsets>
-		</value>
-	</Operation>
+			<!-- </statOffsets> -->
+		<!-- </value> -->
+	<!-- </Operation> -->
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/TraitDef[defName="BodyPurist"]/degreeDatas/li[1]</xpath>
