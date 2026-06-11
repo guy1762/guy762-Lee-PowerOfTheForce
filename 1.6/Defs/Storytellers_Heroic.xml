@@ -3,7 +3,7 @@
 	<StorytellerDef ParentName="BaseStoryteller">
 		<defName>SWPotF_HeroicStoryteller_Revan</defName>
 		<label>Revan Roleplayer</label>
-		<description>Distributes the "Heroic" trait to your colonists (your choice) every in-game year, to a maxiumum of 8. This will grant those colonists access to the "Heroic" RPG leveling system.\n\nThis storyteller has Cassandra Classic settings otherwise.</description>
+		<description>Distributes the "Heroic" trait to your colonists (your choice) every in-game year, to a maxiumum of 8. This will grant those colonists access to the "Heroic" RPG leveling system. Pawns who already posess this trait do not count towards the maximum.\n\nThis storyteller has Cassandra Classic settings otherwise.</description>
 		<portraitLarge>Revan_big</portraitLarge>
 		<portraitTiny>Revan_tiny</portraitTiny>
 		<listOrder>762</listOrder>
