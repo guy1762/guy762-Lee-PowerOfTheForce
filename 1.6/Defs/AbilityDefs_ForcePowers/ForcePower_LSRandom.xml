@@ -97,7 +97,7 @@
 		<stages>
 		  <li>
 			<statOffsets>
-				<ImmunityGainSpeedFactor>10</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>10</ImmunityGainSpeed>
 			</statOffsets>
 			<capMods>
 				<li>

@@ -93,7 +93,7 @@
 				<MoveSpeed>0.8</MoveSpeed>
 				<MeleeDodgeChance>0.8</MeleeDodgeChance>
 				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.8</VEF_RangedDodgeChance>
-				<ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>0.5</ImmunityGainSpeed>
 				
 				<Force_FPRecovery>0.5</Force_FPRecovery>
 			</statFactors>
@@ -246,7 +246,7 @@
 				<MoveSpeed>0.3</MoveSpeed>
 				<MeleeDodgeChance>0.3</MeleeDodgeChance>
 				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.3</VEF_RangedDodgeChance>
-				<ImmunityGainSpeedFactor>0.3</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
 				
 				<Force_FPRecovery>0</Force_FPRecovery>
 			</statFactors>
@@ -321,7 +321,7 @@
 			
 			<naturalHealingFactor>-0.1</naturalHealingFactor>
 			<statFactors>
-				<ImmunityGainSpeedFactor>0.9</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>0.9</ImmunityGainSpeed>
 			</statFactors>
 		  </li>
 		  <li>
@@ -333,7 +333,7 @@
 			
 			<naturalHealingFactor>-0.4</naturalHealingFactor>
 			<statFactors>
-				<ImmunityGainSpeedFactor>0.6</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>0.6</ImmunityGainSpeed>
 			</statFactors>
 			
 			<hediffGivers>
@@ -356,7 +356,7 @@
 			
 			<naturalHealingFactor>-0.7</naturalHealingFactor>
 			<statFactors>
-				<ImmunityGainSpeedFactor>0.3</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>0.3</ImmunityGainSpeed>
 			</statFactors>
 			
 			<hediffGivers>
@@ -387,7 +387,7 @@
 			
 			<naturalHealingFactor>-1</naturalHealingFactor>
 			<statFactors>
-				<ImmunityGainSpeedFactor>0</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>0</ImmunityGainSpeed>
 			</statFactors>
 			
 			<hediffGivers>

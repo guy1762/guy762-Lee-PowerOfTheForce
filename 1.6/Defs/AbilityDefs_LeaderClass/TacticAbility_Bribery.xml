@@ -54,7 +54,7 @@
 	<AbilityDef>
 		<defName>SWPotF_TacticAbility_Bribery</defName>
 		<label>Bribery</label>
-		<description>Spend 10,000 credits from the caster's inventory to attempt to instantly recruit a group of targets. This rolls a check of the caster's Negotiation Ability stat contested by the target's Loyalty stat.\n\nPawns with the Loyal, Unyielding, or Heroic traits are immune to this ability, as well as any pawns casting an active Command Tier. Pawns recruited by this ability can be dismissed while undrafted. All affected pawns will be removed from their original faction regardless if the stat check succeeds or fails.</description>
+		<description>Spend credits from the caster's inventory to attempt to instantly recruit a group of targets (1,000 per target). This rolls a check of the caster's Negotiation Ability stat contested by the target's Loyalty stat.\n\nPawns with the Loyal, Unyielding, or Heroic traits are immune to this ability, as well as any pawns casting an active Command Tier. Pawns recruited by this ability can be dismissed while undrafted. All affected pawns will be removed from their original faction regardless if the stat check succeeds or fails.</description>
 		<iconPath>UI/EaWIcons/Bribery</iconPath>
 		<warmupMoteSocialSymbol>UI/EaWIcons/Bribery</warmupMoteSocialSymbol>
 		<uiOrder>762</uiOrder>
@@ -123,13 +123,20 @@
             </li>
 			<li Class="EBSGFramework.CompProperties_RemoveItemFromInventory">
                 <casterThing>guy762_KotORcredits</casterThing>
-                <casterCount>10000</casterCount>
+                <!-- <casterCount>10000</casterCount> it seems like it's subtracting the 10k for every individual pawn affected :/ -->
+                <casterCount>1000</casterCount>
             </li>
 			
 			
 			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
 			
 				<targetGroup>NonPlayer</targetGroup>
+				
+				<targetHasNoneOfTraits>
+					<SWPotF_Trait_heroic />
+					<SWCPTrait_Loyal />
+					<SWCPTrait_Unyielding />
+				</targetHasNoneOfTraits>
 				
 				<targetHasNoneOfHediffs>
 					<!-- <li>SWPotF_TacticAbilityHediff_AmbushWaiting</li> -->

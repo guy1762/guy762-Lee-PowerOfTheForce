@@ -93,7 +93,7 @@
 			<naturalHealingFactor>10000</naturalHealingFactor>
 			<totalBleedFactor>0.25</totalBleedFactor>
 			<statOffsets>
-				<ImmunityGainSpeedFactor>1000</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>1000</ImmunityGainSpeed>
 			</statOffsets>
 		  </li>
 		</stages>

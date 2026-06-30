@@ -115,7 +115,7 @@
 				<li>SWPotF_hediff_ForcePlague</li>
 			</makeImmuneTo>
 			<statOffsets>
-				<ImmunityGainSpeedFactor>1000</ImmunityGainSpeedFactor>
+				<ImmunityGainSpeed>1000</ImmunityGainSpeed>
 			</statOffsets>
 		  </li>
 		</stages>

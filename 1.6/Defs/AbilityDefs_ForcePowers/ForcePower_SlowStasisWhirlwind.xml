@@ -85,7 +85,7 @@
 				<MoveSpeed>0.5</MoveSpeed>
 				<MeleeDodgeChance>0.5</MeleeDodgeChance>
 				<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.5</VEF_RangedDodgeChance>
-				<!--ImmunityGainSpeedFactor>0.5</ImmunityGainSpeedFactor-->
+				<!--ImmunityGainSpeed>0.5</ImmunityGainSpeed-->
 			</statFactors>
 			<statOffsets>
 				<MeleeCooldownFactor>0.5</MeleeCooldownFactor>
