@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Speciesist (-1) and Xenophile (+1) are two degrees of one trait, so they are
+       mutually exclusive with no extra configuration. -->
+  <TraitDef>
+    <defName>SWCPTrait_XenotypeAttitude</defName>
+    <commonality>1.0</commonality>
+    <degreeDatas>
+      <li>
+        <label>xenophile</label>
+        <description>[PAWN_nameDef] feels an easy warmth toward those of other species.</description>
+        <degree>1</degree>
+      </li>
+      <li>
+        <label>speciesist</label>
+        <description>[PAWN_nameDef] distrusts anyone not of [PAWN_possessive] own kind.</description>
+        <degree>-1</degree>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  <!-- Using it like this defaults to 'baseliner' -->
+  <TraitDef>
+    <defName>SWCPTrait_Humanophobic</defName>
+    <!-- <commonality>1.0</commonality> -->
+    <commonality>0.2</commonality> <!-- setting this low because I don't have any way to set different commonalities for baseliners vs non baseliners yet -->
+    <degreeDatas>
+      <li>
+        <label>humanophobic</label>
+        <description>[PAWN_nameDef] recoils from baseline humans.</description>
+        <degree>0</degree>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+	<!-- Speciesist: negative opinion of anyone NOT of the observer's xenotype. -->
+	<ThoughtDef>
+		<defName>SWCPThought_SpeciesistReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+			<mode>DifferentFromSelf</mode>
+			<requiredTrait>SWCPTrait_XenotypeAttitude</requiredTrait>
+			<requiredTraitDegree>-1</requiredTraitDegree>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>different species</label>
+			<baseOpinionOffset>-18</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+	<!-- Xenophile: positive opinion of anyone NOT of the observer's xenotype. -->
+	<ThoughtDef>
+		<defName>SWCPThought_XenophileReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+			<mode>DifferentFromSelf</mode>
+			<requiredTrait>SWCPTrait_XenotypeAttitude</requiredTrait>
+			<requiredTraitDegree>1</requiredTraitDegree>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>different species</label>
+			<baseOpinionOffset>15</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+	<!-- Humanophobic: negative opinion of a specific xenotype (default Baseliner). -->
+	<ThoughtDef>
+		<defName>SWCPThought_HumanophobicReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+			<mode>SpecificXenotype</mode>
+			<requiredTrait>SWCPTrait_Humanophobic</requiredTrait>
+			<targetXenotype>Baseliner</targetXenotype>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>human presence</label>
+			<baseOpinionOffset>-20</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+	  
+
+	
+	
+	
+
+</Defs>

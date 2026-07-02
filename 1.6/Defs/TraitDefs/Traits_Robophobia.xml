@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  
+  <!-- Using it like this targets another specific xenotype -->
+  <!-- <TraitDef> -->
+    <!-- <defName>SWCPTrait_Humanophobic_non_baseliner_one_type_example</defName> -->
+    <!-- <commonality>1.0</commonality> -->
+    <!-- <degreeDatas> -->
+      <!-- <li> -->
+        <!-- <label>humanophobic_non_baseliner_one_type</label> -->
+        <!-- <description>[PAWN_nameDef] recoils from wasters.</description> -->
+        <!-- <degree>0</degree> -->
+      <!-- </li> -->
+    <!-- </degreeDatas> -->
+  <!-- </TraitDef> -->
+  
+  <!-- Using it like this targets multiple specific xenotypes -->
+	<TraitDef>
+		<defName>SWCPTrait_DroidAttitude</defName>
+		<commonality>1.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>robophile</label>
+				<description>[PAWN_nameDef] loves all droids.</description>
+				<degree>1</degree>
+			</li>
+			<li>
+				<label>robophobic</label>
+				<description>[PAWN_nameDef] despises all droids.</description>
+				<degree>-1</degree>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	  
+	<!-- Humanophobic_one_xenotype: negative opinion of a specific xenotype. -->
+	<!-- <ThoughtDef> -->
+		<!-- <defName>SWCP_HumanophobicReaction_one_xenotype</defName> -->
+		<!-- <thoughtClass>Thought_SituationalSocial</thoughtClass> -->
+		<!-- <workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass> -->
+		<!-- <modExtensions> -->
+		  <!-- <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction"> -->
+			<!-- <mode>SpecificXenotype</mode> -->
+			<!-- <requiredTrait>SWCP_Humanophobic_non_baseliner_one_type_example</requiredTrait> -->
+			<!-- <targetXenotype>Waster</targetXenotype> -->
+		  <!-- </li> -->
+		<!-- </modExtensions> -->
+		<!-- <stages> -->
+		  <!-- <li> -->
+			<!-- <label>waster presence</label> -->
+			<!-- <baseOpinionOffset>-20</baseOpinionOffset> -->
+		  <!-- </li> -->
+		<!-- </stages> -->
+	<!-- </ThoughtDef> -->
+	
+	
+	
+	
+	
+	
+	<!-- Humanophobic_multiple_xenotypes: negative opinion of multiple specific xenotypes. -->
+	<ThoughtDef>
+		<defName>SWCPThought_RobophobicReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+			<li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+				<mode>SpecificXenotype</mode>
+				<requiredTrait>SWCPTrait_DroidAttitude</requiredTrait>
+				<requiredTraitDegree>-1</requiredTraitDegree>
+				<targetXenotypes>
+					<li>SWCPDroidXenotype_21BMedDroid</li>
+					<li>SWCPDroidXenotype_3POProtocolDroid</li>
+					<li>SWCPDroidXenotype_ASP7LaborDroid</li>
+					<li>SWCPDroidXenotype_CLLM2BinaryLoadlifter</li>
+					<li>SWCPDroidXenotype_LOMProtocolDroid</li>
+					<li>SWCPDroidXenotype_PitDroid</li>
+					<li>SWCPDroidXenotype_R2Series</li>
+					<li>SWCPDroidXenotype_R4Series</li>
+					<li>SWCPDroidXenotype_R5Series</li>
+					<li>SWCPDroidXenotype_RA7ProtocolDroid</li>
+				</targetXenotypes>
+			</li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>unwanted droid presence</label>
+			<baseOpinionOffset>-18</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+	
+	
+	
+
+	<ThoughtDef>
+		<defName>SWCPThought_RobophileReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+			<li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+				<mode>SpecificXenotype</mode>
+				<requiredTrait>SWCPTrait_DroidAttitude</requiredTrait>
+				<requiredTraitDegree>1</requiredTraitDegree>
+				<targetXenotypes>
+					<li>SWCPDroidXenotype_21BMedDroid</li>
+					<li>SWCPDroidXenotype_3POProtocolDroid</li>
+					<li>SWCPDroidXenotype_ASP7LaborDroid</li>
+					<li>SWCPDroidXenotype_CLLM2BinaryLoadlifter</li>
+					<li>SWCPDroidXenotype_LOMProtocolDroid</li>
+					<li>SWCPDroidXenotype_PitDroid</li>
+					<li>SWCPDroidXenotype_R2Series</li>
+					<li>SWCPDroidXenotype_R4Series</li>
+					<li>SWCPDroidXenotype_R5Series</li>
+					<li>SWCPDroidXenotype_RA7ProtocolDroid</li>
+				</targetXenotypes>
+			</li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>droid presence</label>
+			<baseOpinionOffset>15</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+	
+	
+	
+
+</Defs>

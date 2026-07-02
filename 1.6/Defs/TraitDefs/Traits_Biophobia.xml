@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+
+  
+  <!-- Using it like this targets another specific xenotype -->
+  <!-- <TraitDef> -->
+    <!-- <defName>SWCPTrait_Humanophobic_non_baseliner_one_type_example</defName> -->
+    <!-- <commonality>1.0</commonality> -->
+    <!-- <degreeDatas> -->
+      <!-- <li> -->
+        <!-- <label>humanophobic_non_baseliner_one_type</label> -->
+        <!-- <description>[PAWN_nameDef] recoils from wasters.</description> -->
+        <!-- <degree>0</degree> -->
+      <!-- </li> -->
+    <!-- </degreeDatas> -->
+  <!-- </TraitDef> -->
+  
+  <!-- Using it like this targets multiple specific xenotypes -->
+	<TraitDef>
+		<defName>SWCPTrait_OrganicsAttitude</defName>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>biophile</label>
+				<description>[PAWN_nameDef] loves all organic beings.</description>
+				<degree>1</degree>
+			</li>
+			<li>
+				<label>biophobic</label>
+				<description>[PAWN_nameDef] despises all organic beings.</description>
+				<degree>-1</degree>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	  
+	<!-- Humanophobic_one_xenotype: negative opinion of a specific xenotype. -->
+	<!-- <ThoughtDef> -->
+		<!-- <defName>SWCP_HumanophobicReaction_one_xenotype</defName> -->
+		<!-- <thoughtClass>Thought_SituationalSocial</thoughtClass> -->
+		<!-- <workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass> -->
+		<!-- <modExtensions> -->
+		  <!-- <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction"> -->
+			<!-- <mode>SpecificXenotype</mode> -->
+			<!-- <requiredTrait>SWCP_Humanophobic_non_baseliner_one_type_example</requiredTrait> -->
+			<!-- <targetXenotype>Waster</targetXenotype> -->
+		  <!-- </li> -->
+		<!-- </modExtensions> -->
+		<!-- <stages> -->
+		  <!-- <li> -->
+			<!-- <label>waster presence</label> -->
+			<!-- <baseOpinionOffset>-20</baseOpinionOffset> -->
+		  <!-- </li> -->
+		<!-- </stages> -->
+	<!-- </ThoughtDef> -->
+	
+	
+	
+	
+	
+	
+	<!-- Humanophobic_multiple_xenotypes: negative opinion of multiple specific xenotypes. -->
+	<ThoughtDef>
+		<defName>SWCPThought_BiophobicReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+			<li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+				<mode>SpecificXenotype</mode>
+				<requiredTrait>SWCPTrait_OrganicsAttitude</requiredTrait>
+				<requiredTraitDegree>-1</requiredTraitDegree>
+				<targetXenotypes>
+					<li>Baseliner</li>
+					
+					<li>Dirtmole</li>
+					<li>Genie</li>
+					<li>Hussar</li>
+					<li>Sanguophage</li>
+					<li>Neanderthal</li>
+					<li>Pigskin</li>
+					<li>Impid</li>
+					<li>Waster</li>
+					<li>Yttakin</li>
+					<li>Highmate</li>
+					
+					<li MayRequire="Ludeon.RimWorld.Odyssey">Starjack</li>
+					
+					<li>guy762_xenotype_aqualish</li>
+					<li>guy762_xenotype_arkanian</li>
+					<li>guy762_xenotype_bith</li>
+					<li>guy762_xenotype_bothan</li>
+					<li>guy762_xenotype_cathar</li>
+					<li>guy762_xenotype_chadrafan</li>
+					<li>guy762_xenotype_chiss</li>
+					<li>guy762_xenotype_defel</li>
+					<li>guy762_xenotype_devaronian</li>
+					<li>guy762_xenotype_duros</li>
+					<li>guy762_xenotype_echani</li>
+					<li>guy762_xenotype_ewok</li>
+					<li>guy762_xenotype_falleen</li>
+					<li>guy762_xenotype_feeorin</li>
+					<li>guy762_xenotype_gamorrean</li>
+					<li>guy762_xenotype_gand</li>
+					<li>guy762_xenotype_gungan</li>
+					<li>guy762_xenotype_hutt</li>
+					<li>guy762_xenotype_ithorian</li>
+					<li>guy762_xenotype_iridonian</li>
+					<li>guy762_xenotype_jawa</li>
+					<li>Lee_xenotype_kage</li>
+					<li>guy762_xenotype_kaleesh</li>
+					<li>guy762_xenotype_keldor</li>
+					<li>guy762_xenotype_klatoonian</li>
+					<li>guy762_xenotype_kubaz</li>
+					<li>guy762_xenotype_lasat</li>
+					<li>guy762_xenotype_mimbanese</li>
+					<li>guy762_xenotype_miraluka</li>
+					<li>guy762_xenotype_mirialan</li>
+					<li>guy762_xenotype_moncal</li>
+					<li>guy762_xenotype_nagai</li>
+					<li>guy762_xenotype_nautolan</li>
+					<li>guy762_xenotype_nelvaanian</li>
+					<li>guy762_xenotype_nemoidian</li>
+					<li>guy762_xenotype_nikto</li>
+					<li>guy762_xenotype_pantoran</li>
+					<li>guy762_xenotype_quarren</li>
+					<li>guy762_xenotype_rodian</li>
+					<li>guy762_xenotype_selkath</li>
+					<li>guy762_xenotype_sith</li>
+					<li>guy762_xenotype_snivvian</li>
+					<li>guy762_xenotype_sullustan</li>
+					<li>guy762_xenotype_taung</li>
+					<li>guy762_xenotype_togruta</li>
+					<li>guy762_xenotype_trandoshan</li>
+					<li>guy762_xenotype_tusken</li>
+					<li>guy762_xenotype_twilek</li>
+					<li>guy762_xenotype_ugnaught</li>
+					<li>guy762_xenotype_umbaran</li>
+					<li>guy762_xenotype_weequay</li>
+					<li>guy762_xenotype_wookiee</li>
+					<li>guy762_xenotype_yoder</li>
+					<li>guy762_xenotype_zabrak</li>
+					<li>guy762_xenotype_zabrakDathomiri</li>
+					<li>guy762_xenotype_zeltron</li>
+					<li>guy762_xenotype_zygerrian</li>
+				</targetXenotypes>
+			</li>
+		</modExtensions>
+		<stages>
+			<li>
+				<label>unwanted meatbag presence</label>
+				<baseOpinionOffset>-18</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	
+	
+
+	<ThoughtDef>
+		<defName>SWCPThought_BiophileReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_XenotypeReaction</workerClass>
+		<modExtensions>
+			<li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_XenotypeReaction">
+				<mode>SpecificXenotype</mode>
+				<requiredTrait>SWCPTrait_OrganicsAttitude</requiredTrait>
+				<requiredTraitDegree>1</requiredTraitDegree>
+				<targetXenotypes>
+					<li>Baseliner</li>
+					
+					<li>Dirtmole</li>
+					<li>Genie</li>
+					<li>Hussar</li>
+					<li>Sanguophage</li>
+					<li>Neanderthal</li>
+					<li>Pigskin</li>
+					<li>Impid</li>
+					<li>Waster</li>
+					<li>Yttakin</li>
+					<li>Highmate</li>
+					
+					<li MayRequire="Ludeon.RimWorld.Odyssey">Starjack</li>
+					
+					<li>guy762_xenotype_aqualish</li>
+					<li>guy762_xenotype_arkanian</li>
+					<li>guy762_xenotype_bith</li>
+					<li>guy762_xenotype_bothan</li>
+					<li>guy762_xenotype_cathar</li>
+					<li>guy762_xenotype_chadrafan</li>
+					<li>guy762_xenotype_chiss</li>
+					<li>guy762_xenotype_defel</li>
+					<li>guy762_xenotype_devaronian</li>
+					<li>guy762_xenotype_duros</li>
+					<li>guy762_xenotype_echani</li>
+					<li>guy762_xenotype_ewok</li>
+					<li>guy762_xenotype_falleen</li>
+					<li>guy762_xenotype_feeorin</li>
+					<li>guy762_xenotype_gamorrean</li>
+					<li>guy762_xenotype_gand</li>
+					<li>guy762_xenotype_gungan</li>
+					<li>guy762_xenotype_hutt</li>
+					<li>guy762_xenotype_ithorian</li>
+					<li>guy762_xenotype_iridonian</li>
+					<li>guy762_xenotype_jawa</li>
+					<li>Lee_xenotype_kage</li>
+					<li>guy762_xenotype_kaleesh</li>
+					<li>guy762_xenotype_keldor</li>
+					<li>guy762_xenotype_klatoonian</li>
+					<li>guy762_xenotype_kubaz</li>
+					<li>guy762_xenotype_lasat</li>
+					<li>guy762_xenotype_mimbanese</li>
+					<li>guy762_xenotype_miraluka</li>
+					<li>guy762_xenotype_mirialan</li>
+					<li>guy762_xenotype_moncal</li>
+					<li>guy762_xenotype_nagai</li>
+					<li>guy762_xenotype_nautolan</li>
+					<li>guy762_xenotype_nelvaanian</li>
+					<li>guy762_xenotype_nemoidian</li>
+					<li>guy762_xenotype_nikto</li>
+					<li>guy762_xenotype_pantoran</li>
+					<li>guy762_xenotype_quarren</li>
+					<li>guy762_xenotype_rodian</li>
+					<li>guy762_xenotype_selkath</li>
+					<li>guy762_xenotype_sith</li>
+					<li>guy762_xenotype_snivvian</li>
+					<li>guy762_xenotype_sullustan</li>
+					<li>guy762_xenotype_taung</li>
+					<li>guy762_xenotype_togruta</li>
+					<li>guy762_xenotype_trandoshan</li>
+					<li>guy762_xenotype_tusken</li>
+					<li>guy762_xenotype_twilek</li>
+					<li>guy762_xenotype_ugnaught</li>
+					<li>guy762_xenotype_umbaran</li>
+					<li>guy762_xenotype_weequay</li>
+					<li>guy762_xenotype_wookiee</li>
+					<li>guy762_xenotype_yoder</li>
+					<li>guy762_xenotype_zabrak</li>
+					<li>guy762_xenotype_zabrakDathomiri</li>
+					<li>guy762_xenotype_zeltron</li>
+					<li>guy762_xenotype_zygerrian</li>
+				</targetXenotypes>
+			</li>
+		</modExtensions>
+		<stages>
+			<li>
+				<label>organic presence</label>
+				<baseOpinionOffset>15</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+	
+	
+	
+
+</Defs>
