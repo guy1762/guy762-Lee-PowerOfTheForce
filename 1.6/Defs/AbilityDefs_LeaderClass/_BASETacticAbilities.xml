@@ -14,11 +14,13 @@
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		
 		
-		<cooldownTicksRange>600000</cooldownTicksRange>
+		<cooldownTicksRange>300000</cooldownTicksRange>
+		<!-- 600,000 = 10 in-game days -->
+		
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<!-- this is in seconds, not ticks -->
-			<Ability_Duration>1000</Ability_Duration>
+			<!-- this is in seconds, not ticks. 1,000 = 24 in-game hours -->
+			<Ability_Duration>3000</Ability_Duration>
 		</statBases>
 		
 		<jobDef>CastAbilityOnThingMelee</jobDef>
