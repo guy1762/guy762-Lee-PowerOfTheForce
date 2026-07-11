@@ -143,7 +143,7 @@
 	<HediffDef>
         <defName>SWCPHediff_TemporaryRecruitment</defName>
         <label>temporary recruitment</label>
-        <description>.</description>
+        <description>This pawn has joined your faction temporarily. They can be dismissed without upsetting your other colonists by casting the "Dismiss" ability while un-drafted.</description>
         <everCurableByItem>false</everCurableByItem>
         <initialSeverity>0.001</initialSeverity>
         <stages />

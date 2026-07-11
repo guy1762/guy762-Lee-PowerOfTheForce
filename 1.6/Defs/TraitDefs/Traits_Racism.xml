@@ -3,36 +3,50 @@
 
   <!-- Speciesist (-1) and Xenophile (+1) are two degrees of one trait, so they are
        mutually exclusive with no extra configuration. -->
-  <TraitDef>
-    <defName>SWCPTrait_XenotypeAttitude</defName>
-    <commonality>1.0</commonality>
-    <degreeDatas>
-      <li>
-        <label>xenophile</label>
-        <description>[PAWN_nameDef] feels an easy warmth toward those of other species.</description>
-        <degree>1</degree>
-      </li>
-      <li>
-        <label>speciesist</label>
-        <description>[PAWN_nameDef] distrusts anyone not of [PAWN_possessive] own kind.</description>
-        <degree>-1</degree>
-      </li>
-    </degreeDatas>
-  </TraitDef>
+	<TraitDef>
+		<defName>SWCPTrait_XenotypeAttitude</defName>
+		<commonality>1.0</commonality>
+		<degreeDatas>
+			<li>
+				<label>xenophile</label>
+				<description>[PAWN_nameDef] feels an easy warmth toward those of other species.</description>
+				<degree>1</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+				</statOffsets>
+			</li>
+			<li>
+				<label>speciesist</label>
+				<description>[PAWN_nameDef] distrusts anyone not of [PAWN_possessive] own kind.</description>
+				<degree>-1</degree>
+				<statOffsets>
+					<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> mechanically this isn't much of a negative impact on gameplay since this is only an opinion-of-others debuff, not a mood debuff -->
+					<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
 
   <!-- Using it like this defaults to 'baseliner' -->
-  <TraitDef>
-    <defName>SWCPTrait_Humanophobic</defName>
-    <!-- <commonality>1.0</commonality> -->
-    <commonality>0.2</commonality> <!-- setting this low because I don't have any way to set different commonalities for baseliners vs non baseliners yet -->
-    <degreeDatas>
-      <li>
-        <label>humanophobic</label>
-        <description>[PAWN_nameDef] recoils from baseline humans.</description>
-        <degree>0</degree>
-      </li>
-    </degreeDatas>
-  </TraitDef>
+	<TraitDef>
+		<defName>SWCPTrait_Humanophobic</defName>
+		<!-- <commonality>1.0</commonality> -->
+		<commonality>0.2</commonality> <!-- setting this low because I don't have any way to set different commonalities for baseliners vs non baseliners yet -->
+		<degreeDatas>
+			<li>
+				<label>humanophobic</label>
+				<description>[PAWN_nameDef] recoils from baseline humans.</description>
+				<degree>0</degree>
+				
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
 
   
   

@@ -42,7 +42,8 @@
 		<selectionWeight>0.1</selectionWeight>
 		<displayOrderInCategory>76201</displayOrderInCategory>
 		<statOffsets>
-			<Force_Lightside_Attunement>0.5</Force_Lightside_Attunement>
+			<!-- <Force_Lightside_Attunement>0.5</Force_Lightside_Attunement> -->
+			<Force_Lightside_Attunement>50</Force_Lightside_Attunement>
 			<PsychicSensitivity>0.50</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
 			<Force_FPRecovery>0.25</Force_FPRecovery>
@@ -62,7 +63,8 @@
 		<selectionWeight>0.3</selectionWeight>
 		<displayOrderInCategory>76202</displayOrderInCategory>
 		<statOffsets>
-			<Force_Lightside_Attunement>0.25</Force_Lightside_Attunement>
+			<!-- <Force_Lightside_Attunement>0.25</Force_Lightside_Attunement> -->
+			<Force_Lightside_Attunement>25</Force_Lightside_Attunement>
 			<PsychicSensitivity>0.25</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
 			<Force_FPRecovery>0.125</Force_FPRecovery>
@@ -81,7 +83,8 @@
 		<selectionWeight>0.1</selectionWeight>
 		<displayOrderInCategory>76203</displayOrderInCategory>
 		<statOffsets>
-			<Force_Lightside_Attunement>0.10</Force_Lightside_Attunement>
+			<!-- <Force_Lightside_Attunement>0.10</Force_Lightside_Attunement> -->
+			<Force_Lightside_Attunement>10</Force_Lightside_Attunement>
 			<PsychicSensitivity>0.10</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
 			<Force_FPRecovery>0.05</Force_FPRecovery>
@@ -110,7 +113,8 @@
 		<selectionWeight>0.3</selectionWeight>
 		<displayOrderInCategory>76204</displayOrderInCategory>
 		<statOffsets>
-			<Force_Darkside_Attunement>0.10</Force_Darkside_Attunement>
+			<!-- <Force_Darkside_Attunement>0.10</Force_Darkside_Attunement> -->
+			<Force_Darkside_Attunement>10</Force_Darkside_Attunement>
 			<PsychicSensitivity>0.10</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
 			<Force_FPRecovery>0.10</Force_FPRecovery>
@@ -129,7 +133,8 @@
 		<selectionWeight>0.3</selectionWeight>
 		<displayOrderInCategory>76205</displayOrderInCategory>
 		<statOffsets>
-			<Force_Darkside_Attunement>0.25</Force_Darkside_Attunement>
+			<!-- <Force_Darkside_Attunement>0.25</Force_Darkside_Attunement> -->
+			<Force_Darkside_Attunement>25</Force_Darkside_Attunement>
 			<PsychicSensitivity>0.25</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
 			<Force_FPRecovery>0.20</Force_FPRecovery>
@@ -190,7 +195,8 @@
 		<displayOrderInCategory>76206</displayOrderInCategory>
 		
 		<statOffsets>
-			<Force_Darkside_Attunement>0.5</Force_Darkside_Attunement>
+			<!-- <Force_Darkside_Attunement>0.5</Force_Darkside_Attunement> -->
+			<Force_Darkside_Attunement>5</Force_Darkside_Attunement>
 			<PsychicSensitivity>0.50</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
 			<Force_FPRecovery>0.30</Force_FPRecovery>

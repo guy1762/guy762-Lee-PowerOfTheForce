@@ -25,11 +25,19 @@
 				<label>robophile</label>
 				<description>[PAWN_nameDef] loves all droids.</description>
 				<degree>1</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+				</statOffsets>
 			</li>
 			<li>
 				<label>robophobic</label>
 				<description>[PAWN_nameDef] despises all droids.</description>
 				<degree>-1</degree>
+				<statOffsets>
+					<!-- <SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad> mechanically this isn't much of a negative impact on gameplay since this is only an opinion-of-others debuff, not a mood debuff -->
+					<!-- <SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad> -->
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
 			</li>
 		</degreeDatas>
 	</TraitDef>

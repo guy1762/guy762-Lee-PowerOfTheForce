@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  
+
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="Force_Darkside_Attunement"]/parts</xpath>
+			<value>
+				<li Class="SWCP_FlyingSloth_Misc.StatPart_StatOffset">
+					<stat>SWCPStat_TraitRatings_DarkSideAffinity</stat>
+					<factor>10</factor>
+				</li>
+			</value>
+		</match>
+	  
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.standalone">
+		<mods>
+			<li>Star Wars : The Force Standalone</li>
+		</mods>
+		
+		<match Class="PatchOperationAdd">
+			<xpath>Defs/StatDef[defName="Force_Lightside_Attunement"]/parts</xpath>
+			<value>
+				<li Class="SWCP_FlyingSloth_Misc.StatPart_StatOffset">
+					<stat>SWCPStat_TraitRatings_LightSideAffinity</stat>
+					<factor>10</factor>
+				</li>
+			</value>
+		</match>
+	  
+	</Operation>
+	
+	
+</Patch>

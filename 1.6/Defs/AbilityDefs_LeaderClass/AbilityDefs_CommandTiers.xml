@@ -318,7 +318,7 @@
 					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-					<li MayRequire="rim.job.world">Sex</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> this won't prevent sex, they'll just spam it -->
 					<li MayRequire="LovelyDovey.Sex.WithEuterpe">SEX_Intimacy</li>
 				</disablesNeeds>
 			</li>
@@ -490,7 +490,7 @@
 					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-					<li MayRequire="rim.job.world">Sex</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> this won't prevent sex, they'll just spam it -->
 					<li MayRequire="LovelyDovey.Sex.WithEuterpe">SEX_Intimacy</li>
 				</disablesNeeds>
 			</li>
@@ -664,7 +664,7 @@
 					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-					<li MayRequire="rim.job.world">Sex</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> this won't prevent sex, they'll just spam it -->
 					<li MayRequire="LovelyDovey.Sex.WithEuterpe">SEX_Intimacy</li>
 				</disablesNeeds>
 			</li>
@@ -839,7 +839,7 @@
 					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-					<li MayRequire="rim.job.world">Sex</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> this won't prevent sex, they'll just spam it -->
 					<li MayRequire="LovelyDovey.Sex.WithEuterpe">SEX_Intimacy</li>
 				</disablesNeeds>
 			</li>
@@ -1014,7 +1014,7 @@
 					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-					<li MayRequire="rim.job.world">Sex</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> this won't prevent sex, they'll just spam it -->
 					<li MayRequire="LovelyDovey.Sex.WithEuterpe">SEX_Intimacy</li>
 				</disablesNeeds>
 			</li>
@@ -1184,7 +1184,7 @@
 					<li MayRequire="Dubwise.DubsBadHygiene">Hygiene</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">Bladder</li>
 					<li MayRequire="Dubwise.DubsBadHygiene">DBHThirst</li>
-					<li MayRequire="rim.job.world">Sex</li>
+					<!-- <li MayRequire="rim.job.world">Sex</li> this won't prevent sex, they'll just spam it -->
 					<li MayRequire="LovelyDovey.Sex.WithEuterpe">SEX_Intimacy</li>
 				</disablesNeeds>
 			</li>
