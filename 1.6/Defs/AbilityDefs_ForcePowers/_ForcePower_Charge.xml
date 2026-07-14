@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_chargebattery</defName>
 		<label>Charge battery</label>
 		<description>Use the Force to shock any battery-like structure with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage. Effectiveness scales with the caster's psychic sensitivity stat.</description>
@@ -9,12 +9,12 @@
 			<HediffDef>guy762_Electrocuted</HediffDef>
 		</descriptionHyperlinks>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<iconPath>UI/ForceIcons/Power_Charge</iconPath>
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>5</level> -->
+		<level>5</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -27,7 +27,7 @@
 		<cooldownTicksRange>12000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -79,17 +79,17 @@
                 </needOffsets>
             </li-->
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>5</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>5</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
 	  
-	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_chargedroid</defName>
 		<label>Charge droid</label>
 		<description>Use the Force to shock a droid or mechanoid with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage.</description>
@@ -98,11 +98,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_ChargeDroid</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>7</level> -->
+		<level>7</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -115,7 +115,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>15</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -178,15 +178,15 @@
                 </needOffsets>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>7</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_chargebattery</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>7</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_chargebattery</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  

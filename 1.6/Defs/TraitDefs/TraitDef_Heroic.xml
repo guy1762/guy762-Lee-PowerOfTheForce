@@ -23,10 +23,10 @@
 			<li Class="SWCP.TraitExtension_DraftedHediff">
 				<hediff>SWPotF_hediff_HeroicBonus</hediff>
 			</li>
-			<!-- <li Class="ItsSorceryFramework.ModExtension_SchemaAddition"> -->
-				<!-- <schema>SWPotF_HeroModeSchema</schema> -->
-				<!-- <baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef> -->
-			<!-- </li> -->
+			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+				<schema>SWPotF_HeroModeSchema</schema>
+				<baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef>
+			</li>
 		</modExtensions>
 	</TraitDef>
 	

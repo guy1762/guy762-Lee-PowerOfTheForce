@@ -1,0 +1,1524 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- these are the UI tabs -->
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+		<defName>SWPotF_ForceLearningTracker_Summary</defName>
+		<label>Summary</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass> <!-- this is for the summary tab -->
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotF_ForceLearningTracker_tree_Univ</defName>
+		<label>Universal Powers</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+	
+	
+	
+	
+	<!-- telekinetics chain -->
+	
+	
+	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_push</defName> -->
+		<!-- <label>Force Push</label> -->
+		<!-- <description>Use the Force to push a target away from the caster.</description> -->
+		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+		
+		<!-- <abilityGain> -->
+			<!-- <li>SWPotF_forcepower_push</li> -->
+		<!-- </abilityGain> -->
+		
+		<!-- <prereqGenesProhibit> -->
+			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
+		<!-- </prereqGenesProhibit> -->
+		
+		<!-- <coordX>0</coordX> -->
+		<!-- <coordY>0</coordY> -->
+		<!-- <pointReq>1</pointReq> -->
+		
+	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	
+	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_pull</defName> -->
+		<!-- <label>Force Pull</label> -->
+		<!-- <description>Use the Force to pull a target towards the caster. Can also be used to quickly equip a nearby weapon when unarmed.</description> -->
+		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+		
+		<!-- <prereqLevel>1</prereqLevel> -->
+		<!-- <prereqNodes> -->
+			<!-- <li>SWPotF_ForceTreeNodeUniv_push</li> -->
+		<!-- </prereqNodes> -->
+		
+		<!-- <abilityGain> -->
+			<!-- <li>SWPotF_forcepower_pull</li> -->
+		<!-- </abilityGain> -->
+		
+		<!-- <prereqGenesProhibit> -->
+			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
+		<!-- </prereqGenesProhibit> -->
+		
+		<!-- <coordX>1</coordX> -->
+		<!-- <coordY>0</coordY> -->
+		<!-- <pointReq>1</pointReq> -->
+		
+	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	
+	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_repulse</defName> -->
+		<!-- <label>Force Repulse</label> -->
+		<!-- <description>Use the Force to push all nearby targets away from the caster.</description> -->
+		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+		
+		<!-- <prereqLevel>12</prereqLevel> -->
+		<!-- <prereqNodes> -->
+			<!-- <li>SWPotF_ForceTreeNodeUniv_pull</li> -->
+		<!-- </prereqNodes> -->
+		
+		<!-- <abilityGain> -->
+			<!-- <li>SWPotF_forcepower_repulse</li> -->
+		<!-- </abilityGain> -->
+		
+		<!-- <prereqGenesProhibit> -->
+			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
+		<!-- </prereqGenesProhibit> -->
+		
+		<!-- <coordX>12</coordX> -->
+		<!-- <coordY>0</coordY> -->
+		<!-- <pointReq>1</pointReq> -->
+		
+	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	
+	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_wave</defName> -->
+		<!-- <label>Force Wave</label> -->
+		<!-- <description>Use the Force to push all targets within an angled radius away from the caster.</description> -->
+		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+		
+		<!-- <prereqLevel>15</prereqLevel> -->
+		<!-- <prereqNodes> -->
+			<!-- <li>SWPotF_ForceTreeNodeUniv_repulse</li> -->
+		<!-- </prereqNodes> -->
+		
+		<!-- <abilityGain> -->
+			<!-- <li>SWPotF_forcepower_wave</li> -->
+		<!-- </abilityGain> -->
+		
+		<!-- <prereqGenesProhibit> -->
+			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
+		<!-- </prereqGenesProhibit> -->
+		
+		<!-- <coordX>15</coordX> -->
+		<!-- <coordY>0</coordY> -->
+		<!-- <pointReq>1</pointReq> -->
+		
+	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	
+	
+	
+	<!-- throw saber -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_saberthrow</defName>
+		<label>Throw Lightsaber</label>
+		<description>Use the Force to throw and recall the caster's lightsaber at a target.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_saberthrow</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>1</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_advsaberthrow</defName>
+		<label>Adv. Throw Lightsaber</label>
+		<description>Use the Force to throw and recall the caster's lightsaber at up to three targets. Replaces the basic "Throw Lightsaber" ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_saberthrow</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_saberthrow</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advsaberthrow</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>9</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_triplesaber</defName>
+		<label>Lightsaber Telekinesis</label>
+		<description>Use the Force to levitate and maneuver three lightsabers at once.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>18</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_advsaberthrow</li>
+		</prereqNodes>
+
+		<!--abilityGain>
+			<li>SWPotF_forcepower_knightspeed</li>
+		</abilityGain-->
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>18</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	
+	
+	<!-- speed chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_speedI</defName>
+		<label>Burst of Speed</label>
+		<description>Use the Force to enhance movement speed and dodge chance.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_speed</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_speedII</defName>
+		<label>Knight Speed</label>
+		<description>Use the Force to better enhance movement speed, dodge chance, and attack speed. Replaces Burst of Speed.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_speedI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_speed</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_knightspeed</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>9</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_speedIII</defName>
+		<label>Master Speed</label>
+		<description>Use the Force to greatly increase movement speed, dodge chance, and attack speed. Replaces Knight Speed.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_speedII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_knightspeed</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstspeed</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>15</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- slow/stasis/whirlwind -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_slow</defName>
+		<label>Force Slow</label>
+		<description>Use the Force to slow a target down.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<coordX>1</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_slow</li>
+		</abilityGain>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.015</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_stasis</defName>
+		<label>Force Stasis</label>
+		<description>Use the Force to halt a target's movement.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_slow</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_stasis</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.015</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>9</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_whirlwind</defName>
+		<label>Force Whirlwind</label>
+		<description>Use the Force to...</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_stasis</li>
+		</prereqNodes>
+		
+		<!--abilityGain>
+			<li>SWPotF_forcepower_whirlwind</li>
+		</abilityGain-->
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.015</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>15</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- jump chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_jumpI</defName>
+		<label>Force Jump</label>
+		<description>Use the Force to leap to a visible spot within 10 meters.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_jump</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_jumpII</defName>
+		<label>Knight Jump</label>
+		<description>Use the Force to leap to a visible spot within 20 meters. Replaces Force Jump.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_jumpI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_jump</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_knightjump</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>6</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_jumpIII</defName>
+		<label>Master Jump</label>
+		<description>Use the Force to leap to any accessible spot within 30 meters. Replaces Knight Jump.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_jumpII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_knightjump</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstjump</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>12</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+
+	
+	
+	
+	<!-- cloak chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_cloakI</defName>
+		<label>Force Camouflage</label>
+		<description>Use the Force to render the caster invisible.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_cloak</li>
+		</abilityGain>
+		
+		<coordX>15</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_cloakII</defName>
+		<label>Knight Camouflage</label>
+		<description>Use the Force to better render the caster invisible. Replaces Force Camouflage.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>19</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_cloakI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_cloak</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_knightcloak</li>
+		</abilityGain>
+		
+		<coordX>19</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_cloakIII</defName>
+		<label>Master Camouflage</label>
+		<description>Use the Force to better render the caster invisible. Replaces Knight Camouflage.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>23</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_cloakII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_knightcloak</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstcloak</li>
+		</abilityGain>
+		
+		<coordX>23</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- energy resistance chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_EResI</defName>
+		<label>Energy Resistance</label>
+		<description>Use the Force to render the caster invisible.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_energyres</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.025</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_EResII</defName>
+		<label>Knight Energy Resistance</label>
+		<description>Use the Force to form a strong barrier protecting an individual from various energy attacks. Replaces the standard Energy Resistance ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_EResI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_energyres</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advenergyres</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.025</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>9</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_EResIII</defName>
+		<label>Master Energy Resistance</label>
+		<description>Use the Force to form a very strong barrier protecting an individual from various energy attacks. Replaces Knight Energy Resistance.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>17</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_EResII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advenergyres</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstenergyres</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.025</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>17</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- Force resistance/immunity -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_forceresist</defName>
+		<label>Force Resistance</label>
+		<description>Use the Force to reduce the caster's psychic sensitivity by 50%, offering resistance to most Force abilities good or bad.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_forceresist</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>9</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_forceimmunity</defName>
+		<label>Force Immunity</label>
+		<description>Use the Force to reduce the caster's psychic sensitivity to 0%, offering immunity to most Force abilities good or bad.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_forceresist</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_forceimmune</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>15</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- suppression/breach -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_suppression</defName>
+		<label>Force Suppression</label>
+		<description>Use the Force to cancel a wide range of Force abilities active on the target.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_suppression</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>9</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_breach</defName>
+		<label>Force Breach</label>
+		<description>Use the Force to cancel a wide range of Force abilities active on the target, including many higher-level powers. Replaces Force Suppression.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_suppression</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_suppression</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_breach</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>15</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+
+	<!-- force body chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_ForceBodyI</defName>
+		<label>Force Body</label>
+		<description>Use the Force to channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_forcebody</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.04</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>9</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_ForceBodyII</defName>
+		<label>Adv. Force Body</label>
+		<description>Use the Force to efficiently channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Replaces the standard Force Body ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_ForceBodyI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_forcebody</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advforcebody</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.04</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>9</coordX>
+		<coordY>9</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_ForceBodyIII</defName>
+		<label>Master Force Body</label>
+		<description>Use the Force to optimally channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Replaces Adv. Force Body.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_ForceBodyII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advforcebody</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstforcebody</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.04</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>15</coordX>
+		<coordY>9</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- Force confusion/mind trick -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_confusion</defName>
+		<label>Force Confusion</label>
+		<description>Use the Force to confuse a target.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_confusion</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>10</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_mindtrick</defName> -->
+		<!-- <label>Mind Trick</label> -->
+		<!-- <description>Use the Force to command a target to do a variety of different tasks.</description> -->
+		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+		
+		<!-- <prereqLevel>15</prereqLevel> -->
+		<!-- <prereqNodes> -->
+			<!-- <li>SWPotF_ForceTreeNodeUniv_confusion</li> -->
+		<!-- </prereqNodes> -->
+
+		<!-- <abilityRemove> -->
+			<!-- <li>SWPotF_forcepower_confusion</li> -->
+		<!-- </abilityRemove> -->
+		<!-- <abilityGain> -->
+			<!-- <li>SWPotF_forcepower_mindtrick</li> -->
+		<!-- </abilityGain> -->
+		
+		<!-- <statOffsets> -->
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		<!-- </statOffsets> -->
+		
+		<!-- <coordX>15</coordX> -->
+		<!-- <coordY>10</coordY> -->
+		<!-- <pointReq>1</pointReq> -->
+	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	
+	
+	<!-- affect/dominate mind -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_affectmind</defName>
+		<label>Affect Mind</label>
+		<description>Use the Force to reduce a target's resistance to recruitment.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_affectmind</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.02</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>11</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_dominatemind</defName>
+		<label>Dominate Mind</label>
+		<description>Use the Force to greatly reduce a target's resistance to recruitment and conversion to the caster's ideoligion. Replaces Affect Mind.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_affectmind</li>
+		</prereqNodes>
+
+		<!--abilityRemove>
+			<li>SWPotF_forcepower_affectmind</li>
+		</abilityRemove-->
+		<abilityGain>
+			<li>SWPotF_forcepower_dominatemind</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.01</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.02</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		
+		<coordX>6</coordX>
+		<coordY>11</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	<!-- droid chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_droidstun</defName>
+		<label>Stun Droid</label>
+		<description>Use the Force to cause electromagnetic disruption within a droid or turret, temporarily stunning it for several seconds. Because this deals EMP damage, this will instantly disable any active energy shield.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_droidstun</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.035</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>1</coordX>
+		<coordY>12</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_droiddisable</defName>
+		<label>Disable Droid</label>
+		<description>Use the Force to cause ionic buildup within a droid, potentially ionizing it. This does not disable active energy shields.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_droidstun</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_droiddisable</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.035</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>6</coordX>
+		<coordY>12</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_droiddestroy</defName>
+		<label>Destroy Droid</label>
+		<description>Use the Force to rip a droid apart at the molecular level, ignoring all armor and shields.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_droiddisable</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_droiddestroy</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.035</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>12</coordX>
+		<coordY>12</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	<!-- charge chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_chargebattery</defName>
+		<label>Charge Battery</label>
+		<description>Use the Force to shock any battery-like structure with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<abilityGain>
+			<li>SWPotF_forcepower_chargebattery</li>
+		</abilityGain>
+		
+		<coordX>5</coordX>
+		<coordY>13</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_chargedroid</defName>
+		<label>Charge Droid</label>
+		<description>Use the Force to shock a droid or mechanoid with a bolt of electricity, recharging the target's power stores while dealing a minor amount of electrical damage.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_chargebattery</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_chargedroid</li>
+		</abilityGain>
+		
+		<coordX>7</coordX>
+		<coordY>13</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	<!-- Blaster Storm chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_BlasterStormI</defName>
+		<label>Blaster Storm</label>
+		<description>Use the Force to reduce the caster's ranged aiming speed and attack cooldown.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<abilityGain>
+			<li>SWPotF_forcepower_blasterstorm</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>6</coordX>
+		<coordY>14</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_BlasterStormII</defName>
+		<label>Adv. Blaster Storm</label>
+		<description>Use the Force to better reduce the caster's ranged aiming speed and attack cooldown. Replaces the standard Blaster Storm ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_BlasterStormI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_blasterstorm</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advblasterstorm</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>12</coordX>
+		<coordY>14</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_BlasterStormIII</defName>
+		<label>Master Blaster Storm</label>
+		<description>Use the Force to greatly reduce the caster's ranged aiming speed and attack cooldown. Replaces Adv. Blaster Storm.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>18</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_BlasterStormII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advblasterstorm</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstblasterstorm</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.015</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		
+		<coordX>18</coordX>
+		<coordY>14</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+
+	
+	
+	<!-- critical strike chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_CritStrikeWeapon</defName>
+		<label>Sun Djerm</label>
+		<description>Use the Force to guide a melee strike that targets an opponents weapon, destroying it permanently.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<abilityGain>
+			<li>SWPotF_forcepower_critweapon</li>
+		</abilityGain>
+		
+		<coordX>15</coordX>
+		<coordY>17</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.075</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_MartialAlignment>0.25</SWPotF_MartialAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_CritStrikeHand</defName>
+		<label>Cho Mai</label>
+		<description>Use the Force to guide a melee strike that targets an opponents hand, severing it and disarming them.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>18</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_CritStrikeWeapon</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_crithand</li>
+		</abilityGain>
+		
+		<coordX>18</coordX>
+		<coordY>17</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.075</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_MartialAlignment>0.35</SWPotF_MartialAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_CritStrikeLimb</defName>
+		<label>Cho Mok</label>
+		<description>Use the Force to guide a melee strike that targets a random limb on the opponent, severing it.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>21</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_CritStrikeHand</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_critlimb</li>
+		</abilityGain>
+		
+		<coordX>21</coordX>
+		<coordY>17</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.075</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_MartialAlignment>0.5</SWPotF_MartialAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_CritStrikeBisect</defName>
+		<label>Sai Tok</label>
+		<description>Use the Force to guide a melee strike that bisects an opponent at the waist, severing their legs.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>26</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_CritStrikeLimb</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_critbisect</li>
+		</abilityGain>
+		
+		<coordX>26</coordX>
+		<coordY>17</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.075</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_MartialAlignment>0.65</SWPotF_MartialAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_CritStrikeHead</defName>
+		<label>Sai Cha</label>
+		<description>Use the Force to guide a melee strike that decapitates an opponent, severing their head.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>30</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_CritStrikeBisect</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_crithead</li>
+		</abilityGain>
+		
+		<coordX>30</coordX>
+		<coordY>17</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.075</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_MartialAlignment>0.75</SWPotF_MartialAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	<!-- battle meditation chain -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_BattleMeditationI</defName>
+		<label>Battle Meditation</label>
+		<description>"Every fighter brings their own fears, their own hopes into combat; with sufficient concentration, a Jedi can strengthen the hopes of their allies and heighten the fears of their enemies. Thus, what armies know in their hearts must become true, because they believe it so strongly." - Odan-Urr\n\nBy visualizing the desired outcome of a battle, a Jedi can shape the field of Force that surrounds events. The caster can greatly enhance the willpower and combat abilities of nearby friendlies while weakening that of their enemies. Proper use can turn the tide of even the largest battles.\n\nAfter activating this ability the caster will go into a state of deep meditation and will remain still for the duration of the ability. This trance will be broken if new commands are ordered or if the caster takes damage, so make sure you leave the caster in a safe place and don't disturb them!\n\nThe duration of the meditative trance scales with the caster's psychic sensitivity stat, and it will slowly drain the caster's Force points over the course of the meditative state. All psychically-sensitive colonists within a 500-tile radius will benefit from this ability, and all psy-sensitive enemies within 500 tiles will suffer it's negative effects.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>20</prereqLevel>
+		<abilityGain>
+			<li>SWPotF_forcepower_batlmed</li>
+		</abilityGain>
+		
+		<coordX>20</coordX>
+		<coordY>18</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.035</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_SpiritualAlignment>0.5</SWPotF_SpiritualAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_BattleMeditationII</defName>
+		<label>Adv. Battle Meditation</label>
+		<description>Through channeling the Force, this person can better enhance the willpower and combat abilities of all colonists within 500 tiles, while weakening any enemies in that area. Replaces the standard Battle Meditation ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>28</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_BattleMeditationI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_batlmed</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advbatlmed</li>
+		</abilityGain>
+		
+		<coordX>28</coordX>
+		<coordY>18</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.035</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_SpiritualAlignment>0.70</SWPotF_SpiritualAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_BattleMeditationIII</defName>
+		<label>Master Battle Meditation</label>
+		<description>Through channeling the Force, this person can greatly enhance the willpower and combat abilities of all colonists within 500 tiles, while weakening any enemies in that area. Replaces Adv. Battle Meditation.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>34</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_BattleMeditationII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advbatlmed</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstbatlmed</li>
+		</abilityGain>
+		
+		<coordX>34</coordX>
+		<coordY>18</coordY>
+		<pointReq>1</pointReq>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.035</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.075</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<SWPotF_SpiritualAlignment>0.85</SWPotF_SpiritualAlignment>
+				</statReqs>
+			</li>
+		</prereqStats>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- misc -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_breathcontrol</defName>
+		<label>Body Control</label>
+		<description>Use the Force to focus the caster's breathing and internal temperature regulation, giving temporary immunity to environmental toxins as well as significantly boosting the comfortable temperature limits. Also boosts carry weight limit.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<abilityGain>
+			<li>SWPotF_forcepower_breathcontrol</li>
+		</abilityGain>
+		
+		<coordX>5</coordX>
+		<coordY>20</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_mentor</defName> -->
+		<!-- <label>Mentorship</label> -->
+		<!-- <description>...</description> -->
+		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+		
+		<!-- <prereqLevel>20</prereqLevel> -->
+		<!-- <abilityGain> -->
+			<!-- <li>SWPotF_forcepower_mentor</li> -->
+			<!-- <li>SWPotF_mentorlesson_combat</li> -->
+		<!-- </abilityGain> -->
+		
+		<!-- <coordX>20</coordX> -->
+		<!-- <coordY>20</coordY> -->
+		<!-- <pointReq>1</pointReq> -->
+		
+	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Refinement</defName>
+		<label>Experimental refinement</label>
+		<description>Make sure to develop proper controls.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>2</coordX>
+		<coordY>5</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqNodes>
+			<li>ISFE_Node_Logos_Design</li>
+		</prereqNodes>
+		<exclusiveNodes>
+			<li>ISFE_Node_Logos_Surrender</li>
+		</exclusiveNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Collection</defName>
+		<label>Data collection</label>
+		<description>Good data collection now saves a lot of heartache later.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqNodes>
+			<li>ISFE_Node_Logos_Refinement</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Conclusion</defName>
+		<label>Research conclusion</label>
+		<description>A through analysis allows the next bit of research to reach new heights.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqNodes>
+			<li>ISFE_Node_Logos_Collection</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef-->
+	
+	
+</Defs>

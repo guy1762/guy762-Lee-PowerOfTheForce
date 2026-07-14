@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_wound</defName>
 		<label>wound</label>
 		<description>Use the Force to wound a target, periodically inflicting damage on random internal organs. Duration scales with the target's psychic sensitivity.</description>
@@ -10,7 +10,7 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Wound</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -23,10 +23,10 @@
 		<cooldownTicksRange>1000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>10</Force_AbilityDarksideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -67,12 +67,12 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	<HediffDef>
@@ -136,7 +136,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_kill</defName>
 		<label>kill</label>
 		<description>Use the Force to kill a target, periodically inflicting damage to their vital internal organs (including the heart and brain). Duration scales with the target's psychic sensitivity.</description>
@@ -145,11 +145,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Kill</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>12</level> -->
+		<level>12</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -159,10 +159,10 @@
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>40</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>15</Force_AbilityDarksideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -204,15 +204,15 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>12</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_wound</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>12</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_wound</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	<HediffDef>

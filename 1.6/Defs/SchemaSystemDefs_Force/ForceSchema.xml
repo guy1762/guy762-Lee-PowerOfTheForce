@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+		<defName>SWPotF_ForceSchema</defName>
+		<label>The Force</label>
+		<description>The Force - the invisible energy field that permeates and binds all life in the galaxy.</description>
+	
+		<energyTrackerDefs>
+			<li>SWPotF_EnergyTracker_ForcePoints</li>
+		</energyTrackerDefs>
+		<learningTrackerDefs> <!-- UI tabs-->
+			<li>SWPotF_ForceLearningTracker_Summary</li>
+			
+			<li>SWPotF_ForceLearningTracker_tree_Univ</li>
+			<li>SWPotF_ForceLearningTracker_tree_Light</li>
+			<li>SWPotF_ForceLearningTracker_tree_Dark</li>
+		</learningTrackerDefs>
+		<progressTrackerDef>SWPotF_ProgressTracker_ForceLvl</progressTrackerDef>
+	</ItsSorceryFramework.SorcerySchemaDef>
+
+	
+</Defs>

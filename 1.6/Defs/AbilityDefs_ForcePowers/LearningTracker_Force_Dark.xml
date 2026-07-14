@@ -1,0 +1,865 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- these are the UI tabs -->
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotF_ForceLearningTracker_tree_Dark</defName>
+		<label>Dark Side Powers</label>
+		
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+		<!--defaultLocked>true</defaultLocked-->
+		<lockedLabel>Unknown</lockedLabel>
+		<unlockTip>Learn about this skill tree through a certain item, or by completing First Studies.</unlockTip>
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+
+	
+	<!-- lightning chain -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_shock</defName>
+		<label>Force Shock</label>
+		<description>Use the Force to electrocute a target.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>1</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_shock</li>
+		</abilityGain>
+		
+		<!--statOffsets>
+			<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+		</statOffsets-->
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_lightning</defName>
+		<label>Force Lightning</label>
+		<description>Use the Force to electrocute all targets in a long but narrow arc.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>9</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_shock</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_lightning</li>
+		</abilityGain>
+		
+		<!--statOffsets>
+			<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+		</statOffsets-->
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_storm</defName>
+		<label>Force Storm</label>
+		<description>Use the Force to electrocute all targets in a large arc.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>18</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>18</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_lightning</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_storm</li>
+		</abilityGain>
+		
+		<!--statOffsets>
+			<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+		</statOffsets-->
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- choke and crush -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_choke</defName>
+		<label>Choke</label>
+		<description>Use the Force to choke a target, inflicting damage directly to their neck. Does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>9</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>9</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_choke</li>
+		</abilityGain>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_crush</defName>
+		<label>Crush</label>
+		<description>Use the Force to crush a target, rapidly inflicting damage throughout their entire body. Can be used on droids, does not use psychic sensitivity for scaling, and cannot be canceled by Force Suppression/Breach.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>25</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>25</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_choke</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_crush</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+			
+			<!-- <Force_Darkside_Attunement>0.05</Force_Darkside_Attunement> -->
+		</statOffsets>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- wound and kill -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_wound</defName>
+		<label>Wound</label>
+		<description>Use the Force to wound a target, periodically inflicting damage on random internal organs.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>1</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_wound</li>
+		</abilityGain>
+		
+		<!--hediffAdd>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>1</severity></li>
+		</hediffAdd-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_kill</defName>
+		<label>Kill</label>
+		<description>Use the Force to kill a target, periodically inflicting damage to their vital internal organs (including the heart and brain).</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>12</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_wound</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_kill</li>
+		</abilityGain>
+		
+		<!--statOffsets>
+			<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+		</statOffsets-->
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- plagues -->
+	
+	
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_affliction</defName>
+		<label>Affliction</label>
+		<description>Use the Force to poison a target, slowing them down and causing them to vomit periodically. Also halves Force point recovery.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>6</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>6</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_affliction</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.05</SWPotF_SpiritualAlignment>
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_plague</defName>
+		<label>Plague</label>
+		<description>Use the Force to inflict a terrible plague on a target, slowly rotting their organs and weakening them. Also halts Force point recovery.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>12</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_affliction</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_plague</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.05</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	<!-- fears -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_fear</defName>
+		<label>Fear</label>
+		<description>Use the Force to induce fear and anxiety in a target.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>1</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_fear</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.025</SWPotF_SpiritualAlignment>
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_horror</defName>
+		<label>Horror</label>
+		<description>Use the Force to induce panic in a target, causing them to flee off the map.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>6</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_fear</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_horror</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.025</SWPotF_SpiritualAlignment>
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_insanity</defName>
+		<label>Insanity</label>
+		<description>Use the Force to drive a target insane, causing them to lash out and attack anyone they can find.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>12</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_horror</li>
+		</prereqNodes>
+
+		<abilityGain>
+			<li>SWPotF_forcepower_insanity</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.025</SWPotF_SpiritualAlignment>
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	<!-- scream -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_screamI</defName>
+		<label>Force Scream</label>
+		<description>Use the Force to create a wave of sound dealing sonic damage against a target. Does not use psychic sensitivity for scaling.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>1</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_scream</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.05</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_screamII</defName>
+		<label>Warrior Scream</label>
+		<description>Use the Force to create a strong wave of sound dealing sonic damage against a target. Does not use psychic sensitivity for scaling. Replaces the standard Force Scream ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>9</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_screamI</li>
+		</prereqNodes>
+		
+		<abilityRemove>
+			<li>SWPotF_forcepower_scream</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advscream</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.05</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_screamIII</defName>
+		<label>Marauder Scream</label>
+		<description>Use the Force to create a powerful explosive wave of sound dealing sonic damage against a target. Does not use psychic sensitivity for scaling. Replaces Warrior Scream.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>15</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_screamII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advscream</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstscream</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.05</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	<!-- life drain -->
+	
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_drainlife</defName>
+		<label>Drain Life</label>
+		<description>Use the Force to sap the life from a target, siphoning their sleep and hunger needs as well as overall health while adding to the caster's.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>9</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>9</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_drainlife</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_deathfield</defName>
+		<label>Death Field</label>
+		<description>Use the Force to strip the life from all targets within an arc, siphoning their sleep and hunger needs as well as overall health while adding to the caster's.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>18</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>18</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_drainlife</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_deathfield</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- force drain -->
+	
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_drainforceI</defName>
+		<label>Drain Force</label>
+		<description>Use the Force to drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>1</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>1</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_drainforce</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.04</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_drainforceII</defName>
+		<label>Adv. Drain Force</label>
+		<description>Use the Force to better drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Replaces the standard Force Drain ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>9</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_drainforceI</li>
+		</prereqNodes>
+		
+		<abilityRemove>
+			<li>SWPotF_forcepower_drainforce</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advdrainforce</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.04</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_drainforceIII</defName>
+		<label>Master Drain Force</label>
+		<description>Use the Force to greatly drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Replaces Adv. Force Drain.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>15</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_drainforceII</li>
+		</prereqNodes>
+		
+		<abilityRemove>
+			<li>SWPotF_forcepower_advdrainforce</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstdrainforce</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<!-- <SWPotF_MartialAlignment>0.025</SWPotF_MartialAlignment> -->
+			<SWPotF_SpiritualAlignment>0.04</SWPotF_SpiritualAlignment>
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	<!-- rend -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_rendI</defName>
+		<label>Rend</label>
+		<description>Use the Force to boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>12</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>12</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_rend</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_rendII</defName>
+		<label>Warrior Rend</label>
+		<description>Use the Force to better boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Replaces the standard Rend ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>17</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>17</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_rendI</li>
+		</prereqNodes>
+		
+		<abilityRemove>
+			<li>SWPotF_forcepower_rend</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advrend</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_rendIII</defName>
+		<label>Marauder Rend</label>
+		<description>Use the Force to greatly boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Replaces Warrior Rend.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>24</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>24</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_rendII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advrend</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstrend</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	<!-- fury -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_furyI</defName>
+		<label>Fury</label>
+		<description>Use the Force to channel the caster's anger and rage, strengthening them and increasing melee damage dealt with each subsequent kill (caps at 6). Also reduces dodge chance.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>15</coordX>
+		<coordY>9</coordY>
+		<pointReq>1</pointReq>
+		
+		<prereqLevel>15</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_fury</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_furyII</defName>
+		<label>Warrior Fury</label>
+		<description>Use the Force to better channel the caster's anger and rage, strengthening them and increasing melee damage dealt with each subsequent kill (caps at 6). Also reduces dodge chance. Replaces the standard Fury ability.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>20</coordX>
+		<coordY>9</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>20</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_furyI</li>
+		</prereqNodes>
+		
+		<abilityRemove>
+			<li>SWPotF_forcepower_fury</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_advfury</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeDS_furyIII</defName>
+		<label>Marauder Fury</label>
+		<description>Use the Force to greatly channel the caster's anger and rage, strengthening them and increasing melee damage dealt with each subsequent kill (caps at 6). Also reduces dodge chance. Replaces Warrior Fury.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Dark</learningTrackerDef>
+		
+		<coordX>24</coordX>
+		<coordY>9</coordY>
+		<pointReq>1</pointReq>
+				
+		<prereqLevel>24</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeDS_furyII</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotF_forcepower_advfury</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotF_forcepower_mstfury</li>
+		</abilityGain>
+		
+		<statOffsets>
+			<SWPotF_MartialAlignment>0.05</SWPotF_MartialAlignment>
+			<!-- <SWPotF_SpiritualAlignment>0.03</SWPotF_SpiritualAlignment> -->
+		</statOffsets>
+		<!--prereqStats>
+			<li>
+				<mode>Greater</mode>
+				<statReqs>
+					<Force_Darkside_Attunement>0.05</Force_Darkside_Attunement>
+				</statReqs>
+			</li>
+		</prereqStats-->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+</Defs>

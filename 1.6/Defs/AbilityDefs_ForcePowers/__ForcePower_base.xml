@@ -1,36 +1,43 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef Name="SWPotF_forcepower_base" Abstract="True">
+	<!-- <AbilityDef Name="SWPotF_forcepower_base" Abstract="True"> -->
+		<!-- <aiCanUse>true</aiCanUse> -->
+		<!-- <uiOrder>762</uiOrder> -->
+		
+		<!-- <writeCombatLog>True</writeCombatLog> -->
+		
+		<!-- <comps> -->
+			<!-- <li Class="TheForce_Standalone.CompProperties_AbilityEffect_ForcePower"></li> -->
+		<!-- </comps> -->
+	<!-- </AbilityDef> -->
+	
+	<!-- <AbilityCategoryDef> -->
+		<!-- <defName>SWPotF_AbilityCategory_Lightside</defName> -->
+		<!-- <label>(SWPotF) Light</label> -->
+		<!-- <displayOrder>0</displayOrder> -->
+	<!-- </AbilityCategoryDef> -->
+	<!-- <AbilityCategoryDef> -->
+		<!-- <defName>SWPotF_AbilityCategory_Universal</defName> -->
+		<!-- <label>(SWPotF) Universal</label> -->
+		<!-- <displayOrder>0</displayOrder> -->
+	<!-- </AbilityCategoryDef> -->
+	<!-- <AbilityCategoryDef> -->
+		<!-- <defName>SWPotF_AbilityCategory_Darkside</defName> -->
+		<!-- <label>(SWPotF) Dark</label> -->
+		<!-- <displayOrder>0</displayOrder> -->
+	<!-- </AbilityCategoryDef> -->
+	
+	
+	
+	
+	
+	<ItsSorceryFramework.SorceryDef Name="SWPotF_forcepower_base" ParentName="SorceryBase" Abstract="True">
+		<sorcerySchema>SWPotF_ForceSchema</sorcerySchema>
 		<aiCanUse>true</aiCanUse>
 		<uiOrder>762</uiOrder>
 		
 		<writeCombatLog>True</writeCombatLog>
-		
-		<comps>
-			<li Class="TheForce_Standalone.CompProperties_AbilityEffect_ForcePower"></li>
-		</comps>
-		<!-- <modExtensions> -->
-			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
-				<!-- <RequiredLevel>1</RequiredLevel> -->
-			<!-- </li> -->
-		<!-- </modExtensions> -->
-	</AbilityDef>
-	
-	<AbilityCategoryDef>
-		<defName>SWPotF_AbilityCategory_Lightside</defName>
-		<label>(SWPotF) Light</label>
-		<displayOrder>0</displayOrder>
-	</AbilityCategoryDef>
-	<AbilityCategoryDef>
-		<defName>SWPotF_AbilityCategory_Universal</defName>
-		<label>(SWPotF) Universal</label>
-		<displayOrder>0</displayOrder>
-	</AbilityCategoryDef>
-	<AbilityCategoryDef>
-		<defName>SWPotF_AbilityCategory_Darkside</defName>
-		<label>(SWPotF) Dark</label>
-		<displayOrder>0</displayOrder>
-	</AbilityCategoryDef>
+	</ItsSorceryFramework.SorceryDef>
 	
 </Defs>

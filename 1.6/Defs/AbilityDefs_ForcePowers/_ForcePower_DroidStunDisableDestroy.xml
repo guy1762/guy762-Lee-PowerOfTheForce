@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_droidstun</defName>
 		<label>Stun droid</label>
 		<description>Use the Force to cause electromagnetic disruption within a droid or turret, temporarily stunning it for several seconds. Because this deals EMP damage, this will instantly disable any active energy shield.</description>
@@ -10,7 +10,7 @@
 		</descriptionHyperlinks-->
 		<iconPath>UI/ForceIcons/Force_power_Stun_Droid</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -22,7 +22,7 @@
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>25</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -69,14 +69,14 @@
                 </targetIsOneOfXenotype>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
-	<VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_DroidStun</defName>
 		<label>Droid stun</label>
 		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
@@ -116,7 +116,7 @@
 	  
 	  
 	  
-	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_droiddisable</defName>
 		<label>Disable droid</label>
 		<description>Use the Force to cause ionic buildup within a droid, potentially ionizing it. This does not disable active energy shields.</description>
@@ -125,11 +125,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Disable_Droid</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>6</level> -->
+		<level>6</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -138,7 +138,7 @@
 		<cooldownTicksRange>1000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>15</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -185,17 +185,17 @@
                 </targetIsOneOfXenotype>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>6</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_droidstun</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>6</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_droidstun</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
-	<VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_DroidDisable</defName>
 		<label>Droid ionization</label>
 		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->
@@ -238,7 +238,7 @@
 	  
 	  
 	  
-	<AbilityDef MayRequire="guy762.KotORDroids" ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_droiddestroy</defName>
 		<label>Destroy droid</label>
 		<description>Use the Force to rip a droid apart at the molecular level, ignoring all armor and shields.</description>
@@ -247,11 +247,11 @@
 		</descriptionHyperlinks-->
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Destroy_Droid</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>12</level> -->
+		<level>12</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -260,7 +260,7 @@
 		<cooldownTicksRange>2000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -307,17 +307,17 @@
                 </targetIsOneOfXenotype>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>12</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_droiddisable</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>12</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_droiddisable</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
-	<VEF.Weapons.ExpandableProjectileDef MayRequire="guy762.KotORDroids" ParentName="BaseBullet">
+	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_DroidDestroy</defName>
 		<label>Droid destruction</label>
 		<!-- <thingClass>TheForce_ItsSorcery.Abilities.ForceLightningProjectile</thingClass> I don't actually remember what this did -->

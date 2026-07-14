@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_rend</defName>
 		<label>rend</label>
 		<description>Use the Force to boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -11,10 +11,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/FeatIcons/MeleeCombat/KotORII_Feat_Flurry</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>12</level> -->
+		<level>12</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -23,10 +23,8 @@
 		
 		<cooldownTicksRange>12000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
-			
-			<!-- <Force_AbilityDarksideStat>5</Force_AbilityDarksideStat> -->
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -57,12 +55,12 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>12</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>12</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<HediffDef>
 		<defName>SWPotF_hediff_ForceRend</defName>
@@ -164,7 +162,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advrend</defName>
 		<label>warrior rend</label>
 		<description>Use the Force to better boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -174,10 +172,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/FeatIcons/MeleeCombat/KotORII_Feat_Improved_Flurry</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>17</level> -->
+		<level>17</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -186,10 +184,10 @@
 		
 		<cooldownTicksRange>12000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>45</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>5</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>5</Force_AbilityDarksideStat> -->
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -220,15 +218,15 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>17</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_rend</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>17</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_rend</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<HediffDef>
 		<defName>SWPotF_hediff_WarriorRend</defName>
@@ -271,7 +269,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstrend</defName>
 		<label>marauder rend</label>
 		<description>Use the Force to greatly boost the caster's melee attack speed, increasing with each subsequent kill (caps at 6). Also reduces melee hit chance and deflection chance. Duration scales with the caster's psychic sensitivity.</description>
@@ -281,10 +279,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/FeatIcons/MeleeCombat/KotORII_Feat_Master_Flurry</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>24</level> -->
+		<level>24</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -293,10 +291,10 @@
 		
 		<cooldownTicksRange>12000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>60</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>10</Force_AbilityDarksideStat> -->
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -327,15 +325,15 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>24</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_advrend</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>24</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_advrend</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<HediffDef>
 		<defName>SWPotF_hediff_MarauderRend</defName>

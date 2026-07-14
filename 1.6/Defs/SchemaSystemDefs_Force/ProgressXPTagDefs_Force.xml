@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+	<!--ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_CastEnergyCost">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_CastEnergyCost</workerClass>
+		<defName>SWPotF_ForceEXPTag_CastEnergyCost</defName>
+		<expFactor>1</expFactor>
+	</ItsSorceryFramework.ProgressEXPTagDef>     PROGRESSION GAIN EVERY TIME A SorceryDef ABILITY IS CAST -->
+	
+	
+	
+	
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_DuringJob">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_DuringJob</workerClass>
+		<defName>SWPotF_ForceEXPTag_DuringMeditation</defName>
+		<fixedEXP>0.01</fixedEXP> <!-- ~3-4 hours of meditation for one point -->
+		<!-- <fixedEXP>0.005</fixedEXP> ~8-9 hours of meditation for one point -->
+		<jobSets>
+			<li>
+				<label>Meditating</label>
+				<jobDefs>
+					<li>Meditate</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">Reign</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">MeditatePray</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">PruneGauranlenTree</li>
+				</jobDefs>
+			</li>
+			<!--li>
+				<label>Teaching</label>
+				<jobDefs>
+					<li>SWPotF_CastAbilityOnThingMelee</li>
+				</jobDefs>
+			</li-->
+		</jobSets>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+	
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnSkillEXP">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnSkillEXP</workerClass>
+		<defName>SWPotF_ForceEXPTag_OnSkillEXP</defName>
+		<fixedEXP>0.001</fixedEXP>
+		<skillDefs>
+			<li>Artistic</li>
+			<!--li>Intellectual</li-->
+		</skillDefs>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+	
+	
+	
+	
+	
+	
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnInteraction">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnInteraction</workerClass>
+		<defName>SWPotF_ForceEXPTag_OnInteraction_MentorshipTraining</defName>
+		<fixedEXP>20</fixedEXP> <!-- actually only gives 50% of this for some reason? -->
+		<interactionDefs>
+			<li>guy762_InteractDef_trainingcombat</li>
+		</interactionDefs>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+	
+	
+	
+	<!--ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_UseItem">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_UseItem</workerClass>
+		<defName>ISFE_Logos_EXPTag_UseItem</defName>
+		<fixedEXP>1</fixedEXP>
+		<expItems>
+			<li>
+				<thingDef>Milk</thingDef>
+				<exp>50</exp>
+				<expFactorStat>GlobalLearningFactor</expFactorStat>
+			</li>
+		</expItems>
+	</ItsSorceryFramework.ProgressEXPTagDef-->
+	
+	
+</Defs>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_stun</defName>
 		<label>stun</label>
 		<description>Use the Force to stun a target. Duration scales with the psychic sensitivity of the target.</description>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Stun</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Lightside</category>
+		<!-- <category>SWPotF_AbilityCategory_Lightside</category> -->
 		<hotKey>Misc8</hotKey>
 		
-		<!-- <level>1</level> -->
+		<level>1</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -19,7 +19,7 @@
 		<cooldownTicksRange>1000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>25</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>9</Ability_Duration>
 		</statBases>
 		<verbProperties>		
@@ -55,25 +55,25 @@
 				<sound>kotorsound_force_stun</sound>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_stunfield</defName>
 		<label>stun field</label>
 		<description>Use the Force to stun multiple targets within a radius. Duration scales with the psychic sensitivity of the target.</description>
 		<iconPath>UI/ForceIcons/Power_Force_StunField</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Lightside</category>
+		<!-- <category>SWPotF_AbilityCategory_Lightside</category> -->
 		<hotKey>Misc8</hotKey>
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -86,7 +86,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>40</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>9</Ability_Duration>
 			<Ability_EffectRadius>3.9</Ability_EffectRadius>
 		</statBases>
@@ -126,15 +126,15 @@
 				<sound>kotorsound_force_stun</sound>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_stun</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_stun</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -145,7 +145,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_pacify</defName>
 		<label>pacify</label>
 		<description>Use the Force to render a target unconscious. Duration scales with the target's psychic sensitivity.</description>
@@ -154,11 +154,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/LS/KotOR_Force_power_Stasis_Field</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Lightside</category>
+		<!-- <category>SWPotF_AbilityCategory_Lightside</category> -->
 		<hotKey>Misc8</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>18</level> -->
+		<level>18</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -167,10 +167,10 @@
 		<cooldownTicksRange>12000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>25</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityLightsideStat>5</Force_AbilityLightsideStat>
+			<!-- <Force_AbilityLightsideStat>5</Force_AbilityLightsideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -212,15 +212,15 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>18</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_stunfield</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>18</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_stunfield</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	<HediffDef>

@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+
+	<ItsSorceryFramework.EnergyTrackerDef ParentName = "ISF_EnergyTrackerBase">
+		<energyTrackerClass>ItsSorceryFramework.EnergyTracker</energyTrackerClass>
+		<defName>SWPotF_EnergyTracker_ForcePoints</defName>
+		<label>Force points</label>
+		<normalBarColor>(195,155,205)</normalBarColor>
+		<energyUnitStatDef>SWPotF_ForcePoints</energyUnitStatDef>
+		
+		<energyMinStatDef>SWPotF_ForcePoints_Min</energyMinStatDef>
+		<energyMaxStatDef>SWPotF_ForcePoints_Max</energyMaxStatDef>
+		<disableReasonKey>SWPotF_DisableReason_ForcePoints</disableReasonKey>
+
+		<comps>
+			<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_PerTick">
+				<energyRecoveryStatDef>SWPotF_ForcePoints_Recovery</energyRecoveryStatDef>
+				<overchargeRecoveryFactor>-0.5</overchargeRecoveryFactor>
+				<deficitRecoveryFactor>0.5</deficitRecoveryFactor>
+			</li>
+			<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_JobBase">
+				<compClass>ItsSorceryFramework.EnergyTrackerComp_DuringJob</compClass>
+				<scalingStatDef>SWPotF_ForcePoints_Recovery</scalingStatDef>
+				<baseEnergy>3</baseEnergy>
+				<jobSetLabel>Meditating</jobSetLabel>
+				<jobDefs>
+					<li>Meditate</li>
+					<li MayRequire="Ludeon.RimWorld.Royalty">Reign</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">MeditatePray</li>
+					<li MayRequire="Ludeon.RimWorld.Ideology">PruneGauranlenTree</li>
+				</jobDefs>
+			</li>
+			
+			
+			<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_DamageBase">    <!-- gives points for dealing this damage -->
+				<compClass>ItsSorceryFramework.EnergyTrackerComp_OnDamage</compClass>
+				<scalingStatDef>SWPotF_ForcePoints_ForceDamageScaling</scalingStatDef>
+				<damageDefs>
+					<li>guy762_ForceDamage_add</li>
+				</damageDefs>
+			</li>
+			<!--<li Class = "ItsSorceryFramework.EnergyTrackerCompProperties_DamageBase">    gives points for receiving this damage
+				<compClass>ItsSorceryFramework.EnergyTrackerComp_OnDamaged</compClass>
+				<scalingStatDef>SWPotF_ForcePoints_ForceDamageScaling</scalingStatDef>
+				<damageDefs>
+					<li>guy762_ForceDamage_deplete</li>
+				</damageDefs>
+			</li>-->
+		</comps>
+	</ItsSorceryFramework.EnergyTrackerDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- FORCE DRAIN STUFF -->
+	
+	
+	<DamageDef>
+		<defName>guy762_ForceDamage_add</defName>
+		<label>siphoned Force</label>
+		<hasForcefulImpact>false</hasForcefulImpact>
+		<makesBlood>false</makesBlood>
+		<canInterruptJobs>false</canInterruptJobs>
+	</DamageDef>
+  
+	<!--<DamageDef>
+		<defName>guy762_ForceDamage_deplete</defName>
+		<label>Force sap</label>
+		<hasForcefulImpact>false</hasForcefulImpact>
+		<makesBlood>false</makesBlood>
+		<canInterruptJobs>false</canInterruptJobs>
+	</DamageDef>-->
+	
+	<StatDef> <!--StatDef whose value multiplies the damage amount to give energy gain or loss.-->
+		<defName>SWPotF_ForcePoints_ForceDamageScaling</defName>
+		<label>Force damage scaling factor</label>
+		<description>A multiplier on the Force point change from various EnergyTrackerComps.</description>
+		<category>BasicsPawn</category>
+		
+		<defaultBaseValue>0.5</defaultBaseValue>
+		
+		<toStringStyle>PercentZero</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>false</alwaysHide>
+		<minValue>0</minValue>
+		<displayPriorityInCategory>76205</displayPriorityInCategory>
+		<scenarioRandomizable>true</scenarioRandomizable>
+	</StatDef>
+	
+	
+	
+	
+	
+	
+	<!-- the rest of the statdefs -->
+	
+	<StatDef>
+		<defName>SWPotF_ForcePoints</defName>
+		<label>Force points</label>
+		<showIfHediffsPresent><li>SWPotF_Hediff_ForceProgression</li></showIfHediffsPresent>
+		<category>ISF_Sorcery</category>
+		<description>.</description>
+		<defaultBaseValue>10</defaultBaseValue>
+		<showIfUndefined>false</showIfUndefined>
+		<displayPriorityInCategory>76200</displayPriorityInCategory>
+	</StatDef>
+	
+	<StatDef>
+		<defName>SWPotF_ForcePoints_Min</defName>
+		<label>minimum Force points</label>
+		<description>.</description>
+		<showIfHediffsPresent><li>SWPotF_Hediff_ForceProgression</li></showIfHediffsPresent>
+		<category>BasicsPawn</category>
+		
+		<defaultBaseValue>0</defaultBaseValue>
+		
+		<minValue>0</minValue>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>false</alwaysHide>
+		<displayPriorityInCategory>76201</displayPriorityInCategory>
+		<statFactors>
+			<li>SWPotF_ForcePoints_CostFactor</li>
+		</statFactors>
+	</StatDef>
+	
+	<StatDef>
+		<defName>SWPotF_ForcePoints_Max</defName>
+		<label>maximum Force points</label>
+		<description>.</description>
+		<showIfHediffsPresent><li>SWPotF_Hediff_ForceProgression</li></showIfHediffsPresent>
+		<category>BasicsPawn</category>
+		
+		<defaultBaseValue>40</defaultBaseValue>
+		
+		<minValue>0</minValue>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>false</alwaysHide>
+		<displayPriorityInCategory>76202</displayPriorityInCategory>
+		<statFactors>
+			<li>SWPotF_ForcePoints_CostFactor</li>
+		</statFactors>
+	</StatDef>
+	
+	<StatDef>
+		<defName>SWPotF_ForcePoints_Recovery</defName>
+		<label>Force point recovery rate</label>
+		<description>The rate at which a pawn recovers Force points per second.</description>
+		<showIfHediffsPresent><li>SWPotF_Hediff_ForceProgression</li></showIfHediffsPresent>
+		<category>BasicsPawn</category>
+		
+		<defaultBaseValue>0.05</defaultBaseValue>
+		
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>false</alwaysHide>
+		<displayPriorityInCategory>76203</displayPriorityInCategory>
+		<scenarioRandomizable>true</scenarioRandomizable>
+		<statFactors>
+			<li>SWPotF_ForcePoints_CostFactor</li>
+		</statFactors>
+		
+		<parts>
+		  <li Class="StatPart_GearStatOffset">
+			<apparelStat>SWPotF_ForcePoints_RecoveryOffset</apparelStat>
+			<includeWeapon>true</includeWeapon>
+		  </li>
+		</parts>
+	</StatDef>
+	
+	<StatDef>
+		<defName>SWPotF_ForcePoints_RecoveryOffset</defName>
+		<label>Force point recovery offset</label>
+		<description>An offset applied to the rate at which a pawn recovers Force points per second.</description>
+		<category>Basics</category>
+		<defaultBaseValue>0</defaultBaseValue>
+		<hideAtValue>0</hideAtValue>
+		<formatString>{0}/s</formatString>
+		<toStringStyle>FloatTwo</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<displayPriorityInCategory>3550</displayPriorityInCategory>
+		<showIfUndefined>false</showIfUndefined>
+		<showOnPawns>false</showOnPawns>
+	  </StatDef>
+	
+	<StatDef>
+		<defName>SWPotF_ForcePoints_CostFactor</defName>
+		<label>Force point cost factor</label>
+		<description>A multiplier on Force point cost when using Force powers.</description>
+		<showIfHediffsPresent><li>SWPotF_Hediff_ForceProgression</li></showIfHediffsPresent>
+		<category>BasicsPawn</category>
+		<defaultBaseValue>1</defaultBaseValue>
+		<toStringStyle>PercentZero</toStringStyle>
+		<showOnAnimals>false</showOnAnimals>
+		<alwaysHide>false</alwaysHide>
+		<minValue>0</minValue>
+		<displayPriorityInCategory>76204</displayPriorityInCategory>
+		<scenarioRandomizable>true</scenarioRandomizable>
+	</StatDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<StatDef>
+        <defName>Force_Lightside_Attunement</defName>
+        <label>Lightside Enlightenment</label>
+        <description>The influence of the lightside on the pawn.</description>
+        <category>BasicsPawn</category>
+        <minValue>0</minValue>
+        <defaultBaseValue>0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showOnAnimals>true</showOnAnimals>
+        <showOnMechanoids>false</showOnMechanoids>
+        <displayPriorityInCategory>76206</displayPriorityInCategory>
+        <scenarioRandomizable>true</scenarioRandomizable>
+    </StatDef>
+	
+	<StatDef>
+        <defName>Force_Darkside_Attunement</defName>
+        <label>Darkside Corruption</label>
+        <description>The influence of the darkside on the pawn.</description>
+        <category>BasicsPawn</category>
+        <minValue>0</minValue>
+        <defaultBaseValue>0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showOnAnimals>true</showOnAnimals>
+        <showOnMechanoids>false</showOnMechanoids>
+        <displayPriorityInCategory>76207</displayPriorityInCategory>
+        <scenarioRandomizable>true</scenarioRandomizable>
+    </StatDef>
+	
+	
+	
+	
+	
+	<StatDef>
+        <defName>SWPotF_MartialAlignment</defName>
+        <label>Martial Alignment</label>
+        <description>A pawn's alignment with the 'martial' aspects of Force-use.</description>
+        <category>BasicsPawn</category>
+        <minValue>0</minValue>
+        <defaultBaseValue>0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showOnAnimals>true</showOnAnimals>
+        <showOnMechanoids>false</showOnMechanoids>
+        <displayPriorityInCategory>76208</displayPriorityInCategory>
+        <scenarioRandomizable>true</scenarioRandomizable>
+    </StatDef>
+	
+	<StatDef>
+        <defName>SWPotF_SpiritualAlignment</defName>
+        <label>Spiritual Alignment</label>
+        <description>A pawn's alignment with the 'spiritual' aspects of Force-use.</description>
+        <category>BasicsPawn</category>
+        <minValue>0</minValue>
+        <defaultBaseValue>0</defaultBaseValue>
+        <toStringStyle>PercentZero</toStringStyle>
+        <showOnAnimals>true</showOnAnimals>
+        <showOnMechanoids>false</showOnMechanoids>
+        <displayPriorityInCategory>76209</displayPriorityInCategory>
+        <scenarioRandomizable>true</scenarioRandomizable>
+    </StatDef>
+	
+</Defs>

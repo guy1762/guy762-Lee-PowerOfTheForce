@@ -6,7 +6,7 @@
 		<biostatCpx>0</biostatCpx>
 		<selectionWeight>0</selectionWeight>
 		<exclusionTags>
-		  <li>Force</li>
+			<li>Force</li>
 		</exclusionTags>
 		<randomChosen>false</randomChosen>
 		<!--modExtensions>
@@ -46,7 +46,7 @@
 			<Force_Lightside_Attunement>50</Force_Lightside_Attunement>
 			<PsychicSensitivity>0.50</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
-			<Force_FPRecovery>0.25</Force_FPRecovery>
+			<SWPotF_ForcePoints_Recovery>0.25</SWPotF_ForcePoints_Recovery>
 			
 			<PawnBeauty>2</PawnBeauty>
 		</statOffsets>
@@ -67,7 +67,7 @@
 			<Force_Lightside_Attunement>25</Force_Lightside_Attunement>
 			<PsychicSensitivity>0.25</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
-			<Force_FPRecovery>0.125</Force_FPRecovery>
+			<SWPotF_ForcePoints_Recovery>0.125</SWPotF_ForcePoints_Recovery>
 			
 			<PawnBeauty>1</PawnBeauty>
 		</statOffsets>
@@ -87,7 +87,7 @@
 			<Force_Lightside_Attunement>10</Force_Lightside_Attunement>
 			<PsychicSensitivity>0.10</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
-			<Force_FPRecovery>0.05</Force_FPRecovery>
+			<SWPotF_ForcePoints_Recovery>0.05</SWPotF_ForcePoints_Recovery>
 		</statOffsets>
 		<biostatCpx>5</biostatCpx>
 	</GeneDef>
@@ -104,7 +104,7 @@
 	  
 	  
 	  
-	  <GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+	<GeneDef ParentName="SWPotF_Gene_ForceSensitive">
 		<defName>SWPotF_Gene_DSCorruptionI</defName>
 		<label>minor darkside corruption</label>
 		<labelShortAdj>corrupted</labelShortAdj>
@@ -117,12 +117,12 @@
 			<Force_Darkside_Attunement>10</Force_Darkside_Attunement>
 			<PsychicSensitivity>0.10</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.05</PsychicEntropyRecoveryRate>
-			<Force_FPRecovery>0.10</Force_FPRecovery>
+			<SWPotF_ForcePoints_Recovery>0.10</SWPotF_ForcePoints_Recovery>
 		</statOffsets>
 		<biostatCpx>5</biostatCpx>
-	  </GeneDef>
+	</GeneDef>
 	  
-	  <GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+	<GeneDef ParentName="SWPotF_Gene_ForceSensitive">
 		<defName>SWPotF_Gene_DSCorruptionII</defName>
 		<label>moderate darkside corruption</label>
 		<labelShortAdj>corrupted</labelShortAdj>
@@ -137,7 +137,7 @@
 			<Force_Darkside_Attunement>25</Force_Darkside_Attunement>
 			<PsychicSensitivity>0.25</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.10</PsychicEntropyRecoveryRate>
-			<Force_FPRecovery>0.20</Force_FPRecovery>
+			<SWPotF_ForcePoints_Recovery>0.20</SWPotF_ForcePoints_Recovery>
 			
 			<PawnBeauty>-1</PawnBeauty>
 		</statOffsets>
@@ -181,9 +181,9 @@
 		<exclusionTags>
 		  <li>EyeColor_ReplacedByPotFSithEyes</li>
 		</exclusionTags>
-	  </GeneDef>
+	</GeneDef>
 	 
-	 <GeneDef ParentName="SWPotF_Gene_ForceSensitive">
+	<GeneDef ParentName="SWPotF_Gene_ForceSensitive">
 		<defName>SWPotF_Gene_DSCorruptionIII</defName>
 		<label>major darkside corruption</label>
 		<labelShortAdj>corrupted</labelShortAdj>
@@ -199,7 +199,7 @@
 			<Force_Darkside_Attunement>5</Force_Darkside_Attunement>
 			<PsychicSensitivity>0.50</PsychicSensitivity>
 			<PsychicEntropyRecoveryRate>0.25</PsychicEntropyRecoveryRate>
-			<Force_FPRecovery>0.30</Force_FPRecovery>
+			<SWPotF_ForcePoints_Recovery>0.30</SWPotF_ForcePoints_Recovery>
 			
 			<PawnBeauty>-2</PawnBeauty>
 		</statOffsets>
@@ -246,7 +246,7 @@
 		  <li>EyeColor_ReplacedByPotFSithEyes</li>
 		  <li>SkinColorOverride</li>
 		</exclusionTags>
-	  </GeneDef>
+	</GeneDef>
 
 
 

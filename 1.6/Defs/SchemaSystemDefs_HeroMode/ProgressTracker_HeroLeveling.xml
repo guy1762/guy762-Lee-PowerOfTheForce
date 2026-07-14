@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="ProgressTrackerHediffBase"> 
+		<defName>SWPotF_Hediff_HeroModeProgression</defName>
+		<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+		<label>Heroic</label>
+		<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
+		<description>Hero level progression.</description>
+		<initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+		<minSeverity>0</minSeverity>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<stages>	
+		</stages>
+
+	</HediffDef>
+	
+	
+	
+	<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+		<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+		<defName>SWPotF_ProgressTracker_HeroModeLvl</defName>
+		<label>Heroic</label>
+		<bgPath>UI/ForceSchemaBackground</bgPath>
+		<progressLevelUpKey>SWPotF_HeroMode_LevelUp</progressLevelUpKey>
+		<progressLevelUpDescKey>SWPotF_HeroMode_LevelUpMessage</progressLevelUpDescKey>
+		<skillPointLabelKey>SWPotF_HeroMode_SkillPointLabel</skillPointLabelKey>
+		
+		<progressHediff>SWPotF_Hediff_HeroModeProgression</progressHediff>
+		<baseClass>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClass>
+		
+		<!-- <classes> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</li> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_10thru20_HeroModeLvl</li> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_20thru30_HeroModeLvl</li> -->
+		<!-- </classes> -->
+
+	</ItsSorceryFramework.ProgressTrackerDef>
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "SWPotF_ProgressTrackerClass_base_HeroModeLvl" ParentName = "ProgressTrackerClassBase">
+		<progressTrackerDef>SWPotF_ProgressTracker_HeroModeLvl</progressTrackerDef>
+		
+		<expTags>
+			<li>SWPotF_HeroEXPTag_OnQuestWin</li>
+			<!-- <li>SWPotF_ForceEXPTag_OnSkillEXP</li> -->
+		</expTags>
+	</ItsSorceryFramework.ProgressTrackerClassDef>	
+	
+	
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnQuestFinish">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnQuestFinish</workerClass>
+		<defName>SWPotF_HeroEXPTag_OnQuestWin</defName>
+		<fixedEXP>100</fixedEXP>
+		<questOutcome>Success</questOutcome>
+		<questDefs/>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+	
+	
+	
+	
+
+	
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_HeroModeLvl">
+		<defName>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</defName>
+		<label>Novice Hero leveling</label>
+		<description>.</description>
+		<linkedClasses>
+			<li>
+				<classDef>SWPotF_ProgressTrackerClass_10thru20_HeroModeLvl</classDef>
+				<levelReset>False</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+		</linkedClasses>
+		
+		<levelRange>1~10</levelRange>
+		<levelLabels>
+			<li><level>1</level><label>initiate</label></li>
+			<li><level>5</level><label>adept</label></li>		
+			<li><level>10</level><label>trained</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>1</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>2</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>3</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>4</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>5</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>6</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>7</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>8</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>9</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>10</level>
+				<!-- <pointGain>2</pointGain> -->
+				
+				<hediffAdd>
+					<li>
+						<hediffDef>SWPotF_hediff_SaberTraining</hediffDef>
+					</li>
+				</hediffAdd>
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ adv rank \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_HeroModeLvl">
+		<defName>SWPotF_ProgressTrackerClass_10thru20_HeroModeLvl</defName>
+		<label>Advanced Hero leveling</label>
+		<description>.</description>
+		<linkedClasses>
+			<li>
+				<classDef>SWPotF_ProgressTrackerClass_20thru30_HeroModeLvl</classDef>
+				<levelReset>False</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+		</linkedClasses>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqClasses>
+			<li>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</li>
+		</prereqClasses>
+		
+		<levelRange>10~20</levelRange>
+		<levelLabels>
+			<li><level>10</level><label>trained</label></li>
+			<li><level>15</level><label>skilled</label></li>
+			<li><level>20</level><label>expert</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>11</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>12</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>13</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>14</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>15</level>
+				<pointGain>1</pointGain>
+			</li>
+			<li>
+				<level>16</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>17</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>18</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>19</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>20</level>
+				<!-- <pointGain>2</pointGain> -->
+				
+				
+				<!--capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1</offset>
+					</li>
+				</capMods-->
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ expert rank \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_HeroModeLvl">
+		<defName>SWPotF_ProgressTrackerClass_20thru30_HeroModeLvl</defName>
+		<label>Expert Hero leveling</label>
+		<description>.</description>
+		
+		<prereqLevel>20</prereqLevel>
+		<prereqClasses>
+			<li>SWPotF_ProgressTrackerClass_10thru20_HeroModeLvl</li>
+		</prereqClasses>
+		
+		<levelRange>20~30</levelRange>
+		<levelLabels>
+			<li><level>20</level><label>expert</label></li>
+			<li><level>30</level><label>master</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>21</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>22</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>23</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>24</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>25</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>26</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>27</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>28</level>
+				<!-- <pointGain>1</pointGain> -->
+				
+			</li>
+			<li>
+				<level>29</level>
+				<pointGain>1</pointGain>
+				
+			</li>
+			<li>
+				<level>30</level>
+				<!-- <pointGain>2</pointGain> -->
+				
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- no levels 31-50, extreme leveling is reserved for Jedi nonsense -->
+	
+
+	
+</Defs>

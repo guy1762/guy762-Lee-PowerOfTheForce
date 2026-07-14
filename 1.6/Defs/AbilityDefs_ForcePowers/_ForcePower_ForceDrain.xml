@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_drainforce</defName>
 		<label>Drain Force</label>
 		<description>Use the Force to drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Drain_Force</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>1</level> -->
+		<level>1</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -20,7 +20,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>-25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>-25</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>1</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		<verbProperties>		
@@ -62,27 +62,27 @@
 				<goodwillImpact>-75</goodwillImpact>
 			</li>
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-                <!-- <targetHasAllOfHediffs> -->
-                    <!-- <li>SWPotF_Hediff_ForceProgression</li> -->
-                <!-- </targetHasAllOfHediffs> -->
+                <targetHasAllOfHediffs>
+                    <li>SWPotF_Hediff_ForceProgression</li>
+                </targetHasAllOfHediffs>
 				<!--targetStatLimiters>
                     <li>
-						<stat>Force_AbilityForcePoolCost</stat>
+						<stat>SWPotF_ForcePoints</stat>
 						<minStatValue>25</minStatValue>
 					</li>
                 </targetStatLimiters-->
-				<targetStatLimiters>
-					<li><stat>Force_FPMax</stat></li>
-				</targetStatLimiters>
+				<!-- <targetStatLimiters> -->
+					<!-- <li><stat>Force_FPMax</stat></li> -->
+				<!-- </targetStatLimiters> -->
             </li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -130,7 +130,7 @@
 		<stages>
 		  <li>
 			<statFactors>
-				<Force_FPRecovery>-12.5</Force_FPRecovery>
+				<SWPotF_ForcePoints_Recovery>-12.5</SWPotF_ForcePoints_Recovery>
 			</statFactors>
 		  </li>
 		</stages>
@@ -150,17 +150,17 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advdrainforce</defName>
 		<label>Adv. drain Force</label>
 		<description>Use the Force to better drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Improved_Drain_Force</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -169,7 +169,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>-50</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>-50</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>1</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		<verbProperties>		
@@ -211,24 +211,24 @@
 				<goodwillImpact>-75</goodwillImpact>
 			</li>
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-                <!-- <targetHasAllOfHediffs> -->
-                    <!-- <li>SWPotF_Hediff_ForceProgression</li> -->
-                <!-- </targetHasAllOfHediffs> -->
-				<targetStatLimiters>
-					<li><stat>Force_FPMax</stat></li>
-				</targetStatLimiters>
+                <targetHasAllOfHediffs>
+                    <li>SWPotF_Hediff_ForceProgression</li>
+                </targetHasAllOfHediffs>
+				<!-- <targetStatLimiters> -->
+					<!-- <li><stat>Force_FPMax</stat></li> -->
+				<!-- </targetStatLimiters> -->
             </li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_drainforce</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_drainforce</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -276,7 +276,7 @@
 		<stages>
 		  <li>
 			<statFactors>
-				<Force_FPRecovery>-25</Force_FPRecovery>
+				<SWPotF_ForcePoints_Recovery>-25</SWPotF_ForcePoints_Recovery>
 			</statFactors>
 		  </li>
 		</stages>
@@ -302,17 +302,17 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstdrainforce</defName>
 		<label>Master drain Force</label>
 		<description>Use the Force to greatly drain raw Force energy from a Force-sensitive target, siphoning their available Force points while adding to the caster's. Only works on Force users.</description>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Master_Drain_Force</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>15</level> -->
+		<level>15</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -321,7 +321,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>-75</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>-75</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>1</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		<verbProperties>		
@@ -363,27 +363,27 @@
 				<goodwillImpact>-75</goodwillImpact>
 			</li>
 			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
-                <!-- <targetHasAllOfHediffs> -->
-                    <!-- <li>SWPotF_Hediff_ForceProgression</li> -->
-                <!-- </targetHasAllOfHediffs> -->
-				<targetStatLimiters>
-					<li>
-						<stat>Force_FPMax</stat>
+                <targetHasAllOfHediffs>
+                    <li>SWPotF_Hediff_ForceProgression</li>
+                </targetHasAllOfHediffs>
+				<!-- <targetStatLimiters> -->
+					<!-- <li> -->
+						<!-- <stat>Force_FPMax</stat> -->
 						<!-- <minStatValue></minStatValue> -->
-					</li>
-				</targetStatLimiters>
+					<!-- </li> -->
+				<!-- </targetStatLimiters> -->
             </li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>15</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_advdrainforce</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>15</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_advdrainforce</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -431,7 +431,7 @@
 		<stages>
 		  <li>
 			<statFactors>
-				<Force_FPRecovery>-50</Force_FPRecovery>
+				<SWPotF_ForcePoints_Recovery>-50</SWPotF_ForcePoints_Recovery>
 			</statFactors>
 		  </li>
 		</stages>
@@ -451,13 +451,13 @@
 	  
 	  
 
-	<DamageDef>
-		<defName>guy762_ForceDamage_add</defName>
-		<label>siphoned Force</label>
-		<hasForcefulImpact>false</hasForcefulImpact>
-		<makesBlood>false</makesBlood>
-		<canInterruptJobs>false</canInterruptJobs>
-	</DamageDef>
+	<!-- <DamageDef> -->
+		<!-- <defName>guy762_ForceDamage_add</defName> -->
+		<!-- <label>siphoned Force</label> -->
+		<!-- <hasForcefulImpact>false</hasForcefulImpact> -->
+		<!-- <makesBlood>false</makesBlood> -->
+		<!-- <canInterruptJobs>false</canInterruptJobs> -->
+	<!-- </DamageDef> -->
 
 	  
 

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_critweapon</defName>
 		<label>Sun Djerm</label>
 		<description>Use the Force to guide a melee strike that targets an opponents weapon, destroying it permanently. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
 		<iconPath>UI/ForceIcons/Power_CritStrike_weapon</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>15</level> -->
+		<level>15</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -18,7 +18,7 @@
 		
 		<cooldownTicksRange>6000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>15</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -52,25 +52,25 @@
 				</casterHasAllOfHediffs>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>15</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>15</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_crithand</defName>
 		<label>Cho Mai</label>
 		<description>Use the Force to guide a melee strike that targets an opponents hand, severing it and disarming them. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
 		<iconPath>UI/ForceIcons/Power_CritStrike_hand</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>18</level> -->
+		<level>18</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -78,7 +78,7 @@
 		
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -112,28 +112,28 @@
 				</casterHasAllOfHediffs>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>18</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_critweapon</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>18</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_critweapon</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_critlimb</defName>
 		<label>Cho Mok</label>
 		<description>Use the Force to guide a melee strike that targets a random limb on the opponent, severing it. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
 		<iconPath>UI/ForceIcons/Power_CritStrike_randomlimb</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>21</level> -->
+		<level>21</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -141,7 +141,7 @@
 		
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -175,28 +175,28 @@
 				</casterHasAllOfHediffs>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>21</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_crithand</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>21</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_crithand</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_critbisect</defName>
 		<label>Sai Tok</label>
 		<description>Use the Force to guide a melee strike that bisects an opponent at the waist, severing their legs. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
 		<iconPath>UI/ForceIcons/Power_CritStrike_bisect</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>26</level> -->
+		<level>26</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -204,7 +204,7 @@
 		
 		<cooldownTicksRange>16000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>25</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -238,28 +238,28 @@
 				</casterHasAllOfHediffs>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>26</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_critlimb</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>26</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_critlimb</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_crithead</defName>
 		<label>Sai Cha</label>
 		<description>Use the Force to guide a melee strike that decapitates an opponent, severing their head. Only usable while a lightsaber is equipped, and cannot be used on bosses.</description>
 		<iconPath>UI/ForceIcons/Power_CritStrike_head</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>30</level> -->
+		<level>30</level>
 		<aiCanUse>false</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -267,7 +267,7 @@
 		
 		<cooldownTicksRange>16000</cooldownTicksRange>
 		<statBases>
-			<Force_AbilityForcePoolCost>25</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>25</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -301,15 +301,15 @@
 				</casterHasAllOfHediffs>
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>30</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_critbisect</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>30</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_critbisect</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	 
 </Defs>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_saberthrow</defName>
 		<label>throw lightsaber</label>
 		<description>Use the Force to throw the caster's lightsaber at a target.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Throw_Lightsaber</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>1</level> -->
+		<level>1</level>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
 		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -20,7 +20,7 @@
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<!-- <verbClass>Verb_CastAbility</verbClass> -->
@@ -50,12 +50,12 @@
 				<sound>kotorsound_force_generic</sound>
 			</li-->
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -98,17 +98,17 @@
     <!-- </ThingDef> -->
 
 	
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advsaberthrow</defName>
 		<label>adv. throw lightsaber</label>
 		<description>Use the Force to throw the caster's lightsaber at multiple targets.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Advanced_Throw_Lightsaber</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
 		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
@@ -117,7 +117,7 @@
 		<cooldownTicksRange>6000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -147,15 +147,15 @@
 				<requireMeleeWeapon>true</requireMeleeWeapon> <!-- default: true -->
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_saberthrow</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_saberthrow</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	
 	
 	<ThingDef ParentName="BaseBullet">

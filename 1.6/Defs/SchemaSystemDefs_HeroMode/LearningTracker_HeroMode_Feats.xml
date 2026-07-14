@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- these are the UI tabs -->
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+		<defName>SWPotF_HeroModeLearningTracker_Summary</defName>
+		<label>Summary</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass> <!-- this is for the summary tab -->
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotF_HeroModeLearningTracker_tree_Feats</defName>
+		<label>Feats</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+	
+	
+	
+	
+	<!-- toughness -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_toughnessI</defName>
+		<label>Toughness</label>
+		<description>.</description>
+		<learningTrackerDef>SWPotF_HeroModeLearningTracker_tree_Feats</learningTrackerDef>
+		
+		<hediffAdd>
+			<!-- <li><hediffDef>SWPotF_FeatHediff_toughness</hediffDef><severity>1</severity></li> -->
+		</hediffAdd>
+		
+		<coordX>0</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_toughnessII</defName>
+		<label>Improved Toughness</label>
+		<description>.</description>
+		<learningTrackerDef>SWPotF_HeroModeLearningTracker_tree_Feats</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_toughnessI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<!-- <li><hediffDef>SWPotF_FeatHediff_toughness</hediffDef><severity>2</severity></li> -->
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_toughnessIII</defName>
+		<label>Master Toughness</label>
+		<description>.</description>
+		<learningTrackerDef>SWPotF_HeroModeLearningTracker_tree_Feats</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_toughnessII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<!-- <li><hediffDef>SWPotF_FeatHediff_toughness</hediffDef><severity>3</severity></li> -->
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- conditioning -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_conditioningI</defName>
+		<label>Conditioning</label>
+		<description>.</description>
+		<learningTrackerDef>SWPotF_HeroModeLearningTracker_tree_Feats</learningTrackerDef>
+		
+		<hediffAdd>
+			<!-- <li><hediffDef>SWPotF_FeatHediff_conditioning</hediffDef><severity>1</severity></li> -->
+		</hediffAdd>
+		
+		<coordX>0</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_conditioningII</defName>
+		<label>Improved Conditioning</label>
+		<description>.</description>
+		<learningTrackerDef>SWPotF_HeroModeLearningTracker_tree_Feats</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_conditioningI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<!-- <li><hediffDef>SWPotF_FeatHediff_conditioning</hediffDef><severity>2</severity></li> -->
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_conditioningIII</defName>
+		<label>Master Conditioning</label>
+		<description>.</description>
+		<learningTrackerDef>SWPotF_HeroModeLearningTracker_tree_Feats</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_conditioningII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<!-- <li><hediffDef>SWPotF_FeatHediff_conditioning</hediffDef><severity>3</severity></li> -->
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Refinement</defName>
+		<label>Experimental refinement</label>
+		<description>Make sure to develop proper controls.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>2</coordX>
+		<coordY>5</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqs>
+			<li>ISFE_Node_Logos_Design</li>
+		</prereqs>
+		<exclusiveNodes>
+			<li>ISFE_Node_Logos_Surrender</li>
+		</exclusiveNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Collection</defName>
+		<label>Data collection</label>
+		<description>Good data collection now saves a lot of heartache later.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqs>
+			<li>ISFE_Node_Logos_Refinement</li>
+		</prereqs>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Conclusion</defName>
+		<label>Research conclusion</label>
+		<description>A through analysis allows the next bit of research to reach new heights.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqs>
+			<li>ISFE_Node_Logos_Collection</li>
+		</prereqs>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef-->
+	
+	
+</Defs>

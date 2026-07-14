@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_disarm</defName>
 		<label>disarm</label>
 		<description>Use the Force to pull a target's weapon from their hands. Has a chance to cause the target to flee. Effectiveness scales with StaggerDurationFactor.</description>
 		<iconPath>UI/ForceIcons/Power_Force_Disarm</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Lightside</category>
+		<!-- <category>SWPotF_AbilityCategory_Lightside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>6</level> -->
+		<level>6</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
 		<ai_IsOffensive>true</ai_IsOffensive>
@@ -20,10 +20,10 @@
 		<cooldownTicksRange>1000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>5</Ability_Duration>
 			
-			<Force_AbilityLightsideStat>5</Force_AbilityLightsideStat>
+			<!-- <Force_AbilityLightsideStat>5</Force_AbilityLightsideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -63,12 +63,12 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>6</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>6</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -141,16 +141,16 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_disarmfield</defName>
 		<label>disarm field</label>
 		<description>Use the Force to pull multiple targets' weapons from their hands. Has a chance to cause the targets to flee. Effectiveness scales with StaggerDurationFactor.</description>
 		<iconPath>UI/ForceIcons/Power_Force_DisarmField</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Lightside</category>
+		<!-- <category>SWPotF_AbilityCategory_Lightside</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>17</level> -->
+		<level>17</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -163,11 +163,11 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>60</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>60</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>5</Ability_Duration>
 			<Ability_EffectRadius>3.9</Ability_EffectRadius>
 			
-			<Force_AbilityLightsideStat>10</Force_AbilityLightsideStat>
+			<!-- <Force_AbilityLightsideStat>10</Force_AbilityLightsideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -210,15 +210,15 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>17</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_disarm</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>17</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_disarm</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	 
 </Defs>

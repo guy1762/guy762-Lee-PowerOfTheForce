@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_affectmind</defName>
 		<label>affect mind</label>
 		<description>Use the Force to reduce a target's resistance to recruitment. Effectiveness scales with the target's psychic sensitivity.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Affect_Mind</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -23,7 +23,7 @@
 		<cooldownTicksRange>64000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>10</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>10</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		
 		<jobDef>CastAbilityOnThingMelee</jobDef>
@@ -66,12 +66,12 @@
 				</workTags>
 			  </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  <InteractionDef>
 		<defName>guy762_InteractDef_affectmind</defName>
@@ -88,17 +88,17 @@
 
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_dominatemind</defName>
 		<label>dominate mind</label>
 		<description>Use the Force to greatly reduce a target's resistance to recruitment and conversion to the caster's ideoligion. Effectiveness scales with the target's psychic sensitivity.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Dominate_Mind</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>6</level> -->
+		<level>6</level>
 		<aiCanUse>false</aiCanUse>
 		<hostile>false</hostile>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -111,7 +111,7 @@
 		<cooldownTicksRange>64000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		
 		<jobDef>CastAbilityOnThingMelee</jobDef>
@@ -162,15 +162,15 @@
 			  </li>
 			  <li MayRequire="Ludeon.RimWorld.Ideology" Class="CompProperties_AbilityShowTargetIdeoCertainty" />
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>6</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_affectmind</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>6</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_affectmind</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 
 	 
 

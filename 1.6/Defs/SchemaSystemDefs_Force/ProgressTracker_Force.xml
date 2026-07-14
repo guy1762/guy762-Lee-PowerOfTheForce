@@ -1,0 +1,714 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="ProgressTrackerHediffBase"> 
+		<defName>SWPotF_Hediff_ForceProgression</defName>
+		<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
+		<label>Force sensitivity</label>
+		<defaultLabelColor>(195,155,205)</defaultLabelColor> <!-- lavender -->
+		<description>Sensitivity to the Force.</description>
+		<initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
+		<minSeverity>0</minSeverity>
+		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
+		<stages>	
+		</stages>
+		
+		<allowedMeditationFocusTypes>
+			<!--li>Dignified</li-->
+			<li>Artistic</li>
+			<li>Minimal</li>
+			<!-- <li>Natural</li> lightside -->
+			<!-- <li>Morbid</li> darkside -->
+			<!-- <li>Flame</li> darkside -->
+		</allowedMeditationFocusTypes>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>SWPotF_hediff_SaberTraining</defName>
+		<label>Lightsaber training</label>
+		<description>This hediff grants immunity to the invisible hediff that the "Disarm" ability functions through, meaning this pawn cannot be disarmed through that ability.</description>
+		<defaultLabelColor>(195,155,205)</defaultLabelColor>
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<becomeVisible>false</becomeVisible>
+				<makeImmuneTo>
+					<li>SWPotF_hediff_ForceDisarm</li>
+				</makeImmuneTo>
+			</li>
+		</stages>
+	</HediffDef>
+	  
+	<!-- <HediffDef> -->
+		<!-- <defName>SWPotF_hediff_NoLongerTrainable</defName> -->
+		<!-- <label>Completed Force training</label> -->
+		<!-- <description>This hidden hediff blocks the "Apprentice" hediff given by the Apprenticeship ability, as this pawn is now a fully-trained Force-user.</description> -->
+		<!-- <defaultLabelColor>(195,155,205)</defaultLabelColor> -->
+		<!-- <hediffClass>HediffWithComps</hediffClass> -->
+		<!-- <maxSeverity>1.0</maxSeverity> -->
+		<!-- <isBad>false</isBad> -->
+		<!-- <stages> -->
+		  <!-- <li> -->
+			<!-- <becomeVisible>false</becomeVisible> -->
+			<!-- <makeImmuneTo> -->
+				<!-- <li>SWPotF_hediff_apprentice</li> -->
+			<!-- </makeImmuneTo> -->
+		  <!-- </li> -->
+		<!-- </stages> -->
+	<!-- </HediffDef> -->
+	
+	
+	<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
+		<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
+		<defName>SWPotF_ProgressTracker_ForceLvl</defName>
+		<label>Force connection</label>
+		<bgPath>UI/ForceSchemaBackground</bgPath>
+		<progressLevelUpKey>SWPotF_Force_LevelUp</progressLevelUpKey>
+		<progressLevelUpDescKey>SWPotF_Force_LevelUpMessage</progressLevelUpDescKey>
+		<skillPointLabelKey>SWPotF_Force_SkillPointLabel</skillPointLabelKey>
+		
+		<progressHediff>SWPotF_Hediff_ForceProgression</progressHediff>
+		<baseClass>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</baseClass>
+		<!-- <classes> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</li> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_10thru20_ForceLvl</li> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_20thru30_ForceLvl</li> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_30thru40_ForceLvl</li> -->
+			<!-- <li>SWPotF_ProgressTrackerClass_40thru50_ForceLvl</li> -->
+		<!-- </classes> -->
+
+	</ItsSorceryFramework.ProgressTrackerDef>
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "SWPotF_ProgressTrackerClass_base_ForceLvl" ParentName = "ProgressTrackerClassBase">
+		<progressTrackerDef>SWPotF_ProgressTracker_ForceLvl</progressTrackerDef>
+		
+		<expTags>
+			<li>SWPotF_ForceEXPTag_DuringMeditation</li>
+			<li>SWPotF_ForceEXPTag_OnSkillEXP</li>
+			<li>SWPotF_ForceEXPTag_OnInteraction_MentorshipTraining</li>
+		</expTags>
+	</ItsSorceryFramework.ProgressTrackerClassDef>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_ForceLvl">
+		<defName>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</defName>
+		<label>Apprentice Force training</label>
+		<description>.</description>
+		<linkedClasses>
+			<li>
+				<classDef>SWPotF_ProgressTrackerClass_10thru20_ForceLvl</classDef>
+				<levelReset>False</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+		</linkedClasses>
+		
+		<prereqTraitsProhibit>
+			<PsychicSensitivity>-2</PsychicSensitivity>
+		</prereqTraitsProhibit>
+		
+		<levelRange>1~10</levelRange>
+		<levelLabels>
+			<li><level>1</level><label>initiate</label></li>
+			<li><level>5</level><label>adept</label></li>		
+			<li><level>10</level><label>trained</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>1</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>2</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>3</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>4</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>5</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>6</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>7</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>8</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>9</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>10</level>
+				<pointGain>2</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+				<hediffAdd>
+					<li>
+						<hediffDef>SWPotF_hediff_SaberTraining</hediffDef>
+					</li>
+				</hediffAdd>
+				<specialClasses>
+					<li>
+						<classDef>SWPotF_ProgressTrackerClass_10thru20_ForceLvl</classDef>
+						<levelReset>False</levelReset>
+						<benefitReset>False</benefitReset>
+						<removePostClassChange>True</removePostClassChange>
+					</li>
+				</specialClasses>
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ knight rank \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_ForceLvl">
+		<defName>SWPotF_ProgressTrackerClass_10thru20_ForceLvl</defName>
+		<label>Intermediate Force training</label>
+		<description>.</description>
+		<linkedClasses>
+			<li>
+				<classDef>SWPotF_ProgressTrackerClass_20thru30_ForceLvl</classDef>
+				<levelReset>False</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+		</linkedClasses>
+		
+		<prereqTraitsProhibit>
+			<PsychicSensitivity>-1</PsychicSensitivity>
+		</prereqTraitsProhibit>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqClasses>
+			<li>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</li>
+		</prereqClasses>
+		
+		<levelRange>10~20</levelRange>
+		<levelLabels>
+			<li><level>10</level><label>trained</label></li>
+			<li><level>15</level><label>skilled</label></li>
+			<li><level>20</level><label>expert</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>11</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>12</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>13</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>14</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>15</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+				<!-- <hediffAdd> -->
+					<!-- <li> -->
+						<!-- <hediffDef>SWPotF_hediff_NoLongerTrainable</hediffDef> -->
+					<!-- </li> -->
+				<!-- </hediffAdd> -->
+			</li>
+			<li>
+				<level>16</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>17</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>18</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>19</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>20</level>
+				<pointGain>2</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+				<specialClasses>
+					<li>
+						<classDef>SWPotF_ProgressTrackerClass_20thru30_ForceLvl</classDef>
+						<levelReset>False</levelReset>
+						<benefitReset>False</benefitReset>
+						<removePostClassChange>True</removePostClassChange>
+					</li>
+				</specialClasses>
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ expert rank \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_ForceLvl">
+		<defName>SWPotF_ProgressTrackerClass_20thru30_ForceLvl</defName>
+		<label>Expert Force training</label>
+		<description>.</description>
+		<linkedClasses>
+			<li>
+				<classDef>SWPotF_ProgressTrackerClass_30thru40_ForceLvl</classDef>
+				<levelReset>False</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+		</linkedClasses>
+		
+		<prereqTraitMode>Or</prereqTraitMode>
+		<prereqTraits>
+			<!-- <PsychicSensitivity>1~2</PsychicSensitivity> -->
+			<PsychicSensitivity>1</PsychicSensitivity>
+			<SWPotF_Trait_psyultrasensitive />
+		</prereqTraits>
+		
+		<prereqLevel>20</prereqLevel>
+		<prereqClasses>
+			<li>SWPotF_ProgressTrackerClass_10thru20_ForceLvl</li>
+		</prereqClasses>
+		
+		<levelRange>20~30</levelRange>
+		<levelLabels>
+			<li><level>20</level><label>expert</label></li>
+			<li><level>30</level><label>master</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>21</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>22</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>23</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>24</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>25</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>26</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>27</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>28</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>29</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>30</level>
+				<pointGain>2</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+				<specialClasses>
+					<li>
+						<classDef>SWPotF_ProgressTrackerClass_30thru40_ForceLvl</classDef>
+						<levelReset>False</levelReset>
+						<benefitReset>False</benefitReset>
+						<removePostClassChange>True</removePostClassChange>
+					</li>
+				</specialClasses>
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ master rank \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_ForceLvl">
+		<defName>SWPotF_ProgressTrackerClass_30thru40_ForceLvl</defName>
+		<label>Master Force training</label>
+		<description>.</description>
+		<linkedClasses>
+			<li>
+				<classDef>SWPotF_ProgressTrackerClass_40thru50_ForceLvl</classDef>
+				<levelReset>False</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+		</linkedClasses>
+		
+		<prereqTraitMode>Or</prereqTraitMode>
+		<prereqTraits>
+			<PsychicSensitivity>2</PsychicSensitivity>
+			<SWPotF_Trait_psyultrasensitive />
+		</prereqTraits>
+		
+		<prereqLevel>30</prereqLevel>
+		<prereqClasses>
+			<li>SWPotF_ProgressTrackerClass_20thru30_ForceLvl</li>
+		</prereqClasses>
+		
+		<levelRange>30~40</levelRange>
+		<levelLabels>
+			<li><level>30</level><label>master</label></li>
+			<li><level>40</level><label>great master</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>31</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>32</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>33</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>34</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>35</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>36</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>37</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>38</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>39</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>40</level>
+				<pointGain>2</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+				<specialClasses>
+					<li>
+						<classDef>SWPotF_ProgressTrackerClass_40thru50_ForceLvl</classDef>
+						<levelReset>False</levelReset>
+						<benefitReset>False</benefitReset>
+						<removePostClassChange>True</removePostClassChange>
+					</li>
+				</specialClasses>
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ legend rank \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_ForceLvl">
+		<defName>SWPotF_ProgressTrackerClass_40thru50_ForceLvl</defName>
+		<label>Legend Force training</label>
+		<description>.</description>
+		
+		<prereqLevel>40</prereqLevel>
+		<prereqClasses>
+			<li>SWPotF_ProgressTrackerClass_30thru40_ForceLvl</li>
+		</prereqClasses>
+		
+		<prereqTraits>
+			<SWPotF_Trait_psyultrasensitive />
+		</prereqTraits>
+		
+		<levelRange>40~50</levelRange>
+		<levelLabels>
+			<li><level>40</level><label>great master</label></li>
+			<li><level>50</level><label>legend</label></li>
+		</levelLabels>
+		
+		<levelSpecifics>
+			<li>
+				<level>41</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>42</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>43</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>44</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>45</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>46</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>47</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>48</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>49</level>
+				<pointGain>1</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+			<li>
+				<level>50</level>
+				<pointGain>2</pointGain>
+				<statOffsets>
+					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+				</statOffsets>
+			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+
+	
+</Defs>

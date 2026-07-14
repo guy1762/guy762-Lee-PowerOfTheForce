@@ -3,7 +3,7 @@
 
 	
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_breathcontrol</defName>
 		<label>body control</label>
 		<!-- <description>Use the Force to focus the caster's breathing and internal temperature regulation, giving temporary immunity to environmental toxins as well as significantly boosting the comfortable temperature limits. Also boosts carry weight limit. Duration scales with the caster's psychic sensitivity.</description> -->
@@ -13,11 +13,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Breath_Control</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>5</level> -->
+		<level>5</level>
 		<aiCanUse>true</aiCanUse>
 		<hostile>false</hostile>
 		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
@@ -32,7 +32,7 @@
 		<cooldownTicksRange>36000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>10</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>10</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>240</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		
@@ -63,12 +63,12 @@
 				<!--durationMultiplier>PsychicSensitivity</durationMultiplier-->
 			</li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>5</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>5</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  

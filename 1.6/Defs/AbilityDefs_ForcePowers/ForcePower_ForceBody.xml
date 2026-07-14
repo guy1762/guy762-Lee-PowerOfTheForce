@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_forcebody</defName>
 		<label>Force body</label>
 		<description>Use the Force to channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Lasts 10 seconds. Sleep and hunger levels must be above 66% to cast.</description>
@@ -10,10 +10,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Body</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>1</level> -->
+		<level>1</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -23,7 +23,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>0</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>0</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		
@@ -65,12 +65,12 @@
                 </casterNeedLevels>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<HediffDef>
 		<defName>SWPotF_hediff_ForceBody</defName>
@@ -85,7 +85,7 @@
 				<hungerRateFactor>99</hungerRateFactor>
 				<restFallFactor>99</restFallFactor>
 				<statFactors>
-					<Force_FPRecovery>100</Force_FPRecovery> <!-- about +50 over 10sec with no FP offset modifiers -->
+					<SWPotF_ForcePoints_Recovery>100</SWPotF_ForcePoints_Recovery> <!-- about +50 over 10sec with no FP offset modifiers -->
 				</statFactors>
 			</li>
 		</stages>
@@ -104,7 +104,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_advforcebody</defName>
 		<label>Adv. Force body</label>
 		<description>Use the Force to efficiently channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Lasts 10 seconds. Sleep and hunger levels must be above 50% to cast.</description>
@@ -113,10 +113,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Improved_Force_Body</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -126,7 +126,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>0</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>0</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		
@@ -168,15 +168,15 @@
                 </casterNeedLevels>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_forcebody</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_forcebody</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<HediffDef>
 		<defName>SWPotF_hediff_AdvForceBody</defName>
@@ -191,7 +191,7 @@
 				<hungerRateFactor>66</hungerRateFactor>
 				<restFallFactor>66</restFallFactor>
 				<statFactors>
-					<Force_FPRecovery>200</Force_FPRecovery> <!-- about +100 over 10sec with no FP offset modifiers -->
+					<SWPotF_ForcePoints_Recovery>200</SWPotF_ForcePoints_Recovery> <!-- about +100 over 10sec with no FP offset modifiers -->
 				</statFactors>
 			</li>
 		</stages>
@@ -209,7 +209,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_mstforcebody</defName>
 		<label>Master Force body</label>
 		<description>Use the Force to optimally channel stored energy within the caster's body, draining their sleep and hunger levels in order to rapidly recharge Force points. Lasts 10 seconds. Sleep and hunger levels must be above 33% to cast.</description>
@@ -218,10 +218,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Master_Force_Body</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!-- <hotKey>Misc12</hotKey> -->
 		
-		<!-- <level>15</level> -->
+		<level>15</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -231,7 +231,7 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>0</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>0</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
 		</statBases>
 		
@@ -273,15 +273,15 @@
                 </casterNeedLevels>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>15</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_advforcebody</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>15</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_advforcebody</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<HediffDef>
 		<defName>SWPotF_hediff_MstForceBody</defName>
@@ -296,7 +296,7 @@
 				<hungerRateFactor>33</hungerRateFactor>
 				<restFallFactor>33</restFallFactor>
 				<statFactors>
-					<Force_FPRecovery>300</Force_FPRecovery> <!-- about +150 over 10sec with no FP offset modifiers -->
+					<SWPotF_ForcePoints_Recovery>300</SWPotF_ForcePoints_Recovery> <!-- about +150 over 10sec with no FP offset modifiers -->
 				</statFactors>
 			</li>
 		</stages>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_cope</defName>
 		<label>cope</label>
 		<description>Channel the dark side to increase the caster's resistance to pain, enabling them to fight for longer. Also clears debilitating conditions from weapon attacks, such as Sonic Disorientation and Electrocution.</description>
@@ -10,10 +10,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Force_Cope</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<hotKey>Misc10</hotKey>
 		
-		<!-- <level>1</level> -->
+		<level>1</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -22,10 +22,10 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>15</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>15</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>10</Force_AbilityDarksideStat> -->
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -64,12 +64,12 @@
 			</li>
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -84,7 +84,7 @@
 			<li>
 				<totalBleedFactor>0.1</totalBleedFactor>
 				<statFactors>
-					<!-- <Force_FPRecovery>-0.1</Force_FPRecovery> -->
+					<!-- <SWPotF_ForcePoints_Recovery>-0.1</SWPotF_ForcePoints_Recovery> -->
 					<Force_AbilityDarksideOffset>2</Force_AbilityDarksideOffset>
 					
 					<IncomingDamageFactor>0.75</IncomingDamageFactor>
@@ -117,7 +117,7 @@
 	
 	
 	
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_seethe</defName>
 		<label>seethe</label>
 		<description>Channel the dark side of the Force to quickly recover from injuries. Force points will slowly be drained while active. Can be cast while incapacitated.</description>
@@ -126,10 +126,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Force_Seethe</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<hotKey>Misc10</hotKey>
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -139,10 +139,10 @@
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>10</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>20</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>20</Force_AbilityDarksideStat> -->
 		</statBases>
 		
 		<targetRequired>False</targetRequired>
@@ -179,14 +179,14 @@
 				<castableInUnconscious>true</castableInUnconscious>
 				<castableInMentalbreak>false</castableInMentalbreak>
 			</li>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_cope</li>
-				</requiredAbilities>
-			</li>
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_cope</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
 		</modExtensions>
-	</AbilityDef>
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -200,7 +200,7 @@
 		<stages>
 			<li>
 				<statFactors>
-					<Force_FPRecovery>-1</Force_FPRecovery>
+					<SWPotF_ForcePoints_Recovery>-1</SWPotF_ForcePoints_Recovery>
 					<Force_AbilityDarksideOffset>2</Force_AbilityDarksideOffset>
 				</statFactors>
 			</li>
@@ -233,7 +233,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_spite</defName>
 		<label>spite</label>
 		<description>Surrender to the power of the dark side to continue living even in the face of grievous injuries and imminent death. Bleeding will immediately be halted, immunity to all environmental effects will be granted, and death will be prevented, but no actual healing will take place. Force points will be drained while active. Duration scales with psychic sensitivity. Can only be cast while incapacitated.</description>
@@ -242,10 +242,10 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/Power_Force_Spite</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<hotKey>Misc10</hotKey>
 		
-		<!-- <level>15</level> -->
+		<level>15</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>false</ai_IsOffensive>
 		<hostile>false</hostile>
@@ -259,10 +259,10 @@
 		
 		<targetRequired>false</targetRequired>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			<Ability_Duration>600</Ability_Duration> <!-- this is in seconds, not ticks -->
 			
-			<Force_AbilityDarksideStat>100</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>100</Force_AbilityDarksideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -297,14 +297,14 @@
 				<castableInUnconscious>true</castableInUnconscious>
 				<castableInMentalbreak>false</castableInMentalbreak>
 			</li>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>15</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_seethe</li>
-				</requiredAbilities>
-			</li>
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>15</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_seethe</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
 		</modExtensions>
-	</AbilityDef>
+	</ItsSorceryFramework.SorceryDef>
 	
 	
 	<HediffDef>
@@ -322,7 +322,7 @@
 			<li>
 				<totalBleedFactor>0</totalBleedFactor>
 				<statFactors>
-					<Force_FPRecovery>-5</Force_FPRecovery>
+					<SWPotF_ForcePoints_Recovery>-5</SWPotF_ForcePoints_Recovery>
 					<Force_AbilityDarksideOffset>3</Force_AbilityDarksideOffset>
 				</statFactors>
 				<statOffsets>

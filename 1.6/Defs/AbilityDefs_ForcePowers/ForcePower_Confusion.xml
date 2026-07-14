@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
+		<defName>SWPotF_forcepower_confusion</defName>
+		<label>Force confusion</label>
+		<description>Use the Force to confuse a target. Duration scales with the target's psychic sensitivity.</description>
+		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Confusion</iconPath>
+		
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
+		<!--hotKey>Misc12</hotKey-->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<aiCanUse>true</aiCanUse>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<ai_IsOffensive>true</ai_IsOffensive>
+		<hostile>true</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<Ability_Duration>30</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>10</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<targetParams>
+				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
+				<canTargetSelf>true</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<neverTargetIncapacitated>True</neverTargetIncapacitated>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_force_JAmindtrick</sound>
+			</li>
+			<li Class = "CompProperties_AbilityGiveMentalState">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>WanderConfused</stateDef>
+				<durationMultiplier>PsychicSensitivity</durationMultiplier>
+				
+				<canTargetBosses>false</canTargetBosses>
+				<psychic>True</psychic>
+			</li>
+		</comps>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
+	
+</Defs>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_shock</defName>
 		<label>Force shock</label>
 		<description>Use the Force to electrocute a target. Does not use psychic sensitivity for scaling.</description>
@@ -10,7 +10,7 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Shock</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<hotKey>Misc5</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
@@ -22,9 +22,9 @@
 		<cooldownTicksRange>1000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>20</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>20</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			
-			<Force_AbilityDarksideStat>10</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>10</Force_AbilityDarksideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -61,12 +61,12 @@
             </li-->
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>1</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>1</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	<VEF.Weapons.ExpandableProjectileDef ParentName="BaseBullet">
 		<defName>SWPotF_projectile_ForceShock</defName>
@@ -107,7 +107,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_lightning</defName>
 		<label>Force lightning</label>
 		<description>Use the Force to electrocute all targets in a long but narrow arc. Does not use psychic sensitivity for scaling.</description>
@@ -116,11 +116,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Lightning</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<hotKey>Misc5</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -133,9 +133,9 @@
 		<cooldownTicksRange>2000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>40</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>40</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			
-			<Force_AbilityDarksideStat>15</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>15</Force_AbilityDarksideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -175,15 +175,15 @@
 			<!-- </li> -->
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_shock</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_shock</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
@@ -228,7 +228,7 @@
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_storm</defName>
 		<label>Force storm</label>
 		<description>Use the Force to electrocute all targets in a large arc. Does not use psychic sensitivity for scaling.</description>
@@ -237,11 +237,11 @@
 		</descriptionHyperlinks>
 		<iconPath>UI/ForceIcons/DS/KotORII_Power_Force_Storm</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Darkside</category>
+		<!-- <category>SWPotF_AbilityCategory_Darkside</category> -->
 		<hotKey>Misc5</hotKey>
 		<writeCombatLog>True</writeCombatLog>
 		
-		<!-- <level>18</level> -->
+		<level>18</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -254,9 +254,9 @@
 		<cooldownTicksRange>8000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>60</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>60</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 			
-			<Force_AbilityDarksideStat>20</Force_AbilityDarksideStat>
+			<!-- <Force_AbilityDarksideStat>20</Force_AbilityDarksideStat> -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -296,15 +296,15 @@
 			<!-- </li> -->
 		</comps>
 		
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>18</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_lightning</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>18</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_lightning</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  

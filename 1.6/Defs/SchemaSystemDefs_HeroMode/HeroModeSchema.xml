@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
+		<defName>SWPotF_HeroModeSchema</defName>
+		<label>Heroic</label>
+		<description>.</description>
+	
+		<learningTrackerDefs> <!-- UI tabs-->
+			<li>SWPotF_HeroModeLearningTracker_Summary</li>
+			
+			<li>SWPotF_HeroModeLearningTracker_tree_Feats</li>
+		</learningTrackerDefs>
+		<progressTrackerDef>SWPotF_ProgressTracker_HeroModeLvl</progressTrackerDef>
+	</ItsSorceryFramework.SorcerySchemaDef>
+
+	
+</Defs>

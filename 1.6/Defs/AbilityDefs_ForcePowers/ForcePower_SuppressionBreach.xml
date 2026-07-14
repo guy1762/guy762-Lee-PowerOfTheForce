@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_suppression</defName>
 		<label>Force suppression</label>
 		<description>Use the Force to cancel a wide range of Force abilities active on the target.</description>
 		<iconPath>UI/ForceIcons/N/KotORII_Power_Force_Suppression</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
 		
-		<!-- <level>9</level> -->
+		<level>9</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -22,7 +22,7 @@
 		<cooldownTicksRange>3000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -122,30 +122,30 @@
                 <recursiveChecks>3</recursiveChecks>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>9</RequiredLevel>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>9</RequiredLevel> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  
 	  
 	  
 	  
-	<AbilityDef ParentName="SWPotF_forcepower_base">
+	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_breach</defName>
 		<label>Force breach</label>
 		<description>Use the Force to cancel a wide range of Force abilities active on the target, including many higher-level powers.</description>
 		<iconPath>UI/ForceIcons/Power_Force_Breach2</iconPath>
 		
-		<category>SWPotF_AbilityCategory_Universal</category>
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
 		<!--hotKey>Misc12</hotKey-->
 		<writeCombatLog>True</writeCombatLog>
 		
 		
-		<!-- <level>15</level> -->
+		<level>15</level>
 		<aiCanUse>true</aiCanUse>
 		<ai_IsOffensive>true</ai_IsOffensive>
 		<hostile>true</hostile>
@@ -155,7 +155,7 @@
 		<cooldownTicksRange>2000</cooldownTicksRange>
 		<stunTargetWhileCasting>false</stunTargetWhileCasting>
 		<statBases>
-			<Force_AbilityForcePoolCost>30</Force_AbilityForcePoolCost> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
+			<SWPotF_ForcePoints>30</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
 		</statBases>
 		<verbProperties>		
 			<verbClass>Verb_CastAbility</verbClass>
@@ -262,15 +262,15 @@
                 <recursiveChecks>3</recursiveChecks>
             </li>
 		</comps>
-		<modExtensions>
-			<li Class="TheForce_Standalone.ForceAbilityDefExtension">
-				<RequiredLevel>15</RequiredLevel>
-				<requiredAbilities>
-					<li>SWPotF_forcepower_suppression</li>
-				</requiredAbilities>
-			</li>
-		</modExtensions>
-	</AbilityDef>
+		<!-- <modExtensions> -->
+			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
+				<!-- <RequiredLevel>15</RequiredLevel> -->
+				<!-- <requiredAbilities> -->
+					<!-- <li>SWPotF_forcepower_suppression</li> -->
+				<!-- </requiredAbilities> -->
+			<!-- </li> -->
+		<!-- </modExtensions> -->
+	</ItsSorceryFramework.SorceryDef>
 	  
 	  
 	  

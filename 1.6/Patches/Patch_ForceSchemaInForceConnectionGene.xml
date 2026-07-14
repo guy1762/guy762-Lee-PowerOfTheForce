@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	  
+	  <Operation Class="PatchOperationFindMod" IfModActive="guy762.StarWarsXenotypes">
+		<mods>
+			<li>Star Wars Xenotypes</li>
+		</mods>
+		
+		<match Class="PatchOperationSequence">
+		  <operations>
+		  
+		  
+		  
+			<li Class="PatchOperationReplace">
+			  <xpath>Defs/GeneDef[defName="guy762_statgene_force"]/modExtensions</xpath>
+				<value>
+				  <modExtensions>
+					  <li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+						<schema>SWPotF_ForceSchema</schema>
+					  </li>
+					</modExtensions>
+				</value>
+			</li>
+			
+			
+			
+			
+		  </operations>
+		</match>
+	  
+	  </Operation>
+	  
+	 
+
+
+</Patch>
