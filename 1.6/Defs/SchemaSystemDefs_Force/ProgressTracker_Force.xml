@@ -86,8 +86,8 @@
 		
 		<expTags>
 			<li>SWPotF_ForceEXPTag_DuringMeditation</li>
-			<li>SWPotF_ForceEXPTag_OnSkillEXP</li>
-			<li>SWPotF_ForceEXPTag_OnInteraction_MentorshipTraining</li>
+			<!-- <li>SWPotF_ForceEXPTag_OnSkillEXP</li> -->
+			<!-- <li>SWPotF_ForceEXPTag_OnInteraction_MentorshipTraining</li> -->
 		</expTags>
 	</ItsSorceryFramework.ProgressTrackerClassDef>	
 	
@@ -110,7 +110,22 @@
 	
 	
 	
+	<!--
+		
+		NOTE: in KotOR 2, max Force point increases vary by class!
+			
+			Guardian: +4
+			Sentinel: +6
+			Consular: +8
+			
+			WeaponMaster/Marauder: +6
+			Watchman/Assassin: +8
+			Master/Lord: +10
+		
+		Consulars also get +2 Force powers on levels 3, 6, 9, 12, and 15
+		Masters/Lords get +2 on 1, 4, 8, and 12
 	
+	-->
 	
 	
 	
@@ -133,80 +148,81 @@
 		
 		<levelRange>1~10</levelRange>
 		<levelLabels>
+			<!-- <li><level>0</level><label>latent</label></li> -->
 			<li><level>1</level><label>initiate</label></li>
 			<li><level>5</level><label>adept</label></li>		
 			<li><level>10</level><label>trained</label></li>
 		</levelLabels>
 		
 		<levelSpecifics>
+			<!-- <li> -->
+				<!-- <level>0</level> -->
+			<!-- </li> -->
 			<li>
 				<level>1</level>
-				<pointGain>1</pointGain>
-				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
-				</statOffsets>
+				<pointGain>2</pointGain>
 			</li>
 			<li>
 				<level>2</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>3</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>4</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>5</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>6</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>7</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>8</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>9</level>
 				<pointGain>1</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 			</li>
 			<li>
 				<level>10</level>
 				<pointGain>2</pointGain>
 				<statOffsets>
-					<SWPotF_ForcePoints_Max>10</SWPotF_ForcePoints_Max>
+					<SWPotF_ForcePoints_Max>5</SWPotF_ForcePoints_Max>
 				</statOffsets>
 				<hediffAdd>
 					<li>
@@ -379,9 +395,10 @@
 		
 		<prereqTraitMode>Or</prereqTraitMode>
 		<prereqTraits>
-			<!-- <PsychicSensitivity>1~2</PsychicSensitivity> -->
-			<PsychicSensitivity>1</PsychicSensitivity>
-			<SWPotF_Trait_psyultrasensitive />
+			<!-- <SWPotF_Trait_ForceSensitive_weak /> -->
+			<SWPotF_Trait_ForceSensitive_mid />
+			<SWPotF_Trait_ForceSensitive_strong />
+			<SWPotF_Trait_ForceSensitive_ultra />
 		</prereqTraits>
 		
 		<prereqLevel>20</prereqLevel>
@@ -502,8 +519,8 @@
 		
 		<prereqTraitMode>Or</prereqTraitMode>
 		<prereqTraits>
-			<PsychicSensitivity>2</PsychicSensitivity>
-			<SWPotF_Trait_psyultrasensitive />
+			<SWPotF_Trait_ForceSensitive_strong />
+			<SWPotF_Trait_ForceSensitive_ultra />
 		</prereqTraits>
 		
 		<prereqLevel>30</prereqLevel>
@@ -620,7 +637,7 @@
 		</prereqClasses>
 		
 		<prereqTraits>
-			<SWPotF_Trait_psyultrasensitive />
+			<SWPotF_Trait_ForceSensitive_ultra />
 		</prereqTraits>
 		
 		<levelRange>40~50</levelRange>

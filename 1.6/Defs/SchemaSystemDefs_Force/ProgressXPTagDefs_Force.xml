@@ -16,6 +16,7 @@
 		<defName>SWPotF_ForceEXPTag_DuringMeditation</defName>
 		<fixedEXP>0.01</fixedEXP> <!-- ~3-4 hours of meditation for one point -->
 		<!-- <fixedEXP>0.005</fixedEXP> ~8-9 hours of meditation for one point -->
+		<!-- <fixedEXP>0.0001</fixedEXP> -->
 		<jobSets>
 			<li>
 				<label>Meditating</label>
@@ -35,29 +36,30 @@
 		</jobSets>
 	</ItsSorceryFramework.ProgressEXPTagDef>
 	
-	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnSkillEXP">
-		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnSkillEXP</workerClass>
-		<defName>SWPotF_ForceEXPTag_OnSkillEXP</defName>
-		<fixedEXP>0.001</fixedEXP>
-		<skillDefs>
-			<li>Artistic</li>
+	<!-- <ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnSkillEXP"> -->
+		<!-- <workerClass>ItsSorceryFramework.ProgressEXPWorker_OnSkillEXP</workerClass> -->
+		<!-- <defName>SWPotF_ForceEXPTag_OnSkillEXP</defName> -->
+		<!-- <fixedEXP>0.001</fixedEXP> -->
+		<!-- <skillDefs> -->
+			<!-- <li>Artistic</li> -->
 			<!--li>Intellectual</li-->
-		</skillDefs>
-	</ItsSorceryFramework.ProgressEXPTagDef>
+		<!-- </skillDefs> -->
+	<!-- </ItsSorceryFramework.ProgressEXPTagDef> -->
 	
 	
 	
 	
 	
 	
-	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnInteraction">
-		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnInteraction</workerClass>
-		<defName>SWPotF_ForceEXPTag_OnInteraction_MentorshipTraining</defName>
-		<fixedEXP>20</fixedEXP> <!-- actually only gives 50% of this for some reason? -->
-		<interactionDefs>
-			<li>guy762_InteractDef_trainingcombat</li>
-		</interactionDefs>
-	</ItsSorceryFramework.ProgressEXPTagDef>
+	<!-- <ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnInteraction"> -->
+		<!-- <workerClass>ItsSorceryFramework.ProgressEXPWorker_OnInteraction</workerClass> -->
+		<!-- <defName>SWPotF_ForceEXPTag_OnInteraction_MentorshipTraining</defName> -->
+		<!-- <fixedEXP>20</fixedEXP> -->
+		 <!-- actually only gives 50% of this for some reason? -->
+		<!-- <interactionDefs> -->
+			<!-- <li>guy762_InteractDef_trainingcombat</li> -->
+		<!-- </interactionDefs> -->
+	<!-- </ItsSorceryFramework.ProgressEXPTagDef> -->
 	
 	
 	

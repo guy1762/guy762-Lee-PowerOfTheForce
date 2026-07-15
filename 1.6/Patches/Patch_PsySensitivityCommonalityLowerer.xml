@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  
+	<Operation Class="PatchOperationReplace">
+		<xpath>Defs/TraitDef[defName="PsychicSensitivity"]/commonality</xpath>
+		<value>
+			<commonality>0</commonality>
+		</value>
+	</Operation>
+	
+
+	
+	
+</Patch>

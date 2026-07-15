@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	
+	<TraitDef Name="SWPotF_Trait_ForceSensitiveBASE" Abstract="True">
+		<conflictingTraits>
+			<li>PsychicSensitivity</li>
+			<li>SWPotFConflictingTraitTag_ForceSensitivity</li>
+		</conflictingTraits>
+		<modExtensions>
+			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
+				<schema>SWPotF_ForceSchema</schema>
+				<baseClassDef>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</baseClassDef>
+			</li>
+		</modExtensions>
+	</TraitDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<TraitDef ParentName="SWPotF_Trait_ForceSensitiveBASE">
+		<defName>SWPotF_Trait_ForceSensitive_weak</defName>
+		<commonality>0.01</commonality>
+		<degreeDatas>
+			<li>
+				<label>dull Force sensitivity</label>
+				<description>[PAWN_nameDef] has a minor connection with the Force. A metaphysical, spiritual, binding, and ubiquitous power that held enormous importance for both the Jedi and Sith monastic orders.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<PsychicSensitivity>0.5</PsychicSensitivity>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	
+	<TraitDef ParentName="SWPotF_Trait_ForceSensitiveBASE">
+		<defName>SWPotF_Trait_ForceSensitive_mid</defName>
+		<commonality>0.001</commonality>
+		<degreeDatas>
+			<li>
+				<label>Force sensitivity</label>
+				<description>[PAWN_nameDef] has a moderate connection with the Force. A metaphysical, spiritual, binding, and ubiquitous power that held enormous importance for both the Jedi and Sith monastic orders.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<PsychicSensitivity>1</PsychicSensitivity>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>2</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>2</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	<TraitDef ParentName="SWPotF_Trait_ForceSensitiveBASE">
+		<defName>SWPotF_Trait_ForceSensitive_strong</defName>
+		<commonality>0.0001</commonality>
+		<degreeDatas>
+			<li>
+				<label>strong Force sensitivity</label>
+				<description>[PAWN_nameDef] has a strong connection with the Force. A metaphysical, spiritual, binding, and ubiquitous power that held enormous importance for both the Jedi and Sith monastic orders.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<PsychicSensitivity>2</PsychicSensitivity>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>3</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>3</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	<TraitDef ParentName="SWPotF_Trait_ForceSensitiveBASE">
+		<defName>SWPotF_Trait_ForceSensitive_ultra</defName>
+		<commonality>0</commonality>
+		<degreeDatas>
+			<li>
+				<label>ultimate Force sensitivity</label>
+				<description>[PAWN_nameDef] has an incredible connection with the Force. A metaphysical, spiritual, binding, and ubiquitous power that held enormous importance for both the Jedi and Sith monastic orders.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<PsychicSensitivity>5</PsychicSensitivity>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>4</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>4</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+
+</Defs>

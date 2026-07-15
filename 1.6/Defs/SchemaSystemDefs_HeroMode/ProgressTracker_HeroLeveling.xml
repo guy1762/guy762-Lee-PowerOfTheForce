@@ -55,9 +55,16 @@
 		<questDefs/>
 	</ItsSorceryFramework.ProgressEXPTagDef>
 	
+	<!--
+	
+	NEEDS:
+	
+	ProgressEXPWorker_OnHonorGain - gives XP for gaining any Royalty DLC Honor regardless of faction. should have an option for X amount of XP per point of Honor
+	
+	ProgressEXPWorker_OnTitleGain - XP for gaining any Royalty title. X amount of XP per new title
 	
 	
-	
+	-->
 
 	
 	
@@ -76,9 +83,9 @@
 		
 		<levelRange>1~10</levelRange>
 		<levelLabels>
-			<li><level>1</level><label>initiate</label></li>
-			<li><level>5</level><label>adept</label></li>		
-			<li><level>10</level><label>trained</label></li>
+			<li><level>1</level><label>novice</label></li>
+			<!-- <li><level>5</level><label>adept</label></li> -->
+			<!-- <li><level>10</level><label>trained</label></li> -->
 		</levelLabels>
 		
 		<levelSpecifics>
@@ -169,9 +176,9 @@
 		
 		<levelRange>10~20</levelRange>
 		<levelLabels>
-			<li><level>10</level><label>trained</label></li>
-			<li><level>15</level><label>skilled</label></li>
-			<li><level>20</level><label>expert</label></li>
+			<li><level>10</level><label>skilled</label></li>
+			<!-- <li><level>15</level><label>skilled</label></li> -->
+			<!-- <li><level>20</level><label>expert</label></li> -->
 		</levelLabels>
 		
 		<levelSpecifics>
@@ -261,7 +268,7 @@
 		<levelRange>20~30</levelRange>
 		<levelLabels>
 			<li><level>20</level><label>expert</label></li>
-			<li><level>30</level><label>master</label></li>
+			<!-- <li><level>30</level><label>master</label></li> -->
 		</levelLabels>
 		
 		<levelSpecifics>
@@ -322,11 +329,7 @@
 	
 	
 	
-	
-	
-	
-	
-	<!-- no levels 31-50, extreme leveling is reserved for Jedi nonsense -->
+
 	
 
 	
