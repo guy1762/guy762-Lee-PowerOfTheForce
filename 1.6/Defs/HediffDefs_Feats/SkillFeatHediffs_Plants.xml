@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsI</defName>
+		<label>Skill Feat: Plants I</label>
+		<description>Adds one permanent skill point in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>1</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsII</defName>
+		<label>Skill Feat: Plants II</label>
+		<description>Adds two permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>2</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsIII</defName>
+		<label>Skill Feat: Plants III</label>
+		<description>Adds three permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>3</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsIV</defName>
+		<label>Skill Feat: Plants IV</label>
+		<description>Adds four permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>4</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsV</defName>
+		<label>Skill Feat: Plants V</label>
+		<description>Adds five permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>5</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsVI</defName>
+		<label>Skill Feat: Plants VI</label>
+		<description>Adds six permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>6</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsVII</defName>
+		<label>Skill Feat: Plants VII</label>
+		<description>Adds seven permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>7</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsVIII</defName>
+		<label>Skill Feat: Plants VIII</label>
+		<description>Adds eight permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>8</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsIX</defName>
+		<label>Skill Feat: Plants IX</label>
+		<description>Adds nine permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>9</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_PlantsX</defName>
+		<label>Skill Feat: Plants X</label>
+		<description>Adds ten permanent skill points in Plants.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Plants</skill><skillChange>10</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+
+
+
+
+
+
+</Defs>

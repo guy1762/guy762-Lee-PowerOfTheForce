@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<!-- these are the UI tabs -->
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerProgress">
+		<defName>SWPotF_HeroModeLearningTracker_Summary</defName>
+		<label>Summary</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Progress</learningTrackerClass> <!-- this is for the summary tab -->
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+</Defs>

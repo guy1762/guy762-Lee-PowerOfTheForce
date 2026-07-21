@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingI</defName>
+		<label>Skill Feat: Shooting I</label>
+		<description>Adds one permanent skill point in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>1</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingII</defName>
+		<label>Skill Feat: Shooting II</label>
+		<description>Adds two permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>2</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingIII</defName>
+		<label>Skill Feat: Shooting III</label>
+		<description>Adds three permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>3</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingIV</defName>
+		<label>Skill Feat: Shooting IV</label>
+		<description>Adds four permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>4</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingV</defName>
+		<label>Skill Feat: Shooting V</label>
+		<description>Adds five permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>5</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingVI</defName>
+		<label>Skill Feat: Shooting VI</label>
+		<description>Adds six permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>6</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingVII</defName>
+		<label>Skill Feat: Shooting VII</label>
+		<description>Adds seven permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>7</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingVIII</defName>
+		<label>Skill Feat: Shooting VIII</label>
+		<description>Adds eight permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>8</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingIX</defName>
+		<label>Skill Feat: Shooting IX</label>
+		<description>Adds nine permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>9</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_ShootingX</defName>
+		<label>Skill Feat: Shooting X</label>
+		<description>Adds ten permanent skill points in Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>10</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+
+
+
+
+
+
+</Defs>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingI</defName>
+		<label>Skill Feat: Crafting I</label>
+		<description>Adds one permanent skill point in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>1</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingII</defName>
+		<label>Skill Feat: Crafting II</label>
+		<description>Adds two permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>2</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingIII</defName>
+		<label>Skill Feat: Crafting III</label>
+		<description>Adds three permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>3</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingIV</defName>
+		<label>Skill Feat: Crafting IV</label>
+		<description>Adds four permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>4</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingV</defName>
+		<label>Skill Feat: Crafting V</label>
+		<description>Adds five permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>5</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingVI</defName>
+		<label>Skill Feat: Crafting VI</label>
+		<description>Adds six permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>6</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingVII</defName>
+		<label>Skill Feat: Crafting VII</label>
+		<description>Adds seven permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>7</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingVIII</defName>
+		<label>Skill Feat: Crafting VIII</label>
+		<description>Adds eight permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>8</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingIX</defName>
+		<label>Skill Feat: Crafting IX</label>
+		<description>Adds nine permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>9</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_SkillFeat_CraftingX</defName>
+		<label>Skill Feat: Crafting X</label>
+		<description>Adds ten permanent skill points in Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Crafting</skill><skillChange>10</skillChange></li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+
+
+
+
+
+
+</Defs>

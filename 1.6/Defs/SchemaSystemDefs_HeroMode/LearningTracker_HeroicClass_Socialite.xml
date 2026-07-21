@@ -1,0 +1,1090 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotFLearningTracker_HeroicClass_Socialite</defName>
+		<label>Starter Class: Socialite</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+		
+		<defaultLocked>true</defaultLocked>
+		<lockedLabel>Starter Class: Socialite</lockedLabel>
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Socialite -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_SocialiteI</defName>
+		<label>Class Progression: Socialite I</label>
+		<description>Class progression feat. Adds one permanent skill point in Social.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_SocialiteI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_SocialiteII</defName>
+		<label>Class Progression: Socialite II</label>
+		<description>Class progression feat. Adds one permanent skill point in Social and Cooking.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_SocialiteII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_SocialiteI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</defName>
+		<label>Class Progression: Socialite III</label>
+		<description>Class progression feat. Adds one permanent skill point in Social, Cooking, and Artistic.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_SocialiteIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_SocialiteII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIV</defName>
+		<label>Class Progression: Socialite IV</label>
+		<description>Class progression feat. Adds two permanent skill points in Social, one permanent point in Cooking, and one in Artistic.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_SocialiteIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_SocialiteIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_SocialiteV</defName>
+		<label>Class Progression: Socialite V</label>
+		<description>Class progression feat. Adds two permanent skill points in Social, one permanent point in Cooking, and one in Artistic. Raises passion in Social by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_SocialiteV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_SocialiteIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_SocialiteVI</defName>
+		<label>Class Progression: Socialite VI</label>
+		<description>Class progression feat. Adds two permanent skill points in Social, one permanent point in Cooking, and one in Artistic. Raises passion in Social and Cooking by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_SocialiteVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_SocialiteV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Socialite -->
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Social -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialI</defName>
+		<label>Skill Upgrade: Social I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialII</defName>
+		<label>Skill Upgrade: Social II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialIII</defName>
+		<label>Skill Upgrade: Social III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialIV</defName>
+		<label>Skill Upgrade: Social IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialV</defName>
+		<label>Skill Upgrade: Social V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialVI</defName>
+		<label>Skill Upgrade: Social VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialVII</defName>
+		<label>Skill Upgrade: Social VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialVIII</defName>
+		<label>Skill Upgrade: Social VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialIX</defName>
+		<label>Skill Upgrade: Social IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialX</defName>
+		<label>Skill Upgrade: Social X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_socialIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Social -->
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Cooking -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingI</defName>
+		<label>Skill Upgrade: Cooking I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingII</defName>
+		<label>Skill Upgrade: Cooking II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIII</defName>
+		<label>Skill Upgrade: Cooking III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIV</defName>
+		<label>Skill Upgrade: Cooking IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingV</defName>
+		<label>Skill Upgrade: Cooking V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVI</defName>
+		<label>Skill Upgrade: Cooking VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVII</defName>
+		<label>Skill Upgrade: Cooking VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVIII</defName>
+		<label>Skill Upgrade: Cooking VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIX</defName>
+		<label>Skill Upgrade: Cooking IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingX</defName>
+		<label>Skill Upgrade: Cooking X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Cooking.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CookingX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CookingIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Cooking -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Artistic -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticI</defName>
+		<label>Skill Upgrade: Artistic I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticII</defName>
+		<label>Skill Upgrade: Artistic II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticIII</defName>
+		<label>Skill Upgrade: Artistic III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticIV</defName>
+		<label>Skill Upgrade: Artistic IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticV</defName>
+		<label>Skill Upgrade: Artistic V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticVI</defName>
+		<label>Skill Upgrade: Artistic VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticVII</defName>
+		<label>Skill Upgrade: Artistic VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticVIII</defName>
+		<label>Skill Upgrade: Artistic VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticIX</defName>
+		<label>Skill Upgrade: Artistic IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticX</defName>
+		<label>Skill Upgrade: Artistic X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Artistic.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Artistic</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_artisticIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ArtisticX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ArtisticIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Artistic -->
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Socialite Equipment Feats -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Socialite_any</defName>
+		<label>Equipment Focus: Any</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Armor_Proficiency_Medium</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SocialiteII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>10</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Socialite Equipment Feats -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- empathy -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyI</defName>
+		<label>empathy</label>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations or when applying medical treatment.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		<!-- <exclusiveNodes> -->
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<!-- <li>ISFE_Node_Coomsumerism_PartyCondition</li> -->
+		<!-- </exclusiveNodes> -->
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyII</defName>
+		<label>Improved Empathy</label>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations or when applying medical treatment. Replaces empathy.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>2</severity></li>
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyIII</defName>
+		<label>Master Empathy</label>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations or when applying medical treatment. Replaces Improved empathy.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>2</severity></li>
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+
+	
+</Defs>

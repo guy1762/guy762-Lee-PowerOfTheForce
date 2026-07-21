@@ -25,7 +25,7 @@
 			</li>
 			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
 				<schema>SWPotF_HeroModeSchema</schema>
-				<baseClassDef>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClassDef>
+				<baseClassDef>SWPotFClassProgressTracker_Heroic_levelone</baseClassDef>
 			</li>
 		</modExtensions>
 	</TraitDef>

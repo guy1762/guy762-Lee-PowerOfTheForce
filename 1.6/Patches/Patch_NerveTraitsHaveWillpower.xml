@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Tough"]/degreeDatas/li[1]</xpath>
+		<order>Append</order>
+		<value>
+			<statOffsets>
+				<SWCPStat_Willpower>0.25</SWCPStat_Willpower>
+			</statOffsets>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Wimp"]/degreeDatas/li[1]/statOffsets</xpath>
+		<order>Append</order>
+		<value>
+			<SWCPStat_Willpower>-0.25</SWCPStat_Willpower>
+		</value>
+	</Operation>
+	
+	
+	
+	
+	
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[1]/statFactors</xpath>	<!-- iron-willed -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_Willpower>1.5</SWCPStat_Willpower>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[2]/statFactors</xpath>	<!-- steadfast -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_Willpower>1.25</SWCPStat_Willpower>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[3]/statFactors</xpath>	<!-- nervous -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_Willpower>0.75</SWCPStat_Willpower>
+		</value>
+	</Operation>
+	
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/TraitDef[defName="Nerves"]/degreeDatas/li[4]/statFactors</xpath>	<!-- volatile -->
+		<order>Append</order>
+		<value>
+			<SWCPStat_Willpower>0.5</SWCPStat_Willpower>
+		</value>
+	</Operation>
+	
+	
+</Patch>

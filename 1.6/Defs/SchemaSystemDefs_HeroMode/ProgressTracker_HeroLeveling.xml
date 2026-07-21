@@ -5,55 +5,80 @@
 		<defName>SWPotF_Hediff_HeroModeProgression</defName>
 		<hediffClass>ItsSorceryFramework.Hediff_ProgressLevel</hediffClass>
 		<label>Heroic</label>
-		<defaultLabelColor>(255,255,7)</defaultLabelColor> <!-- star wars yellow -->
+		<defaultLabelColor>(215,195,90)</defaultLabelColor> <!-- skywalker yellow -->
 		<description>Hero level progression.</description>
 		<initialSeverity>1</initialSeverity> <!-- Severity is bound to level of implant -->
 		<minSeverity>0</minSeverity>
 		<countsAsAddedPartOrImplant>false</countsAsAddedPartOrImplant>
 		<stages>	
 		</stages>
-
 	</HediffDef>
 	
 	
 	
 	<ItsSorceryFramework.ProgressTrackerDef ParentName = "ProgressTrackerLevelBase">
-		<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 		<defName>SWPotF_ProgressTracker_HeroModeLvl</defName>
 		<label>Heroic</label>
+		<progressTrackerClass>ItsSorceryFramework.ProgressTracker_Level</progressTrackerClass>
 		<bgPath>UI/ForceSchemaBackground</bgPath>
+		
 		<progressLevelUpKey>SWPotF_HeroMode_LevelUp</progressLevelUpKey>
 		<progressLevelUpDescKey>SWPotF_HeroMode_LevelUpMessage</progressLevelUpDescKey>
 		<skillPointLabelKey>SWPotF_HeroMode_SkillPointLabel</skillPointLabelKey>
 		
 		<progressHediff>SWPotF_Hediff_HeroModeProgression</progressHediff>
-		<baseClass>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</baseClass>
-		
-		<!-- <classes> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</li> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_10thru20_HeroModeLvl</li> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_20thru30_HeroModeLvl</li> -->
-		<!-- </classes> -->
+		<baseClass>SWPotFClassProgressTracker_Heroic_levelone</baseClass> <!-- linking a base class is required -->
 
+
+		<baseEXP>100</baseEXP> <!-- default: 100 -->
+		<scaling>1.1</scaling> <!-- default: 1.1 | Used to set up the experience required for each level. See equationType for how it is used. -->
 	</ItsSorceryFramework.ProgressTrackerDef>
+	
+	
+	
+	
+	
+	
 	
 	<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "SWPotF_ProgressTrackerClass_base_HeroModeLvl" ParentName = "ProgressTrackerClassBase">
 		<progressTrackerDef>SWPotF_ProgressTracker_HeroModeLvl</progressTrackerDef>
 		
 		<expTags>
 			<li>SWPotF_HeroEXPTag_OnQuestWin</li>
+			<li>SWPotF_HeroEXPTag_OddityXP</li>
 			<!-- <li>SWPotF_ForceEXPTag_OnSkillEXP</li> -->
 		</expTags>
 	</ItsSorceryFramework.ProgressTrackerClassDef>	
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_OnQuestFinish">
 		<workerClass>ItsSorceryFramework.ProgressEXPWorker_OnQuestFinish</workerClass>
 		<defName>SWPotF_HeroEXPTag_OnQuestWin</defName>
-		<fixedEXP>100</fixedEXP>
+		<fixedEXP>10</fixedEXP>
 		<questOutcome>Success</questOutcome>
 		<questDefs/>
 	</ItsSorceryFramework.ProgressEXPTagDef>
+	
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_Passive">
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_Passive</workerClass>
+		<defName>SWPotF_HeroEXPTag_PassiveDebug</defName>
+		<fixedEXP>2</fixedEXP> <!-- is divided by two for some reason -->
+	</ItsSorceryFramework.ProgressEXPTagDef>
+	
 	
 	<!--
 	
@@ -68,71 +93,228 @@
 
 	
 	
+	
+	
+	
+	
+	
 	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_HeroModeLvl">
-		<defName>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</defName>
-		<label>Novice Hero leveling</label>
-		<description>.</description>
+		<defName>SWPotFClassProgressTracker_Heroic_levelone</defName>
+		<label>Heroic (classless)</label>
+		<description>Please wait a moment for the class selections to unlock themselves via level up.</description>
+		
+		<levelRange>1~2</levelRange>
+		<levelLabels>
+			<li><level>1</level><label>loading, please wait</label></li>
+			<li><level>2</level><label>classless</label></li>
+		</levelLabels>
+		
 		<linkedClasses>
 			<li>
-				<classDef>SWPotF_ProgressTrackerClass_10thru20_HeroModeLvl</classDef>
-				<levelReset>False</levelReset>
+				<classDef>SWPotFClassProgressTracker_Heroic_goon</classDef>
+				<levelReset>True</levelReset>
+				<benefitReset>False</benefitReset>
+				<removePostClassChange>True</removePostClassChange>
+			</li>
+			<li>
+				<classDef>SWPotFClassProgressTracker_Heroic_socialite</classDef>
+				<levelReset>True</levelReset>
 				<benefitReset>False</benefitReset>
 				<removePostClassChange>True</removePostClassChange>
 			</li>
 		</linkedClasses>
+		<levelSpecifics>
+			<li>
+				<level>2</level>
+				<!-- <pointGain>0</pointGain> important to remember: this is 1 by default -->
+				<pointGain>2</pointGain>
+				
+				<specialClasses>
+					<li>
+						<classDef>SWPotFClassProgressTracker_Heroic_goon</classDef>
+						<levelReset>True</levelReset>
+						<benefitReset>False</benefitReset>
+						<removePostClassChange>True</removePostClassChange>
+					</li>
+					<li>
+						<classDef>SWPotFClassProgressTracker_Heroic_socialite</classDef>
+						<levelReset>True</levelReset>
+						<benefitReset>False</benefitReset>
+						<removePostClassChange>True</removePostClassChange>
+					</li>
+				</specialClasses>
+			</li>
+		</levelSpecifics>
+
+		
+		<expTags>
+			<li>SWPotF_HeroEXPTag_PassiveDebug</li>
+		</expTags>
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ goon \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_HeroModeLvl">
+		<defName>SWPotFClassProgressTracker_Heroic_goon</defName>
+		<label>Starter Class: Goon</label>
+		<description>henchmen.</description>
+		<!-- <linkedClasses> -->
+			<!-- <li> -->
+				<!-- <classDef>SWPotF_ProgressTrackerClass_20thru30_HeroModeLvl</classDef> -->
+				<!-- <levelReset>False</levelReset> -->
+				<!-- <benefitReset>False</benefitReset> -->
+				<!-- <removePostClassChange>True</removePostClassChange> -->
+			<!-- </li> -->
+		<!-- </linkedClasses> -->
+		
+		<prereqLevel>1</prereqLevel>
+		<prereqClasses>
+			<li>SWPotFClassProgressTracker_Heroic_levelone</li>
+		</prereqClasses>
 		
 		<levelRange>1~10</levelRange>
-		<levelLabels>
-			<li><level>1</level><label>novice</label></li>
-			<!-- <li><level>5</level><label>adept</label></li> -->
-			<!-- <li><level>10</level><label>trained</label></li> -->
+		<levelLabels> <!-- these are labels on the Heroic schema hediff -->
+			<li><level>1</level><label>Goon 1</label></li>
+			<li><level>2</level><label>Goon 2</label></li>
+			<li><level>3</level><label>Goon 3</label></li>
+			<li><level>4</level><label>Goon 4</label></li>
+			<li><level>5</level><label>Goon 5</label></li>
+			<li><level>6</level><label>Goon 6</label></li>
+			<li><level>7</level><label>Goon 7</label></li>
+			<li><level>8</level><label>Goon 8</label></li>
+			<li><level>9</level><label>Goon 9</label></li>
+			<li><level>10</level><label>Goon 10</label></li>
 		</levelLabels>
 		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_goon</li>
+		</unlocks>
+		
+		<levelFactors>
+			<li>
+				<level>1</level>
+				<pointGain>2</pointGain>
+			</li>
+		</levelFactors>
 		<levelSpecifics>
 			<li>
 				<level>1</level>
-				<pointGain>1</pointGain>
+			</li>
+			<!-- <li> -->
+				<!-- <level>2</level> -->
+				<!-- <pointGain>2</pointGain> -->
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>3</level> -->
+				<!-- <pointGain>2</pointGain> -->
+				
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>4</level> -->
+				<!-- <pointGain>2</pointGain> -->
+				
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>5</level> -->
+				<!-- <pointGain>2</pointGain> -->
+				
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>6</level> -->
+				<!-- <pointGain>2</pointGain> -->
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>7</level> -->
+				<!-- <pointGain>2</pointGain> -->
+				
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>8</level> -->
+				<!-- <pointGain>2</pointGain> -->
+				
+			<!-- </li> -->
+			<!-- <li> -->
+				<!-- <level>9</level> -->
+				<!-- <pointGain>2</pointGain> -->
+			<!-- </li> -->
+			<li>
+				<level>10</level>
+				<!-- <pointGain>2</pointGain> -->
+				
+				<hediffAdd>
+					<li>
+						<hediffDef>SWPotF_hediff_SaberTraining</hediffDef>
+					</li>
+				</hediffAdd>
+				<!--capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1</offset>
+					</li>
+				</capMods-->
 				
 			</li>
+		</levelSpecifics>
+
+	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
+	
+	
+	
+	
+	<!--\\\\\\\\\\\\\\ socialite \\\\\\\\\\\\\\-->
+	
+	<ItsSorceryFramework.ProgressTrackerClassDef ParentName = "SWPotF_ProgressTrackerClass_base_HeroModeLvl">
+		<defName>SWPotFClassProgressTracker_Heroic_socialite</defName>
+		<label>Starter Class: Socialite</label>
+		<description>.</description>
+		<!-- <linkedClasses> -->
+			<!-- <li> -->
+				<!-- <classDef>SWPotF_ProgressTrackerClass_20thru30_HeroModeLvl</classDef> -->
+				<!-- <levelReset>False</levelReset> -->
+				<!-- <benefitReset>False</benefitReset> -->
+				<!-- <removePostClassChange>True</removePostClassChange> -->
+			<!-- </li> -->
+		<!-- </linkedClasses> -->
+		
+		<prereqLevel>1</prereqLevel>
+		<prereqClasses>
+			<li>SWPotFClassProgressTracker_Heroic_levelone</li>
+		</prereqClasses>
+		
+		<levelRange>1~10</levelRange>
+		<levelLabels> <!-- these are labels on the Heroic schema hediff -->
+			<li><level>1</level><label>Socialite 1</label></li>
+			<li><level>2</level><label>Socialite 2</label></li>
+			<li><level>3</level><label>Socialite 3</label></li>
+			<li><level>4</level><label>Socialite 4</label></li>
+			<li><level>5</level><label>Socialite 5</label></li>
+			<li><level>6</level><label>Socialite 6</label></li>
+			<li><level>7</level><label>Socialite 7</label></li>
+			<li><level>8</level><label>Socialite 8</label></li>
+			<li><level>9</level><label>Socialite 9</label></li>
+			<li><level>10</level><label>Socialite 10</label></li>
+		</levelLabels>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Socialite</li>
+		</unlocks>
+		
+		<levelFactors>
 			<li>
-				<level>2</level>
-				<!-- <pointGain>1</pointGain> -->
-				
+				<level>1</level>
+				<pointGain>2</pointGain>
 			</li>
+		</levelFactors>
+		<levelSpecifics>
 			<li>
-				<level>3</level>
-				<pointGain>1</pointGain>
-				
-			</li>
-			<li>
-				<level>4</level>
-				<!-- <pointGain>1</pointGain> -->
-				
-			</li>
-			<li>
-				<level>5</level>
-				<pointGain>1</pointGain>
-				
-			</li>
-			<li>
-				<level>6</level>
-				<!-- <pointGain>1</pointGain> -->
-				
-			</li>
-			<li>
-				<level>7</level>
-				<pointGain>1</pointGain>
-				
-			</li>
-			<li>
-				<level>8</level>
-				<!-- <pointGain>1</pointGain> -->
-				
-			</li>
-			<li>
-				<level>9</level>
-				<pointGain>1</pointGain>
-				
+				<level>1</level>
 			</li>
 			<li>
 				<level>10</level>
@@ -143,10 +325,18 @@
 						<hediffDef>SWPotF_hediff_SaberTraining</hediffDef>
 					</li>
 				</hediffAdd>
+				<!--capMods>
+					<li>
+						<capacity>Consciousness</capacity>
+						<offset>1</offset>
+					</li>
+				</capMods-->
+				
 			</li>
 		</levelSpecifics>
 
 	</ItsSorceryFramework.ProgressTrackerClassDef>
+	
 	
 	
 	
@@ -171,7 +361,7 @@
 		
 		<prereqLevel>10</prereqLevel>
 		<prereqClasses>
-			<li>SWPotF_ProgressTrackerClass_1thru10_HeroModeLvl</li>
+			<li>SWPotFClassProgressTracker_Heroic_levelone</li>
 		</prereqClasses>
 		
 		<levelRange>10~20</levelRange>
@@ -230,7 +420,11 @@
 				<level>20</level>
 				<!-- <pointGain>2</pointGain> -->
 				
-				
+				<hediffAdd>
+					<li>
+						<hediffDef>SWPotF_hediff_SaberTraining</hediffDef>
+					</li>
+				</hediffAdd>
 				<!--capMods>
 					<li>
 						<capacity>Consciousness</capacity>
@@ -325,11 +519,6 @@
 		</levelSpecifics>
 
 	</ItsSorceryFramework.ProgressTrackerClassDef>
-	
-	
-	
-	
-
 	
 
 	

@@ -202,6 +202,7 @@
 				<li>SWPotF_hediff_ForceFear</li>
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 			</makeImmuneTo>
 			<statOffsets>
 			  <ShootingAccuracyPawn>2</ShootingAccuracyPawn>
@@ -502,6 +503,7 @@
 				<li>SWPotF_hediff_ForceFear</li>
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 			</makeImmuneTo>
 			<statOffsets>
 			  <ShootingAccuracyPawn>4</ShootingAccuracyPawn>
@@ -798,6 +800,7 @@
 				<li>SWPotF_hediff_ForceFear</li>
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 			</makeImmuneTo>
 			<statOffsets>
 			  <ShootingAccuracyPawn>6</ShootingAccuracyPawn>

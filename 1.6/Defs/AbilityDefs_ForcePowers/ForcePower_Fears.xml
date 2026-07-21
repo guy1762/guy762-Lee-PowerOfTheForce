@@ -57,7 +57,7 @@
 				<!--replaceExisting>false</replaceExisting-->
 				<applicableToMechs>False</applicableToMechs>
 				<durationMultiplier>PsychicSensitivity</durationMultiplier>
-			  </li>
+			</li>
 			<li Class="CompProperties_AbilityFleckOnTarget">
 				<fleckDef>PsycastPsychicEffect</fleckDef>
 				<sound>kotorsound_force_fear</sound>
@@ -84,8 +84,9 @@
 		<stages>
 		  <li>
 			<statOffsets>
-			  <PainShockThreshold>-0.2</PainShockThreshold>
-			  <MentalBreakThreshold>1000</MentalBreakThreshold>
+				<PainShockThreshold>-0.2</PainShockThreshold>
+				<MentalBreakThreshold>1000</MentalBreakThreshold>
+				<Terror MayRequire="Ludeon.RimWorld.Ideology">1</Terror>
 			</statOffsets>
 			<mentalStateGivers>
 			  <li>

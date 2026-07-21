@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_GoonI</defName>
+		<label>Class Feat: Goon I</label>
+		<description>Adds one permanent skill point in Melee.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Melee</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_GoonII</defName>
+		<label>Class Feat: Goon II</label>
+		<description>Adds one permanent skill point in Melee and Shooting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Shooting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Melee</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_GoonIII</defName>
+		<label>Class Feat: Goon III</label>
+		<description>Adds one permanent skill point in Melee, Shooting, and Social.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Shooting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Melee</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_GoonIV</defName>
+		<label>Class Feat: Goon IV</label>
+		<description>Adds two permanent skill points in Melee, one permanent point in Shooting, and one in Social.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Shooting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Melee</skill><skillChange>2</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_GoonV</defName>
+		<label>Class Feat: Goon V</label>
+		<description>Adds two permanent skill points in Melee, one permanent point in Shooting, and one in Social. Raises passion in Melee by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Shooting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Melee</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_GoonVI</defName>
+		<label>Class Feat: Goon VI</label>
+		<description>Adds two permanent skill points in Melee, one permanent point in Shooting, and one in Social. Raises passion in Melee and Social by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Shooting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Melee</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+</Defs>

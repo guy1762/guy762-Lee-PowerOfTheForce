@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef Name="SWPotFHediff_FeatBASE" Abstract="True">
+		<!-- <label>stealth field</label> -->
+		<!-- <description>.</description> -->
+		
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<everCurableByItem>false</everCurableByItem>
+		
+		<!--
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>2</skillChange></li>
+					<li><skill>Melee</skill><skillChange>2</skillChange></li>
+					<li><skill>Construction</skill><skillChange>2</skillChange></li>
+					<li><skill>Mining</skill><skillChange>2</skillChange></li>
+					<li><skill>Cooking</skill><skillChange>2</skillChange></li>
+					<li><skill>Plants</skill><skillChange>2</skillChange></li>
+					<li><skill>Animals</skill><skillChange>2</skillChange></li>
+					<li><skill>Crafting</skill><skillChange>2</skillChange></li>
+					<li><skill>Artistic</skill><skillChange>2</skillChange></li>
+					<li><skill>Medicine</skill><skillChange>2</skillChange></li>
+					<li><skill>Social</skill><skillChange>2</skillChange></li>
+					<li><skill>Intellectual</skill><skillChange>2</skillChange></li>
+					
+					<li>
+                        <skill>Intellectual</skill><skillChange>20</skillChange>
+						
+                        <setPassion>True</setPassion>
+                        <passionChange>1</passionChange> The number of steps you want passion to change by (i.e. 1 would make None become Minor, and Minor become Major, while -1 would make Major become Minor, and Minor become None)
+                        <passion>None</passion> The desired passion to be set to. The vanilla options are None, Minor, and Major. To use this, setPassion must be true and passionChange will be ignored
+                    </li>
+				</skillChanges>
+			</li>
+		</comps>
+		<stages>
+			<li>
+				<label>active</label>
+				<minSeverity>0</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				<disabledWorkTags>Violent</disabledWorkTags>
+				<statFactors>
+					<MoveSpeed>0.5</MoveSpeed>
+				</statFactors>
+				<statOffsets>
+					<ShootingAccuracyPawn>-0.15</ShootingAccuracyPawn>
+					<MeleeHitChance>-0.15</MeleeHitChance>
+					<MeleeCooldownFactor>0.15</MeleeCooldownFactor>
+					<RangedCooldownFactor>0.15</RangedCooldownFactor>
+					<PainShockThreshold>-0.15</PainShockThreshold>
+					<MentalBreakThreshold>0.15</MentalBreakThreshold>
+				</statOffsets>
+			</li>
+		</stages>
+		
+		-->
+	</HediffDef>
+	
+					
+	
+</Defs>

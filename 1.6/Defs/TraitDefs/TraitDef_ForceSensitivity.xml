@@ -5,12 +5,15 @@
 	<TraitDef Name="SWPotF_Trait_ForceSensitiveBASE" Abstract="True">
 		<conflictingTraits>
 			<li>PsychicSensitivity</li>
-			<li>SWPotFConflictingTraitTag_ForceSensitivity</li>
+			<li>SWPotF_Trait_ForceSensitive_weak</li>
+			<li>SWPotF_Trait_ForceSensitive_mid</li>
+			<li>SWPotF_Trait_ForceSensitive_strong</li>
+			<li>SWPotF_Trait_ForceSensitive_ultra</li>
 		</conflictingTraits>
 		<modExtensions>
 			<li Class="ItsSorceryFramework.ModExtension_SchemaAddition">
 				<schema>SWPotF_ForceSchema</schema>
-				<baseClassDef>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</baseClassDef>
+				<!-- <baseClassDef>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</baseClassDef> -->
 			</li>
 		</modExtensions>
 	</TraitDef>

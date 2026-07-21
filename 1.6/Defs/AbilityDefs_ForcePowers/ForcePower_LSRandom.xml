@@ -203,6 +203,7 @@
                 <hediffs>
 					<li>SWCPHediff_Suppression</li>
 					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+					<li>SWPotFHediff_Feat_intimidated</li>
 					
 					<li>SWPotF_hediff_ForceFear</li>
 					
@@ -269,6 +270,7 @@
 			<makeImmuneTo>
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 				
 				<li>SWCPHediff_KOStun</li>
 				<li>SWPotF_hediff_ForcePacify</li>

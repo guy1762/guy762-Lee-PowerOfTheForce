@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_Feat_toughness</defName>
+		<label>Feat: Toughness</label>
+		<description>This pawn is built sturdier than most, and is better able to withstand the effects of pain and bodily damage.</description>
+
+		<stages>
+			<li>
+				<!-- <label>active</label> -->
+				<minSeverity>1</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				
+				<painFactor>0.9</painFactor>
+				<statOffsets>
+					<IncomingDamageFactor>-0.05</IncomingDamageFactor>
+					<PainShockThreshold>0.05</PainShockThreshold>
+					<StaggerDurationFactor>-0.1</StaggerDurationFactor>
+					
+					<!-- <MeleeDoorDamageFactor>0.1</MeleeDoorDamageFactor> A special multiplier on the amount of melee damage inflicted on doors. -->
+				</statOffsets>
+			</li>
+			<li>
+				<label>Improved</label>
+				<minSeverity>2</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				
+				<painFactor>0.8</painFactor>
+				<statOffsets>
+					<IncomingDamageFactor>-0.1</IncomingDamageFactor>
+					<PainShockThreshold>0.1</PainShockThreshold>
+					<StaggerDurationFactor>-0.2</StaggerDurationFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Master</label>
+				<minSeverity>3</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				
+				<painFactor>0.7</painFactor>
+				<statOffsets>
+					<IncomingDamageFactor>-0.15</IncomingDamageFactor>
+					<PainShockThreshold>0.15</PainShockThreshold>
+					<StaggerDurationFactor>-0.3</StaggerDurationFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

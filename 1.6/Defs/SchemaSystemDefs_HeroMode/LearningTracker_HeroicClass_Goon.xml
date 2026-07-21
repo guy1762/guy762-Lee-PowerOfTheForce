@@ -1,0 +1,1100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotFLearningTracker_HeroicClass_goon</defName>
+		<label>Starter Class: Goon</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+		
+		<defaultLocked>true</defaultLocked>
+		<lockedLabel>Starter Class: Goon</lockedLabel>
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Goon -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_GoonI</defName>
+		<label>Class Progression: Goon I</label>
+		<description>Class progression feat. Adds one permanent skill point in Melee.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_GoonI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_GoonII</defName>
+		<label>Class Progression: Goon II</label>
+		<description>Class progression feat. Adds one permanent skill point in Melee and Shooting.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_GoonI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</defName>
+		<label>Class Progression: Goon III</label>
+		<description>Class progression feat. Adds one permanent skill point in Melee, Shooting, and Social.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_GoonIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_GoonII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_GoonIV</defName>
+		<label>Class Progression: Goon IV</label>
+		<description>Class progression feat. Adds two permanent skill points in Melee, one permanent point in Shooting, and one in Social.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_GoonIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_GoonIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_GoonV</defName>
+		<label>Class Progression: Goon V</label>
+		<description>Class progression feat. Adds two permanent skill points in Melee, one permanent point in Shooting, and one in Social. Raises passion in Melee by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_GoonV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_GoonIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_GoonVI</defName>
+		<label>Class Progression: Goon VI</label>
+		<description>Class progression feat. Adds two permanent skill points in Melee, one permanent point in Shooting, and one in Social. Raises passion in Melee and Social by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_GoonVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_GoonV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Goon -->
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Melee -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeI</defName>
+		<label>Skill Upgrade: Melee I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeII</defName>
+		<label>Skill Upgrade: Melee II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeIII</defName>
+		<label>Skill Upgrade: Melee III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeIV</defName>
+		<label>Skill Upgrade: Melee IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeV</defName>
+		<label>Skill Upgrade: Melee V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeVI</defName>
+		<label>Skill Upgrade: Melee VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeVII</defName>
+		<label>Skill Upgrade: Melee VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeVIII</defName>
+		<label>Skill Upgrade: Melee VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeIX</defName>
+		<label>Skill Upgrade: Melee IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeX</defName>
+		<label>Skill Upgrade: Melee X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Melee.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Melee</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_goon_meleeIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MeleeX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MeleeIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Melee -->
+
+
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Goon Equipment Feats -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_MeleeFocus</defName>
+		<label>Weapon Focus: Melee</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotORII_Feat_Weapon_Focus_Melee_Weapons</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>2</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_ShortRangeFocus</defName>
+		<label>Weapon Focus: Short-Ranged</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotORII_Feat_Weapon_Focus_Blaster_Pistol</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_MeleeFocus</li>
+		</prereqNodes>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>4</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_LightArmor</defName>
+		<label>Armor Focus: Light Infantry</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Armor_Proficiency_Light</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_ShortRangeFocus</li>
+		</prereqNodes>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>5</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_MeleeProficiency</defName>
+		<label>Weapon Proficiency: Melee</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotORII_Feat_Weapon_Proficiency_Melee_Weapons</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_LightArmor</li>
+		</prereqNodes>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>7</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_ShortRangeProficiency</defName>
+		<label>Weapon Proficiency: Short-Ranged</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotORII_Feat_Weapon_Proficiency_Blaster_Pistol</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_MeleeProficiency</li>
+		</prereqNodes>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>9</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_MediumArmor</defName>
+		<label>Armor Focus: Medium Infantry</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Armor_Proficiency_Medium</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_goon_ShortRangeProficiency</li>
+		</prereqNodes>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_GoonII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>10</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Goon Equipment Feats -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- caution -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_cautionI</defName>
+		<label>Caution</label>
+		<description>This pawn is exceptionally cautious of their surroundings, and is better able to detect stealthed enemies, remain hidden in stealth themselves, and is less likely to trigger enemy traps.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Caution</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<!-- <exclusiveNodes> -->
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<!-- <li>ISFE_Node_Coomsumerism_PartyCondition</li> -->
+		<!-- </exclusiveNodes> -->
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_cautionII</defName>
+		<label>Improved Caution</label>
+		<description>This pawn is exceptionally cautious of their surroundings, and is better able to detect stealthed enemies, remain hidden in stealth themselves, and is less likely to trigger enemy traps. Replaces Caution.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Caution</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_cautionI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>2</severity></li>
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_cautionIII</defName>
+		<label>Master Caution</label>
+		<description>This pawn is exceptionally cautious of their surroundings, and is better able to detect stealthed enemies, remain hidden in stealth themselves, and is less likely to trigger enemy traps. Replaces Improved Caution.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Caution</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_cautionII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>2</severity></li>
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+
+
+
+
+
+
+
+
+
+	<!-- intimidation -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_intimidationI</defName>
+		<label>Intimidation</label>
+		<description>Utilize this pawn's ferocious martial prowess to attempt to scare a target into fleeing. This rolls a check of the caster's Intimidation Power stat contested by the target's Willpower stat.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Intimidate</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotFAbility_Feat_intimidate</li>
+		</abilityGain>
+		
+		<coordX>3</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_intimidationII</defName>
+		<label>Improved Intimidation</label>
+		<description>Utilize this pawn's ferocious martial prowess to better attempt to scare a target into fleeing. This rolls a check of the caster's Intimidation Power stat contested by the target's Willpower stat. Replaces Intimidation.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Intimidate_adv</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_intimidationI</li>
+		</prereqNodes>
+		
+		<abilityRemove>
+			<li>SWPotFAbility_Feat_intimidate</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotFAbility_Feat_intimidate_adv</li>
+		</abilityGain>
+		
+		<coordX>6</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_intimidationIII</defName>
+		<label>Mass Intimidation</label>
+		<description>Utilize this pawn's ferocious martial prowess to attempt to scare all nearby targets into fleeing. This rolls a check of the caster's Intimidation Power stat contested by the target's Willpower stat. Does not replace Improved Intimidation.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Intimidate_mst</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_intimidationII</li>
+		</prereqNodes>
+		
+		
+		<abilityGain>
+			<li>SWPotFAbility_Feat_intimidate_AoE</li>
+		</abilityGain>
+		
+		<coordX>9</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- toughness -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_toughnessI</defName>
+		<label>Toughness</label>
+		<description>This pawn is built sturdier than most, and is better able to withstand the effects of pain and bodily damage.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Toughness</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_toughnessII</defName>
+		<label>Improved Toughness</label>
+		<description>This pawn is built sturdier than most, and is better able to withstand the effects of pain and bodily damage. Replaces Toughness.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Toughness</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_toughnessI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>2</severity></li>
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_toughnessIII</defName>
+		<label>Master Toughness</label>
+		<description>This pawn is built sturdier than most, and is better able to withstand the effects of pain and bodily damage. Replaces Improved Toughness.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Toughness</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_toughnessII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- conditioning -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_conditioningI</defName>
+		<label>Conditioning</label>
+		<description>This pawn is adapted to working in harsh conditions. They are better able to withstand environmental extremes, cope with stress, and survive longer without adequate food or rest.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Conditioning</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_conditioningII</defName>
+		<label>Improved Conditioning</label>
+		<description>This pawn is adapted to working in harsh conditions. They are better able to withstand environmental extremes, cope with stress, and survive longer without adequate food or rest. Replaces Conditioning.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Conditioning</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_conditioningI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>2</severity></li>
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_conditioningIII</defName>
+		<label>Master Conditioning</label>
+		<description>This pawn is adapted to working in harsh conditions. They are better able to withstand environmental extremes, cope with stress, and survive longer without adequate food or rest. Replaces Improved Conditioning.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Conditioning_mst</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_conditioningII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- uncanny dodge -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_uncannydodgeI</defName>
+		<label>Uncanny Dodge</label>
+		<description>Utilize this pawn's sharp reflexes to grant them greatly increased ranged and melee dodge chance for two seconds.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Uncanny_Dodge_I</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		
+		<abilityGain>
+			<li>SWPotFAbility_Feat_uncannydodge</li>
+		</abilityGain>
+		
+		<coordX>4</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_uncannydodgeII</defName>
+		<label>Improved Uncanny Dodge</label>
+		<description>Utilize this pawn's sharp reflexes to grant them greatly increased ranged and melee dodge chance for four seconds. Replaces Uncanny Dodge.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Uncanny_Dodge_II</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_uncannydodgeI</li>
+		</prereqNodes>
+
+		<abilityRemove>
+			<li>SWPotFAbility_Feat_uncannydodge</li>
+		</abilityRemove>
+		<abilityGain>
+			<li>SWPotFAbility_Feat_uncannydodge_adv</li>
+		</abilityGain>
+
+		
+		<coordX>7</coordX>
+		<coordY>7</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	<!-- close combat -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_closecombatI</defName>
+		<label>Close Combat</label>
+		<description>Train this pawn to be proficient in close quarters combat, giving them a bonus to shooting accuracy at the "touch" and "short" ranges. Additionally, while drafted, this pawn will impose an accuracy penalty on all enemies within a 3-tile radius.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Close_Combat</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_closecombatI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>4</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_closecombatII</defName>
+		<label>Improved Close Combat</label>
+		<description>Utilize this pawn's sharp reflexes to grant them greatly increased ranged and melee dodge chance for four seconds. Replaces Uncanny Dodge.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Close_Combat</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_closecombatI</li>
+		</prereqNodes>
+
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_closecombatII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_Feat_closecombatI</li>
+		</hediffRemove>
+
+		
+		<coordX>8</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Refinement</defName>
+		<label>Experimental refinement</label>
+		<description>Make sure to develop proper controls.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>2</coordX>
+		<coordY>5</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqs>
+			<li>ISFE_Node_Logos_Design</li>
+		</prereqs>
+		<exclusiveNodes>
+			<li>ISFE_Node_Logos_Surrender</li>
+		</exclusiveNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Collection</defName>
+		<label>Data collection</label>
+		<description>Good data collection now saves a lot of heartache later.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqs>
+			<li>ISFE_Node_Logos_Refinement</li>
+		</prereqs>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>ISFE_Node_Logos_Conclusion</defName>
+		<label>Research conclusion</label>
+		<description>A through analysis allows the next bit of research to reach new heights.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>2</pointReq>
+				
+		<prereqs>
+			<li>ISFE_Node_Logos_Collection</li>
+		</prereqs>
+		
+		<hediffAdjust>
+			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
+		</hediffAdjust>
+	</ItsSorceryFramework.LearningTreeNodeDef-->
+	
+	
+</Defs>

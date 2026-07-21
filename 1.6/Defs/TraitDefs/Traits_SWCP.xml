@@ -73,6 +73,7 @@
 				<statFactors>
 					<CertaintyLossFactor MayRequire="Ludeon.RimWorld.Ideology">0.125</CertaintyLossFactor>
 					<SWCPStat_Loyalty>4</SWCPStat_Loyalty>
+					<SWCPStat_Willpower>2</SWCPStat_Willpower>
 				</statFactors>
             </li>
         </degreeDatas>
@@ -158,6 +159,8 @@
 				</statFactors>
 				
 				<statOffsets>
+					<SWCPStat_Willpower>0.25</SWCPStat_Willpower>
+					
 					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
 					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
 					<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
@@ -189,7 +192,7 @@
 				<degree>0</degree>
 				<socialFightChanceFactor>0</socialFightChanceFactor>
 				<statFactors>
-					<SWCPStat_Loyalty>0.5</SWCPStat_Loyalty>
+					<SWCPStat_Willpower>0.5</SWCPStat_Willpower>
 				</statFactors>
 				<theOnlyAllowedMentalBreaks>
 					<li>Wander_OwnRoom</li>
@@ -199,6 +202,8 @@
 				</theOnlyAllowedMentalBreaks>
 				
 				<statOffsets>
+					<SWCPStat_Loyalty>-0.5</SWCPStat_Loyalty>
+					
 					<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
 					<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
 					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>

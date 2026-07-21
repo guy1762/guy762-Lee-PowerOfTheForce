@@ -70,15 +70,7 @@
 		<skillPointLabelKey>SWPotF_Force_SkillPointLabel</skillPointLabelKey>
 		
 		<progressHediff>SWPotF_Hediff_ForceProgression</progressHediff>
-		<baseClass>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</baseClass>
-		<!-- <classes> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</li> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_10thru20_ForceLvl</li> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_20thru30_ForceLvl</li> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_30thru40_ForceLvl</li> -->
-			<!-- <li>SWPotF_ProgressTrackerClass_40thru50_ForceLvl</li> -->
-		<!-- </classes> -->
-
+		<baseClass>SWPotF_ProgressTrackerClass_1thru10_ForceLvl</baseClass> <!-- linking a base class is required -->
 	</ItsSorceryFramework.ProgressTrackerDef>
 	
 	<ItsSorceryFramework.ProgressTrackerClassDef Abstract = "True" Name = "SWPotF_ProgressTrackerClass_base_ForceLvl" ParentName = "ProgressTrackerClassBase">
@@ -154,6 +146,12 @@
 			<li><level>10</level><label>trained</label></li>
 		</levelLabels>
 		
+		<levelFactors>
+			<li>
+				<level>1</level>
+				<!-- <pointGain>1</pointGain> -->
+			</li>
+		</levelFactors>
 		<levelSpecifics>
 			<!-- <li> -->
 				<!-- <level>0</level> -->

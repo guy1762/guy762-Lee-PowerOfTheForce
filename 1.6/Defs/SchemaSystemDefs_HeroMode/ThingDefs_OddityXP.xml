@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ItsSorceryFramework.ProgressEXPTagDef ParentName = "EXPTag_UseItem">
+		<defName>SWPotF_HeroEXPTag_OddityXP</defName>
+		<workerClass>ItsSorceryFramework.ProgressEXPWorker_UseItem</workerClass>
+		<expItems>
+			<li>
+				<thingDef>SWCPItem_OddityXP_datapad_purple10xp</thingDef>
+				<exp>10</exp> <!-- EXP = item exp * expFactorStat value -->
+				<gainEXPTransKey>SWPotF_UseEXPItem</gainEXPTransKey>
+				<!-- <expFactorStat>GlobalLearningFactor</expFactorStat> -->
+			</li>
+			<li><thingDef>SWCPItem_OddityXP_datapad_red20xp</thingDef><exp>20</exp><gainEXPTransKey>SWPotF_UseEXPItem</gainEXPTransKey></li>
+			
+		</expItems>
+	</ItsSorceryFramework.ProgressEXPTagDef>
+	
+	
+	<ThingDef Name="SWCPItem_OddityXPBASE" ParentName="guy762_NoCraft_upgradebase" Abstract="True">
+		<!-- <description>Study this item to gain 10 points of Heroic experience.</description> -->
+		<graphicData>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<stackLimit>10</stackLimit><drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+			<MarketValue>1000</MarketValue>
+			<!-- <RoyalFavorValue>0.5</RoyalFavorValue> -->
+			<Mass>1</Mass>
+		</statBases>
+		
+		<comps>
+			<!-- <li Class="CompProperties_Usable"> these aren't needed because ItsSorcery has it's own button for it -->
+				<!-- <useJob>UseItem</useJob> -->
+				<!-- <useLabel>Study {0_label}</useLabel> -->
+				<!-- <showUseGizmo>true</showUseGizmo> -->
+				<!-- <useDuration>132</useDuration> -->
+			<!-- </li> -->
+			<!-- <li Class="CompProperties_UseEffectDestroySelf" /> -->
+			<li Class="CompProperties_UseEffectPlaySound">
+				<soundOnUsed>kotorsound_levelup</soundOnUsed>
+			</li>
+		</comps>
+		
+		<thingSetMakerTags>
+			<li>RewardStandardMidFreq</li>
+		</thingSetMakerTags>
+		<tradeTags>
+			<li>SWCPTT_OddityXP</li>
+		</tradeTags>
+	</ThingDef>
+	
+	
+	
+	
+	
+	
+
+	<ThingDef ParentName="SWCPItem_OddityXPBASE">
+		<defName>SWCPItem_OddityXP_datapad_purple10xp</defName>
+		<label>purple datapad</label>
+		<description>Study this item to gain 10 points of Heroic experience.</description>
+		<graphicData>
+			<texPath>Items/OddityXP/Datapad_purple</texPath>
+		</graphicData>
+	</ThingDef>
+	
+	<ThingDef ParentName="SWCPItem_OddityXPBASE">
+		<defName>SWCPItem_OddityXP_datapad_red20xp</defName>
+		<label>red datapad</label>
+		<description>Study this item to gain 20 points of Heroic experience.</description>
+		<graphicData>
+			<texPath>Items/OddityXP/Datapad_red</texPath>
+		</graphicData>
+	</ThingDef>
+
+
+</Defs>

@@ -74,58 +74,23 @@
 		<maxSeverity>1.0</maxSeverity>
 		<isBad>false</isBad>
 		<comps>
-		  <li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
-                <skillChanges>
-                    <li>
-                        <skill>Shooting</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Melee</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Construction</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Mining</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Cooking</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Plants</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Animals</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Crafting</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Artistic</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Medicine</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Social</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-					<li>
-                        <skill>Intellectual</skill>
-                        <skillChange>2</skillChange>
-                    </li>
-                </skillChanges>
-            </li>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li><skill>Shooting</skill><skillChange>2</skillChange></li>
+					<li><skill>Melee</skill><skillChange>2</skillChange></li>
+					<li><skill>Construction</skill><skillChange>2</skillChange></li>
+					<li><skill>Mining</skill><skillChange>2</skillChange></li>
+					<li><skill>Cooking</skill><skillChange>2</skillChange></li>
+					<li><skill>Plants</skill><skillChange>2</skillChange></li>
+					<li><skill>Animals</skill><skillChange>2</skillChange></li>
+					<li><skill>Crafting</skill><skillChange>2</skillChange></li>
+					<li><skill>Artistic</skill><skillChange>2</skillChange></li>
+					<li><skill>Medicine</skill><skillChange>2</skillChange></li>
+					<li><skill>Social</skill><skillChange>2</skillChange></li>
+					<li><skill>Intellectual</skill><skillChange>2</skillChange></li>
+				</skillChanges>
+			</li>
+			
 		  <!--2,500 ticks per hour in game-->
 		  <li Class="HediffCompProperties_Disappears">
 			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
@@ -393,54 +358,18 @@
 		<comps>
 		  <li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
                 <skillChanges>
-                    <li>
-                        <skill>Shooting</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Melee</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Construction</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Mining</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Cooking</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Plants</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Animals</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Crafting</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Artistic</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Medicine</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Social</skill>
-                        <skillChange>4</skillChange>
-                    </li>
-					<li>
-                        <skill>Intellectual</skill>
-                        <skillChange>4</skillChange>
-                    </li>
+					<li><skill>Shooting</skill><skillChange>4</skillChange></li>
+					<li><skill>Melee</skill><skillChange>4</skillChange></li>
+					<li><skill>Construction</skill><skillChange>4</skillChange></li>
+					<li><skill>Mining</skill><skillChange>4</skillChange></li>
+					<li><skill>Cooking</skill><skillChange>4</skillChange></li>
+					<li><skill>Plants</skill><skillChange>4</skillChange></li>
+					<li><skill>Animals</skill><skillChange>4</skillChange></li>
+					<li><skill>Crafting</skill><skillChange>4</skillChange></li>
+					<li><skill>Artistic</skill><skillChange>4</skillChange></li>
+					<li><skill>Medicine</skill><skillChange>4</skillChange></li>
+					<li><skill>Social</skill><skillChange>4</skillChange></li>
+					<li><skill>Intellectual</skill><skillChange>4</skillChange></li>
                 </skillChanges>
             </li>
 		  <!--2,500 ticks per hour in game-->

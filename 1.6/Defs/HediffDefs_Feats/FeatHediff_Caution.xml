@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_Feat_caution</defName>
+		<label>Feat: Caution</label>
+		<description>This pawn is exceptionally cautious of their surroundings, and is better able to detect stealthed enemies, remain hidden in stealth themselves, and is less likely to trigger enemy traps.</description>
+
+		<stages>
+			<li>
+				<!-- <label>active</label> -->
+				<minSeverity>1</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				
+				<statOffsets>
+					<SWCPStat_Stealth>0.1</SWCPStat_Stealth>
+					<HuntingStealth>0.1</HuntingStealth>
+					
+					<SWCPStat_Awareness>0.1</SWCPStat_Awareness>
+					<PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Improved</label>
+				<minSeverity>2</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<SWCPStat_Stealth>0.2</SWCPStat_Stealth>
+					<HuntingStealth>0.2</HuntingStealth>
+					
+					<SWCPStat_Awareness>0.2</SWCPStat_Awareness>
+					<PawnTrapSpringChance>-0.2</PawnTrapSpringChance>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Master</label>
+				<minSeverity>3</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<SWCPStat_Stealth>0.3</SWCPStat_Stealth>
+					<HuntingStealth>0.3</HuntingStealth>
+					
+					<SWCPStat_Awareness>0.3</SWCPStat_Awareness>
+					<PawnTrapSpringChance>-0.3</PawnTrapSpringChance>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef Name="SWPotFAbility_Feat_intimidate">
+		<defName>SWPotFAbility_Feat_intimidate</defName>
+		<label>intimidation</label>
+		<description>Utilize this pawn's ferocious martial prowess to attempt to scare a target into fleeing. This rolls a check of the caster's Intimidation Power stat contested by the target's Willpower stat.\n\nPawns with the Iron-Willed, Unyielding, or Heroic traits are immune to this ability.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_intimidated</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/PotF_Feat_Intimidate</iconPath>
+		
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
+		<!-- <hotKey></hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<!-- <level>1</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<!-- this is in seconds, not ticks -->
+			<Ability_Duration>60</Ability_Duration>
+		</statBases>
+		
+		<targetRequired>true</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>7</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_vader</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> don't use this, it checks for factions automatically -->
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+				<canTargetBosses>false</canTargetBosses>
+				<useStatic>True</useStatic>
+                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
+				<successChance>
+					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
+					
+					<casterStatChance>SWCPStat_IntimidationPower</casterStatChance>
+					<casterStatEffect>Multiply</casterStatEffect> <!-- success chance increases if stat is above 1 -->
+					
+					<targetStatChance>SWCPStat_Willpower</targetStatChance>
+					<targetStatEffect>Divide</targetStatEffect> <!-- success chance decreases if stat is above 1 -->
+					
+					<successMessage>Intimidation attempt SUCCESS! {0} -> {1}</successMessage>
+					<failureMessage>Intimidation attempt FAILED! {0} -> {1}</failureMessage>
+				</successChance>
+            </li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_intimidated</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<!--replaceExisting>false</replaceExisting-->
+				<applicableToMechs>False</applicableToMechs>
+			</li>
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<targetGroup>Hostiles</targetGroup>
+				
+				<targetHasNoneOfTraits>
+					<SWPotF_Trait_heroic />
+					<SWCPTrait_Unyielding />
+					<Nerves>2</Nerves>
+				</targetHasNoneOfTraits>
+
+				<targetMentalStates />
+				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	<AbilityDef ParentName="SWPotFAbility_Feat_intimidate">
+		<defName>SWPotFAbility_Feat_intimidate_adv</defName>
+		<label>adv. intimidation</label>
+		<description>Utilize this pawn's ferocious martial prowess to better attempt to scare a target into fleeing. This rolls a check of the caster's Intimidation Power stat contested by the target's Willpower stat.\n\nPawns with the Iron-Willed, Unyielding, or Heroic traits are immune to this ability.</description>
+		<iconPath>UI/FeatIcons/PotF_Feat_Intimidate_adv</iconPath>
+
+		<cooldownTicksRange>9000</cooldownTicksRange>
+
+		<comps Inherit="False">
+			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+				<canTargetBosses>false</canTargetBosses>
+				<useStatic>True</useStatic>
+                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
+				<successChance>
+					<baseSuccessChance>0.75</baseSuccessChance> <!-- this is basically the DC -->
+					
+					<casterStatChance>SWCPStat_IntimidationPower</casterStatChance>
+					<casterStatEffect>Multiply</casterStatEffect> <!-- success chance increases if stat is above 1 -->
+					
+					<targetStatChance>SWCPStat_Willpower</targetStatChance>
+					<targetStatEffect>Divide</targetStatEffect> <!-- success chance decreases if stat is above 1 -->
+					
+					<successMessage>Improved Intimidation attempt SUCCESS! {0} -> {1}</successMessage>
+					<failureMessage>Improved Intimidation attempt FAILED! {0} -> {1}</failureMessage>
+				</successChance>
+            </li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_intimidated</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<!--replaceExisting>false</replaceExisting-->
+				<applicableToMechs>False</applicableToMechs>
+			</li>
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<targetGroup>Hostiles</targetGroup>
+				
+				<targetHasNoneOfTraits>
+					<SWPotF_Trait_heroic />
+					<SWCPTrait_Unyielding />
+					<Nerves>2</Nerves>
+				</targetHasNoneOfTraits>
+
+				<targetMentalStates />
+				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	
+	<AbilityDef>
+		<defName>SWPotFAbility_Feat_intimidate_AoE</defName>
+		<label>mass intimidation</label>
+		<description>Utilize this pawn's ferocious martial prowess to attempt to scare all nearby targets into fleeing. This rolls a check of the caster's Intimidation Power stat contested by the target's Willpower stat.\n\nPawns with the Iron-Willed, Unyielding, or Heroic traits are immune to this ability.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_intimidated</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/PotF_Feat_Intimidate_mst</iconPath>
+		
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
+		<!-- <hotKey></hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<!-- <level>1</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<!-- this is in seconds, not ticks -->
+			<Ability_Duration>60</Ability_Duration>
+			<Ability_EffectRadius>5</Ability_EffectRadius>
+		</statBases>
+		
+		<targetRequired>true</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>10</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_vader</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> don't use this, it checks for factions automatically -->
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+				<canTargetBosses>false</canTargetBosses>
+				
+				<useStatic>True</useStatic>
+                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
+				<successChance>
+					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
+					
+					<casterStatChance>SWCPStat_IntimidationPower</casterStatChance>
+					<casterStatEffect>Multiply</casterStatEffect> <!-- success chance increases if stat is above 1 -->
+					
+					<targetStatChance>SWCPStat_Willpower</targetStatChance>
+					<targetStatEffect>Divide</targetStatEffect> <!-- success chance decreases if stat is above 1 -->
+					
+					<successMessage>Intimidation attempt SUCCESS! {0} -> {1}</successMessage>
+					<failureMessage>Intimidation attempt FAILED! {0} -> {1}</failureMessage>
+				</successChance>
+            </li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_intimidated</hediffDef>
+				<applyToTarget>true</applyToTarget>
+				<!--replaceExisting>false</replaceExisting-->
+				<applicableToMechs>False</applicableToMechs>
+			</li>
+			
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<targetGroup>Hostiles</targetGroup>
+				
+				<targetHasNoneOfTraits>
+					<SWPotF_Trait_heroic />
+					<SWCPTrait_Unyielding />
+					<Nerves>2</Nerves>
+				</targetHasNoneOfTraits>
+
+				<targetMentalStates />
+				<targetMentalStateCheck>Forbidden</targetMentalStateCheck>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	  
+	  
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_intimidated</defName>
+		<label>Intimidated</label>
+		<description>This pawn has been intimidated by an ability cast.</description>
+		
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>true</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<PainShockThreshold>-0.2</PainShockThreshold>
+					<MentalBreakThreshold>0.2</MentalBreakThreshold>
+					<Terror MayRequire="Ludeon.RimWorld.Ideology">0.5</Terror>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		  <li Class="HediffCompProperties_RemoveIfOtherHediff">
+			<hediffs>
+				<li>SWPotF_hediff_BatlMed_Buff</li>
+				<li>SWPotF_hediff_AdvBatlMed_Buff</li>
+				<li>SWPotF_hediff_MstBatlMed_Buff</li>
+				
+				<li>SWPotF_hediff_ForceValor</li>
+				<li>SWPotF_hediff_KnightValor</li>
+				<li>SWPotF_hediff_MstValor</li>
+				
+				<li>SWPotF_hediff_Enlightenment</li>
+			</hediffs>
+		  </li>
+		</comps>
+	</HediffDef>
+	  
+	<ThoughtDef>
+		<defName>guy762_ThoughtDef_Intimidated</defName>
+		<workerClass>ThoughtWorker_Hediff</workerClass>
+		<hediff>SWPotFHediff_Feat_intimidated</hediff>
+		<validWhileDespawned>false</validWhileDespawned>
+		<developmentalStageFilter>Baby, Child, Adult</developmentalStageFilter>
+		<stages>
+		  <li>
+			<label>intimidated</label>
+			<description>I gotta get out of here!</description>
+			<baseMoodEffect>-50</baseMoodEffect>
+		  </li>
+		</stages>
+		<lerpMoodToZero>true</lerpMoodToZero>
+		<stackLimit>5</stackLimit>
+	</ThoughtDef>
+
+</Defs>

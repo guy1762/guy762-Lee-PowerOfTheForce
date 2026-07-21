@@ -74,6 +74,7 @@
 					
 					<li>SWCPHediff_Suppression</li>
 					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+					<li>SWPotFHediff_Feat_intimidated</li>
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
@@ -102,6 +103,7 @@
 				
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 			</makeImmuneTo>
 			<capMods>
 				<li>
@@ -229,6 +231,7 @@
 					
 					<li>SWCPHediff_Suppression</li>
 					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+					<li>SWPotFHediff_Feat_intimidated</li>
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
@@ -268,6 +271,7 @@
 				
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 			</makeImmuneTo>
 			<capMods>
 				<li>
@@ -400,6 +404,7 @@
 					
 					<li>SWCPHediff_Suppression</li>
 					<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+					<li>SWPotFHediff_Feat_intimidated</li>
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
@@ -446,6 +451,7 @@
 				
 				<li>SWCPHediff_Suppression</li>
 				<li>SWPotF_TacticAbilityHediff_HarassDebuff</li>
+				<li>SWPotFHediff_Feat_intimidated</li>
 			</makeImmuneTo>
 			<capMods>
 				<li>

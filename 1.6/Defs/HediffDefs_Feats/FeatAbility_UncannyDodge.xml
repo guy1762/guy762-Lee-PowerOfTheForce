@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef Name="SWPotFAbility_Feat_uncannydodge">
+		<defName>SWPotFAbility_Feat_uncannydodge</defName>
+		<label>uncanny dodge</label>
+		<description>Utilize this pawn's sharp reflexes to grant them greatly increased ranged and melee dodge chance for two seconds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_uncannydodge</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/KotORII_Feat_Uncanny_Dodge_I</iconPath>
+		
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
+		<!-- <hotKey></hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<!-- <level>1</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>1800</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Ability_Duration>2</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0</warmupTime>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityFleckOnTarget">
+				<fleckDef>PsycastPsychicEffect</fleckDef>
+				<sound>kotorsound_UnderRail_sprint</sound>
+			</li>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_uncannydodge</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef ParentName="SWPotFAbility_Feat_uncannydodge">
+		<defName>SWPotFAbility_Feat_uncannydodge_adv</defName>
+		<label>adv. uncanny dodge</label>
+		<description>Utilize this pawn's sharp reflexes to grant them greatly increased ranged and melee dodge chance for four seconds.</description>
+		<iconPath>UI/FeatIcons/KotORII_Feat_Uncanny_Dodge_II</iconPath>
+		
+		<cooldownTicksRange>1800</cooldownTicksRange>
+		<statBases>
+			<Ability_Duration>4</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+	</AbilityDef>
+	
+	
+	
+	
+	
+	
+	
+	  
+	  
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_uncannydodge</defName>
+		<label>uncanny dodge</label>
+		<description>Temporarily improved dodge chance.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statOffsets>
+					<MeleeDodgeChance>100</MeleeDodgeChance>
+					<VEF_RangedDodgeChance MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">100</VEF_RangedDodgeChance>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	  
+	
+
+</Defs>

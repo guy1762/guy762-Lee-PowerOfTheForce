@@ -150,6 +150,9 @@
 					<!-- <MeleeCooldownFactor>10</MeleeCooldownFactor> -->
 					<!-- <RangedCooldownFactor>10</RangedCooldownFactor> -->
 					<AimingDelayFactor>10</AimingDelayFactor>
+					
+					<SuppressionPower MayRequire="Ludeon.RimWorld.Ideology">2</SuppressionPower>
+					<SWCPStat_IntimidationPower>2</SWCPStat_IntimidationPower>
 				</statFactors>
 			</li>
         </stages>
@@ -236,6 +239,9 @@
 					<MeleeHitChance>0.5</MeleeHitChance>
 					<MentalBreakThreshold>2</MentalBreakThreshold>
 				</statFactors>
+				<statOffsets>
+					<Terror MayRequire="Ludeon.RimWorld.Ideology">0.3</Terror>
+				</statOffsets>
 			</li>
 			<li>
 				<label>intimidated</label>
@@ -246,6 +252,9 @@
 					<MeleeHitChance>0.5</MeleeHitChance>
 					<MentalBreakThreshold>2</MentalBreakThreshold>
 				</statFactors>
+				<statOffsets>
+					<Terror MayRequire="Ludeon.RimWorld.Ideology">0.6</Terror>
+				</statOffsets>
 				<mentalStateGivers>
 					<li>
 						<mentalState>Berserk</mentalState>
@@ -270,6 +279,9 @@
 					<MeleeHitChance>0.5</MeleeHitChance>
 					<MentalBreakThreshold>2</MentalBreakThreshold>
 				</statFactors>
+				<statOffsets>
+					<Terror MayRequire="Ludeon.RimWorld.Ideology">0.9</Terror>
+				</statOffsets>
 				<mentalStateGivers>
 					<li>
 						<mentalState>Berserk</mentalState>

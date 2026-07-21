@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_SocialiteI</defName>
+		<label>Class Feat: Socialite I</label>
+		<description>Adds one permanent skill point in Social.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_SocialiteII</defName>
+		<label>Class Feat: Socialite II</label>
+		<description>Adds one permanent skill point in Social and Cooking.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Cooking</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_SocialiteIII</defName>
+		<label>Class Feat: Socialite III</label>
+		<description>Adds one permanent skill point in Social, Cooking, and Artistic.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Cooking</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Artistic</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_SocialiteIV</defName>
+		<label>Class Feat: Socialite IV</label>
+		<description>Adds two permanent skill points in Social, one permanent point in Cooking, and one in Artistic.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Cooking</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Artistic</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>2</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_SocialiteV</defName>
+		<label>Class Feat: Socialite V</label>
+		<description>Adds two permanent skill points in Social, one permanent point in Cooking, and one in Artistic. Raises passion in Social by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Cooking</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Artistic</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_SocialiteVI</defName>
+		<label>Class Feat: Socialite VI</label>
+		<description>Adds two permanent skill points in Social, one permanent point in Cooking, and one in Artistic. Raises passion in Social and Cooking by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Cooking</skill><skillChange>1</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Artistic</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+</Defs>
