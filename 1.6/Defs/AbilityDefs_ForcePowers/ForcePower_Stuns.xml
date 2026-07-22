@@ -101,7 +101,7 @@
 				
 				<canTargetLocations>True</canTargetLocations>
 				
-				<canTargetSelf>true</canTargetSelf>
+				<canTargetSelf>false</canTargetSelf>
 				<canTargetBuildings>false</canTargetBuildings>
 				<canTargetItems>false</canTargetItems>
 				
