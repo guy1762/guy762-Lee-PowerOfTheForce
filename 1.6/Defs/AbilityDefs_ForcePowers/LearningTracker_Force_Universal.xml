@@ -40,100 +40,126 @@
 	<!-- telekinetics chain -->
 	
 	
-	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
-		<!-- <defName>SWPotF_ForceTreeNodeUniv_push</defName> -->
-		<!-- <label>Force Push</label> -->
-		<!-- <description>Use the Force to push a target away from the caster.</description> -->
-		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_push</defName>
+		<label>Force Push</label>
+		<description>Use the Force to push a target away from the caster.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
 		
-		<!-- <abilityGain> -->
-			<!-- <li>SWPotF_forcepower_push</li> -->
-		<!-- </abilityGain> -->
+		<abilityGain>
+			<li>SWPotF_forcepower_push</li>
+		</abilityGain>
 		
-		<!-- <prereqGenesProhibit> -->
-			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
-		<!-- </prereqGenesProhibit> -->
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
 		
-		<!-- <coordX>0</coordX> -->
-		<!-- <coordY>0</coordY> -->
-		<!-- <pointReq>1</pointReq> -->
+		<coordX>0</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
 		
-	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_pull</defName>
+		<label>Force Pull</label>
+		<description>Use the Force to pull a target towards the caster. Can also be used to quickly equip a nearby weapon when unarmed.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>1</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_push</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_pull</li>
+		</abilityGain>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>1</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
 	
 	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
-		<!-- <defName>SWPotF_ForceTreeNodeUniv_pull</defName> -->
-		<!-- <label>Force Pull</label> -->
-		<!-- <description>Use the Force to pull a target towards the caster. Can also be used to quickly equip a nearby weapon when unarmed.</description> -->
+		<!-- <defName>SWPotF_ForceTreeNodeUniv_lift</defName> -->
+		<!-- <label>Force Lift</label> -->
+		<!-- <description>Use the Force to lift a target into midair. Once lifted, the target can then be thrown towards a nearby tile.</description> -->
 		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
 		
-		<!-- <prereqLevel>1</prereqLevel> -->
-		<!-- <prereqNodes> -->
-			<!-- <li>SWPotF_ForceTreeNodeUniv_push</li> -->
-		<!-- </prereqNodes> -->
-		
-		<!-- <abilityGain> -->
-			<!-- <li>SWPotF_forcepower_pull</li> -->
-		<!-- </abilityGain> -->
-		
-		<!-- <prereqGenesProhibit> -->
-			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
-		<!-- </prereqGenesProhibit> -->
-		
-		<!-- <coordX>1</coordX> -->
-		<!-- <coordY>0</coordY> -->
-		<!-- <pointReq>1</pointReq> -->
-		
-	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
-	
-	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
-		<!-- <defName>SWPotF_ForceTreeNodeUniv_repulse</defName> -->
-		<!-- <label>Force Repulse</label> -->
-		<!-- <description>Use the Force to push all nearby targets away from the caster.</description> -->
-		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
-		
-		<!-- <prereqLevel>12</prereqLevel> -->
+		<!-- <prereqLevel>6</prereqLevel> -->
 		<!-- <prereqNodes> -->
 			<!-- <li>SWPotF_ForceTreeNodeUniv_pull</li> -->
 		<!-- </prereqNodes> -->
 		
 		<!-- <abilityGain> -->
-			<!-- <li>SWPotF_forcepower_repulse</li> -->
+			<!-- <li>SWPotF_forcepower_lift</li> -->
 		<!-- </abilityGain> -->
 		
 		<!-- <prereqGenesProhibit> -->
 			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
 		<!-- </prereqGenesProhibit> -->
 		
-		<!-- <coordX>12</coordX> -->
+		<!-- <coordX>6</coordX> -->
 		<!-- <coordY>0</coordY> -->
 		<!-- <pointReq>1</pointReq> -->
 		
 	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
 	
-	<!-- <ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase"> -->
-		<!-- <defName>SWPotF_ForceTreeNodeUniv_wave</defName> -->
-		<!-- <label>Force Wave</label> -->
-		<!-- <description>Use the Force to push all targets within an angled radius away from the caster.</description> -->
-		<!-- <learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef> -->
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_repulse</defName>
+		<label>Force Repulse</label>
+		<description>Use the Force to push all nearby targets away from the caster.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
 		
-		<!-- <prereqLevel>15</prereqLevel> -->
-		<!-- <prereqNodes> -->
-			<!-- <li>SWPotF_ForceTreeNodeUniv_repulse</li> -->
-		<!-- </prereqNodes> -->
+		<prereqLevel>12</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_pull</li>
+			<!-- <li>SWPotF_ForceTreeNodeUniv_lift</li> -->
+		</prereqNodes>
 		
-		<!-- <abilityGain> -->
-			<!-- <li>SWPotF_forcepower_wave</li> -->
-		<!-- </abilityGain> -->
+		<abilityGain>
+			<li>SWPotF_forcepower_repulse</li>
+		</abilityGain>
 		
-		<!-- <prereqGenesProhibit> -->
-			<!-- <li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li> -->
-		<!-- </prereqGenesProhibit> -->
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
 		
-		<!-- <coordX>15</coordX> -->
-		<!-- <coordY>0</coordY> -->
-		<!-- <pointReq>1</pointReq> -->
+		<coordX>12</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
 		
-	<!-- </ItsSorceryFramework.LearningTreeNodeDef> -->
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_ForceTreeNodeUniv_wave</defName>
+		<label>Force Wave</label>
+		<description>Use the Force to push all targets within an angled radius away from the caster.</description>
+		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_Univ</learningTrackerDef>
+		
+		<prereqLevel>15</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_ForceTreeNodeUniv_repulse</li>
+		</prereqNodes>
+		
+		<abilityGain>
+			<li>SWPotF_forcepower_wave</li>
+		</abilityGain>
+		
+		<prereqGenesProhibit>
+			<li MayRequire="guy762.NA.MM.SWVehicles">SWWE_Gene_HalcyonJedi</li>
+		</prereqGenesProhibit>
+		
+		<coordX>15</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
 	
 	
 	

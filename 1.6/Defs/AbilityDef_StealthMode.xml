@@ -23,7 +23,7 @@
 		<!-- <stunTargetWhileCasting>true</stunTargetWhileCasting> -->
 		
 		<!-- <targetRequired>False</targetRequired> -->
-		<!-- <verbProperties>		 -->
+		<!-- <verbProperties> -->
 			<!-- <verbClass>Verb_CastAbility</verbClass> -->
 			<!-- <violent>false</violent> -->
 			<!-- <drawAimPie>False</drawAimPie> -->
@@ -373,7 +373,7 @@
 		<allowMothballIfLowPriorityWorldPawn>false</allowMothballIfLowPriorityWorldPawn>
 		<comps>
 			<li Class="HediffCompProperties_Disappears">
-				<disappearsAfterTicks>18000</disappearsAfterTicks> <!-- 300 seconds -->
+				<disappearsAfterTicks>18000</disappearsAfterTicks> <!-- 300 seconds, ~7 hours? -->
 				<showRemainingTime>True</showRemainingTime>
 			</li>
 		</comps>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+
+	<HediffDef>
+		<defName>SWCPHediff_ThugLeaderChallengeAbilityGiver</defName>
+		<label>challenge ability giver</label>
+		<description>.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<stages>
+			<li><minSeverity>0</minSeverity><becomeVisible>false</becomeVisible></li>
+		</stages>
+		<comps>
+			<!-- <li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/> -->
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_RemoveOnFactionChange" />
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_Ability_ThugLeaderChallenge</abilityDef>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<AbilityDef>
+		<defName>SWCP_Ability_ThugLeaderChallenge</defName>
+		<label>Challenge</label>
+		<description>This is an NPC-only ability. Challenge a player-controlled pawn to initiate combat. If successful, all nearby pawns with the correct "signal" hediff will immediately be switched to a hostile faction and attack the player.</description>
+		<iconPath>UI/FeatIcons/PotF_Feat_Intimidate_red</iconPath>
+		<uiOrder>999</uiOrder>
+
+		<jobDef>CastAbilityOnThingMelee</jobDef>
+		<writeCombatLog>True</writeCombatLog>
+
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<targetRequired>true</targetRequired>
+		
+		<!-- 60,000 = 1 in-game day -->
+		<!-- 12,000 = 5 hours -->
+		<cooldownTicksRange>60000</cooldownTicksRange>
+		<statBases>
+			<!-- this is in seconds, not ticks. 1,000 = 24 in-game hours -->
+			<Ability_Duration>30</Ability_Duration>
+		</statBases>
+		
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>8</range>
+			<drawAimPie>true</drawAimPie>
+			<warmupTime>1</warmupTime>
+			<requireLineOfSight>True</requireLineOfSight>
+			<soundCast>kotorsound_HuttLaugh</soundCast>
+			<targetParams>
+				<onlyTargetColonistsOrPrisonersOrSlavesAllowMinorMentalBreaks>True</onlyTargetColonistsOrPrisonersOrSlavesAllowMinorMentalBreaks>
+				<canTargetPawns>True</canTargetPawns>
+				<canTargetSelf>False</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="EBSGFramework.CompProperties_CreateLinkedHediff">
+                <hediffOnCaster>SWCPHediff_ThugLeaderInitiateCombatAbilityGiver</hediffOnCaster>
+				
+				<successChance>
+					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
+					
+					<casterStatChance>SWCPStat_IntimidationPower</casterStatChance>
+					<casterStatEffect>Multiply</casterStatEffect> <!-- success chance increases if stat is above 1 -->
+					
+					<targetStatChance>SWCPStat_Willpower</targetStatChance>
+					<targetStatEffect>Divide</targetStatEffect> <!-- success chance decreases if stat is above 1 -->
+					
+					<successMessage>Challenge attempt SUCCESS! {0} -> {1}</successMessage>
+					<failureMessage>Challenge attempt FAILED! {0} -> {1}</failureMessage>
+				</successChance>
+            </li>
+		</comps>
+    </AbilityDef>
+	
+	<!-- PROBLEM: the AI doesn't really have any way of casting this without dev intervention since there isn't a jobGiver for casting an ability on an ally without any other qualifiers  -->
+	
+	
+	
+	
+	<HediffDef>
+		<defName>SWCPHediff_ThugLeaderInitiateCombatAbilityGiver</defName>
+		<label>initiate combat ability giver</label>
+		<description>.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<stages>
+			<li><minSeverity>0</minSeverity><becomeVisible>false</becomeVisible></li>
+		</stages>
+		<comps>
+			<!-- <li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/> -->
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_RemoveOnFactionChange" />
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+			<li Class="HediffCompProperties_Disappears"><showRemainingTime>true</showRemainingTime></li>
+			
+			<li Class="HediffCompProperties_GiveAbility">
+				<abilityDef>SWCP_Ability_ThugLeaderInitiateCombat</abilityDef>
+			</li>
+		</comps>
+		
+		<displayWound>true</displayWound>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/EaWIcons/Caution_red</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>1</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>100</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef>
+		<defName>SWCP_Ability_ThugLeaderInitiateCombat</defName>
+		<label>Initiate Combat</label>
+		<description>Initiate combat after a successful challenge against a colonist.</description>
+		<iconPath>UI/EaWIcons/Caution_red</iconPath>
+		<uiOrder>999</uiOrder>
+
+		<writeCombatLog>True</writeCombatLog>
+
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>true</casterMustBeCapableOfViolence>
+		<targetRequired>false</targetRequired>
+		
+		<!-- 60,000 = 1 in-game day -->
+		<!-- 12,000 = 5 hours -->
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<statBases>
+			<!-- this is in seconds, not ticks. 1,000 = 24 in-game hours -->
+			<Ability_Duration>30</Ability_Duration>
+			
+			<Ability_EffectRadius>30</Ability_EffectRadius>
+		</statBases>
+		
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>-1</range>
+			<drawAimPie>true</drawAimPie>
+			<warmupTime>0.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<soundCast>kotorsound_EaWBarracksSelect</soundCast>
+			<targetParams>
+				<canTargetPawns>True</canTargetPawns>
+				<canTargetSelf>true</canTargetSelf>
+				<!-- <onlyTargetFactions> -->
+					<!-- <li>guy762_KotORFaction_Civilians</li> -->
+				<!-- </onlyTargetFactions> -->
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="EBSGFramework.CompProperties_AbilityAbilityValidator">
+				<targetHasAnyOfHediffs>
+					<li>SWCPHediff_ThugLeaderChallengeAbilityGiver</li>
+					<li>SWCPHediff_ThugLeaderInitiateCombatAbilityGiver</li>
+					<li>SWCPHediff_ThugChallengerGroup</li>
+				</targetHasAnyOfHediffs>
+            </li>
+			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+                <useStatic>True</useStatic>
+                <staticFaction>AncientsHostile</staticFaction>
+				<!-- PROBLEM: Due to how the game handles pawn ai, pawns may choose to wander off the map if their faction is changed to a non-player faction, though if the caster has a Lord and useStatic is False, the pawn should usually be able to change their actions to whatever that Lord tells them to do -->
+            </li>
+		</comps>
+    </AbilityDef>
+	
+
+	<HediffDef>
+		<defName>SWCPHediff_ThugChallengerGroup</defName>
+		<label>challenge group</label>
+		<description>.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<stages>
+			<li><minSeverity>0</minSeverity><becomeVisible>false</becomeVisible></li>
+		</stages>
+		<comps>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_RemoveOnFactionChange" />
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+</Defs>

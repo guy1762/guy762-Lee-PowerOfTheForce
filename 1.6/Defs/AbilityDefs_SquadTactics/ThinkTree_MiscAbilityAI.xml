@@ -93,4 +93,65 @@
 	</ThinkTreeDef>
 	
 	
+	
+	
+	
+	
+	<ThinkTreeDef>	<!-- REMINDER: THIS NEEDS A PATCH TO WORK -->
+		<defName>guy762_SWCPAI_ThugLeaderChallenge</defName>
+		<insertTag>EBSGAI_NonColonist</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes> <!-- /////////////////////////////////// -->
+				
+				<li Class="ThinkNode_ConditionalHasAbility">
+					<ability>SWCP_Ability_ThugLeaderChallenge</ability>
+					<subNodes>
+						<li Class="EBSGFramework.ThinkNode_ConditionalValidTargetForAbility">
+							<ability>SWCP_Ability_ThugLeaderChallenge</ability>
+							<onlyHostiles>false</onlyHostiles>
+							<subNodes>
+								<li Class="EBSGFramework.ThinkNode_RecordPassage">
+									<output>[Thug Leader Challenge] ability check ThinkNode reached!</output>
+								</li>
+								<li Class="EBSGFramework.JobGiver_AICastBerserkAbility"><!-- PROBLEM: the AI doesn't really have any way of casting this without dev intervention since there isn't a jobGiver for casting an ability on an ally without any other qualifiers  -->
+									<ability>SWCP_Ability_ThugLeaderChallenge</ability>
+								</li>
+							</subNodes>
+						</li>
+					</subNodes>
+				</li>
+
+			</subNodes> <!-- /////////////////////////////////// -->
+		</thinkRoot>
+	</ThinkTreeDef>
+	
+	
+	
+	
+	
+	<ThinkTreeDef>	<!-- REMINDER: THIS NEEDS A PATCH TO WORK -->
+		<defName>guy762_SWCPAI_ThugLeaderInitiateCombat</defName>
+		<insertTag>EBSGAI_NonColonist</insertTag>
+		<insertPriority>100</insertPriority>
+		<thinkRoot Class="ThinkNode_Priority">
+			<subNodes> <!-- /////////////////////////////////// -->
+				
+				<li Class="ThinkNode_ConditionalHasAbility">
+					<ability>SWCP_Ability_ThugLeaderInitiateCombat</ability>
+					<subNodes>
+						<li Class="EBSGFramework.ThinkNode_RecordPassage">
+							<output>[Thug Leader Initiate Combat] ability check ThinkNode reached!</output>
+						</li>
+						<li Class="JobGiver_AICastAbilityOnSelf">
+							<ability>SWCP_Ability_ThugLeaderInitiateCombat</ability>
+						</li>
+					</subNodes>
+				</li>
+
+			</subNodes> <!-- /////////////////////////////////// -->
+		</thinkRoot>
+	</ThinkTreeDef>
+	
+	
 </Defs>

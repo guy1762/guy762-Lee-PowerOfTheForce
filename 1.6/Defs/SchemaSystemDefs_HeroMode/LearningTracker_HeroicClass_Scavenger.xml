@@ -1,0 +1,1477 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotFLearningTracker_HeroicClass_Scavenger</defName>
+		<label>Starter Class: Scavenger</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+		
+		<defaultLocked>true</defaultLocked>
+		<lockedLabel>Starter Class: Scavenger</lockedLabel>
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Scavenger -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_ScavengerI</defName>
+		<label>Class Progression: Scavenger I</label>
+		<description>Class progression feat. Adds one permanent skill point in Construction.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_ScavengerI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_ScavengerII</defName>
+		<label>Class Progression: Scavenger II</label>
+		<description>Class progression feat. Adds one permanent skill point in Construction and Crafting.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_ScavengerII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_ScavengerI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</defName>
+		<label>Class Progression: Scavenger III</label>
+		<description>Class progression feat. Adds one permanent skill point in Construction, Crafting, and Mining.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_ScavengerIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_ScavengerII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIV</defName>
+		<label>Class Progression: Scavenger IV</label>
+		<description>Class progression feat. Adds two permanent skill points in Construction, one permanent point in Crafting, and one in Mining.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_ScavengerIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_ScavengerIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_ScavengerV</defName>
+		<label>Class Progression: Scavenger V</label>
+		<description>Class progression feat. Adds two permanent skill points in Construction, one permanent point in Crafting, and one in Mining. Raises passion in Construction by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_ScavengerV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_ScavengerIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_ScavengerVI</defName>
+		<label>Class Progression: Scavenger VI</label>
+		<description>Class progression feat. Adds two permanent skill points in Construction, one permanent point in Crafting, and one in Mining. Raises passion in Construction and Crafting by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_ScavengerVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_ScavengerV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Scavenger -->
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</defName>
+		<label>Scavenger Multiclass: Soldier</label>
+		<description>Invest unspent points into the Soldier starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Soldier</li>
+		</unlocks>
+		
+		<coordX>7</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</defName>
+		<label>Scavenger Multiclass: Goon</label>
+		<description>Invest unspent points into the Goon starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_goon</li>
+		</unlocks>
+		
+		<coordX>8</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</defName>
+		<label>Scavenger Multiclass: Academic</label>
+		<description>Invest unspent points into the Academic starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Academic</li>
+		</unlocks>
+		
+		<coordX>9</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</defName>
+		<label>Scavenger Multiclass: Scout</label>
+		<description>Invest unspent points into the Scout starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scout</li>
+		</unlocks>
+		
+		<coordX>10</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</defName>
+		<label>Scavenger Multiclass: Socialite</label>
+		<description>Invest unspent points into the Socialite starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_ScavengerIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Socialite</li>
+		</unlocks>
+		
+		<coordX>11</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Construction -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionI</defName>
+		<label>Skill Upgrade: Construct I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionII</defName>
+		<label>Skill Upgrade: Construct II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionIII</defName>
+		<label>Skill Upgrade: Construct III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionIV</defName>
+		<label>Skill Upgrade: Construct IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionV</defName>
+		<label>Skill Upgrade: Construct V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionVI</defName>
+		<label>Skill Upgrade: Construct VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionVII</defName>
+		<label>Skill Upgrade: Construct VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionVIII</defName>
+		<label>Skill Upgrade: Construct VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionIX</defName>
+		<label>Skill Upgrade: Construct IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionX</defName>
+		<label>Skill Upgrade: Construct X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Construction.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Repair</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_constructionIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_ConstructionX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_ConstructionIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Construction -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Crafting -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingI</defName>
+		<label>Skill Upgrade: Crafting I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingII</defName>
+		<label>Skill Upgrade: Crafting II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingIII</defName>
+		<label>Skill Upgrade: Crafting III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingIV</defName>
+		<label>Skill Upgrade: Crafting IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingV</defName>
+		<label>Skill Upgrade: Crafting V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingVI</defName>
+		<label>Skill Upgrade: Crafting VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingVII</defName>
+		<label>Skill Upgrade: Crafting VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingVIII</defName>
+		<label>Skill Upgrade: Crafting VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingIX</defName>
+		<label>Skill Upgrade: Crafting IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingX</defName>
+		<label>Skill Upgrade: Crafting X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Crafting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Crafting</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_craftingIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_CraftingX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_CraftingIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Crafting -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Mining -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningI</defName>
+		<label>Skill Upgrade: Mining I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningII</defName>
+		<label>Skill Upgrade: Mining II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningIII</defName>
+		<label>Skill Upgrade: Mining III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningIV</defName>
+		<label>Skill Upgrade: Mining IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningV</defName>
+		<label>Skill Upgrade: Mining V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningVI</defName>
+		<label>Skill Upgrade: Mining VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningVII</defName>
+		<label>Skill Upgrade: Mining VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningVIII</defName>
+		<label>Skill Upgrade: Mining VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningIX</defName>
+		<label>Skill Upgrade: Mining IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningX</defName>
+		<label>Skill Upgrade: Mining X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Mining.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Mining</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Scavenger_MiningIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MiningX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MiningIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Mining -->
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Scavenger Equipment Feats -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Scavenger_any</defName>
+		<label>Equipment Focus: Any</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Armor_Proficiency_Medium</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_ScavengerII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>6</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Scavenger Equipment Feats -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- gear head -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadI</defName>
+		<label>Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Gear_Head</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadIII</li>
+		</exclusiveNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_gearhead</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadII</defName>
+		<label>Improved Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting. Replaces Gear Head.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Gear_Head</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_gearhead</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadIII</defName>
+		<label>Master Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting. Replaces Improved Gear Head.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Gear_Head</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_gearhead</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- labor -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Scavenger_laborI</defName>
+		<label>labor</label>
+		<description>This pawn is exceptionally skilled in common labor tasks, and has a natural advantage in animal handling, mining, harvesting, and fishing.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Labor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		<exclusiveNodes>
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Scout_laborI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scout_laborII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scout_laborIII</li>
+		</exclusiveNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_labor</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Scavenger_laborII</defName>
+		<label>Improved Labor</label>
+		<description>This pawn is exceptionally skilled in common labor tasks, and has a natural advantage in animal handling, mining, harvesting, and fishing. Replaces Labor.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Labor_adv</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_laborI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_labor</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Scavenger_laborIII</defName>
+		<label>Master Labor</label>
+		<description>This pawn is exceptionally skilled in common labor tasks, and has a natural advantage in animal handling, mining, harvesting, and fishing. Replaces Improved Labor.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Labor_mst</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Scavenger</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_laborII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_labor</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+
+	
+</Defs>

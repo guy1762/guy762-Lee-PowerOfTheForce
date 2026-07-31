@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<AbilityDef>
+		<defName>SWPotFAbility_Feat_secondwind</defName>
+		<label>second wind</label>
+		<description>Utilize this pawn's unshakable fighting spirit to attempt to revive themself while downed. Duration scales with the target's willpower.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_secondwind</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/KotORII_Feat_Spirit</iconPath>
+
+		<!-- <level>3</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>false</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>120000</cooldownTicksRange>
+		<!-- 60,000 = 1 in-game day -->
+		
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		
+		<targetRequired>false</targetRequired>
+		<statBases>
+			<Ability_Duration>5</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>-1</range>
+			<warmupTime>0</warmupTime>
+			<soundCast>kotorsound_EaWAreaHeal</soundCast>
+			<targetParams>
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>True</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_secondwind</hediffDef>
+				<replaceExisting>false</replaceExisting>
+				<applyToSelf>true</applyToSelf>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>SWCPStat_Willpower</durationMultiplier>
+			</li>
+		</comps>
+		<modExtensions>
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+
+	  
+	  
+	  
+	  
+	<AbilityDef>
+		<defName>SWPotFAbility_Feat_secondwind_adv</defName>
+		<label>adv. second wind</label>
+		<description>Utilize this pawn's unshakable fighting spirit to attempt to revive themself while downed, or encourage an incapacitated nearby ally to get back up. Duration scales with the target's willpower.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_secondwind</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/KotORII_Feat_Fighting_Spirit</iconPath>
+
+		<!-- <level>6</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>120000</cooldownTicksRange>
+		<!-- 60,000 = 1 in-game day -->
+		
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		<statBases>
+			<Ability_Duration>5</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>True</requireLineOfSight>
+			<warmupTime>0</warmupTime>
+			<soundCast>kotorsound_EaWAreaHeal</soundCast>
+			<targetParams>
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>true</canTargetSelf>
+				
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_secondwind</hediffDef>
+				<replaceExisting>false</replaceExisting>
+				<!--applyToSelf>true</applyToSelf-->
+				<applyToTarget>true</applyToTarget>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>SWCPStat_Willpower</durationMultiplier>
+				
+				<goodwillImpact>15</goodwillImpact>
+			</li>
+		</comps>
+		
+		<modExtensions>
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	  
+	  
+	  
+	  
+	<AbilityDef>
+		<defName>SWPotFAbility_Feat_secondwind_mst</defName>
+		<label>master second wind</label>
+		<description>Utilize this pawn's unshakable fighting spirit to attempt to revive themself and any nearby incapacitated allies while downed. Can also target a small group of incapacitated allies without the caster needing to be downed themself. Duration scales with the target's willpower.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_secondwind</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/KotORII_Feat_Heroic_Resolve</iconPath>
+		
+		<!-- <level>9</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<groupAbility>true</groupAbility>
+		<ai_SearchAOEForTargets>true</ai_SearchAOEForTargets>
+		<canUseAoeToGetTargets>true</canUseAoeToGetTargets>
+		
+		<displayGizmoWhileUndrafted>True</displayGizmoWhileUndrafted>
+		<showWhenDrafted>true</showWhenDrafted>
+		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
+		
+		<cooldownTicksRange>120000</cooldownTicksRange>
+		<!-- 60,000 = 1 in-game day -->
+		
+		<!-- <targetRequired>false</targetRequired> -->
+		<statBases>
+			<Ability_Duration>5</Ability_Duration> <!-- this is in seconds, not ticks -->
+			<Ability_EffectRadius>3</Ability_EffectRadius>
+		</statBases>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<range>5</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<drawAimPie>False</drawAimPie>
+			<warmupTime>0</warmupTime>
+			<soundCast>kotorsound_EaWAreaHeal</soundCast>
+			<targetParams>
+				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
+				<canTargetSelf>true</canTargetSelf>
+				
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>false</canTargetMechs>
+				
+				<neverTargetHostileFaction>true</neverTargetHostileFaction>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_secondwind</hediffDef>
+				<replaceExisting>false</replaceExisting>
+				<applicableToMechs>False</applicableToMechs>
+				<durationMultiplier>SWCPStat_Willpower</durationMultiplier>
+				
+				<goodwillImpact>15</goodwillImpact>
+			</li>
+		</comps>
+		
+		<modExtensions>
+			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
+				<castableInMentalbreak>false</castableInMentalbreak>
+			</li>
+		</modExtensions>
+	</AbilityDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		  
+	  
+	  
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_secondwind</defName>
+		<label>second wind</label>
+		<description>.</description>
+		<defaultLabelColor>(7,172,255)</defaultLabelColor> <!-- KotOR blue -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<preventsDeath>true</preventsDeath>
+		<stages>
+			<li>
+				<naturalHealingFactor>1000</naturalHealingFactor>
+				<totalBleedFactor>0.25</totalBleedFactor>
+				<statOffsets>
+					<ImmunityGainSpeed>10</ImmunityGainSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+			<li Class="HediffCompProperties_Disappears"><showRemainingTime>True</showRemainingTime></li>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+</Defs>

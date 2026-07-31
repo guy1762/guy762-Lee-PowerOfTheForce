@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_Feat_gearhead</defName>
+		<label>Feat: Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting.</description>
+
+		<stages>
+			<li>
+				<!-- <label>active</label> -->
+				<minSeverity>1</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				
+				<statOffsets> <!-- 13 -->
+					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.2</PilotingAbility>
+					
+					<ResearchSpeed>0.2</ResearchSpeed>
+					<HackingSpeed>0.2</HackingSpeed>
+					<HackingStealth>20</HackingStealth>
+					
+					<ConstructionSpeed>0.2</ConstructionSpeed>
+					<ConstructSuccessChance>0.2</ConstructSuccessChance>
+					<FixBrokenDownBuildingSuccessChance>0.2</FixBrokenDownBuildingSuccessChance>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.2</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">0.2</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.2</SubcoreEncodingSpeed>
+					<WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.2</WorkSpeedGlobalOffsetMech>
+					
+					<SmeltingSpeed>0.2</SmeltingSpeed>
+					<GeneralLaborSpeed>0.2</GeneralLaborSpeed>
+					<ButcheryMechanoidSpeed>0.2</ButcheryMechanoidSpeed>
+					<ButcheryMechanoidEfficiency>0.2</ButcheryMechanoidEfficiency>
+
+					<DrugSynthesisSpeed>0.2</DrugSynthesisSpeed>
+					<DeepDrillingSpeed>0.2</DeepDrillingSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Improved</label>
+				<minSeverity>2</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.4</PilotingAbility>
+					
+					<ResearchSpeed>0.4</ResearchSpeed>
+					<HackingSpeed>0.4</HackingSpeed>
+					<HackingStealth>40</HackingStealth>
+					
+					<ConstructionSpeed>0.4</ConstructionSpeed>
+					<ConstructSuccessChance>0.4</ConstructSuccessChance>
+					<FixBrokenDownBuildingSuccessChance>0.4</FixBrokenDownBuildingSuccessChance>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.4</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">0.4</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.4</SubcoreEncodingSpeed>
+					<WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.4</WorkSpeedGlobalOffsetMech>
+					
+					<SmeltingSpeed>0.4</SmeltingSpeed>
+					<GeneralLaborSpeed>0.4</GeneralLaborSpeed>
+					<ButcheryMechanoidSpeed>0.4</ButcheryMechanoidSpeed>
+					<ButcheryMechanoidEfficiency>0.4</ButcheryMechanoidEfficiency>
+					
+					<DrugSynthesisSpeed>0.4</DrugSynthesisSpeed>
+					<DeepDrillingSpeed>0.4</DeepDrillingSpeed>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Master</label>
+				<minSeverity>3</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.6</PilotingAbility>
+					
+					<ResearchSpeed>0.6</ResearchSpeed>
+					<HackingSpeed>0.6</HackingSpeed>
+					<HackingStealth>60</HackingStealth>
+					
+					<ConstructionSpeed>0.6</ConstructionSpeed>
+					<ConstructSuccessChance>0.6</ConstructSuccessChance>
+					<FixBrokenDownBuildingSuccessChance>0.6</FixBrokenDownBuildingSuccessChance>
+					<MechFormingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.6</MechFormingSpeed>
+					<MechRepairSpeed MayRequire="Ludeon.RimWorld.Biotech">0.6</MechRepairSpeed>
+					<SubcoreEncodingSpeed MayRequire="Ludeon.RimWorld.Biotech">0.6</SubcoreEncodingSpeed>
+					<WorkSpeedGlobalOffsetMech MayRequire="Ludeon.RimWorld.Biotech">0.6</WorkSpeedGlobalOffsetMech>
+					
+					<SmeltingSpeed>0.6</SmeltingSpeed>
+					<GeneralLaborSpeed>0.6</GeneralLaborSpeed>
+					<ButcheryMechanoidSpeed>0.6</ButcheryMechanoidSpeed>
+					<ButcheryMechanoidEfficiency>0.6</ButcheryMechanoidEfficiency>
+					
+					<DrugSynthesisSpeed>0.6</DrugSynthesisSpeed>
+					<DeepDrillingSpeed>0.6</DeepDrillingSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

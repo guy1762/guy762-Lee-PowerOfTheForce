@@ -408,11 +408,12 @@
                 </hediffs>
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
-			<!-- <li Class="TheForce_ItsSorcery.Abilities.CompProperties_StopMentalState" /> -->
-			<li Class="EBSGFramework.CompProperties_AbilityStopMentalNoPsychic">
-                <majorChance>1</majorChance>
-                <extremeChance>1</extremeChance>
-            </li>
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_StopMentalState" />
+			
+			<!-- <li Class="EBSGFramework.CompProperties_AbilityStopMentalNoPsychic"> -->
+                <!-- <majorChance>1</majorChance> -->
+                <!-- <extremeChance>1</extremeChance> -->
+            <!-- </li> -->
 		</comps>
 		
 		<modExtensions>

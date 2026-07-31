@@ -154,8 +154,8 @@
 	<SoundDef>
 		<defName>kotorsound_JAsightloop</defName>
 		<context>MapOnly</context>
-		<eventNames />	
-		<maxSimultaneous>1</maxSimultaneous>	
+		<eventNames />
+		<maxSimultaneous>1</maxSimultaneous>
 		<sustain>true</sustain>
 		<priorityMode>PrioritizeNearest</priorityMode>
 		<subSounds>
@@ -164,15 +164,15 @@
 					<li Class="AudioGrain_Clip">
 						<clipPath>JediAcademyExtracts/seeloop</clipPath>
 					</li>
-				</grains>	
+				</grains>
 				<volumeRange>
-				<min>35</min>        
+				<min>35</min>
 				<max>35</max>
-				</volumeRange>  		
+				</volumeRange>
 				<pitchRange>
-					<min>1</min>				
+					<min>1</min>
 					<max>1</max>
-				</pitchRange>			
+				</pitchRange>
 			</li>
 		</subSounds>
 	</SoundDef>

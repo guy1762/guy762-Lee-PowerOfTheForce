@@ -179,7 +179,7 @@
 			<drawAimPie>False</drawAimPie>
 			<range>-1</range>
 			<requireLineOfSight>false</requireLineOfSight>
-			<warmupTime>0.5</warmupTime>
+			<warmupTime>0</warmupTime>
 			<targetParams>
 				<canTargetSelf>true</canTargetSelf>
 			</targetParams>
@@ -225,7 +225,7 @@
                 <recursiveChecks>3</recursiveChecks> <!--No reason to have this, but maybe I'm paranoid-->
             </li>
 			
-			<!-- <li Class="TheForce_ItsSorcery.Abilities.CompProperties_StopMentalState" /> NEEDS TO BE FIXED -->
+			<li Class="TheForce_ItsSorcery.Abilities.CompProperties_StopMentalState" />
 			
 			<!-- <li Class="EBSGFramework.CompProperties_AbilityStopMentalNoPsychic"> doesn't work unless caster is in mental break themselves -->
                 <!-- <majorChance>1</majorChance> -->

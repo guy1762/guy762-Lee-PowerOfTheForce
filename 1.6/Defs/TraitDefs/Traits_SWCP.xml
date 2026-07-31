@@ -284,5 +284,266 @@
         </comps>
 	</HediffDef>
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Charismatic: others form a warmer opinion of the pawn who has this trait. -->
+	
+	<TraitDef>
+		<defName>SWCPTrait_Charismatic</defName>
+		<commonality>1.5</commonality>
+		<degreeDatas>
+			<li>
+				<label>charismatic</label>
+				<description>[PAWN_nameDef] has an easy, magnetic presence that others warm to quickly.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SocialImpact>0.20</SocialImpact>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	<ThoughtDef>
+		<defName>SWCPThought_CharismaticReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_TraitOpinion</workerClass>
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_TraitOpinion">
+			<requiredTrait>SWCPTrait_Charismatic</requiredTrait>
+			<source>Target</source>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>charismatic</label>
+			<baseOpinionOffset>15</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+
+
+
+
+
+
+	<!-- Arrogant: the arrogant pawn forms a worse opinion of everyone else. -->
+
+	<TraitDef>
+		<defName>SWCPTrait_Arrogant</defName>
+		<commonality>1.75</commonality>
+		<degreeDatas>
+			<li>
+				<label>arrogant</label>
+				<description>[PAWN_nameDef] looks down on nearly everyone else.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+	
+	<ThoughtDef>
+		<defName>SWCPThought_ArrogantReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_TraitOpinion</workerClass>
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_TraitOpinion">
+			<requiredTrait>SWCPTrait_Arrogant</requiredTrait>
+			<source>Self</source>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>arrogant</label>
+			<baseOpinionOffset>-12</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+
+
+
+
+
+
+
+
+
+
+	<!-- Swindler: others form a worse opinion of the pawn who has this trait. -->
+
+	<TraitDef>
+		<defName>SWCPTrait_Swindler</defName>
+		<commonality>1</commonality>
+		<degreeDatas>
+			<li>
+				<label>swindler</label>
+				<description>[PAWN_nameDef] has a well-earned reputation for cheating people out of what's theirs.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<TradePriceImprovement>0.2</TradePriceImprovement>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+
+
+	<ThoughtDef>
+		<defName>SWCPThought_SwindlerReaction</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>SWCP_FlyingSloth_Misc.ThoughtWorker_TraitOpinion</workerClass>
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.ThoughtExtension_TraitOpinion">
+			<requiredTrait>SWCPTrait_Swindler</requiredTrait>
+			<source>Target</source>
+		  </li>
+		</modExtensions>
+		<stages>
+		  <li>
+			<label>swindler</label>
+			<baseOpinionOffset>-5</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+
+
+
+
+
+
+
+
+
+	<!-- Healer: skilled at tending wounds, and feels good about it (mood half is in Thoughts_Healer.xml / TraitHealer.cs). -->
+	<TraitDef>
+		<defName>SWCP_Healer</defName> <!-- hardcoded defName from DefOf -->
+		<commonality>0.5</commonality>
+		<degreeDatas>
+			<li>
+				<label>healer</label>
+				<description>[PAWN_nameDef] has a gift for tending wounds and a naturally reassuring bedside manner.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<MedicalTendQuality>0.12</MedicalTendQuality>
+					
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+					<SWCPStat_TraitRatings_LightSideAffinity>0.1</SWCPStat_TraitRatings_LightSideAffinity>
+				</statOffsets>
+				<skillGains>
+					<Medicine>2</Medicine>
+				</skillGains>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	
+	<!-- Granted to a Healer-trait pawn (via Patch_DoTend_HealerMood in HarmonyPatches.cs) when they finish tending another pawn. -->
+	<ThoughtDef>
+		<defName>SWCP_HealerSatisfaction</defName> <!-- hardcoded defName from DefOf -->
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<durationDays>0.5</durationDays>
+		<stackLimit>4</stackLimit>
+		<stages>
+		  <li>
+			<label>tended someone</label>
+			<description>I helped tend someone's wounds. It felt good to help.</description>
+			<baseMoodEffect>3</baseMoodEffect>
+		  </li>
+		</stages>
+	</ThoughtDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Treacherous: may permanently defect to a raid once combat starts. Raid-defection mechanics
+       live in TraitTreacherous.cs / HarmonyPatches.cs; config lives in the modExtensions block
+       below. The "doesn't care when a colonist dies" half of this trait is pure XML and lives in
+       Patches/Patches_Treacherous.xml (nullifyingTraits on the vanilla death-mood thoughts), not here. -->
+	<TraitDef>
+		<defName>SWCP_Treacherous</defName> <!-- hardcoded defName from DefOf, ALSO a patch applies this as an exclusion to several ThoughtDefs -->
+		<commonality>0.05</commonality>
+		<degreeDatas>
+			<li>
+				<label>treacherous</label>
+				<description>[PAWN_nameDef] has a hidden willingness to turn on the colony if the right enemy comes calling.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+		<conflictingTraits>
+            <li>SWCPTrait_Unyielding</li>
+            <li>SWCPTrait_Loyal</li>
+        </conflictingTraits>
+		<modExtensions>
+			<li Class="SWCP_FlyingSloth_Misc.TraitExtension_TreacherousDefection">
+				<!-- Empty/omitted = all RaidStrategyDefs qualify. Uncomment and list specific strategies to restrict. -->
+				<!--
+				<qualifyingRaidStrategies>
+				  <li>ImmediateAttack</li>
+				  <li>Siege</li>
+				</qualifyingRaidStrategies>
+				-->
+				
+				
+				<!-- Optional: an additional StatDef read off the pawn that modifies the roll. Unset/omitted
+				 = no modifier, baseDefectionChance is used as-is.
+				 chanceModifierMode picks HOW the stat combines with baseDefectionChance: Multiplicative
+				 (default; finalChance = baseDefectionChance * statValue, stat should default ~1.0) or
+				 Additive (finalChance = baseDefectionChance + statValue, stat should default ~0).
+				 higherStatIncreasesChance picks the DIRECTION: true (default) = a higher stat raises the
+				 chance; false = a higher stat lowers it instead (e.g. a "Loyalty" stat, where more
+				 loyalty should mean less betrayal - flips Multiplicative to divide and Additive to
+				 subtract). Result is always clamped to [0,1] either way. -->
+				
+				<chanceModifierStat>SWCPStat_Loyalty</chanceModifierStat>
+				<chanceModifierMode>Multiplicative</chanceModifierMode>
+				<baseDefectionChance>0.75</baseDefectionChance>
+				<higherStatIncreasesChance>false</higherStatIncreasesChance>
+				
+				<combatCheckIntervalTicks>250</combatCheckIntervalTicks>
+				<cleanupIntervalTicks>2500</cleanupIntervalTicks>
+				<maxPendingTicks>60000</maxPendingTicks>
+			</li>
+		</modExtensions>
+	</TraitDef>
+	
+	
+	
+	
 
 </Defs>

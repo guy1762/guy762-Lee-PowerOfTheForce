@@ -174,13 +174,331 @@
 		<pointReq>1</pointReq>
 		
 	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+
 
 	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Goon -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
 
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</defName>
+		<label>Goon Multiclass: Soldier</label>
+		<description>Invest unspent points into the Soldier starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Soldier</li>
+		</unlocks>
+		
+		<coordX>7</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</defName>
+		<label>Goon Multiclass: Scavenger</label>
+		<description>Invest unspent points into the Scavenger starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scavenger</li>
+		</unlocks>
+		
+		<coordX>8</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</defName>
+		<label>Goon Multiclass: Academic</label>
+		<description>Invest unspent points into the Academic starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Academic</li>
+		</unlocks>
+		
+		<coordX>9</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</defName>
+		<label>Goon Multiclass: Scout</label>
+		<description>Invest unspent points into the Scout starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scout</li>
+		</unlocks>
+		
+		<coordX>10</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</defName>
+		<label>Goon Multiclass: Socialite</label>
+		<description>Invest unspent points into the Socialite starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_GoonIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Socialite</li>
+		</unlocks>
+		
+		<coordX>11</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
 
-
-
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
 
 
 
@@ -614,10 +932,15 @@
 		<description>This pawn is exceptionally cautious of their surroundings, and is better able to detect stealthed enemies, remain hidden in stealth themselves, and is less likely to trigger enemy traps.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Caution</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
-		<!-- <exclusiveNodes> -->
+		<exclusiveNodes>
 		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
-			<!-- <li>ISFE_Node_Coomsumerism_PartyCondition</li> -->
-		<!-- </exclusiveNodes> -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_cautionI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_cautionII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_cautionIII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scout_cautionI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scout_cautionII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scout_cautionIII</li>
+		</exclusiveNodes>
 		
 		<hediffAdd>
 			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>1</severity></li>
@@ -642,7 +965,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>2</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>4</coordX>
@@ -664,7 +987,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>2</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_caution</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>8</coordX>
@@ -772,6 +1095,12 @@
 		<description>This pawn is built sturdier than most, and is better able to withstand the effects of pain and bodily damage.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Toughness</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_toughnessI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_toughnessII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_toughnessIII</li>
+		</exclusiveNodes>
 		
 		<hediffAdd>
 			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>1</severity></li>
@@ -796,7 +1125,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>2</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>4</coordX>
@@ -818,7 +1147,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>3</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_toughness</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>8</coordX>
@@ -843,6 +1172,12 @@
 		<description>This pawn is adapted to working in harsh conditions. They are better able to withstand environmental extremes, cope with stress, and survive longer without adequate food or rest.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Conditioning</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
+		<exclusiveNodes>
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_conditioningI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_conditioningII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Soldier_conditioningIII</li>
+		</exclusiveNodes>
 		
 		<hediffAdd>
 			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>1</severity></li>
@@ -867,7 +1202,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>2</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>4</coordX>
@@ -889,7 +1224,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>3</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_conditioning</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>8</coordX>
@@ -933,7 +1268,7 @@
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Uncanny_Dodge_II</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
 		
-		<prereqLevel>7</prereqLevel>
+		<prereqLevel>8</prereqLevel>
 		<prereqNodes>
 			<li>SWPotF_HeroModeTreeNodeFeats_goon_uncannydodgeI</li>
 		</prereqNodes>
@@ -946,7 +1281,7 @@
 		</abilityGain>
 
 		
-		<coordX>7</coordX>
+		<coordX>8</coordX>
 		<coordY>7</coordY>
 		<pointReq>1</pointReq>
 	</ItsSorceryFramework.LearningTreeNodeDef>
@@ -977,11 +1312,11 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeFeats_goon_closecombatII</defName>
 		<label>Improved Close Combat</label>
-		<description>Utilize this pawn's sharp reflexes to grant them greatly increased ranged and melee dodge chance for four seconds. Replaces Uncanny Dodge.</description>
+		<description>Train this pawn to be an expert in close quarters combat, giving them a bonus to shooting accuracy at the "touch" and "short" ranges. Additionally, while drafted, this pawn will impose an accuracy penalty on all enemies within a 3-tile radius. Replaces Close Combat.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Close_Combat</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
 		
-		<prereqLevel>8</prereqLevel>
+		<prereqLevel>7</prereqLevel>
 		<prereqNodes>
 			<li>SWPotF_HeroModeTreeNodeFeats_goon_closecombatI</li>
 		</prereqNodes>
@@ -994,107 +1329,37 @@
 		</hediffRemove>
 
 		
-		<coordX>8</coordX>
+		<coordX>7</coordX>
 		<coordY>8</coordY>
 		<pointReq>1</pointReq>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<!--ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-		<defName>ISFE_Node_Logos_Refinement</defName>
-		<label>Experimental refinement</label>
-		<description>Make sure to develop proper controls.</description>
-		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_goon_closecombatIII</defName>
+		<label>Master Close Combat</label>
+		<description>Train this pawn to be a master in close quarters combat, giving them a bonus to shooting accuracy at the "touch" and "short" ranges. Additionally, while drafted, this pawn will impose an accuracy penalty on all enemies within a 3-tile radius. Replaces Improved Close Combat.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/PotF_Feat_Master_Close_Combat</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_goon</learningTrackerDef>
 		
-		<coordX>2</coordX>
-		<coordY>5</coordY>
-		<pointReq>2</pointReq>
-				
-		<prereqs>
-			<li>ISFE_Node_Logos_Design</li>
-		</prereqs>
-		<exclusiveNodes>
-			<li>ISFE_Node_Logos_Surrender</li>
-		</exclusiveNodes>
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_goon_closecombatII</li>
+		</prereqNodes>
+
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_closecombatIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_Feat_closecombatII</li>
+		</hediffRemove>
+
 		
-		<hediffAdjust>
-			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
-		</hediffAdjust>
+		<coordX>10</coordX>
+		<coordY>8</coordY>
+		<pointReq>1</pointReq>
 	</ItsSorceryFramework.LearningTreeNodeDef>
 	
-	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-		<defName>ISFE_Node_Logos_Collection</defName>
-		<label>Data collection</label>
-		<description>Good data collection now saves a lot of heartache later.</description>
-		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
-		
-		<coordX>3</coordX>
-		<coordY>0</coordY>
-		<pointReq>2</pointReq>
-				
-		<prereqs>
-			<li>ISFE_Node_Logos_Refinement</li>
-		</prereqs>
-		
-		<hediffAdjust>
-			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
-		</hediffAdjust>
-	</ItsSorceryFramework.LearningTreeNodeDef>
-	
-	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
-		<defName>ISFE_Node_Logos_Conclusion</defName>
-		<label>Research conclusion</label>
-		<description>A through analysis allows the next bit of research to reach new heights.</description>
-		<learningTrackerDef>SWPotF_ForceLearningTracker_tree_two</learningTrackerDef>
-		
-		<coordX>4</coordX>
-		<coordY>0</coordY>
-		<pointReq>2</pointReq>
-				
-		<prereqs>
-			<li>ISFE_Node_Logos_Collection</li>
-		</prereqs>
-		
-		<hediffAdjust>
-			<li><hediffDef>ISFE_EnhancedIntel</hediffDef><severity>3</severity></li>
-		</hediffAdjust>
-	</ItsSorceryFramework.LearningTreeNodeDef-->
+
 	
 	
 </Defs>

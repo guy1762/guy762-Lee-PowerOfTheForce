@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Treacherous trait: makes the trait unconditionally block the vanilla "a colonist died" mood
+     thoughts (KnowColonistDied, WitnessedDeathAlly, KnowColonistExecuted) for the Treacherous pawn
+     itself (as the observer), regardless of who caused the death and regardless of whether this
+     pawn has ever defected. Uses ThoughtDef.nullifyingTraits, the same declarative mechanism
+     vanilla uses for e.g. Psychopath. Conditional on whether <nullifyingTraits> already exists on
+     each target def, so this doesn't need to assume vanilla's current content one way or the other. -->
+<Patch>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="KnowColonistDied"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="KnowColonistDied"]</xpath>
+        <value>
+          <nullifyingTraits>
+            <li>SWCP_Treacherous</li>
+          </nullifyingTraits>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="KnowColonistDied"]/nullifyingTraits</xpath>
+        <value>
+          <li>SWCP_Treacherous</li>
+        </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="WitnessedDeathAlly"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="WitnessedDeathAlly"]</xpath>
+        <value>
+          <nullifyingTraits>
+            <li>SWCP_Treacherous</li>
+          </nullifyingTraits>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="WitnessedDeathAlly"]/nullifyingTraits</xpath>
+        <value>
+          <li>SWCP_Treacherous</li>
+        </value>
+    </match>
+  </Operation>
+
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThoughtDef[defName="KnowColonistExecuted"]/nullifyingTraits</xpath>
+    <nomatch Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="KnowColonistExecuted"]</xpath>
+        <value>
+          <nullifyingTraits>
+            <li>SWCP_Treacherous</li>
+          </nullifyingTraits>
+        </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+        <xpath>Defs/ThoughtDef[defName="KnowColonistExecuted"]/nullifyingTraits</xpath>
+        <value>
+          <li>SWCP_Treacherous</li>
+        </value>
+    </match>
+  </Operation>
+
+</Patch>

@@ -194,6 +194,312 @@
 	
 	
 	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</defName>
+		<label>Socialite Multiclass: Soldier</label>
+		<description>Invest unspent points into the Soldier starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Soldier</li>
+		</unlocks>
+		
+		<coordX>7</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</defName>
+		<label>Socialite Multiclass: Goon</label>
+		<description>Invest unspent points into the Goon starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		<exclusiveNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_goon</li>
+		</unlocks>
+		
+		<coordX>8</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</defName>
+		<label>Socialite Multiclass: Scavenger</label>
+		<description>Invest unspent points into the Scavenger starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scavenger</li>
+		</unlocks>
+		
+		<coordX>9</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</defName>
+		<label>Socialite Multiclass: Academic</label>
+		<description>Invest unspent points into the Academic starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Academic</li>
+		</unlocks>
+		
+		<coordX>10</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</defName>
+		<label>Socialite Multiclass: Scout</label>
+		<description>Invest unspent points into the Scout starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_SocialiteIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scout</li>
+		</unlocks>
+		
+		<coordX>11</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -468,7 +774,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingI</defName>
 		<label>Skill Upgrade: Cooking I</label>
 		<description>Skill upgrade feat. Adds one permanent skill point in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<hediffAdd>
@@ -485,7 +791,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingII</defName>
 		<label>Skill Upgrade: Cooking II</label>
 		<description>Skill upgrade feat. Adds two permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>2</prereqLevel>
@@ -510,7 +816,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIII</defName>
 		<label>Skill Upgrade: Cooking III</label>
 		<description>Skill upgrade feat. Adds three permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>3</prereqLevel>
@@ -535,7 +841,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIV</defName>
 		<label>Skill Upgrade: Cooking IV</label>
 		<description>Skill upgrade feat. Adds four permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>4</prereqLevel>
@@ -560,7 +866,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingV</defName>
 		<label>Skill Upgrade: Cooking V</label>
 		<description>Skill upgrade feat. Adds five permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>5</prereqLevel>
@@ -585,7 +891,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVI</defName>
 		<label>Skill Upgrade: Cooking VI</label>
 		<description>Skill upgrade feat. Adds six permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>6</prereqLevel>
@@ -610,7 +916,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVII</defName>
 		<label>Skill Upgrade: Cooking VII</label>
 		<description>Skill upgrade feat. Adds seven permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>7</prereqLevel>
@@ -635,7 +941,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingVIII</defName>
 		<label>Skill Upgrade: Cooking VIII</label>
 		<description>Skill upgrade feat. Adds eight permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>8</prereqLevel>
@@ -660,7 +966,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingIX</defName>
 		<label>Skill Upgrade: Cooking IX</label>
 		<description>Skill upgrade feat. Adds nine permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>9</prereqLevel>
@@ -685,7 +991,7 @@
 		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Socialite_cookingX</defName>
 		<label>Skill Upgrade: Cooking X</label>
 		<description>Skill upgrade feat. Adds ten permanent skill points in Cooking.</description>
-		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Demolitions</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Cooking</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
 		<prereqLevel>10</prereqLevel>
@@ -992,13 +1298,13 @@
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Armor_Proficiency_Medium</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
-		<prereqLevel>10</prereqLevel>
+		<prereqLevel>6</prereqLevel>
 		
 		<!-- <hediffAdd> -->
 			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SocialiteII</hediffDef><severity>1</severity></li> -->
 		<!-- </hediffAdd> -->
 		
-		<coordX>10</coordX>
+		<coordX>6</coordX>
 		<coordY>4</coordY>
 		<pointReq>1</pointReq>
 		
@@ -1023,13 +1329,15 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyI</defName>
 		<label>empathy</label>
-		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations or when applying medical treatment.</description>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations, cooking, and when applying medical treatment.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
-		<!-- <exclusiveNodes> -->
+		<exclusiveNodes>
 		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
-			<!-- <li>ISFE_Node_Coomsumerism_PartyCondition</li> -->
-		<!-- </exclusiveNodes> -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_empathyI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_empathyII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_empathyIII</li>
+		</exclusiveNodes>
 		
 		<hediffAdd>
 			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li>
@@ -1044,7 +1352,7 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyII</defName>
 		<label>Improved Empathy</label>
-		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations or when applying medical treatment. Replaces empathy.</description>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations, cooking, and when applying medical treatment. Replaces empathy.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
@@ -1054,7 +1362,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>2</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>4</coordX>
@@ -1066,7 +1374,7 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyIII</defName>
 		<label>Master Empathy</label>
-		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations or when applying medical treatment. Replaces Improved empathy.</description>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations, cooking, and when applying medical treatment. Replaces Improved empathy.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Socialite</learningTrackerDef>
 		
@@ -1076,7 +1384,7 @@
 		</prereqNodes>
 		
 		<hediffAdjust>
-			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>2</severity></li>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
 		</hediffAdjust>
 		
 		<coordX>8</coordX>

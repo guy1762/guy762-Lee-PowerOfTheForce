@@ -96,7 +96,7 @@
 	<HediffDef ParentName="SWPotFHediff_FeatBASE">
 		<defName>SWPotFHediff_Feat_closecombatII</defName>
 		<label>Feat: Improved Close Combat</label>
-		<description>This pawn is proficient in close quarters combat, and has a bonus to shooting accuracy at the "touch" and "short" ranges. Additionally, while drafted, this pawn imposes an accuracy penalty on all enemies within a 3-tile radius.</description>
+		<description>This pawn is an expert in close quarters combat, and has a bonus to shooting accuracy at the "touch" and "short" ranges. Additionally, while drafted, this pawn imposes an accuracy penalty on all enemies within a 3-tile radius.</description>
 
         <stages>
             <li>
@@ -155,6 +155,90 @@
 				<statOffsets>
 					<ShootingAccuracyPawn>-0.4</ShootingAccuracyPawn>
 					<MeleeHitChance>-0.4</MeleeHitChance>
+				</statOffsets>
+			</li>
+        </stages>
+        <comps>
+			<li Class="HediffCompProperties_DisappearsOnDeath"/>
+            <li Class="HediffCompProperties_SeverityPerSecond">
+				<severityPerSecond>-0.1</severityPerSecond>
+			</li>
+        </comps>
+    </HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_Feat_closecombatIII</defName>
+		<label>Feat: Master Close Combat</label>
+		<description>This pawn is a master in close quarters combat, and has a bonus to shooting accuracy at the "touch" and "short" ranges. Additionally, while drafted, this pawn imposes an accuracy penalty on all enemies within a 3-tile radius.</description>
+
+        <stages>
+            <li>
+				<minSeverity>0</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				<statOffsets>
+					<ShootingAccuracyFactor_Touch>0.6</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>0.6</ShootingAccuracyFactor_Short>
+				</statOffsets>
+			</li>
+        </stages>
+        <comps>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_HediffsWhileDrafted">
+                <draftedHediffs>
+                    <li><hediff>SWPotFHediff_Feat_closecombatIII_draftedAoE</hediff></li>
+                </draftedHediffs>
+            </li>
+        </comps>
+    </HediffDef>
+	
+	<HediffDef>
+        <defName>SWPotFHediff_Feat_closecombatIII_draftedAoE</defName>
+        <label>Master Close Combat Passive Bonus</label>
+        <description>This pawn is a master in close combat, and imposes an accuracy penalty on any enemy in close proximity.</description>
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <stages>
+            <li><minSeverity>0</minSeverity><becomeVisible>true</becomeVisible></li>
+        </stages>
+        <comps>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_GiveHediffsToNonAlliesInRange">
+				<targetingParameters>
+					<canTargetBuildings>false</canTargetBuildings>
+					<canTargetAnimals>false</canTargetAnimals>
+					<canTargetMechs>False</canTargetMechs>
+				</targetingParameters>
+				<hediff>SWPotFHediff_Feat_closecombatIII_debuff</hediff>
+				<range>3</range>
+				<initialSeverity>3</initialSeverity>
+			</li>
+        </comps>
+    </HediffDef>
+	
+	<HediffDef>
+        <defName>SWPotFHediff_Feat_closecombatIII_debuff</defName>
+        <label>Master Close Combat debuff</label>
+        <description>This pawn is made less accurate by being in short range of a close combat master.</description>
+		<defaultLabelColor>(255,7,48)</defaultLabelColor> <!-- red -->
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+		<maxSeverity>3</maxSeverity>
+        <stages>
+            <li>
+				<becomeVisible>true</becomeVisible>
+				<minSeverity>0.01</minSeverity>
+				<statOffsets>
+					<ShootingAccuracyPawn>-0.6</ShootingAccuracyPawn>
+					<MeleeHitChance>-0.6</MeleeHitChance>
 				</statOffsets>
 			</li>
         </stages>

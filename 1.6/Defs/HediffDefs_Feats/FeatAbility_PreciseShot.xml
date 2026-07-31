@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<!--
+		I - Precise Shot
+		II - Improved Precise Shot
+		III - Advanced Precise Shot - lvl 12
+		IV - Expert Precise Shot - lvl 16
+		V - Master Precise Shot - lvl 20
+	-->
+	
+	
+	
+	<AbilityDef Name="SWPotFAbility_Feat_preciseshotI">
+		<defName>SWPotFAbility_Feat_preciseshotI</defName>
+		<label>precise shot</label>
+		<description>Utilize this pawn's sharp senses to grant them greatly increased ranged accuracy and damage for three seconds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_preciseshotI</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_I</iconPath>
+		
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
+		<!-- <hotKey></hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<!-- <level>1</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>3600</cooldownTicksRange>
+		<stunTargetWhileCasting>false</stunTargetWhileCasting>
+		<statBases>
+			<Ability_Duration>3</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<targetRequired>False</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>-1</range>
+			<requireLineOfSight>false</requireLineOfSight>
+			<warmupTime>0</warmupTime>
+			<soundCast>kotorsound_FoCUIChargeSoundThatIDontKnowTheSourceOf</soundCast>
+			<targetParams>
+				<canTargetSelf>true</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_preciseshotI</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_preciseshotI</defName>
+		<label>precise shot</label>
+		<description>Temporarily improved ranged accuracy and damage.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+				<statOffsets>
+					<VEF_RangeAttackDamageFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.4</VEF_RangeAttackDamageFactor>
+					
+					<ShootingAccuracyFactor_Touch>10</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>10</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Medium>10</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>10</ShootingAccuracyFactor_Long>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef ParentName="SWPotFAbility_Feat_preciseshotI">
+		<defName>SWPotFAbility_Feat_preciseshotII</defName>
+		<label>improved precise shot</label>
+		<description>Utilize this pawn's sharp senses to grant them greatly increased ranged accuracy and damage for three seconds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_preciseshotII</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_II</iconPath>
+
+		<statBases>
+			<Ability_Duration>3</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<comps Inherit="False">
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_preciseshotII</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_preciseshotII</defName>
+		<label>improved precise shot</label>
+		<description>Temporarily improved ranged accuracy and damage.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+				<statOffsets>
+					<VEF_RangeAttackDamageFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.8</VEF_RangeAttackDamageFactor>
+					
+					<ShootingAccuracyFactor_Touch>10</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>10</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Medium>10</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>10</ShootingAccuracyFactor_Long>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef ParentName="SWPotFAbility_Feat_preciseshotI">
+		<defName>SWPotFAbility_Feat_preciseshotIII</defName>
+		<label>adv. precise shot</label>
+		<description>Utilize this pawn's sharp senses to grant them greatly increased ranged accuracy and damage for six seconds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_preciseshotIII</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_III</iconPath>
+
+		<statBases>
+			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<comps Inherit="False">
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_preciseshotIII</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_preciseshotIII</defName>
+		<label>advanced precise shot</label>
+		<description>Temporarily improved ranged accuracy and damage.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+				<statOffsets>
+					<VEF_RangeAttackDamageFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.2</VEF_RangeAttackDamageFactor>
+					
+					<ShootingAccuracyFactor_Touch>10</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>10</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Medium>10</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>10</ShootingAccuracyFactor_Long>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef ParentName="SWPotFAbility_Feat_preciseshotI">
+		<defName>SWPotFAbility_Feat_preciseshotIV</defName>
+		<label>expert precise shot</label>
+		<description>Utilize this pawn's sharp senses to grant them greatly increased ranged accuracy and damage for six seconds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_preciseshotIV</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_IV</iconPath>
+
+		<statBases>
+			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<comps Inherit="False">
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_preciseshotIV</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_preciseshotIV</defName>
+		<label>expert precise shot</label>
+		<description>Temporarily improved ranged accuracy and damage.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+				<statOffsets>
+					<VEF_RangeAttackDamageFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">1.6</VEF_RangeAttackDamageFactor>
+					
+					<ShootingAccuracyFactor_Touch>10</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>10</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Medium>10</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>10</ShootingAccuracyFactor_Long>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<AbilityDef ParentName="SWPotFAbility_Feat_preciseshotI">
+		<defName>SWPotFAbility_Feat_preciseshotV</defName>
+		<label>master precise shot</label>
+		<description>Utilize this pawn's sharp senses to grant them greatly increased ranged accuracy and damage for six seconds.</description>
+		<descriptionHyperlinks>
+			<HediffDef>SWPotFHediff_Feat_preciseshotV</HediffDef>
+		</descriptionHyperlinks>
+		<iconPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_V</iconPath>
+
+		<statBases>
+			<Ability_Duration>6</Ability_Duration> <!-- this is in seconds, not ticks -->
+		</statBases>
+		
+		<comps Inherit="False">
+			<li Class="CompProperties_AbilityGiveHediff">
+				<compClass>CompAbilityEffect_GiveHediff</compClass>
+				<hediffDef>SWPotFHediff_Feat_preciseshotV</hediffDef>
+				<onlyApplyToSelf>True</onlyApplyToSelf>
+				<replaceExisting>true</replaceExisting>
+			</li>
+		</comps>
+	</AbilityDef>
+	
+
+	<HediffDef>
+		<defName>SWPotFHediff_Feat_preciseshotV</defName>
+		<label>master precise shot</label>
+		<description>Temporarily improved ranged accuracy and damage.</description>
+		<defaultLabelColor>(7,255,131)</defaultLabelColor> <!-- KotOR 2 green -->
+		<hediffClass>HediffWithComps</hediffClass>
+		<maxSeverity>1.0</maxSeverity>
+		<isBad>false</isBad>
+		<stages>
+			<li>
+				<statFactors>
+					<AimingDelayFactor>0.1</AimingDelayFactor>
+				</statFactors>
+				<statOffsets>
+					<VEF_RangeAttackDamageFactor MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">2</VEF_RangeAttackDamageFactor>
+					
+					<ShootingAccuracyFactor_Touch>10</ShootingAccuracyFactor_Touch>
+					<ShootingAccuracyFactor_Short>10</ShootingAccuracyFactor_Short>
+					<ShootingAccuracyFactor_Medium>10</ShootingAccuracyFactor_Medium>
+					<ShootingAccuracyFactor_Long>10</ShootingAccuracyFactor_Long>
+				</statOffsets>
+			</li>
+		</stages>
+		<comps>
+		  <!--2,500 ticks per hour in game-->
+		  <li Class="HediffCompProperties_Disappears">
+			<!--disappearsAfterTicks>1000</disappearsAfterTicks-->
+			<showRemainingTime>True</showRemainingTime>
+		  </li>
+		  <li Class="HediffCompProperties_DisappearsOnDeath"/>
+		</comps>
+	</HediffDef>
+	  
+	
+
+</Defs>

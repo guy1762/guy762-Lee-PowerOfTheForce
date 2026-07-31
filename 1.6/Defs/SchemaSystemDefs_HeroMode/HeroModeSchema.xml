@@ -4,16 +4,16 @@
 	<ItsSorceryFramework.SorcerySchemaDef ParentName = "SorcerySchemaBase">
 		<defName>SWPotF_HeroModeSchema</defName>
 		<label>Heroic</label>
-		<description>SorcerySchemaDef description.</description>
+		<description>This is the SorcerySchemaDef description.</description>
 	
 		<learningTrackerDefs> <!-- UI tabs-->
 			<li>SWPotF_HeroModeLearningTracker_Summary</li>
 			
-			<!-- <li>SWPotFLearningTracker_HeroicClass_Soldier</li> -->
+			<li>SWPotFLearningTracker_HeroicClass_Soldier</li>
 			<li>SWPotFLearningTracker_HeroicClass_goon</li>
-			<!-- <li>SWPotFLearningTracker_HeroicClass_Scavenger</li> -->
-			<!-- <li>SWPotFLearningTracker_HeroicClass_Academic</li> -->
-			<!-- <li>SWPotFLearningTracker_HeroicClass_Scout</li> -->
+			<li>SWPotFLearningTracker_HeroicClass_Scavenger</li>
+			<li>SWPotFLearningTracker_HeroicClass_Academic</li>
+			<li>SWPotFLearningTracker_HeroicClass_Scout</li>
 			<li>SWPotFLearningTracker_HeroicClass_Socialite</li>
 		</learningTrackerDefs>
 		<progressTrackerDef>SWPotF_ProgressTracker_HeroModeLvl</progressTrackerDef>

@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    
+	
+	<!-- Wise: periodically gives advice to other pawns. Each advice interaction has a chance
+       (InteractionExtension_WiseAdvice.inspirationChance) to grant the recipient a random inspiration,
+       respecting their normal eligibility (RimWorld.InspirationWorker.InspirationCanOccur), never
+       forced onto a pawn that can't currently take one. All mechanics live in InteractionWorker_Wise
+       (Source/Interaction_Wise.cs) / Interactions_Wise.xml. This def carries no code-facing fields
+       itself and no mood/opinion effect of its own - purely a gate for the inspiration mechanic. -->
+	<TraitDef>
+		<defName>SWCP_Wise</defName> <!-- hardcoded defName from DefOf -->
+		<commonality>0.1</commonality>
+		<degreeDatas>
+			<li>
+				<label>wise</label>
+				<description>[PAWN_nameDef] often shares advice with others nearby, and it sometimes strikes true enough to spark a burst of inspiration.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	
+	<!-- Wise: pawns with SWCP_Wise occasionally give advice. Purely flavor text (no recipientThought,
+       no mood/opinion effect) the only mechanical effect is InteractionWorker_Wise.Interacted() rolling
+       InteractionExtension_WiseAdvice.inspirationChance and, on success, granting the recipient a
+       random eligible InspirationDef (RimWorld.InspirationHandler.TryStartInspiration), restricted to
+       <eligibleInspirations> if set, otherwise any inspiration vanilla itself would consider available
+       (RimWorld.InspirationHandler.GetRandomAvailableInspirationDef). A successful grant still shows
+       vanilla's own inspiration-begin letter, plus a Messages.Message crediting the advice
+       (Source/Interaction_Wise.cs). No socialFightBaseChance - advice doesn't risk starting a fight. -->
+	<InteractionDef>
+		<defName>SWCPInteraction_WiseAdvice</defName>
+		<label>gave advice</label>
+		<workerClass>SWCP_FlyingSloth_Misc.InteractionWorker_Wise</workerClass>
+		<symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+
+		<logRulesInitiator>
+		  <rulesStrings>
+			<li>r_logentry->[INITIATOR_nameDef] gave [RECIPIENT_nameDef] some advice.</li>
+			<li>r_logentry->[INITIATOR_nameDef] shared some wisdom with [RECIPIENT_nameDef].</li>
+			<li>r_logentry->[INITIATOR_nameDef] offered [RECIPIENT_nameDef] a piece of advice.</li>
+		  </rulesStrings>
+		</logRulesInitiator>
+
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.InteractionExtension_WiseAdvice">
+			<selectionWeight>10</selectionWeight> <!-- starting placeholder; retune after in-game observation -->
+			<inspirationChance>0.5</inspirationChance> <!-- starting placeholder; retune after in-game observation -->
+			
+			<!-- eligibleInspirations left unset on purpose: any inspiration the recipient can currently
+				 receive is a candidate (see InspirationHandler.GetRandomAvailableInspirationDef). To
+				 restrict which inspirations Wise can grant, list their real defNames explicitly, e.g.:
+			<eligibleInspirations>
+			  <li>YourInspirationDefNameHere</li>
+			</eligibleInspirations>
+			-->
+		  </li>
+		</modExtensions>
+	</InteractionDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Jovial: periodically tells other pawns jokes. Each joke lands well or falls flat on a
+       configurable chance; all mechanics live in InteractionWorker_Jovial (Interaction_Jovial.cs) /
+       Interactions_Jovial.xml. This def carries no code-facing fields itself. -->
+	<TraitDef>
+		<defName>SWCP_Jovial</defName> <!-- hardcoded defName from DefOf -->
+		<commonality>2</commonality>
+		<degreeDatas>
+			<li>
+				<label>jovial</label>
+				<description>[PAWN_nameDef] loves cracking jokes with anyone nearby, whether or not the joke actually lands.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Good>1</SWCPStat_TraitRatings_Good>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	
+	<!-- Granted to the recipient of a good Jovial joke (InteractionWorker_Jovial, Interaction_Jovial.cs).
+		   A general, non-pair memory: just "I heard a good joke today", not tied to who told it. -->
+	<ThoughtDef>
+		<defName>SWCPThought_JovialGoodJokeMemory</defName>
+		<thoughtClass>Thought_Memory</thoughtClass>
+		<durationDays>0.5</durationDays>
+		<stackLimit>4</stackLimit>
+		<stages>
+		  <li>
+			<label>heard a good joke</label>
+			<description>Someone told me a genuinely funny joke earlier. I'm still smiling about it. +2</description>
+			<baseMoodEffect>3</baseMoodEffect>
+		  </li>
+		</stages>
+	</ThoughtDef>
+
+	  <!-- Granted to the recipient of a good Jovial joke, targeting the initiator specifically. Mood-neutral:
+		   exists purely to move the recipient's opinion of the joker, not to add another mood memory
+		   (SWCP_JovialGoodJokeMemory above already covers the mood side). -->
+	<ThoughtDef>
+		<defName>SWCPThought_JovialLikedJoke</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>2.5</durationDays>
+		<stackLimit>4</stackLimit>
+		<stackLimitForSameOtherPawn>2</stackLimitForSameOtherPawn>
+		<stages>
+		  <li>
+			<label>told me a great joke</label>
+			<baseOpinionOffset>8</baseOpinionOffset>
+		  </li>
+		</stages>
+	  </ThoughtDef>
+
+	  <!-- Granted to the recipient of a bad Jovial joke, targeting the initiator specifically. Deliberately
+		   the ONLY thing granted on a bad joke - no general memory thought, so nothing shows up in the
+		   recipient's Thoughts tab, only in their opinion of the joker. -->
+	<ThoughtDef>
+		<defName>SWCPThought_JovialDislikedJoke</defName>
+		<thoughtClass>Thought_MemorySocial</thoughtClass>
+		<durationDays>2.5</durationDays>
+		<stackLimit>4</stackLimit>
+		<stackLimitForSameOtherPawn>2</stackLimitForSameOtherPawn>
+		<stages>
+		  <li>
+			<label>told me a bad joke</label>
+			<baseOpinionOffset>-6</baseOpinionOffset>
+		  </li>
+		</stages>
+	</ThoughtDef>
+	
+	<!-- Jovial: pawns with SWCP_Jovial tell jokes that land well or fall flat on a configurable chance
+       (InteractionExtension_JovialJoke.goodJokeChance). Deliberately carries no recipientThought: that
+       InteractionDef field is applied unconditionally by Pawn_InteractionsTracker.TryInteractWith before
+       Interacted() runs, which can't express "thought A on a good roll, thought B on a bad roll". Both
+       the thought grant and the social-log branching are resolved in InteractionWorker_Jovial.Interacted()
+       instead (Source/Interaction_Jovial.cs). No socialFightBaseChance: a joke falling flat just dings
+       opinion, it doesn't risk a fight like a real insult would. -->
+	<InteractionDef>
+		<defName>SWCPInteraction_JovialJoke</defName>
+		<label>told a joke</label>
+		<workerClass>SWCP_FlyingSloth_Misc.InteractionWorker_Jovial</workerClass>
+		<symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+
+		<logRulesInitiator> <!-- keep logRulesInitiator set. Leaving it unset crashes the Log tab, Social tab and pawn tooltips; vanilla assumes it's there. Extra rule packs are trailing clauses, not full sentences. -->
+		  <rulesStrings>
+			<li>r_logentry->[INITIATOR_nameDef] told [RECIPIENT_nameDef] a joke.</li>
+			<li>r_logentry->[INITIATOR_nameDef] tried out a joke on [RECIPIENT_nameDef].</li>
+			<li>r_logentry->[INITIATOR_nameDef] cracked a joke for [RECIPIENT_nameDef].</li>
+		  </rulesStrings>
+		</logRulesInitiator>
+
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.InteractionExtension_JovialJoke">
+			<selectionWeight>20</selectionWeight> <!-- starting placeholder; retune after in-game observation -->
+			<goodJokeChance>0.62</goodJokeChance>
+			<goodMemoryThought>SWCPThought_JovialGoodJokeMemory</goodMemoryThought>
+			<goodOpinionThought>SWCPThought_JovialLikedJoke</goodOpinionThought>
+			<badOpinionThought>SWCPThought_JovialDislikedJoke</badOpinionThought>
+			<goodJokeLogRulePack>SWCP_Sentence_JovialJokeGood</goodJokeLogRulePack>
+			<badJokeLogRulePack>SWCP_Sentence_JovialJokeBad</badJokeLogRulePack>
+		  </li>
+		</modExtensions>
+	</InteractionDef>
+
+	  <!-- Trailing clause appended after the base sentence when the joke lands well. -->
+	<RulePackDef>
+		<defName>SWCP_Sentence_JovialJokeGood</defName>
+		<rulePack>
+		  <rulesStrings>
+			<li>r_logentry->It landed perfectly.</li>
+			<li>r_logentry->[RECIPIENT_nameDef] burst out laughing.</li>
+			<li>r_logentry->It actually got a laugh.</li>
+		  </rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+	  <!-- Trailing clause appended after the base sentence when the joke falls flat. -->
+	<RulePackDef>
+		<defName>SWCP_Sentence_JovialJokeBad</defName>
+		<rulePack>
+		  <rulesStrings>
+			<li>r_logentry->It fell completely flat.</li>
+			<li>r_logentry->[RECIPIENT_nameDef] didn't find it funny at all.</li>
+			<li>r_logentry->It bombed badly.</li>
+		  </rulesStrings>
+		</rulePack>
+	</RulePackDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Hater: functional opposite of vanilla Kind: periodically insults other pawns instead of
+       offering kind words. All mechanics live in InteractionWorker_Hater (Interaction_Hater.cs) /
+       Interactions_Hater.xml; this def carries no code-facing fields itself. -->
+	<TraitDef>
+		<defName>SWCP_Hater</defName> <!-- hardcoded defName from DefOf -->
+		<commonality>1.5</commonality>
+		<degreeDatas>
+			<li>
+				<label>hater</label>
+				<description>[PAWN_nameDef] can't resist tearing other people down with a cutting remark.</description>
+				<degree>0</degree>
+				<statOffsets>
+					<SWCPStat_TraitRatings_SumOfGoodBad>-1</SWCPStat_TraitRatings_SumOfGoodBad>
+					<SWCPStat_TraitRatings_Bad>1</SWCPStat_TraitRatings_Bad>
+					<SWCPStat_TraitRatings_DarkSideAffinity>0.1</SWCPStat_TraitRatings_DarkSideAffinity>
+				</statOffsets>
+			</li>
+		</degreeDatas>
+	</TraitDef>
+	
+	
+	
+	<!-- Hater: functional opposite of vanilla KindWords. Reuses vanilla Insult's own outcome verbatim
+       (symbol, socialFightBaseChance, recipientThought, logRulesInitiator) so a Hater-triggered insult
+       is mechanically and textually identical to a normal vanilla insult: only the selection weight
+       (InteractionWorker_Hater, gated on SWCP_Hater) differs. See Source/Interaction_Hater.cs. -->
+	<InteractionDef>
+		<defName>SWCPInteraction_HaterInsult</defName>
+		<label>hateful insult</label>
+		<workerClass>SWCP_FlyingSloth_Misc.InteractionWorker_Hater</workerClass>
+		<symbol>Things/Mote/SpeechSymbols/Insult</symbol>
+		<socialFightBaseChance>0.04</socialFightBaseChance>
+		<recipientThought>Insulted</recipientThought>
+		<logRulesInitiator>
+		  <rulesStrings>
+			<li>r_logentry(p=3)->[INITIATOR_nameDef] [insulted] [target]'s [characteristic].</li>
+			<li>r_logentry->[INITIATOR_nameDef] compared [target] to [insultcomparison].</li>
+			<li>r_logentry->[INITIATOR_nameDef] called [target] [insultcomparison].</li>
+			<li>r_logentry(INITIATOR_cubeInterest==false,RECIPIENT_cubeInterest==true)->[INITIATOR_nameDef] called [target] a false idol worshipper.</li>
+			<li>r_logentry(INITIATOR_cubeInterest==false,RECIPIENT_cubeInterest==true)->[INITIATOR_nameDef] implied that [target] had been driven insane by the golden cube.</li>
+			<li>r_logentry(INITIATOR_cubeInterest==false,RECIPIENT_cubeInterest==true)->[INITIATOR_nameDef] [insulted] the golden cube.</li>
+			<li>characteristic(INITIATOR_cubeInterest==false)->[PersonalCharacteristic]</li>
+			<li>characteristic(INITIATOR_cubeInterest==true)->[PersonalCharacteristicCube]</li>
+			<li>target(p=4)->[RECIPIENT_nameDef]</li>
+			<li>target->[RECIPIENT_nameDef]'s [PersonFamily]</li>
+			<li>insulted(p=3)->insulted</li>
+			<li>insulted->openly insulted</li>
+			<li>insulted->loudly insulted</li>
+			<li>insulted->flagrantly insulted</li>
+			<li>insulted->directly insulted</li>
+			<li>insulted->viciously insulted</li>
+			<li>insulted->flagrantly disrespected</li>
+			<li>insulted->slandered</li>
+			<li>insulted->hurled invective about</li>
+			<li>insulted->derided</li>
+			<li>insultcomparison(INITIATOR_cubeInterest==false,p=2)->a [Animal]</li>
+			<li>insultcomparison(INITIATOR_cubeInterest==false)->a [Enemy]</li>
+			<li>insultcomparison(INITIATOR_cubeInterest==true)->a sphere</li>
+			<li>insultcomparison(INITIATOR_cubeInterest==true)->something totally pointless</li>
+			<li>insultcomparison(INITIATOR_cubeInterest==true)->a non-cubic platonic object</li>
+		  </rulesStrings>
+		  <include>
+			<li MayRequire="Ludeon.RimWorld.Anomaly">PersonalCharacteristicsCube</li>
+		  </include>
+		</logRulesInitiator>
+
+		<modExtensions>
+		  <li Class="SWCP_FlyingSloth_Misc.InteractionExtension_HaterInsult">
+			<selectionWeight>20</selectionWeight> <!-- starting placeholder; retune after in-game observation -->
+		  </li>
+		</modExtensions>
+	</InteractionDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</Defs>

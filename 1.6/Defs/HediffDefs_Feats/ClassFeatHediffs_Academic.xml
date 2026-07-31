@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_AcademicI</defName>
+		<label>Class Feat: Academic I</label>
+		<description>Adds one permanent skill point in Intellectual.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Intellectual</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_AcademicII</defName>
+		<label>Class Feat: Academic II</label>
+		<description>Adds one permanent skill point in Intellectual and Social.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Intellectual</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_AcademicIII</defName>
+		<label>Class Feat: Academic III</label>
+		<description>Adds one permanent skill point in Intellectual, Social, and Medicine.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Medicine</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Intellectual</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_AcademicIV</defName>
+		<label>Class Feat: Academic IV</label>
+		<description>Adds two permanent skill points in Intellectual, one permanent point in Social, and one in Medicine.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Medicine</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Intellectual</skill><skillChange>2</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_AcademicV</defName>
+		<label>Class Feat: Academic V</label>
+		<description>Adds two permanent skill points in Intellectual, one permanent point in Social, and one in Medicine. Raises passion in Intellectual by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Medicine</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Intellectual</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_AcademicVI</defName>
+		<label>Class Feat: Academic VI</label>
+		<description>Adds two permanent skill points in Intellectual, one permanent point in Social, and one in Medicine. Raises passion in Intellectual and Medicine by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Medicine</skill><skillChange>1</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Social</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Intellectual</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+</Defs>

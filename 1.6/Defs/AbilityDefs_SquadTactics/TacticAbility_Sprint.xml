@@ -81,7 +81,7 @@
 			<requireLineOfSight>false</requireLineOfSight>
 			<drawAimPie>False</drawAimPie>
 			<warmupTime>0.5</warmupTime>
-			<soundCast>kotorsound_BF2AbilityCast</soundCast>
+			<soundCast>kotorsound_UnderRail_sprint</soundCast>
 			<targetParams>
 				<canTargetSelf>true</canTargetSelf>
 				<canTargetBuildings>false</canTargetBuildings>
@@ -182,6 +182,21 @@
 				<severityPerSecond>-0.1</severityPerSecond>
 			</li>
         </comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/EaWIcons/Sprint</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.25</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>100</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
     </HediffDef>
 	
 	

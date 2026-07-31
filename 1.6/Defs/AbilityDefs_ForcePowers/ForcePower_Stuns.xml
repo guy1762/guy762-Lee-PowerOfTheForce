@@ -67,7 +67,7 @@
 	<ItsSorceryFramework.SorceryDef ParentName="SWPotF_forcepower_base">
 		<defName>SWPotF_forcepower_stunfield</defName>
 		<label>stun field</label>
-		<description>Use the Force to stun multiple targets within a radius. Duration scales with the psychic sensitivity of the target.</description>
+		<description>Use the Force to stun multiple targets within a radius. Duration scales with the psychic sensitivity of the target.\n\nCAUTION: The stun damage WILL apply to the caster if they are within the ability radius!!!</description>
 		<iconPath>UI/ForceIcons/Power_Force_StunField</iconPath>
 		
 		<!-- <category>SWPotF_AbilityCategory_Lightside</category> -->

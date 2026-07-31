@@ -13,19 +13,6 @@
 				<becomeVisible>false</becomeVisible>
 				
 				<statOffsets>
-					<SWCPStat_Stealth>0.1</SWCPStat_Stealth>
-					<HuntingStealth>0.1</HuntingStealth>
-					
-					<SWCPStat_Awareness>0.1</SWCPStat_Awareness>
-					<PawnTrapSpringChance>-0.1</PawnTrapSpringChance>
-				</statOffsets>
-			</li>
-			<li>
-				<label>Improved</label>
-				<minSeverity>2</minSeverity>
-				<becomeVisible>false</becomeVisible>
-
-				<statOffsets>
 					<SWCPStat_Stealth>0.2</SWCPStat_Stealth>
 					<HuntingStealth>0.2</HuntingStealth>
 					
@@ -34,16 +21,29 @@
 				</statOffsets>
 			</li>
 			<li>
+				<label>Improved</label>
+				<minSeverity>2</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<SWCPStat_Stealth>0.4</SWCPStat_Stealth>
+					<HuntingStealth>0.4</HuntingStealth>
+					
+					<SWCPStat_Awareness>0.4</SWCPStat_Awareness>
+					<PawnTrapSpringChance>-0.4</PawnTrapSpringChance>
+				</statOffsets>
+			</li>
+			<li>
 				<label>Master</label>
 				<minSeverity>3</minSeverity>
 				<becomeVisible>false</becomeVisible>
 
 				<statOffsets>
-					<SWCPStat_Stealth>0.3</SWCPStat_Stealth>
-					<HuntingStealth>0.3</HuntingStealth>
+					<SWCPStat_Stealth>0.6</SWCPStat_Stealth>
+					<HuntingStealth>0.6</HuntingStealth>
 					
-					<SWCPStat_Awareness>0.3</SWCPStat_Awareness>
-					<PawnTrapSpringChance>-0.3</PawnTrapSpringChance>
+					<SWCPStat_Awareness>0.6</SWCPStat_Awareness>
+					<PawnTrapSpringChance>-0.6</PawnTrapSpringChance>
 				</statOffsets>
 			</li>
 		</stages>

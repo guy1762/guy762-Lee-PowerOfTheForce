@@ -273,6 +273,21 @@
 				<hediff>guy762_hediff_CommandTierVI_buff</hediff>
 			</li>
 		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/TierIcons/CommandTier_VI</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.5</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>101</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 
@@ -436,6 +451,21 @@
 				<hediff>guy762_hediff_CommandTierV_buff</hediff>
 			</li>
 		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/TierIcons/CommandTier_V</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.5</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>101</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 
@@ -610,6 +640,21 @@
 				<hediff>guy762_hediff_CommandTierIV_buff</hediff>
 			</li>
 		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/TierIcons/CommandTier_IV</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.5</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>101</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 	<HediffDef>
@@ -650,6 +695,7 @@
 					<PilotingAbility MayRequire="Ludeon.RimWorld.Odyssey">0.10</PilotingAbility>
 					
 					<SWCPStat_Loyalty>0.5</SWCPStat_Loyalty>
+					<SWCPStat_Willpower>0.5</SWCPStat_Willpower>
 				</statOffsets>
 				
 				<hungerRateFactor>0.1</hungerRateFactor>
@@ -783,6 +829,21 @@
 				<hediff>guy762_hediff_CommandTierIII_buff</hediff>
 			</li>
 		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/TierIcons/CommandTier_III</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.5</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>101</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 	<HediffDef>
@@ -825,6 +886,7 @@
 					<MoveSpeed>0.05</MoveSpeed>
 					
 					<SWCPStat_Loyalty>1</SWCPStat_Loyalty>
+					<SWCPStat_Willpower>1</SWCPStat_Willpower>
 				</statOffsets>
 				
 				<hungerRateFactor>0.1</hungerRateFactor>
@@ -958,6 +1020,21 @@
 				<hediff>guy762_hediff_CommandTierII_buff</hediff>
 			</li>
 		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/TierIcons/CommandTier_II</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.5</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>101</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 	<HediffDef>
@@ -1000,6 +1077,7 @@
 					<MoveSpeed>0.15</MoveSpeed>
 					
 					<SWCPStat_Loyalty>1.5</SWCPStat_Loyalty>
+					<SWCPStat_Willpower>1.5</SWCPStat_Willpower>
 				</statOffsets>
 				
 				<hungerRateFactor>0.1</hungerRateFactor>
@@ -1127,6 +1205,21 @@
 				<hediff>guy762_hediff_CommandTierI_buff</hediff>
 			</li>
 		</comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/TierIcons/CommandTier_I</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.5</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>101</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
 	</HediffDef>
 
 	<HediffDef>
@@ -1169,6 +1262,7 @@
 					<MoveSpeed>0.25</MoveSpeed>
 					
 					<SWCPStat_Loyalty>2</SWCPStat_Loyalty>
+					<SWCPStat_Willpower>2</SWCPStat_Willpower>
 				</statOffsets>
 				
 				

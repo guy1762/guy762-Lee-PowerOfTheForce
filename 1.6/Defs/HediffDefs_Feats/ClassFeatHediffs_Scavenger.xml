@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_ScavengerI</defName>
+		<label>Class Feat: Scavenger I</label>
+		<description>Adds one permanent skill point in Construction.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Construction</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_ScavengerII</defName>
+		<label>Class Feat: Scavenger II</label>
+		<description>Adds one permanent skill point in Construction and Crafting.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Construction</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Crafting</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_ScavengerIII</defName>
+		<label>Class Feat: Scavenger III</label>
+		<description>Adds one permanent skill point in Construction, Crafting, and Mining.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Construction</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Crafting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Mining</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_ScavengerIV</defName>
+		<label>Class Feat: Scavenger IV</label>
+		<description>Adds two permanent skill points in Construction, one permanent point in Crafting, and one in Mining.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Construction</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Crafting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Mining</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_ScavengerV</defName>
+		<label>Class Feat: Scavenger V</label>
+		<description>Adds two permanent skill points in Construction, one permanent point in Crafting, and one in Mining. Raises passion in Construction by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Construction</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Crafting</skill><skillChange>1</skillChange>
+					</li>
+					<li>
+						<skill>Mining</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+	
+	
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_ClassFeat_ScavengerVI</defName>
+		<label>Class Feat: Scavenger VI</label>
+		<description>Adds two permanent skill points in Construction, one permanent point in Crafting, and one in Mining. Raises passion in Construction and Crafting by one tier.</description>
+		<stages><li><minSeverity>1</minSeverity><becomeVisible>false</becomeVisible></li></stages>
+		
+		<comps>
+			<li Class="EBSGFramework.HediffCompProperties_TemporarySkillChange">
+				<skillChanges>
+					<li>
+						<skill>Construction</skill><skillChange>2</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Crafting</skill><skillChange>1</skillChange>
+						<passionChange>1</passionChange>
+					</li>
+					<li>
+						<skill>Mining</skill><skillChange>1</skillChange>
+					</li>
+				</skillChanges>
+			</li>
+		</comps>
+	</HediffDef>
+
+
+
+
+
+
+
+</Defs>

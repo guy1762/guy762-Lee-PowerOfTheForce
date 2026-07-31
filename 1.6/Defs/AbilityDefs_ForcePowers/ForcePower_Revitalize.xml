@@ -23,7 +23,8 @@
 		<showWhenDrafted>true</showWhenDrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		
-		<cooldownTicksRange>64000</cooldownTicksRange>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<!-- 60,000 = 1 in-game day -->
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
 			<SWPotF_ForcePoints>50</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
@@ -132,7 +133,8 @@
 		<showWhenDrafted>true</showWhenDrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		
-		<cooldownTicksRange>64000</cooldownTicksRange>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<!-- 60,000 = 1 in-game day -->
 		<stunTargetWhileCasting>true</stunTargetWhileCasting>
 		<statBases>
 			<SWPotF_ForcePoints>50</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
@@ -145,7 +147,7 @@
 			<violent>false</violent>
 			<range>5</range>
 			<requireLineOfSight>True</requireLineOfSight>
-			<warmupTime>1</warmupTime>
+			<warmupTime>0</warmupTime>
 			<targetParams>
 				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
 				
@@ -182,7 +184,7 @@
 		
 		<modExtensions>
 			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
-				<castableInUnconscious>true</castableInUnconscious>
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
 				<castableInMentalbreak>false</castableInMentalbreak>
 			</li>
 			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
@@ -222,7 +224,9 @@
 		<showWhenDrafted>true</showWhenDrafted>
 		<disableGizmoWhileUndrafted>False</disableGizmoWhileUndrafted>
 		
-		<cooldownTicksRange>64000</cooldownTicksRange>
+		<cooldownTicksRange>30000</cooldownTicksRange>
+		<!-- 60,000 = 1 in-game day -->
+		
 		<targetRequired>false</targetRequired>
 		<statBases>
 			<SWPotF_ForcePoints>50</SWPotF_ForcePoints> <!-- this needs to be a positive value in order to subtract from the force point gauge -->
@@ -237,7 +241,7 @@
 			<range>5</range>
 			<requireLineOfSight>false</requireLineOfSight>
 			<drawAimPie>False</drawAimPie>
-			<warmupTime>1</warmupTime>
+			<warmupTime>0</warmupTime>
 			<targetParams>
 				<onlyTargetPsychicSensitive>true</onlyTargetPsychicSensitive>
 				
@@ -274,7 +278,7 @@
 		
 		<modExtensions>
 			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
-				<castableInUnconscious>true</castableInUnconscious>
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
 				<castableInMentalbreak>false</castableInMentalbreak>
 			</li>
 			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->

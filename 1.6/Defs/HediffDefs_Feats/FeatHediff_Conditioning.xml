@@ -18,6 +18,8 @@
 					<JoyFallRateFactor>-0.1</JoyFallRateFactor>
 					<MentalBreakThreshold>-0.1</MentalBreakThreshold>
 					
+					<SWCPStat_Willpower>0.1</SWCPStat_Willpower>
+					
 					<ToxicEnvironmentResistance>0.1</ToxicEnvironmentResistance>
 					<ComfyTemperatureMin>-5</ComfyTemperatureMin>
 					<ComfyTemperatureMax>-5</ComfyTemperatureMax>
@@ -34,6 +36,8 @@
 					<JoyFallRateFactor>-0.2</JoyFallRateFactor>
 					<MentalBreakThreshold>-0.2</MentalBreakThreshold>
 					
+					<SWCPStat_Willpower>0.2</SWCPStat_Willpower>
+					
 					<ToxicEnvironmentResistance>0.2</ToxicEnvironmentResistance>
 					<ComfyTemperatureMin>-10</ComfyTemperatureMin>
 					<ComfyTemperatureMax>-10</ComfyTemperatureMax>
@@ -49,6 +53,8 @@
 				<statOffsets>
 					<JoyFallRateFactor>-0.3</JoyFallRateFactor>
 					<MentalBreakThreshold>-0.3</MentalBreakThreshold>
+					
+					<SWCPStat_Willpower>0.3</SWCPStat_Willpower>
 					
 					<ToxicEnvironmentResistance>0.3</ToxicEnvironmentResistance>
 					<ComfyTemperatureMin>-15</ComfyTemperatureMin>

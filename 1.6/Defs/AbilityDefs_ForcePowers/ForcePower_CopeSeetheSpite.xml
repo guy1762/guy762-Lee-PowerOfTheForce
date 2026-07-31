@@ -152,7 +152,7 @@
 			<drawAimPie>False</drawAimPie>
 			<range>-1</range>
 			<requireLineOfSight>false</requireLineOfSight>
-			<warmupTime>0.5</warmupTime>
+			<warmupTime>0</warmupTime>
 			<targetParams>
 				<canTargetSelf>true</canTargetSelf>
 				<neverTargetIncapacitated>false</neverTargetIncapacitated>
@@ -176,7 +176,7 @@
 		
 		<modExtensions>
 			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
-				<castableInUnconscious>true</castableInUnconscious>
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
 				<castableInMentalbreak>false</castableInMentalbreak>
 			</li>
 			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->
@@ -270,7 +270,7 @@
 			<range>5</range>
 			<requireLineOfSight>false</requireLineOfSight>
 			<drawAimPie>False</drawAimPie>
-			<warmupTime>0.5</warmupTime>
+			<warmupTime>0</warmupTime>
 			<targetParams>
 				<onlyTargetIncapacitatedPawns>true</onlyTargetIncapacitatedPawns>
 				<canTargetSelf>true</canTargetSelf>
@@ -294,7 +294,7 @@
 		
 		<modExtensions>
 			<li Class="CastableInUnconscious.ModExtension_CastableInUnconscious">
-				<castableInUnconscious>true</castableInUnconscious>
+				<castableInUnconscious>true</castableInUnconscious> <!-- <warmupTime> MUST BE SET TO 0 -->
 				<castableInMentalbreak>false</castableInMentalbreak>
 			</li>
 			<!-- <li Class="TheForce_Standalone.ForceAbilityDefExtension"> -->

@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_Feat_labor</defName>
+		<label>Feat: Labor</label>
+		<description>This pawn is exceptionally skilled in common labor tasks, and has a natural advantage in animal handling, mining, harvesting, and fishing.</description>
+
+		<stages>
+			<li>
+				<!-- <label>active</label> -->
+				<minSeverity>1</minSeverity>
+				<becomeVisible>false</becomeVisible>
+				
+				<statOffsets> <!-- 13 -->
+					<PlantWorkSpeed>0.2</PlantWorkSpeed>
+					<DrugHarvestYield>0.2</DrugHarvestYield>
+					<PlantHarvestYield>0.2</PlantHarvestYield>
+					<ButcheryFleshSpeed>0.2</ButcheryFleshSpeed>
+					<ButcheryFleshEfficiency>0.2</ButcheryFleshEfficiency>
+					<AnimalGatherSpeed>0.2</AnimalGatherSpeed>
+					<AnimalGatherYield>0.2</AnimalGatherYield>
+					<FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">0.2</FishingSpeed>
+					<FishingYield MayRequire="Ludeon.RimWorld.Odyssey">0.2</FishingYield>
+					
+					<!-- <DeepDrillingSpeed>0.2</DeepDrillingSpeed> -->
+					<MiningSpeed>0.2</MiningSpeed>
+					<MiningYield>0.2</MiningYield>
+					<SmoothingSpeed>0.2</SmoothingSpeed>
+					
+					<CleaningSpeed>0.2</CleaningSpeed>
+					
+					<TameAnimalChance>0.2</TameAnimalChance>
+					<TrainAnimalChance>0.2</TrainAnimalChance>
+					<BondAnimalChanceFactor>0.2</BondAnimalChanceFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Improved</label>
+				<minSeverity>2</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<PlantWorkSpeed>0.4</PlantWorkSpeed>
+					
+					<DrugHarvestYield>0.4</DrugHarvestYield>
+					<PlantHarvestYield>0.4</PlantHarvestYield>
+					<ButcheryFleshSpeed>0.4</ButcheryFleshSpeed>
+					<ButcheryFleshEfficiency>0.4</ButcheryFleshEfficiency>
+					<AnimalGatherSpeed>0.4</AnimalGatherSpeed>
+					<AnimalGatherYield>0.4</AnimalGatherYield>
+					<FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">0.4</FishingSpeed>
+					<FishingYield MayRequire="Ludeon.RimWorld.Odyssey">0.4</FishingYield>
+					
+					<!-- <DeepDrillingSpeed>0.4</DeepDrillingSpeed> -->
+					<MiningSpeed>0.4</MiningSpeed>
+					<MiningYield>0.4</MiningYield>
+					<SmoothingSpeed>0.4</SmoothingSpeed>
+					
+					<CleaningSpeed>0.4</CleaningSpeed>
+					
+					<TameAnimalChance>0.4</TameAnimalChance>
+					<TrainAnimalChance>0.4</TrainAnimalChance>
+					<BondAnimalChanceFactor>0.4</BondAnimalChanceFactor>
+				</statOffsets>
+			</li>
+			<li>
+				<label>Master</label>
+				<minSeverity>3</minSeverity>
+				<becomeVisible>false</becomeVisible>
+
+				<statOffsets>
+					<PlantWorkSpeed>0.6</PlantWorkSpeed>
+					
+					<DrugHarvestYield>0.6</DrugHarvestYield>
+					<PlantHarvestYield>0.6</PlantHarvestYield>
+					<ButcheryFleshSpeed>0.6</ButcheryFleshSpeed>
+					<ButcheryFleshEfficiency>0.6</ButcheryFleshEfficiency>
+					<AnimalGatherSpeed>0.6</AnimalGatherSpeed>
+					<AnimalGatherYield>0.6</AnimalGatherYield>
+					<FishingSpeed MayRequire="Ludeon.RimWorld.Odyssey">0.6</FishingSpeed>
+					<FishingYield MayRequire="Ludeon.RimWorld.Odyssey">0.6</FishingYield>
+					
+					<!-- <DeepDrillingSpeed>0.6</DeepDrillingSpeed> -->
+					<MiningSpeed>0.6</MiningSpeed>
+					<MiningYield>0.6</MiningYield>
+					<SmoothingSpeed>0.6</SmoothingSpeed>
+					
+					<CleaningSpeed>0.6</CleaningSpeed>
+					
+					<TameAnimalChance>0.6</TameAnimalChance>
+					<TrainAnimalChance>0.6</TrainAnimalChance>
+					<BondAnimalChanceFactor>0.6</BondAnimalChanceFactor>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+	
+</Defs>

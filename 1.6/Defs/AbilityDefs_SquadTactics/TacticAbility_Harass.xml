@@ -214,6 +214,21 @@
 			<li Class="SWCP_Misc.HediffCompProperties_DisappearsOnDowned"/>
 			<li Class="HediffCompProperties_DisappearsOnDeath"/>
         </comps>
+		<renderNodeProperties>
+			<li>
+				<nodeClass>PawnRenderNode_AttachmentHead</nodeClass>
+				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
+				<texPath>UI/EaWIcons/Harass</texPath>
+				<parentTagDef>Body</parentTagDef>
+				<drawSize>0.25</drawSize>
+				<drawData>
+				  <defaultData>
+					<layer>100</layer>
+					<offset>(0, 0, 1.25)</offset>
+				  </defaultData>
+				</drawData>
+			</li>
+		</renderNodeProperties>
     </HediffDef>
 	
 	

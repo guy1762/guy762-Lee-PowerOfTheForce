@@ -1,0 +1,1473 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	
+	<ItsSorceryFramework.LearningTrackerDef ParentName = "LearningTrackerTree">
+		<defName>SWPotFLearningTracker_HeroicClass_Academic</defName>
+		<label>Starter Class: Academic</label>
+		<learningTrackerClass>ItsSorceryFramework.LearningTracker_Tree</learningTrackerClass> <!-- this is for the "research screen" tabs -->
+		
+		<defaultLocked>true</defaultLocked>
+		<lockedLabel>Starter Class: Academic</lockedLabel>
+	</ItsSorceryFramework.LearningTrackerDef>
+	
+	
+	
+	
+	<!--<defaultLabelColor>(255,7,48)</defaultLabelColor>      red -->
+	<!--<defaultLabelColor>(7,172,255)</defaultLabelColor>     KotOR blue -->
+	<!--<defaultLabelColor>(7,255,131)</defaultLabelColor>     KotOR 2 green -->
+	<!--<defaultLabelColor>(255,255,7)</defaultLabelColor>     yellow -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- these are the "research screen" blips -->
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Academic -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_AcademicI</defName>
+		<label>Class Progression: Academic I</label>
+		<description>Class progression feat. Adds one permanent skill point in Intellectual.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_AcademicI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_AcademicII</defName>
+		<label>Class Progression: Academic II</label>
+		<description>Class progression feat. Adds one permanent skill point in Intellectual and Social.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_AcademicII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_AcademicI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</defName>
+		<label>Class Progression: Academic III</label>
+		<description>Class progression feat. Adds one permanent skill point in Intellectual, Social, and Medicine.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_AcademicIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_AcademicII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_AcademicIV</defName>
+		<label>Class Progression: Academic IV</label>
+		<description>Class progression feat. Adds two permanent skill points in Intellectual, one permanent point in Social, and one in Medicine.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_AcademicIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_AcademicIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_AcademicV</defName>
+		<label>Class Progression: Academic V</label>
+		<description>Class progression feat. Adds two permanent skill points in Intellectual, one permanent point in Social, and one in Medicine. Raises passion in Intellectual by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_AcademicV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_AcademicIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_AcademicVI</defName>
+		<label>Class Progression: Academic VI</label>
+		<description>Class progression feat. Adds two permanent skill points in Intellectual, one permanent point in Social, and one in Medicine. Raises passion in Intellectual and Social by one tier.</description>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_ClassFeat_AcademicVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_ClassFeat_AcademicV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>0</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ CLASS PROGRESSION: Academic -->
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</defName>
+		<label>Academic Multiclass: Soldier</label>
+		<description>Invest unspent points into the Soldier starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Soldier</li>
+		</unlocks>
+		
+		<coordX>7</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</defName>
+		<label>Academic Multiclass: Goon</label>
+		<description>Invest unspent points into the Goon starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_goon</li>
+		</unlocks>
+		
+		<coordX>8</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</defName>
+		<label>Academic Multiclass: Scavenger</label>
+		<description>Invest unspent points into the Scavenger starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scavenger</li>
+		</unlocks>
+		
+		<coordX>9</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</defName>
+		<label>Academic Multiclass: Scout</label>
+		<description>Invest unspent points into the Scout starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li> -->
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li>
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Scout</li>
+		</unlocks>
+		
+		<coordX>10</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</defName>
+		<label>Academic Multiclass: Socialite</label>
+		<description>Invest unspent points into the Socialite starter class.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Mentor</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Soldier_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Goon_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Academic</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Scout</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scavenger_Multiclassing_Socialite</li>
+			
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Soldier</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Goon</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scavenger</li>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Scout</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Academic_Multiclassing_Socialite</li> -->
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Scavenger</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Academic</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Scout_Multiclassing_Socialite</li>
+			
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Soldier</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Goon</li> -->
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scavenger</li> -->
+			<li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Academic</li>
+			<!-- <li>SWPotF_HeroModeTreeNodeClassProgression_Socialite_Multiclassing_Scout</li> -->
+		</exclusiveNodes>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeClassProgression_AcademicIII</li>
+		</prereqNodes>
+		
+		<unlocks>
+			<li>SWPotFLearningTracker_HeroicClass_Socialite</li>
+		</unlocks>
+		
+		<coordX>11</coordX>
+		<coordY>0.25</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ MULTICLASSING -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Intellectual -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualI</defName>
+		<label>Skill Upgrade: Intellect I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualII</defName>
+		<label>Skill Upgrade: Intellect II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualIII</defName>
+		<label>Skill Upgrade: Intellect III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualIV</defName>
+		<label>Skill Upgrade: Intellect IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualV</defName>
+		<label>Skill Upgrade: Intellect V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualVI</defName>
+		<label>Skill Upgrade: Intellect VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualVII</defName>
+		<label>Skill Upgrade: Intellect VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualVIII</defName>
+		<label>Skill Upgrade: Intellect VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualIX</defName>
+		<label>Skill Upgrade: Intellect IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualX</defName>
+		<label>Skill Upgrade: Intellect X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Intellectual.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Computer_Use</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_intellectualIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_IntellectualX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_IntellectualIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>1</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Intellectual -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Social -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialI</defName>
+		<label>Skill Upgrade: Social I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialII</defName>
+		<label>Skill Upgrade: Social II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialIII</defName>
+		<label>Skill Upgrade: Social III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialIV</defName>
+		<label>Skill Upgrade: Social IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialV</defName>
+		<label>Skill Upgrade: Social V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialVI</defName>
+		<label>Skill Upgrade: Social VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialVII</defName>
+		<label>Skill Upgrade: Social VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialVIII</defName>
+		<label>Skill Upgrade: Social VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialIX</defName>
+		<label>Skill Upgrade: Social IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialX</defName>
+		<label>Skill Upgrade: Social X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Social.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/PotF_Feat_Class_Skill_Social</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_socialIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_SocialX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_SocialIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>2</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Social -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Medicine -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineI</defName>
+		<label>Skill Upgrade: Medicine I</label>
+		<description>Skill upgrade feat. Adds one permanent skill point in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineII</defName>
+		<label>Skill Upgrade: Medicine II</label>
+		<description>Skill upgrade feat. Adds two permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>2</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineI</li>
+		</hediffRemove>
+		
+		<coordX>2</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineIII</defName>
+		<label>Skill Upgrade: Medicine III</label>
+		<description>Skill upgrade feat. Adds three permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>3</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineII</li>
+		</hediffRemove>
+		
+		<coordX>3</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineIV</defName>
+		<label>Skill Upgrade: Medicine IV</label>
+		<description>Skill upgrade feat. Adds four permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineIV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineIII</li>
+		</hediffRemove>
+		
+		<coordX>4</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineV</defName>
+		<label>Skill Upgrade: Medicine V</label>
+		<description>Skill upgrade feat. Adds five permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>5</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineIV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineV</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineIV</li>
+		</hediffRemove>
+		
+		<coordX>5</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineVI</defName>
+		<label>Skill Upgrade: Medicine VI</label>
+		<description>Skill upgrade feat. Adds six permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineV</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineVI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineV</li>
+		</hediffRemove>
+		
+		<coordX>6</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineVII</defName>
+		<label>Skill Upgrade: Medicine VII</label>
+		<description>Skill upgrade feat. Adds seven permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>7</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineVI</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineVII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineVI</li>
+		</hediffRemove>
+		
+		<coordX>7</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineVIII</defName>
+		<label>Skill Upgrade: Medicine VIII</label>
+		<description>Skill upgrade feat. Adds eight permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineVII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineVIII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineVII</li>
+		</hediffRemove>
+		
+		<coordX>8</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineIX</defName>
+		<label>Skill Upgrade: Medicine IX</label>
+		<description>Skill upgrade feat. Adds nine permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>9</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineVIII</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineIX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineVIII</li>
+		</hediffRemove>
+		
+		<coordX>9</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineX</defName>
+		<label>Skill Upgrade: Medicine X</label>
+		<description>Skill upgrade feat. Adds ten permanent skill points in Medicine.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/ClassSkills/KotORII_Feat_Class_Skill_Treat_Injury</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>10</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeSkillFeats_Academic_MedicineIX</li>
+		</prereqNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_SkillFeat_MedicineX</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_SkillFeat_MedicineIX</li>
+		</hediffRemove>
+		
+		<coordX>10</coordX>
+		<coordY>3</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Skill Feats: Medicine -->
+	
+	
+	
+	
+	
+	
+	
+
+
+	
+	
+	
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Academic Equipment Feats -->
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Academic_any</defName>
+		<label>Equipment Focus: Any</label>
+		<description>.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Armor_Proficiency_Medium</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>6</prereqLevel>
+		
+		<!-- <hediffAdd> -->
+			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_AcademicII</hediffDef><severity>1</severity></li> -->
+		<!-- </hediffAdd> -->
+		
+		<coordX>6</coordX>
+		<coordY>4</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	<!-- \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ Academic Equipment Feats -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- gear head -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadI</defName>
+		<label>Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Gear_Head</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Scavenger_gearheadIII</li>
+		</exclusiveNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_gearhead</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadII</defName>
+		<label>Improved Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting. Replaces Gear Head.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Gear_Head</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_gearhead</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadIII</defName>
+		<label>Master Gear Head</label>
+		<description>This pawn is exceptionally skilled in working with complex machinery and computer systems, and has a natural advantage when crafting, repairing, and piloting. Replaces Improved Gear Head.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Gear_Head</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_gearheadII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_gearhead</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>5</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- empathy -->
+	
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Academic_empathyI</defName>
+		<label>empathy</label>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations, cooking, and when applying medical treatment.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		<exclusiveNodes>
+		<!-- List of LearningTreeNodeDefs. If even one of the nodes in the list is completed, it will lock out this node. This also applies vise versa: if this node is done, it will lock out all the nodes on the list. -->
+			<li>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyI</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyII</li>
+			<li>SWPotF_HeroModeTreeNodeFeats_Socialite_empathyIII</li>
+		</exclusiveNodes>
+		
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		
+		<coordX>1</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Academic_empathyII</defName>
+		<label>Improved Empathy</label>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations, cooking, and when applying medical treatment. Replaces Empathy.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Improved_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>4</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_empathyI</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>4</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
+		<defName>SWPotF_HeroModeTreeNodeFeats_Academic_empathyIII</defName>
+		<label>Master Empathy</label>
+		<description>This pawn is exceptionally empathetic towards others, and has a natural advantage in social situations, cooking, and when applying medical treatment. Replaces Improved Empathy.</description>
+		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/KotORII_Feat_Master_Empathy</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
+		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Academic</learningTrackerDef>
+		
+		<prereqLevel>8</prereqLevel>
+		<prereqNodes>
+			<li>SWPotF_HeroModeTreeNodeFeats_Academic_empathyII</li>
+		</prereqNodes>
+		
+		<hediffAdjust>
+			<li><hediffDef>SWPotFHediff_Feat_empathy</hediffDef><severity>1</severity></li> <!-- Severity here adds the value to the existing severity -->
+		</hediffAdjust>
+		
+		<coordX>8</coordX>
+		<coordY>6</coordY>
+		<pointReq>1</pointReq>
+		
+	</ItsSorceryFramework.LearningTreeNodeDef>
+	
+
+	
+</Defs>

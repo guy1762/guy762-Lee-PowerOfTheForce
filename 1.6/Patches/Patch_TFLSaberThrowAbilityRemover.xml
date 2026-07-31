@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+
+	
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.lightsaber">
+		<mods>
+			<li>Star Wars : The Force - Lightsaber</li>
+		</mods>
+		
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[@Name="Force_LightsaberBase"]/comps/li[4]/abilitiesRequiringPsylink</xpath>
+		</match>
+	</Operation>
+	
+	<Operation Class="PatchOperationFindMod" IfModActive="lee.theforce.lightsaber">
+		<mods>
+			<li>Star Wars : The Force - Lightsaber</li>
+		</mods>
+		
+		<match Class="PatchOperationRemove">
+			<xpath>Defs/ThingDef[@Name="Force_LightsaberBase"]/comps/li[4]/abilitiesNotRequiringPsylink</xpath>
+		</match>
+	</Operation>
+
+	
+	
+</Patch>
