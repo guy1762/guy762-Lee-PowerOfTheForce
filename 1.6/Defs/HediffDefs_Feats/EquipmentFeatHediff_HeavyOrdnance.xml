@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_EquipmentFeat_heavyordnanceI</defName>
+		<label>Weapon Focus: Heavy Ordnance</label>
+		<description>This pawn is adept in the use of all heavy weapons, granting them reduced cooldown time.</description>
+		<initialSeverity>1</initialSeverity>
+		
+		<comps>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_SeverityByEquipped">
+                <severity>2</severity>
+                <check>FirstOfEach</check>
+				<equipmentTags>
+					<!-- <li><text>SWCPWeaponClassTag_ShortRange</text></li> -->
+					<!-- <li><text>SWCPWeaponClassTag_LongRange</text></li> -->
+					<li><text>SWCPWeaponClassTag_HeavyOrdnance</text></li>
+					<!-- <li><text>SWCPWeaponClassTag_Melee</text></li> -->
+					<!-- <li><text>SWCPWeaponClassTag_Lightsaber</text></li> -->
+				</equipmentTags>
+            </li>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_InvisibleAtStage">
+                <invisibleStages><li>2</li></invisibleStages>
+            </li>
+        </comps>
+		<stages>
+			<li>
+				<label>Active</label>
+				<minSeverity>1</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				
+				<statFactors>
+					<RangedCooldownFactor>0.9</RangedCooldownFactor>
+				</statFactors>
+			</li>
+			<li>
+				<label>Inactive</label>
+				<minSeverity>2</minSeverity> <!-- this has to go backwards for some reason -->
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_EquipmentFeat_heavyordnanceII</defName>
+		<label>Weapon Proficiency: Heavy Ordnance</label>
+		<description>This pawn is proficient in the use of all heavy weapons, granting them better reduced cooldown time.</description>
+		<initialSeverity>1</initialSeverity>
+		
+		<comps>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_SeverityByEquipped">
+                <severity>2</severity>
+                <check>FirstOfEach</check>
+				<equipmentTags>
+					<li><text>SWCPWeaponClassTag_HeavyOrdnance</text></li>
+				</equipmentTags>
+            </li>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_InvisibleAtStage">
+                <invisibleStages><li>2</li></invisibleStages>
+            </li>
+        </comps>
+		<stages>
+			<li>
+				<label>Active</label>
+				<minSeverity>1</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				
+				<statFactors>
+					<RangedCooldownFactor>0.7</RangedCooldownFactor>
+				</statFactors>
+			</li>
+			<li>
+				<label>Inactive</label>
+				<minSeverity>2</minSeverity> <!-- this has to go backwards for some reason -->
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+	<HediffDef ParentName="SWPotFHediff_FeatBASE">
+		<defName>SWPotFHediff_EquipmentFeat_heavyordnanceIII</defName>
+		<label>Weapon Expertise: Heavy Ordnance</label>
+		<description>This pawn is an expert in the use of all heavy weapons, granting them greatly reduced cooldown time.</description>
+		<initialSeverity>1</initialSeverity>
+		
+		<comps>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_SeverityByEquipped">
+                <severity>2</severity>
+                <check>FirstOfEach</check>
+				<equipmentTags>
+					<li><text>SWCPWeaponClassTag_HeavyOrdnance</text></li>
+				</equipmentTags>
+            </li>
+			<li MayRequire="EBSG.Framework" Class="EBSGFramework.HediffCompProperties_InvisibleAtStage">
+                <invisibleStages><li>2</li></invisibleStages>
+            </li>
+        </comps>
+		<stages>
+			<li>
+				<label>Active</label>
+				<minSeverity>1</minSeverity>
+				<becomeVisible>true</becomeVisible>
+				
+				<statFactors>
+					<RangedCooldownFactor>0.5</RangedCooldownFactor>
+				</statFactors>
+			</li>
+			<li>
+				<label>Inactive</label>
+				<minSeverity>2</minSeverity> <!-- this has to go backwards for some reason -->
+				<becomeVisible>false</becomeVisible>
+			</li>
+		</stages>
+	</HediffDef>
+	
+	
+</Defs>

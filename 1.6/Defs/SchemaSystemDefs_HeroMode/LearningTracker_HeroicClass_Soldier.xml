@@ -776,15 +776,15 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_LongRangeFocus</defName>
 		<label>Weapon Focus: Long-Ranged</label>
-		<description>.</description>
+		<description>This pawn is adept in the use of all long-ranged guns, granting them an accuracy bonus at all ranges.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotORII_Feat_Weapon_Focus_Blaster_Rifle</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Soldier</learningTrackerDef>
 		
 		<prereqLevel>2</prereqLevel>
 		
-		<!-- <hediffAdd> -->
-			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SoldierII</hediffDef><severity>1</severity></li> -->
-		<!-- </hediffAdd> -->
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_EquipmentFeat_longrangeI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
 		
 		<coordX>2</coordX>
 		<coordY>2</coordY>
@@ -804,9 +804,9 @@
 			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_LongRangeFocus</li>
 		</prereqNodes>
 		
-		<!-- <hediffAdd> -->
-			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SoldierII</hediffDef><severity>1</severity></li> -->
-		<!-- </hediffAdd> -->
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_EquipmentFeat_heavyarmor</hediffDef><severity>1</severity></li>
+		</hediffAdd>
 		
 		<coordX>4</coordX>
 		<coordY>2</coordY>
@@ -817,7 +817,7 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_HeavyWeaponFocus</defName>
 		<label>Weapon Focus: Heavy Ordnance</label>
-		<description>.</description>
+		<description>This pawn is adept in the use of all heavy weapons, granting them reduced cooldown time.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotOR_Feat_Weapon_Focus_Heavy_Weapons</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Soldier</learningTrackerDef>
 		
@@ -826,9 +826,9 @@
 			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_HeavyArmor</li>
 		</prereqNodes>
 		
-		<!-- <hediffAdd> -->
-			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SoldierII</hediffDef><severity>1</severity></li> -->
-		<!-- </hediffAdd> -->
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_EquipmentFeat_heavyordnanceI</hediffDef><severity>1</severity></li>
+		</hediffAdd>
 		
 		<coordX>5</coordX>
 		<coordY>2</coordY>
@@ -839,7 +839,7 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_LongRangeProficiency</defName>
 		<label>Weapon Proficiency: Long-Ranged</label>
-		<description>.</description>
+		<description>This pawn is proficient in the use of all long-ranged guns, granting them an accuracy bonus at all ranges. Replaces Weapon Focus: Long-Ranged.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotORII_Feat_Weapon_Proficiency_Blaster_Rifle</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Soldier</learningTrackerDef>
 		
@@ -848,9 +848,12 @@
 			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_HeavyWeaponFocus</li>
 		</prereqNodes>
 		
-		<!-- <hediffAdd> -->
-			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SoldierII</hediffDef><severity>1</severity></li> -->
-		<!-- </hediffAdd> -->
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_EquipmentFeat_longrangeII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_EquipmentFeat_longrangeI</li>
+		</hediffRemove>
 		
 		<coordX>7</coordX>
 		<coordY>2</coordY>
@@ -870,9 +873,9 @@
 			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_LongRangeProficiency</li>
 		</prereqNodes>
 		
-		<!-- <hediffAdd> -->
-			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SoldierII</hediffDef><severity>1</severity></li> -->
-		<!-- </hediffAdd> -->
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_EquipmentFeat_mediumarmor</hediffDef><severity>1</severity></li>
+		</hediffAdd>
 		
 		<coordX>9</coordX>
 		<coordY>2</coordY>
@@ -883,7 +886,7 @@
 	<ItsSorceryFramework.LearningTreeNodeDef ParentName = "LearningTreeNodeBase">
 		<defName>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_HeavyWeaponProficiency</defName>
 		<label>Weapon Proficiency: Heavy Ordnance</label>
-		<description>.</description>
+		<description>This pawn is proficient in the use of all heavy weapons, granting them better reduced cooldown time. Replaces Weapon Focus: Heavy Ordnance.</description>
 		<modExtensions><li Class="ISFNodeIcons.LearningNodeIconExtension"><iconPath>UI/FeatIcons/Weapons/KotOR_Feat_Weapon_Proficiency_Heavy_Weapons</iconPath><iconSize>50</iconSize><leftPadding>2</leftPadding><textGap>2</textGap></li></modExtensions>
 		<learningTrackerDef>SWPotFLearningTracker_HeroicClass_Soldier</learningTrackerDef>
 		
@@ -892,9 +895,12 @@
 			<li>SWPotF_HeroModeTreeNodeEquipmentFeats_Soldier_MediumArmor</li>
 		</prereqNodes>
 		
-		<!-- <hediffAdd> -->
-			<!-- <li><hediffDef>SWPotFHediff_ClassFeat_SoldierII</hediffDef><severity>1</severity></li> -->
-		<!-- </hediffAdd> -->
+		<hediffAdd>
+			<li><hediffDef>SWPotFHediff_EquipmentFeat_heavyordnanceII</hediffDef><severity>1</severity></li>
+		</hediffAdd>
+		<hediffRemove>
+			<li>SWPotFHediff_EquipmentFeat_heavyordnanceI</li>
+		</hediffRemove>
 		
 		<coordX>10</coordX>
 		<coordY>2</coordY>

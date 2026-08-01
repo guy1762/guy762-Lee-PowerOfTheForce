@@ -53,10 +53,11 @@
 		</verbProperties>
 		
 		<comps>
-			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+			<li Class="EBSGFramework.CompProperties_AbilityGiveMentalStateWithSuccessChance">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>PanicFlee</stateDef>
+				<durationMultiplier MayRequire="Ludeon.RimWorld.Ideology">Terror</durationMultiplier>
 				<canTargetBosses>false</canTargetBosses>
-				<useStatic>True</useStatic>
-                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
 				<successChance>
 					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
 					
@@ -104,10 +105,11 @@
 		<cooldownTicksRange>9000</cooldownTicksRange>
 
 		<comps Inherit="False">
-			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+			<li Class="EBSGFramework.CompProperties_AbilityGiveMentalStateWithSuccessChance">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>PanicFlee</stateDef>
+				<durationMultiplier MayRequire="Ludeon.RimWorld.Ideology">Terror</durationMultiplier>
 				<canTargetBosses>false</canTargetBosses>
-				<useStatic>True</useStatic>
-                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
 				<successChance>
 					<baseSuccessChance>0.75</baseSuccessChance> <!-- this is basically the DC -->
 					
@@ -200,11 +202,11 @@
 		</verbProperties>
 		
 		<comps>
-			<li Class="EBSGFramework.CompProperties_AbilityChangeFaction">
+			<li Class="EBSGFramework.CompProperties_AbilityGiveMentalStateWithSuccessChance">
+				<compClass>CompAbilityEffect_GiveMentalState</compClass>
+				<stateDef>PanicFlee</stateDef>
+				<durationMultiplier MayRequire="Ludeon.RimWorld.Ideology">Terror</durationMultiplier>
 				<canTargetBosses>false</canTargetBosses>
-				
-				<useStatic>True</useStatic>
-                <staticFaction>guy762_KotORFaction_Civilians</staticFaction>
 				<successChance>
 					<baseSuccessChance>0.5</baseSuccessChance> <!-- this is basically the DC -->
 					

@@ -115,7 +115,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>UI/FeatIcons/KotORII_Feat_Uncanny_Dodge_I</texPath>
 				<parentTagDef>Body</parentTagDef>
-				<drawSize>1</drawSize>
+				<drawSize>0.25</drawSize>
 				<drawData>
 				  <defaultData>
 					<layer>100</layer>

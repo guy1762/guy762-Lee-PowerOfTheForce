@@ -102,7 +102,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_I</texPath>
 				<parentTagDef>Body</parentTagDef>
-				<drawSize>1</drawSize>
+				<drawSize>0.25</drawSize>
 				<drawData>
 				  <defaultData>
 					<layer>100</layer>
@@ -190,7 +190,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_II</texPath>
 				<parentTagDef>Body</parentTagDef>
-				<drawSize>1</drawSize>
+				<drawSize>0.25</drawSize>
 				<drawData>
 				  <defaultData>
 					<layer>100</layer>
@@ -278,7 +278,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_III</texPath>
 				<parentTagDef>Body</parentTagDef>
-				<drawSize>1</drawSize>
+				<drawSize>0.25</drawSize>
 				<drawData>
 				  <defaultData>
 					<layer>100</layer>
@@ -366,7 +366,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_IV</texPath>
 				<parentTagDef>Body</parentTagDef>
-				<drawSize>1</drawSize>
+				<drawSize>0.25</drawSize>
 				<drawData>
 				  <defaultData>
 					<layer>100</layer>
@@ -453,7 +453,7 @@
 				<workerClass>PawnRenderNodeWorker_FlipWhenCrawling</workerClass>
 				<texPath>UI/FeatIcons/HighLevels/KotORII_Feat_Precise_Shot_V</texPath>
 				<parentTagDef>Body</parentTagDef>
-				<drawSize>1</drawSize>
+				<drawSize>0.25</drawSize>
 				<drawData>
 				  <defaultData>
 					<layer>100</layer>
