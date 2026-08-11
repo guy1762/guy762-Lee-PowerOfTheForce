@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<AbilityDef Name="SWPotFAbility_Feat_steal">
+		<defName>SWPotFAbility_Feat_steal</defName>
+		<label>steal</label>
+		<description>Steal a random item from the target's inventory.</description>
+		<iconPath>UI/FeatIcons/PotF_Feat_Steal</iconPath>
+		
+		<!-- <category>SWPotF_AbilityCategory_Universal</category> -->
+		<!-- <hotKey></hotKey> -->
+		<writeCombatLog>True</writeCombatLog>
+		
+		<!-- <level>1</level> -->
+		<aiCanUse>true</aiCanUse>
+		<ai_IsOffensive>false</ai_IsOffensive>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		
+		
+		<cooldownTicksRange>12000</cooldownTicksRange>
+		<stunTargetWhileCasting>true</stunTargetWhileCasting>
+		
+		<targetRequired>true</targetRequired>
+		<verbProperties>		
+			<verbClass>Verb_CastAbility</verbClass>
+			<violent>false</violent>
+			<drawAimPie>False</drawAimPie>
+			<range>1.9</range>
+			<requireLineOfSight>true</requireLineOfSight>
+			<warmupTime>0.5</warmupTime>
+			<soundCast>kotorsound_GoldeneyeSlap</soundCast>
+			<targetParams>
+				<canTargetSelf>false</canTargetSelf>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetAnimals>true</canTargetAnimals>
+				<canTargetHumans>true</canTargetHumans>
+				<canTargetMechs>true</canTargetMechs>
+				<neverTargetIncapacitated>true</neverTargetIncapacitated>
+				<!-- <neverTargetHostileFaction>true</neverTargetHostileFaction> don't use this, it checks for factions automatically -->
+			</targetParams>
+		</verbProperties>
+		
+		<comps>
+			<li Class="SWCP_Thekiborg_Misc.CompProperties_StealRandom" />
+		</comps>
+	</AbilityDef>
+	
+</Defs>

@@ -10,7 +10,9 @@
 		<modExtensions>
 			<li Class="HeroTraitMod.ModExtension_HeroTraitGiver">
 				<ticksBetweenHeroLimitIncrease>3600000</ticksBetweenHeroLimitIncrease>
-				<!-- <ticksBetweenHeroLimitIncrease>360</ticksBetweenHeroLimitIncrease> -->
+				<ticksBetweenRapids>36000</ticksBetweenRapids>
+				<!-- <ticksBetweenRapids>360</ticksBetweenRapids> -->
+				<rapids>3</rapids>
 				<maxHeroes>10</maxHeroes>
 			</li>
 		</modExtensions>
